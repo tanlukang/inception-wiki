@@ -13,8 +13,8 @@ pipelines:
         script: # Modify the commands below to build your repository.
           - echo 'default step'
 
-  pull-requests:
-      "**":
+  branches:
+      development:
         - step:
             name: deploy to github
             script:
