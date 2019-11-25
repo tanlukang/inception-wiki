@@ -3,15 +3,17 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-# init 
-npm install gitbook-cli -g
-gitbook install 
-gitbook build
-
 # remove cache
 if [ -f ./SUMMARY.md ]; then
     rm ./SUMMARY.md
 fi
+
+# init 
+npm install gitbook-cli -g
+gitbook install 
+gitbook build
+# fix plugin bug 
+gitbook build
 
 # fetch repo
 git clone https://tanlukang:${GITHUB_TOKEN}@github.com/tanlukang/inception-wiki.git
