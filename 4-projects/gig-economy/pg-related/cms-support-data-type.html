@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>cms-support-data-type.md · InceptionWiki</title>
+        <title>pg数据类型alpha支持 · InceptionWiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -1030,7 +1030,7 @@
                 <a href="cms-support-data-type.html">
             
                     
-                    cms-support-data-type.md
+                    pg数据类型alpha支持
             
                 </a>
             
@@ -1110,7 +1110,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >cms-support-data-type.md</a>
+        <a href="../../.." >pg数据类型alpha支持</a>
     </h1>
 </div>
 
@@ -1125,54 +1125,194 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <p>&#x6570;&#x636E;&#x7C7B;&#x578B;</p>
+                                <h4 id="pg&#x6570;&#x636E;&#x7C7B;&#x578B;alpha&#x652F;&#x6301;">pg&#x6570;&#x636E;&#x7C7B;&#x578B;alpha&#x652F;&#x6301;</h4>
 <ul>
 <li>serial</li>
 <li>boolean</li>
 <li>text</li>
-<li>varchar <ul>
+<li>int</li>
+<li>double precision</li>
+<li>date</li>
+<li>time</li>
+<li>timestamp</li>
+<li>jsonb</li>
+<li>array</li>
+</ul>
+<h4 id="pg&#x5B57;&#x6BB5;&#x7EA6;&#x675F;alpha&#x652F;&#x6301;">pg&#x5B57;&#x6BB5;&#x7EA6;&#x675F;alpha&#x652F;&#x6301;</h4>
+<ul>
+<li>PRIMARY KEY</li>
+<li>FOREIGN KEY</li>
+<li>UNIQUE</li>
+<li>// NOT NULL<ul>
+<li>&#x53EF;&#x901A;&#x8FC7;&#x5B57;&#x6BB5;&#x914D;&#x7F6E;required&#x5C5E;&#x6027;&#x5B9E;&#x73B0;&#xFF0C;&#x4E0D;&#x5728;DB&#x7EA7;&#x522B;&#x58F0;&#x660E;</li>
+</ul>
+</li>
+<li>// CHECK<ul>
+<li>&#x53EF;&#x901A;&#x8FC7;&#x5B57;&#x6BB5;&#x914D;&#x7F6E;&#x5B9E;&#x73B0;&#xFF0C;&#x4E0D;&#x5728;DB&#x7EA7;&#x522B;&#x5B9E;&#x73B0;</li>
+</ul>
+</li>
+</ul>
+<h4 id="es&#x6570;&#x636E;&#x7C7B;&#x578B;alpha&#x652F;&#x6301;">es&#x6570;&#x636E;&#x7C7B;&#x578B;alpha&#x652F;&#x6301;</h4>
+<ul>
+<li>text</li>
+<li>keyword<ul>
+<li>&#x4E3B;&#x5B57;&#x6BB5;&#x7C7B;&#x578B;&#x4E3A;text&#xFF0C;&#x5E76;&#x4F7F;&#x7528;fields&#x5C5E;&#x6027;&#x58F0;&#x660E;&#x4E00;&#x4E2A;keyword&#x7684;&#x5B50;&#x5B57;&#x6BB5;&#x4F7F;&#x7528;&#xFF0C;&#x5B9E;&#x73B0;&#x5B57;&#x6BB5;&#x65E2;&#x80FD;&#x7528;&#x4E8E;&#x641C;&#x7D22;&#x53C8;&#x80FD;&#x7528;&#x4E8E;&#x805A;&#x5408;</li>
+</ul>
+</li>
+<li>integer</li>
+<li>double</li>
+<li>date</li>
+<li>boolean</li>
+<li>object</li>
+<li>nested</li>
+<li>geo_point<ul>
+<li>lat</li>
+<li>lon</li>
+</ul>
+</li>
+</ul>
+<h4 id="es&#x5B57;&#x6BB5;&#x5C5E;&#x6027;alpha&#x652F;&#x6301;">es&#x5B57;&#x6BB5;&#x5C5E;&#x6027;alpha&#x652F;&#x6301;</h4>
+<ul>
+<li>&#x6682;&#x4E0D;&#x652F;&#x6301;&#xFF0C;&#x4EC5;&#x5728;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;&#x4E0A;&#x7559;&#x51FA;&#x5B57;&#x6BB5;&#x540E;&#x7EED;&#x4F7F;&#x7528;</li>
+</ul>
+<h4 id="cms&#x7F16;&#x8F91;&#x7EC4;&#x4EF6;alpha&#x652F;&#x6301;">cms&#x7F16;&#x8F91;&#x7EC4;&#x4EF6;alpha&#x652F;&#x6301;</h4>
+<ul>
+<li>&#x7EC4;&#x4EF6;&#x7C7B;&#x578B;+&#x6620;&#x5C04;<ul>
+<li>single line text<ul>
+<li>pg: text</li>
+<li>es: text</li>
+</ul>
+</li>
+<li>rich text <ul>
+<li>pg: text</li>
+<li>es: text</li>
+</ul>
+</li>
+<li>integer<ul>
+<li>pg: int</li>
+<li>es: integer</li>
+</ul>
+</li>
+<li>float<ul>
+<li>pg: double precision</li>
+<li>es: double</li>
+</ul>
+</li>
+<li>boolean checkbox<ul>
+<li>pg: boolean</li>
+<li>es: boolean</li>
+</ul>
+</li>
+<li>select<ul>
+<li>pg: text</li>
+<li>es: text</li>
+</ul>
+</li>
+<li>multi-select<ul>
+<li>pg: text []</li>
+<li>es: text []</li>
+</ul>
+</li>
+<li>radio<ul>
+<li>pg: text</li>
+<li>es: text</li>
+</ul>
+</li>
+<li>checkbox<ul>
+<li>pg: text []</li>
+<li>es: text []</li>
+</ul>
+</li>
+<li>date<ul>
+<li>pg: date</li>
+<li>es: date</li>
+</ul>
+</li>
+<li>time<ul>
+<li>pg: time</li>
+<li>es: date</li>
+</ul>
+</li>
+<li>datetime<ul>
+<li>pg: timestamp</li>
+<li>es: date</li>
+</ul>
+</li>
+<li>json<ul>
+<li>pg: josnb</li>
+<li>es: object</li>
+</ul>
+</li>
+<li>geo-point<ul>
+<li>pg: jsonb<ul>
+<li>lat</li>
+<li>lon</li>
+</ul>
+</li>
+<li>es: geo_point<ul>
+<li>lat</li>
+<li>lon</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x7EC4;&#x4EF6;&#x5C5E;&#x6027;<ul>
+<li>label</li>
+<li>description/placeholder/helptext</li>
+<li>required</li>
+<li>multi-value/array</li>
+<li>reference</li>
+<li>unique</li>
+</ul>
+</li>
+</ul>
+<h4 id="pg&#x6570;&#x636E;&#x7C7B;&#x578B;&#x540E;&#x7EED;&#x8003;&#x8651;&#x652F;&#x6301;">pg&#x6570;&#x636E;&#x7C7B;&#x578B;&#x540E;&#x7EED;&#x8003;&#x8651;&#x652F;&#x6301;</h4>
+<ul>
+<li>varchar<ul>
 <li>length</li>
 </ul>
 </li>
-<li>int</li>
 <li>bigint</li>
-<li>double precision</li>
 <li>numeric<ul>
 <li>precision</li>
 <li>scale</li>
 </ul>
 </li>
-<li>date</li>
-<li>time</li>
-<li>timestamp</li>
-<li>array</li>
-<li>jsonb</li>
-<li>? enum</li>
-<li>? timestamptz (extension)</li>
-<li>? uuid (extension)</li>
+<li>enum<ul>
+<li>&#x53EF;&#x901A;&#x8FC7;&#x5B57;&#x6BB5;&#x914D;&#x7F6E;&#x5B9E;&#x73B0;&#xFF0C;&#x4E0D;&#x5728;DB&#x7EA7;&#x522B;&#x5B9E;&#x73B0;</li>
 </ul>
-<p>&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53C2;&#x8003;</p>
+</li>
+<li>geos (extension)<ul>
+<li>&#x76EE;&#x524D;&#x901A;&#x8FC7;&#x4F7F;&#x7528;jsonb&#x4FDD;&#x5B58;lat&#x548C;lon&#x5C5E;&#x6027;&#x66FF;&#x4EE3;&#x5B9E;&#x73B0;&#xFF0C;&#x4F7F;&#x7528;extension&#x7684;&#x597D;&#x5904;&#x662F;&#x53EF;&#x4EE5;&#x5728;sql&#x4E2D;&#x505A;&#x641C;&#x7D22;&#xFF0C;&#x4F46;&#x662F;&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x7684;&#x573A;&#x666F;&#x4E3B;&#x8981;&#x662F;&#x5728;es&#x4E2D;&#x641C;&#x7D22;&#xFF0C;&#x6240;&#x4EE5;&#x6682;&#x65F6;&#x7528;&#x4E0D;&#x4E0A;</li>
+</ul>
+</li>
+<li>timestamptz (extension)</li>
+<li>uuid (extension)<ul>
+<li>&#x53EF;&#x901A;&#x8FC7;varchar&#x5B9E;&#x73B0;</li>
+<li>db&#x7EA7;&#x522B;&#x7684;uuid&#x751F;&#x6210;&#xFF0C;&#x9700;&#x8981;module&#x624D;&#x80FD;&#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8C03;&#x7814;&#xFF0C;<a href="https://www.postgresql.org/docs/9.1/datatype-uuid.html" target="_blank">https://www.postgresql.org/docs/9.1/datatype-uuid.html</a></li>
+</ul>
+</li>
+</ul>
+<h4 id="pg&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53C2;&#x8003;">pg&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53C2;&#x8003;</h4>
 <ul>
 <li><a href="http://www.postgresqltutorial.com/postgresql-data-types/" target="_blank">http://www.postgresqltutorial.com/postgresql-data-types/</a></li>
 <li><a href="http://www.postgres.cn/docs/10/datatype.html" target="_blank">http://www.postgres.cn/docs/10/datatype.html</a></li>
 </ul>
-<p>&#x5B57;&#x6BB5;&#x7EA6;&#x675F;</p>
-<ul>
-<li>PRIMARY KEY</li>
-<li>FOREIGN KEY</li>
-<li>UNIQUE</li>
-<li>NOT NULL</li>
-<li>? CHECK</li>
-</ul>
-<p>&#x5B57;&#x6BB5;&#x7EA6;&#x675F;&#x53C2;&#x8003;</p>
+<h4 id="pg&#x5B57;&#x6BB5;&#x7EA6;&#x675F;&#x53C2;&#x8003;">pg&#x5B57;&#x6BB5;&#x7EA6;&#x675F;&#x53C2;&#x8003;</h4>
 <ul>
 <li><a href="http://www.postgresqltutorial.com/" target="_blank">http://www.postgresqltutorial.com/</a></li>
 <li><a href="http://www.postgres.cn/docs/10/ddl-constraints.html" target="_blank">http://www.postgres.cn/docs/10/ddl-constraints.html</a></li>
 </ul>
-<p>headless cms</p>
+<h4 id="es&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53C2;&#x8003;">es&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53C2;&#x8003;</h4>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-types.html</a></li>
+</ul>
+<h4 id="headless-cms&#x53C2;&#x8003;">headless cms&#x53C2;&#x8003;</h4>
 <ul>
 <li>&#x6570;&#x636E;&#x7C7B;&#x578B;<ul>
-<li>string (text/linetext/richtext/markdown/html/link)</li>
+<li>string (text/single-line text/richtext/markdown/html/link)</li>
 <li>number (int/float)</li>
 <li>boolean (checkbox)</li>
 <li>date</li>
@@ -1194,6 +1334,7 @@
 <li>label</li>
 <li>object</li>
 <li>length</li>
+<li>min/max</li>
 <li>reference (&#x5916;&#x952E;&#x5F15;&#x7528;)</li>
 <li>localization (&#x591A;&#x8BED;&#x8A00;)</li>
 <li>validation (&#x6821;&#x9A8C;&#x89C4;&#x5219;)</li>
@@ -1235,7 +1376,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"cms-support-data-type.md","level":"4.2.5.1","depth":3,"next":{"title":"official-website","level":"4.3","depth":1,"ref":"","articles":[{"title":"what we do","level":"4.3.1","depth":2,"path":"4-projects/official-website/information-structure.md","ref":"4-projects/official-website/information-structure.md","articles":[]}]},"previous":{"title":"pg-related","level":"4.2.5","depth":2,"ref":"","articles":[{"title":"cms-support-data-type.md","level":"4.2.5.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","mtime":"2019-11-25T12:43:08.841Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-25T12:43:56.052Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"pg数据类型alpha支持","level":"4.2.5.1","depth":3,"next":{"title":"official-website","level":"4.3","depth":1,"ref":"","articles":[{"title":"what we do","level":"4.3.1","depth":2,"path":"4-projects/official-website/information-structure.md","ref":"4-projects/official-website/information-structure.md","articles":[]}]},"previous":{"title":"pg-related","level":"4.2.5","depth":2,"ref":"","articles":[{"title":"pg数据类型alpha支持","level":"4.2.5.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","mtime":"2019-11-28T01:26:17.348Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-28T01:27:02.076Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
