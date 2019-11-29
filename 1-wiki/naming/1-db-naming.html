@@ -1162,7 +1162,7 @@
                                 <h1 id="&#x6570;&#x636E;&#x5E93;&#x547D;&#x540D;">&#x6570;&#x636E;&#x5E93;&#x547D;&#x540D;</h1>
 <h2 id="&#x8868;&#x547D;&#x540D;">&#x8868;&#x547D;&#x540D;</h2>
 <ul>
-<li>&#x5168;&#x5C0F;&#x5199;</li>
+<li>&#x5927;&#x9A7C;&#x5CF0;&#x547D;&#x540D;</li>
 <li>&#x4E0D;&#x80FD;&#x6709;&#x62FC;&#x5199;&#x9519;&#x8BEF;</li>
 <li>&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x7F29;&#x5199;&#xFF08;&#x56FD;&#x9645;&#x901A;&#x7528;&#x7F29;&#x5199;&#x9664;&#x5916;&#xFF09;</li>
 <li>&#x4F7F;&#x7528;&#x590D;&#x6570;&#x5F62;&#x5F0F;</li>
@@ -1175,15 +1175,15 @@
 </ul>
 <h3 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h3>
 <ul>
-<li>jobs</li>
-<li>job_logs &#x5408;&#x6210;&#x8BCD;</li>
-<li>datamodels &#x4E1A;&#x52A1;&#x9020;&#x8BCD;</li>
-<li>companyjobs &#x4E1A;&#x52A1;&#x9020;&#x8BCD;</li>
-<li>companyjob_attchements &#x4E1A;&#x52A1;&#x9020;&#x8BCD;+&#x5408;&#x6210;&#x8BCD;</li>
-<li>datamodel_fields &#x4E1A;&#x52A1;&#x9020;&#x8BCD;+&#x5408;&#x6210;&#x8BCD;</li>
-<li>relation_companyjobs_users &#x5173;&#x7CFB;&#x8868;</li>
-<li>relation_companyjob_logs_users &#x5173;&#x7CFB;&#x8868;</li>
-<li>relation_companyjob_logs_user_logs &#x5173;&#x7CFB;&#x8868; </li>
+<li>Jobs</li>
+<li>JobLogs &#x5408;&#x6210;&#x8BCD;</li>
+<li>DataModels &#x4E1A;&#x52A1;&#x9020;&#x8BCD;</li>
+<li>CompanyJobs &#x4E1A;&#x52A1;&#x9020;&#x8BCD;</li>
+<li>CompanyJobLogs &#x4E1A;&#x52A1;&#x9020;&#x8BCD;+&#x5408;&#x6210;&#x8BCD;</li>
+<li>DataModelFields &#x4E1A;&#x52A1;&#x9020;&#x8BCD;+&#x5408;&#x6210;&#x8BCD;</li>
+<li>CompanyJobs_Users &#x5173;&#x7CFB;&#x8868;</li>
+<li>CompanyJobLogs_Users &#x5173;&#x7CFB;&#x8868;</li>
+<li>CompanyJobLogs_UserLogs &#x5173;&#x7CFB;&#x8868; </li>
 </ul>
 <h3 id="&#x5E38;&#x89C1;&#x547D;&#x540D;">&#x5E38;&#x89C1;&#x547D;&#x540D;</h3>
 <ul>
@@ -1197,10 +1197,10 @@
 </ul>
 <h2 id="&#x5B57;&#x6BB5;&#x547D;&#x540D;">&#x5B57;&#x6BB5;&#x547D;&#x540D;</h2>
 <ul>
-<li>&#x5168;&#x5C0F;&#x5199;</li>
+<li>&#x5C0F;&#x9A7C;&#x5CF0;&#x547D;&#x540D;</li>
 <li>&#x4E0D;&#x80FD;&#x6709;&#x62FC;&#x5199;&#x9519;&#x8BEF;</li>
-<li>&#x5916;&#x952E;&#x4F7F;&#x7528;&#x4E0D;&#x80FD;&#x7F29;&#x5199;uid(x) / user_id (&#x221A;)</li>
-<li>&#x5916;&#x952E;&#x4F7F;&#x7528;&#x8D44;&#x6E90;&#x5355;&#x6570;&#x5C0F;&#x5199;+_id&#x7684;&#x5F62;&#x5F0F; users_id(x) / user_id (&#x221A;)</li>
+<li>&#x5916;&#x952E;&#x4F7F;&#x7528;&#x4E0D;&#x80FD;&#x7F29;&#x5199;uid(x) -&gt; userId (&#x221A;)</li>
+<li>&#x5916;&#x952E;&#x4F7F;&#x7528;&#x8D44;&#x6E90;&#x5355;&#x6570;&#x5C0F;&#x5199;+_id&#x7684;&#x5F62;&#x5F0F; usersId(x)-&gt; userId (&#x221A;)</li>
 <li>&#x5C3D;&#x91CF;&#x63A5;&#x8FD1;&#x4E1A;&#x52A1;&#x903B;&#x8F91; &#x5E76;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x7684;&#x539F;&#x7406;&#x547D;&#x540D; &#x6BD4;&#x5982;status</li>
 </ul>
 <h3 id="&#x5E38;&#x89C1;&#x5217;&#x540D;">&#x5E38;&#x89C1;&#x5217;&#x540D;</h3>
@@ -1211,14 +1211,14 @@
 <li>description</li>
 <li>status</li>
 <li>slat</li>
-<li>created_at</li>
-<li>updated_at</li>
-<li>replaced_at</li>
-<li>is_xxx (boolean)</li>
-<li>xxx_id (&#x4F7F;&#x7528;orm&#x5EFA;&#x7ACB;&#x5173;&#x7CFB;&#x8868; &#x5E94;&#x6307;&#x5B9A;&#x522B;&#x540D;)</li>
-<li>created_by_user_id </li>
-<li>is_locked (&#x221A;) / locked_flag(&#xD7;)</li>
-<li>xxx_status</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+<li>replacedAt</li>
+<li>bool -&gt; is/was{XXX} can{XXX}  has{XXX}</li>
+<li>xxxId (&#x4F7F;&#x7528;orm&#x5EFA;&#x7ACB;&#x5173;&#x7CFB;&#x8868; &#x5E94;&#x6307;&#x5B9A;&#x522B;&#x540D;)</li>
+<li>createdByUserId </li>
+<li>isLocked (&#x221A;))/ LockedFlag(&#xD7;)</li>
+<li>xxxStatus</li>
 </ul>
 
                                 
@@ -1259,7 +1259,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据库命名","level":"1.3.1","depth":2,"next":{"title":"React Directory Structure","level":"1.3.2","depth":2,"path":"1-wiki/naming/2-react-directory-structure.md","ref":"1-wiki/naming/2-react-directory-structure.md","articles":[]},"previous":{"title":"naming","level":"1.3","depth":1,"ref":"","articles":[{"title":"数据库命名","level":"1.3.1","depth":2,"path":"1-wiki/naming/1-db-naming.md","ref":"1-wiki/naming/1-db-naming.md","articles":[]},{"title":"React Directory Structure","level":"1.3.2","depth":2,"path":"1-wiki/naming/2-react-directory-structure.md","ref":"1-wiki/naming/2-react-directory-structure.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/naming/1-db-naming.md","mtime":"2019-11-28T11:53:36.827Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-28T11:54:19.398Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据库命名","level":"1.3.1","depth":2,"next":{"title":"React Directory Structure","level":"1.3.2","depth":2,"path":"1-wiki/naming/2-react-directory-structure.md","ref":"1-wiki/naming/2-react-directory-structure.md","articles":[]},"previous":{"title":"naming","level":"1.3","depth":1,"ref":"","articles":[{"title":"数据库命名","level":"1.3.1","depth":2,"path":"1-wiki/naming/1-db-naming.md","ref":"1-wiki/naming/1-db-naming.md","articles":[]},{"title":"React Directory Structure","level":"1.3.2","depth":2,"path":"1-wiki/naming/2-react-directory-structure.md","ref":"1-wiki/naming/2-react-directory-structure.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/naming/1-db-naming.md","mtime":"2019-11-29T00:24:22.570Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-29T00:25:12.517Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
