@@ -165,6 +165,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.4" data-path="4-s3.html">
+            
+                <a href="4-s3.html">
+            
+                    
+                    Amazon Simple Storage Service
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1382,17 +1395,101 @@
 <p>IAM &#x89D2;&#x8272;&#x4E0E;&#x7528;&#x6237;&#x7C7B;&#x4F3C;&#xFF0C;&#x56E0;&#x4E3A;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x5E26;&#x6709;&#x6743;&#x9650;&#x7B56;&#x7565;&#x7684; AWS &#x8EAB;&#x4EFD;&#xFF0C;&#x5176;&#x6743;&#x9650;&#x7B56;&#x7565;&#x786E;&#x5B9A;&#x4E86;&#x6539;&#x8EAB;&#x4EFD;&#x5728; AWS &#x4E2D;&#x80FD;&#x505A;&#x4EC0;&#x4E48;&#x3001;&#x4E0D;&#x80FD;&#x505A;&#x4EC0;&#x4E48;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x89D2;&#x8272;&#x53EF;&#x7528;&#x4E8E;&#x5BF9;&#x5176;&#x6709;&#x9700;&#x8981;&#x7684;&#x4EFB;&#x4F55;&#x4EBA;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x53EA;&#x4E0E;&#x67D0;&#x4E2A;&#x4EBA;&#x76F8;&#x5173;&#x8054;&#x3002;&#x6B64;&#x5916;&#xFF0C;&#x89D2;&#x8272;&#x4E5F;&#x4E0D;&#x4E0E;&#x4EFB;&#x4F55;&#x51ED;&#x8BC1;&#xFF08;&#x5BC6;&#x7801;&#x6216;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#xFF09;&#x76F8;&#x5173;&#x8054;&#x3002;&#x76F8;&#x53CD;&#xFF0C;&#x5982;&#x679C;&#x4E3A;&#x7528;&#x6237;&#x5206;&#x914D;&#x4E86;&#x89D2;&#x8272;&#xFF0C;&#x90A3;&#x4E48;&#x7CFB;&#x7EDF;&#x4F1A;&#x52A8;&#x6001;&#x521B;&#x5EFA;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x5E76;&#x5C06;&#x5176;&#x63D0;&#x4F9B;&#x7ED9;&#x8BE5;&#x7528;&#x6237;&#x3002;</p>
 <h2 id="&#x6388;&#x6743;&#x793A;&#x4F8B;&#xFF1A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5BF9;-aws-&#x8D44;&#x6E90;&#x7684;&#x8BBF;&#x95EE;">&#x6388;&#x6743;&#x793A;&#x4F8B;&#xFF1A;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5BF9; AWS &#x8D44;&#x6E90;&#x7684;&#x8BBF;&#x95EE;</h2>
 <p>&#x6258;&#x7BA1;&#x5728; EC2 &#x5B9E;&#x4F8B;&#x4E0A;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x9700;&#x8981;&#x4E0E; S3 &#x5B58;&#x50A8;&#x6876;&#x4E2D;&#x5B58;&#x50A8;&#x7684;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x64CD;&#x4F5C;&#x3002;</p>
-<ul>
-<li>&#x5C06;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x548C;&#x79D8;&#x5BC6;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x5D4C;&#x5165;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6216;&#x5D4C;&#x5165;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x4F46;&#x8FD9;&#x6837;&#x505A;&#xFF0C;&#x6BCF;&#x6B21;&#x66F4;&#x6539;&#x7528;&#x6237;&#x7684;&#x51ED;&#x8BC1;&#x90FD;&#x8981;&#x6C42;&#x66F4;&#x65B0;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x5B89;&#x5168;&#x800C;&#x4E14;&#x4E0D;&#x53EF;&#x884C;&#x3002;</li>
-<li>&#x4F7F;&#x7528; IAM &#x89D2;&#x8272;&#x5C06;&#x4E34;&#x65F6;&#x5B89;&#x5168;&#x51ED;&#x8BC1;&#x4F5C;&#x4E3A;&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#x3002;</li>
-</ul>
-<h3 id="&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h3>
-<p>&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x662F; IAM &#x89D2;&#x8272;&#x5BB9;&#x5668;&#xFF0C;&#x4F9B;&#x60A8;&#x5728;&#x542F;&#x52A8;&#x5B9E;&#x4F8B;&#x65F6;&#x5C06;&#x89D2;&#x8272;&#x4FE1;&#x606F;&#x4F20;&#x9012;&#x7ED9; EC2 &#x5B9E;&#x4F8B;&#x3002;
-&#x5728;&#x672C;&#x793A;&#x4F8B;&#x4E2D;&#xFF0C;IAM &#x7528;&#x6237;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x540D;&#x4E3A; AppInEC2AccessS3 &#x7684; IAM &#x89D2;&#x8272;&#x3002;&#x8BE5;&#x89D2;&#x8272;&#x6388;&#x4E88;&#x5BF9; S3 &#x5B58;&#x50A8;&#x6876;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002;</p>
+<h4 id="&#x65B9;&#x6848;&#x4E00;&#xFF1A;&#x5C06;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x548C;&#x79D8;&#x5BC6;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x5D4C;&#x5165;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6216;&#x5D4C;&#x5165;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x3002;">&#x65B9;&#x6848;&#x4E00;&#xFF1A;&#x5C06;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x548C;&#x79D8;&#x5BC6;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x5D4C;&#x5165;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6216;&#x5D4C;&#x5165;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x652F;&#x6301;&#x7684;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</h4>
 <ol>
-<li>Select the instance, choose Actions, Instance Settings, Attach/Replace IAM role&#x3002;</li>
-<li>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4F7F;&#x7528; EC2 &#x5143;&#x6570;&#x636E;&#x670D;&#x52A1;&#x83B7;&#x53D6;&#x5BF9;&#x4E34;&#x65F6;&#x5B89;&#x5168;&#x51ED;&#x8BC1;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x3002;</li>
-<li>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E; AppInEC2AccessS3 &#x89D2;&#x8272;&#x4E2D;&#x6307;&#x5B9A;&#x7684; S3 &#x5B58;&#x50A8;&#x6876;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x64CD;&#x4F5C;&#x3002;</li>
+<li><p>AWS console -&gt; IAM -&gt; Users -&gt; Choose one user</p>
+</li>
+<li><p>Choose Security credentials -&gt; Create access key</p>
+</li>
+<li><p>&#x7F16;&#x5199;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;</p>
+<pre class="language-"><code> // &#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x6848;&#xFF0C;&#x6BCF;&#x6B21;&#x66F4;&#x6539;&#x7528;&#x6237;&#x7684;&#x51ED;&#x8BC1;&#x90FD;&#x8981;&#x6C42;&#x66F4;&#x65B0;&#x4EE3;&#x7801;&#x3002;&#x5728;&#x5F88;&#x591A;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x5B89;&#x5168;&#x800C;&#x4E14;&#x4E0D;&#x53EF;&#x884C;&#x3002;
+
+ $key = &apos;FAKE00JNM1WBTEHBUA&apos;;
+ $secret = &apos;fake00lRROGXZ1rkIoqO9dPqHb24Gk5JcI3bPgiv&apos;;
+
+ $s3 = new S3Client([
+     &apos;credentials&apos; =&gt; array(
+         &apos;key&apos;    =&gt; $key,
+         &apos;secret&apos; =&gt; $secret),
+     &apos;version&apos; =&gt; &apos;latest&apos;,
+     &apos;region&apos; =&gt; &apos;us-east-1&apos;
+ ]);
+
+ try {
+     // Upload the second object.
+     $bucket = &apos;test-20191209&apos;;
+     $keyname = &apos;welcome.jpg&apos;;
+     $result = $s3-&gt;putObject([
+         &apos;Bucket&apos; =&gt; $bucket,
+         &apos;Key&apos;    =&gt; $keyname,
+         &apos;SourceFile&apos;   =&gt; &apos;images/welcome-bg.jpg&apos;,
+         &apos;ContentType&apos; =&gt; &apos;image/jpeg&apos;,
+     ]);
+     echo $result[&apos;ObjectURL&apos;] . PHP_EOL;
+
+ } catch (S3Exception $e) {
+     echo $e-&gt;getMessage() . PHP_EOL;
+ }
+</code></pre></li>
+</ol>
+<h4 id="&#x65B9;&#x6848;&#x4E8C;&#xFF1A;&#x5C06;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x548C;&#x79D8;&#x5BC6;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x5B58;&#x653E;&#x5728;-ec2-&#x7684;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x3002;">&#x65B9;&#x6848;&#x4E8C;&#xFF1A;&#x5C06;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x548C;&#x79D8;&#x5BC6;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x5B58;&#x653E;&#x5728; EC2 &#x7684;&#x6307;&#x5B9A;&#x8DEF;&#x5F84;&#x3002;</h4>
+<ol>
+<li><p>&#x5728;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x6587;&#x4EF6;&#x3002;&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7C98;&#x8D34;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre class="language-"><code>[default]
+aws_access_key_id = YOUR_AWS_ACCESS_KEY_ID
+aws_secret_access_key = YOUR_AWS_SECRET_ACCESS_KEY
+</code></pre></li>
+<li><p>&#x5C06; YOUR_AWS_ACCESS_KEY &#x66FF;&#x6362;&#x4E3A;&#x60A8;&#x7684;&#x552F;&#x4E00; AWS &#x8BBF;&#x95EE;&#x5BC6;&#x94A5; ID&#xFF0C;&#x5E76;&#x5C06; YOUR_AWS_SECRET_ACCESS_KEY &#x66FF;&#x6362;&#x4E3A;&#x60A8;&#x7684;&#x552F;&#x4E00; AWS &#x79D8;&#x5BC6;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x3002;</p>
+</li>
+<li><p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; Windows&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x53E6;&#x5B58;&#x4E3A; C:\Users\<yourusername>.aws\credentials
+&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; Linux, macOS, or Unix&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x53E6;&#x5B58;&#x4E3A;~/.aws/credentials</yourusername></p>
+</li>
+<li><p>&#x7F16;&#x5199;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;</p>
+<pre class="language-"><code> // &#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x6848;&#xFF0C;&#x6BCF;&#x6B21;&#x66F4;&#x6539;&#x7528;&#x6237;&#x7684;&#x51ED;&#x8BC1;&#x90FD;&#x8981;&#x6C42;&#x670D;&#x52A1;&#x5668;&#x7BA1;&#x7406;&#x5458;&#x767B;&#x5F55;&#x5230; EC2 &#x4E0A;&#x4FEE;&#x6539; credentials &#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x3002;&#x5728;&#x670D;&#x52A1;&#x5668;&#x5F88;&#x591A;&#x65F6;&#x4F1A;&#x975E;&#x5E38;&#x4E0D;&#x4FBF;&#xFF0C;&#x4E5F;&#x4E0D;&#x5B89;&#x5168;&#x3002;
+
+ $s3 = new S3Client([
+     &apos;profile&apos; =&gt; &apos;default&apos;,
+     &apos;version&apos; =&gt; &apos;latest&apos;,
+     &apos;region&apos; =&gt; &apos;us-east-1&apos;
+ ]);
+</code></pre></li>
+</ol>
+<h4 id="&#x65B9;&#x6848;&#x4E09;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;-iam-&#x89D2;&#x8272;&#x5C06;&#x4E34;&#x65F6;&#x5B89;&#x5168;&#x51ED;&#x8BC1;&#x4F5C;&#x4E3A;&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#x3002;">&#x65B9;&#x6848;&#x4E09;&#xFF1A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A; IAM &#x89D2;&#x8272;&#x5C06;&#x4E34;&#x65F6;&#x5B89;&#x5168;&#x51ED;&#x8BC1;&#x4F5C;&#x4E3A;&#x5B9E;&#x4F8B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x8FDB;&#x884C;&#x4F20;&#x9012;&#x3002;</h4>
+<ol>
+<li><p>&#x521B;&#x5EFA; Policy&#xFF0C;&#x547D;&#x540D;&#x4E3A; <code>AppInEC2AccessS3</code></p>
+<pre class="language-"><code>{
+ &quot;Version&quot;: &quot;2012-10-17&quot;,
+ &quot;Statement&quot;: [
+     {
+         &quot;Sid&quot;: &quot;VisualEditor0&quot;,
+         &quot;Effect&quot;: &quot;Allow&quot;,
+         &quot;Action&quot;: &quot;s3:*&quot;,
+         &quot;Resource&quot;: &quot;*&quot;
+     }
+ ]
+}
+</code></pre></li>
+<li><p>&#x521B;&#x5EFA; Role&#xFF0C;&#x547D;&#x540D;&#x4E3A; <code>AppInEC2</code></p>
+</li>
+<li><p>Select type of trusted entity: AWS service</p>
+</li>
+<li>Choose the service that will use this role: EC2</li>
+<li><p>Choose one or more policies to attach to your new role: <code>AppInEC2AccessS3</code></p>
+</li>
+<li><p>&#x5C06; Role &#x9644;&#x52A0;&#x5230; EC2 &#x4E0A;</p>
+</li>
+<li><p>Select the instance, choose Actions, Instance Settings, Attach/Replace IAM role</p>
+</li>
+<li><p>Attach <code>AppInEC2</code> to this EC2</p>
+</li>
+<li><p>&#x7F16;&#x5199;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;</p>
+<pre class="language-"><code> // Best practice
+
+ $s3 = new S3Client([
+     &apos;version&apos; =&gt; &apos;latest&apos;,
+     &apos;region&apos; =&gt; &apos;us-east-1&apos;
+ ]);
+</code></pre></li>
 </ol>
 <p>&#x53C2;&#x8003;</p>
 <ul>
@@ -1400,6 +1497,9 @@
 <li>&#x9002;&#x7528;&#x4E8E; Amazon EC2 &#x7684; IAM &#x89D2;&#x8272; <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html" target="_blank">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html</a></li>
 <li>&#x66F4;&#x591A; <a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials" target="_blank">http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#instance-metadata-security-credentials</a></li>
 </ul>
+<p><a href="https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/best-practices.html" target="_blank">https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/best-practices.html</a>
+<a href="https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/best-practices.html#use-roles-with-ec2" target="_blank">https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/best-practices.html#use-roles-with-ec2</a>
+<a href="https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html" target="_blank">https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html</a></p>
 
                                 
                                 </section>
@@ -1443,7 +1543,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AWS Identity and Access Management","level":"1.2.2","depth":2,"next":{"title":"Amazon Simple Email Service","level":"1.2.3","depth":2,"path":"1-wiki/aws/3-ses.md","ref":"1-wiki/aws/3-ses.md","articles":[]},"previous":{"title":"安全性、身份和访问管理","level":"1.2.1","depth":2,"path":"1-wiki/aws/1-security-summary.md","ref":"1-wiki/aws/1-security-summary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/2-iam.md","mtime":"2019-12-12T08:16:50.179Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-12T08:17:40.760Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AWS Identity and Access Management","level":"1.2.2","depth":2,"next":{"title":"Amazon Simple Email Service","level":"1.2.3","depth":2,"path":"1-wiki/aws/3-ses.md","ref":"1-wiki/aws/3-ses.md","articles":[]},"previous":{"title":"安全性、身份和访问管理","level":"1.2.1","depth":2,"path":"1-wiki/aws/1-security-summary.md","ref":"1-wiki/aws/1-security-summary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/2-iam.md","mtime":"2019-12-13T09:04:17.907Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-13T09:05:14.582Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

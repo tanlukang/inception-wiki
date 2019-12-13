@@ -65,6 +65,8 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="4-s3.html" />
+    
     
     <link rel="prev" href="2-iam.html" />
     
@@ -156,6 +158,19 @@
             
                     
                     Amazon Simple Email Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="4-s3.html">
+            
+                <a href="4-s3.html">
+            
+                    
+                    Amazon Simple Storage Service
             
                 </a>
             
@@ -1342,99 +1357,94 @@
                                 <h1 id="amazon-simple-email-service">Amazon Simple Email Service</h1>
 <p>&#x6B22;&#x8FCE;&#x4F7F;&#x7528; Amazon Simple Email Service (Amazon SES) &#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6307;&#x5357;&#x3002;Amazon SES &#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x800C;&#x7ECF;&#x6D4E;&#x9AD8;&#x6548;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5E73;&#x53F0;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BE5;&#x5E73;&#x53F0;&#x4F7F;&#x7528;&#x60A8;&#x81EA;&#x5DF1;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x5730;&#x5740;&#x548C;&#x57DF;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x3002;</p>
 <p>&#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x53D1;&#x9001;&#x8425;&#x9500;&#x7535;&#x5B50;&#x90AE;&#x4EF6; (&#x5982;&#x7279;&#x522B;&#x4F18;&#x60E0;)&#x3001;&#x4E8B;&#x52A1;&#x7535;&#x5B50;&#x90AE;&#x4EF6; (&#x5982;&#x8BA2;&#x5355;&#x786E;&#x8BA4;) &#x4EE5;&#x53CA;&#x65B0;&#x95FB;&#x901A;&#x8BAF;&#x548C;&#x7CFB;&#x7EDF;&#x901A;&#x77E5;&#x7B49;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x901A;&#x4FE1;&#x4FE1;&#x606F;&#x3002;&#x5728;&#x4F7F;&#x7528; Amazon SES &#x63A5;&#x6536;&#x90AE;&#x4EF6;&#x65F6;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5F00;&#x53D1;&#x8F6F;&#x4EF6;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#xFF0C;&#x4F8B;&#x5982;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x81EA;&#x52A8;&#x56DE;&#x590D;&#x7A0B;&#x5E8F;&#x3001;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x53D6;&#x6D88;&#x8BA2;&#x9605;&#x7CFB;&#x7EDF;&#x4EE5;&#x53CA;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x7535;&#x5B50;&#x90AE;&#x4EF6;&#x751F;&#x6210;&#x5BA2;&#x6237;&#x652F;&#x6301;&#x670D;&#x52A1;&#x5355;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x3002;</p>
-<h2 id="&#x4F7F;&#x7528;-aws-ses-&#x7684;-api">&#x4F7F;&#x7528; AWS SES &#x7684; API</h2>
-<p>&#x6211;&#x4EEC;&#x60F3;&#x8981;&#x5728;&#x5E94;&#x7528;&#x4E2D;&#x4F7F;&#x7528; AWS SES &#x7684; API&#xFF0C;&#x5BF9;&#x5E94;&#x9700;&#x8981;&#x7684;&#x51ED;&#x8BC1;&#x662F; AWS access keys&#xFF08;Access key ID and secret access key&#xFF09;&#x3002;</p>
-<p><a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-credentials.html" target="_blank">https://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-credentials.html</a></p>
-<h3 id="&#x521B;&#x5EFA;&#x5171;&#x4EAB;&#x51ED;&#x8BC1;&#x6587;&#x4EF6;">&#x521B;&#x5EFA;&#x5171;&#x4EAB;&#x51ED;&#x8BC1;&#x6587;&#x4EF6;</h3>
+<h3 id="&#x5E94;&#x7528;&#x793A;&#x4F8B;">&#x5E94;&#x7528;&#x793A;&#x4F8B;</h3>
 <ol>
-<li>&#x5728;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x4E2D;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65B0;&#x6587;&#x4EF6;&#x3002;&#x5728;&#x6B64;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x7C98;&#x8D34;&#x4EE5;&#x4E0B;&#x4EE3;&#x7801;&#xFF1A;<pre class="language-"><code>[default]
-aws_access_key_id = YOUR_AWS_ACCESS_KEY_ID
-aws_secret_access_key = YOUR_AWS_SECRET_ACCESS_KEY
+<li><p>&#x521B;&#x5EFA; Policy&#xFF0C;&#x547D;&#x540D;&#x4E3A; <code>AppInEC2AccessSES</code></p>
+<pre class="language-"><code>{
+ &quot;Version&quot;: &quot;2012-10-17&quot;,
+ &quot;Statement&quot;: [
+     {
+         &quot;Sid&quot;: &quot;VisualEditor0&quot;,
+         &quot;Effect&quot;: &quot;Allow&quot;,
+         &quot;Action&quot;: &quot;ses:*&quot;,
+         &quot;Resource&quot;: &quot;*&quot;
+     }
+ ]
+}
 </code></pre></li>
-<li><p>&#x5C06; YOUR_AWS_ACCESS_KEY &#x66FF;&#x6362;&#x4E3A;&#x60A8;&#x7684;&#x552F;&#x4E00; AWS &#x8BBF;&#x95EE;&#x5BC6;&#x94A5; ID&#xFF0C;&#x5E76;&#x5C06; YOUR_AWS_SECRET_ACCESS_KEY &#x66FF;&#x6362;&#x4E3A;&#x60A8;&#x7684;&#x552F;&#x4E00; AWS &#x79D8;&#x5BC6;&#x8BBF;&#x95EE;&#x5BC6;&#x94A5;&#x3002;</p>
+<li><p>&#x5C06; Policy &#x9644;&#x52A0;&#x5230; EC2 &#x5173;&#x8054;&#x7684; IAM Role &#x4E0A;</p>
 </li>
-<li><p>&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; Windows&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x53E6;&#x5B58;&#x4E3A; C:\Users\<yourusername>.aws\credentials
-&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x662F; Linux, macOS, or Unix&#xFF0C;&#x5C06;&#x6587;&#x4EF6;&#x53E6;&#x5B58;&#x4E3A;~/.aws/credentials</yourusername></p>
-</li>
-</ol>
-<h3 id="&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;">&#x5B9E;&#x4F8B;&#x4EE3;&#x7801;</h3>
-<pre class="language-"><code>&lt;?php
-
-// If necessary, modify the path in the require statement below to refer to the 
-// location of your Composer autoload.php file.
-require &apos;vendor/autoload.php&apos;;
-
+<li><p>&#x7F16;&#x5199;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;</p>
+<pre class="language-"><code>require &apos;vendor/autoload.php&apos;;
 use Aws\Ses\SesClient;
 use Aws\Exception\AwsException;
 
-// Create an SesClient. Change the value of the region parameter if you&apos;re 
-// using an AWS Region other than US West (Oregon). Change the value of the
-// profile parameter if you want to use a profile in your credentials file
-// other than the default.
-$SesClient = new SesClient([
-    &apos;profile&apos; =&gt; &apos;default&apos;,
-    &apos;version&apos; =&gt; &apos;2010-12-01&apos;,
-    &apos;region&apos;  =&gt; &apos;us-west-2&apos;
-]);
+ // Create an SesClient. Change the value of the region parameter if you&apos;re 
+ // using an AWS Region other than US West (Oregon). Change the value of the
+ // profile parameter if you want to use a profile in your credentials file
+ // other than the default.
+ $SesClient = new SesClient([
+     &apos;version&apos; =&gt; &apos;2010-12-01&apos;,
+     &apos;region&apos;  =&gt; &apos;us-east-1&apos;
+ ]);
 
-// Replace sender@example.com with your &quot;From&quot; address.
-// This address must be verified with Amazon SES.
-$sender_email = &apos;sender@example.com&apos;;
+ // Replace sender@example.com with your &quot;From&quot; address.
+ // This address must be verified with Amazon SES.
+ $sender_email = &apos;sender@example.com&apos;;
 
-// Replace these sample addresses with the addresses of your recipients. If
-// your account is still in the sandbox, these addresses must be verified.
-$recipient_emails = [&apos;recipient1@example.com&apos;,&apos;recipient2@example.com&apos;];
+ // Replace these sample addresses with the addresses of your recipients. If
+ // your account is still in the sandbox, these addresses must be verified.
+ $recipient_emails = [&apos;recipient1@example.com&apos;,&apos;recipient2@example.com&apos;];
 
-// Specify a configuration set. If you do not want to use a configuration
-// set, comment the following variable, and the
-// &apos;ConfigurationSetName&apos; =&gt; $configuration_set argument below.
-$configuration_set = &apos;ConfigSet&apos;;
+ // Specify a configuration set. If you do not want to use a configuration
+ // set, comment the following variable, and the
+ // &apos;ConfigurationSetName&apos; =&gt; $configuration_set argument below.
+ $configuration_set = &apos;ConfigSet&apos;;
 
-$subject = &apos;Amazon SES test (AWS SDK for PHP)&apos;;
-$plaintext_body = &apos;This email was sent with Amazon SES using the AWS SDK for PHP.&apos; ;
-$html_body =  &apos;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>AWS Amazon Simple Email Service Test Email<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>&apos;.
-              &apos;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This email was sent with <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://aws.amazon.com/ses/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&apos;.
-              &apos;Amazon SES<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> using the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://aws.amazon.com/sdk-for-php/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&apos;.
-              &apos;AWS SDK for PHP<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>&apos;;
-$char_set = &apos;UTF-8&apos;;
+ $subject = &apos;Amazon SES test (AWS SDK for PHP)&apos;;
+ $plaintext_body = &apos;This email was sent with Amazon SES using the AWS SDK for PHP.&apos; ;
+ $html_body =  &apos;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>h1</span><span class="token punctuation">&gt;</span></span>AWS Amazon Simple Email Service Test Email<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>h1</span><span class="token punctuation">&gt;</span></span>&apos;.
+             &apos;<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">&gt;</span></span>This email was sent with <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://aws.amazon.com/ses/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&apos;.
+             &apos;Amazon SES<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span> using the <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>https://aws.amazon.com/sdk-for-php/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>&apos;.
+             &apos;AWS SDK for PHP<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>.<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">&gt;</span></span>&apos;;
+ $char_set = &apos;UTF-8&apos;;
 
-try {
-    $result = $SesClient-&gt;sendEmail([
-        &apos;Destination&apos; =&gt; [
-            &apos;ToAddresses&apos; =&gt; $recipient_emails,
-        ],
-        &apos;ReplyToAddresses&apos; =&gt; [$sender_email],
-        &apos;Source&apos; =&gt; $sender_email,
-        &apos;Message&apos; =&gt; [
-          &apos;Body&apos; =&gt; [
-              &apos;Html&apos; =&gt; [
-                  &apos;Charset&apos; =&gt; $char_set,
-                  &apos;Data&apos; =&gt; $html_body,
-              ],
-              &apos;Text&apos; =&gt; [
-                  &apos;Charset&apos; =&gt; $char_set,
-                  &apos;Data&apos; =&gt; $plaintext_body,
-              ],
-          ],
-          &apos;Subject&apos; =&gt; [
-              &apos;Charset&apos; =&gt; $char_set,
-              &apos;Data&apos; =&gt; $subject,
-          ],
-        ],
-        // If you aren&apos;t using a configuration set, comment or delete the
-        // following line
-        &apos;ConfigurationSetName&apos; =&gt; $configuration_set,
-    ]);
-    $messageId = $result[&apos;MessageId&apos;];
-    echo(&quot;Email sent! Message ID: $messageId&quot;.&quot;\n&quot;);
-} catch (AwsException $e) {
-    // output error message if fails
-    echo $e-&gt;getMessage();
-    echo(&quot;The email was not sent. Error message: &quot;.$e-&gt;getAwsErrorMessage().&quot;\n&quot;);
-    echo &quot;\n&quot;;
-}
-</code></pre><p>&#x8BE6;&#x7EC6;&#x8BF4;&#x660E;</p>
-<p><a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-sdk-php.html" target="_blank">https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-using-sdk-php.html</a></p>
+ try {
+     $result = $SesClient-&gt;sendEmail([
+         &apos;Destination&apos; =&gt; [
+             &apos;ToAddresses&apos; =&gt; $recipient_emails,
+         ],
+         &apos;ReplyToAddresses&apos; =&gt; [$sender_email],
+         &apos;Source&apos; =&gt; $sender_email,
+         &apos;Message&apos; =&gt; [
+             &apos;Body&apos; =&gt; [
+                 &apos;Html&apos; =&gt; [
+                     &apos;Charset&apos; =&gt; $char_set,
+                     &apos;Data&apos; =&gt; $html_body,
+                 ],
+                 &apos;Text&apos; =&gt; [
+                     &apos;Charset&apos; =&gt; $char_set,
+                     &apos;Data&apos; =&gt; $plaintext_body,
+                 ],
+             ],
+             &apos;Subject&apos; =&gt; [
+                 &apos;Charset&apos; =&gt; $char_set,
+                 &apos;Data&apos; =&gt; $subject,
+             ],
+         ],
+         // If you aren&apos;t using a configuration set, comment or delete the
+         // following line
+         &apos;ConfigurationSetName&apos; =&gt; $configuration_set,
+     ]);
+     $messageId = $result[&apos;MessageId&apos;];
+     echo(&quot;Email sent! Message ID: $messageId&quot;.&quot;\n&quot;);
+ } catch (AwsException $e) {
+     echo $e-&gt;getMessage();
+     echo(&quot;The email was not sent. Error message: &quot;.$e-&gt;getAwsErrorMessage().&quot;\n&quot;);
+     echo &quot;\n&quot;;
+ }
+</code></pre></li>
+</ol>
 <h3 id="&#x53EF;&#x80FD;&#x7684;&#x5F02;&#x5E38;">&#x53EF;&#x80FD;&#x7684;&#x5F02;&#x5E38;</h3>
 <pre class="language-"><code>AWS HTTP error: Client error: `POST https://email.us-west-2.amazonaws.com` resulted in a `403 Forbidden` response:
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>ErrorResponse</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">&quot;</span>http://ses.amazonaws.com/doc/2010-12-01/<span class="token punctuation">&quot;</span></span><span class="token punctuation">&gt;</span></span>
@@ -1478,10 +1488,14 @@ try {
 
             
                 
-                <a href="2-iam.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: AWS Identity and Access Management">
+                <a href="2-iam.html" class="navigation navigation-prev " aria-label="Previous page: AWS Identity and Access Management">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="4-s3.html" class="navigation navigation-next " aria-label="Next page: Amazon Simple Storage Service">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -1490,7 +1504,7 @@ try {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Amazon Simple Email Service","level":"1.2.3","depth":2,"next":{"title":"git","level":"1.3","depth":1,"ref":"","articles":[{"title":"Git冲突流程处理","level":"1.3.1","depth":2,"path":"1-wiki/git/1-git-conflict.md","ref":"1-wiki/git/1-git-conflict.md","articles":[]}]},"previous":{"title":"AWS Identity and Access Management","level":"1.2.2","depth":2,"path":"1-wiki/aws/2-iam.md","ref":"1-wiki/aws/2-iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/3-ses.md","mtime":"2019-12-12T08:16:50.179Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-12T08:17:40.760Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Amazon Simple Email Service","level":"1.2.3","depth":2,"next":{"title":"Amazon Simple Storage Service","level":"1.2.4","depth":2,"path":"1-wiki/aws/4-s3.md","ref":"1-wiki/aws/4-s3.md","articles":[]},"previous":{"title":"AWS Identity and Access Management","level":"1.2.2","depth":2,"path":"1-wiki/aws/2-iam.md","ref":"1-wiki/aws/2-iam.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/3-ses.md","mtime":"2019-12-13T09:04:17.907Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-13T09:05:14.582Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
