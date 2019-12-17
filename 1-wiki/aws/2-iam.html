@@ -191,6 +191,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.2.6" data-path="6-ec2.html">
+            
+                <a href="6-ec2.html">
+            
+                    
+                    Amazon EC2
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1402,8 +1415,8 @@
 <ul>
 <li>&#x7B56;&#x7565;</li>
 <li>IAM &#x7EC4;</li>
-<li>IAM &#x7528;&#x6237;</li>
-<li>IAM &#x89D2;&#x8272;</li>
+<li>IAM &#x7528;&#x6237;&#xFF08;&#x7528;&#x4E8E;&#x6807;&#x8BC6;&#x975E; AWS &#x6210;&#x5458;&#xFF0C;&#x5982;&#x4EBA;&#x7C7B;&#x64CD;&#x4F5C;&#x5458;&#x3001;&#x672C;&#x5730;&#x8BA1;&#x7B97;&#x673A;&#x7B49;&#xFF09;</li>
+<li>IAM &#x89D2;&#x8272;&#xFF08;&#x7528;&#x4E8E;&#x6807;&#x8BC6; AWS &#x6210;&#x5458;&#xFF0C;&#x5982;&#x5404;&#x79CD; AWS services&#xFF09;</li>
 </ul>
 <p>&#x7528;&#x6237;&#x6216;&#x7CFB;&#x7EDF;&#x7ECF;&#x8FC7;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x540E;&#x8FD8;&#x5FC5;&#x987B;&#x7ECF;&#x8FC7;&#x6388;&#x6743;&#x624D;&#x80FD;&#x8BBF;&#x95EE; AWS &#x670D;&#x52A1;&#x3002;&#x8981;&#x5C06;&#x6743;&#x9650;&#x5206;&#x914D;&#x7ED9;&#x7528;&#x6237;&#x3001;&#x7EC4;&#x3001;&#x89D2;&#x8272;&#x6216;&#x8D44;&#x6E90;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7B56;&#x7565;&#xFF0C;&#x5373;&#x4E00;&#x4EFD;&#x660E;&#x786E;&#x5217;&#x51FA;&#x5404;&#x9879;&#x6743;&#x9650;&#x7684;&#x6587;&#x6863;&#x3002;</p>
 <h3 id="&#x7B56;&#x7565;">&#x7B56;&#x7565;</h3>
@@ -1588,7 +1601,7 @@ aws_secret_access_key = YOUR_AWS_SECRET_ACCESS_KEY
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AWS Identity and Access Management","level":"1.2.2","depth":2,"next":{"title":"AWS Security Token Service","level":"1.2.3","depth":2,"path":"1-wiki/aws/3-sts.md","ref":"1-wiki/aws/3-sts.md","articles":[]},"previous":{"title":"安全性、身份和访问管理","level":"1.2.1","depth":2,"path":"1-wiki/aws/1-security-summary.md","ref":"1-wiki/aws/1-security-summary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/2-iam.md","mtime":"2019-12-16T02:19:04.059Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-16T02:21:13.458Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AWS Identity and Access Management","level":"1.2.2","depth":2,"next":{"title":"AWS Security Token Service","level":"1.2.3","depth":2,"path":"1-wiki/aws/3-sts.md","ref":"1-wiki/aws/3-sts.md","articles":[]},"previous":{"title":"安全性、身份和访问管理","level":"1.2.1","depth":2,"path":"1-wiki/aws/1-security-summary.md","ref":"1-wiki/aws/1-security-summary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/2-iam.md","mtime":"2019-12-17T11:22:49.025Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-17T11:23:33.655Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
