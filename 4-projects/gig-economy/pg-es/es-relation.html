@@ -1429,6 +1429,66 @@
 <li>deep nested</li>
 <li>data modling</li>
 </ul>
+<h3 id="review">review</h3>
+<ul>
+<li>parent/child join<ul>
+<li>&#x8BBE;&#x8BA1;<ul>
+<li>&#x628A;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x7684;content&#x90FD;index&#x5230;&#x540C;&#x4E00;&#x4E2A;mapping&#x4E2D;&#xFF0C;&#x5E76;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;content&#xFF08;talent&#x3001;comapny&#x3001;experience&#xFF09;&#x628A;&#x5404;&#x81EA;&#x6570;&#x636E;&#x5305;&#x8D77;&#x6765;&#xFF0C;&#x907F;&#x514D;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x6570;&#x636E;&#x7684;&#x5B57;&#x6BB5;&#x540D;&#x51B2;&#x7A81;</li>
+<li>mapping&#x4E2D;&#x6709;contentType&#x5B57;&#x6BB5;&#xFF0C;&#x7528;&#x6765;&#x533A;&#x5206;&#x5F53;&#x524D;document&#x5C5E;&#x4E8E;&#x54EA;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</li>
+<li>mapping&#x58F0;&#x660E;&#x4E00;&#x4E2A;joinField&#xFF0C;&#x7528;&#x6765;&#x4EE3;&#x8868;&#x4E0D;&#x540C;content&#x7684;&#x5173;&#x8054;&#x5173;&#x7CFB;</li>
+<li><a href="relation-join.json">&#x6837;&#x4F8B;&#x6570;&#x636E;</a></li>
+</ul>
+</li>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x6BCF;&#x79CD;content&#x53EF;&#x4EE5;&#x72EC;&#x7ACB;index&#x6210;&#x72EC;&#x7ACB;document&#xFF0C;index&#x6027;&#x80FD;&#x9AD8;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>search&#x6027;&#x80FD;&#x6BD4;nested&#x8981;&#x5F31;&#xFF0C;&#x540C;&#x65F6;&#x4E0D;&#x5EFA;&#x8BAE;&#x505A;multiple layer parent join&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/parent-join.html#_multiple_levels_of_parent_join" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/parent-join.html#_multiple_levels_of_parent_join</a></li>
+<li>&#x4E00;&#x79CD;&#x7C7B;&#x578B;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x79CD;parent&#xFF0C;&#x90A3;&#x4E48;&#x7C7B;&#x4F3C;&#x4E8E;talent -&gt; experience -&gt; company&#x8FD9;&#x6837;&#x7684;&#x6A21;&#x578B;&#xFF0C;experience&#x7684;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x65E0;&#x6CD5;&#x8868;&#x793A;&#x51FA;&#x6765;&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/parent-join.html#_parent_join_restrictions" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/parent-join.html#_parent_join_restrictions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>nested<ul>
+<li>&#x8BBE;&#x8BA1;<ul>
+<li>&#x4ECE;&#x67D0;&#x4E00;&#x79CD;content&#x4F5C;&#x4E3A;&#x4E3B;&#x4F53;&#xFF0C;&#x628A;&#x548C;&#x8FD9;&#x4E2A;content&#x5173;&#x8054;&#x7684;&#x5176;&#x4ED6;content&#xFF0C;&#x4F5C;&#x4E3A;&#x8BE5;content&#x7684;&#x5B50;&#x5B57;&#x6BB5;&#x5F62;&#x6210;json<ul>
+<li>1:1&#xFF0C;contentA&#x548C;contentB&#xFF0C;&#x4EE5;contentA&#x4F5C;&#x4E3A;&#x4E3B;&#x4F53;&#xFF0C;&#x628A;contentB&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;contentA&#x7684;&#x4E00;&#x4E2A;object&#x5B57;&#x6BB5;&#x5B58;&#x8D77;&#x6765;</li>
+<li>1:n&#xFF0C;talent&#x548C;experience&#xFF0C;talent&#x4F5C;&#x4E3A;&#x4E3B;&#x4F53;&#xFF0C;&#x628A;experience&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;talent&#x7684;&#x4E00;&#x4E2A;array objcet&#x5B57;&#x6BB5;&#x5B58;&#x8D77;&#x6765;</li>
+<li>n:1&#xFF0C;experience&#x548C;company&#xFF0C;experience&#x4F5C;&#x4E3A;&#x4E3B;&#x4F53;&#xFF0C;&#x628A;company&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;experience&#x7684;&#x4E00;&#x4E2A;object&#x5B57;&#x6BB5;&#x5B58;&#x8D77;&#x6765;</li>
+<li>n:n&#xFF0C;company&#x548C;industry&#xFF0C;company&#x4F5C;&#x4E3A;&#x4E3B;&#x4F53;&#xFF0C;&#x628A;industry&#x7684;&#x6570;&#x636E;&#x4F5C;&#x4E3A;company&#x7684;&#x4E00;&#x4E2A;array objcet&#x5B57;&#x6BB5;&#x5B58;&#x8D77;&#x6765;</li>
+<li>n:n:n...&#xFF0C;&#x540C;&#x4E0A;</li>
+</ul>
+</li>
+<li><a href="relation-nested.json">&#x6837;&#x4F8B;&#x6570;&#x636E;</a></li>
+</ul>
+</li>
+<li>&#x6027;&#x80FD;&#x6D4B;&#x8BD5;<ul>
+<li>16000&#x6761;nested&#x6570;&#x636E;</li>
+<li>size: 178Mi (178Mi)</li>
+<li>docs: 1,265,472 (1,293,084)</li>
+<li>search&#x6027;&#x80FD;&#x8FD8;&#x662F;50ms&#x4EE5;&#x4E0B;&#xFF0C;&#x540C;&#x65F6;update 50&#x4E2A;doc&#x5927;&#x6982;&#x82B1;&#x8D39;200ms&#xFF0C;1000&#x4E2A;doc&#x5927;&#x6982;&#x82B1;&#x8D39;600ms</li>
+</ul>
+</li>
+<li>titanhouse tp/cp&#x4E5F;&#x662F;&#x540C;&#x6837;&#x7684;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF0C;&#x628A;titan&#x4F5C;&#x4E3A;&#x4E3B;&#x4F53;&#x8FDB;&#x884C;index&#xFF0C;&#x4E0B;&#x9762;&#x6302;&#x4F4F;company&#x3001;experience&#x5B57;&#x6BB5;&#xFF0C;&#x4EE5;&#x53CA;&#x989D;&#x5916;&#x7684;&#x4E00;&#x4E9B;&#x8BA1;&#x7B97;&#x5B57;&#x6BB5;</li>
+<li>&#x4F7F;&#x7528;nested&#x505A;es&#x4E2D;&#x5173;&#x7CFB;&#x7684;&#x8868;&#x793A;&#x5E94;&#x8BE5;&#x6CA1;&#x6709;&#x592A;&#x5927;&#x95EE;&#x9898;&#xFF0C;&#x573A;&#x666F;&#x590D;&#x6742;&#x4E86;&#x6216;&#x8005;nested&#x5D4C;&#x5957;&#x5C42;&#x6570;&#x591A;&#x4E86;&#x9700;&#x8981;&#x5BF9;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x505A;&#x989D;&#x5916;&#x4F18;&#x5316;</li>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x4F7F;&#x7528;&#x7B80;&#x5355;&#xFF0C;&#x7528;objce&#x6216;&#x8005;object[]&#x4F5C;&#x4E3A;&#x5B50;field&#xFF0C;&#x5929;&#x7136;&#x4EE3;&#x8868;&#x4E86;&#x5173;&#x8054;&#x5173;&#x7CFB;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x6570;&#x636E;&#x5197;&#x4F59;&#x8F83;&#x591A;&#xFF0C;&#x5360;&#x7528;&#x5B58;&#x50A8;&#x7A7A;&#x95F4;&#x66F4;&#x5927;</li>
+<li>&#x5982;&#x679C;nested&#x5C42;&#x6570;&#x5D4C;&#x5957;&#x8FC7;&#x6DF1;&#xFF0C;&#x8FDB;&#x884C;reindex&#x65F6;&#xFF08;document&#x66F4;&#x65B0;&#xFF09;&#xFF0C;&#x82B1;&#x8D39;&#x65F6;&#x95F4;&#x66F4;&#x591A;&#xFF0C;index&#x6027;&#x80FD;&#x4E0D;&#x5982;parent/child join&#x7684;&#x65B9;&#x5F0F;&#xFF0C;<a href="https://www.elastic.co/blog/managing-relations-inside-elasticsearch" target="_blank">https://www.elastic.co/blog/managing-relations-inside-elasticsearch</a></li>
+<li>&#x5982;&#x679C;&#x5904;&#x4E8E;nested&#x8F83;&#x5E95;&#x5C42;&#x7684;&#x6570;&#x636E;&#x66F4;&#x65B0;&#xFF0C;&#x90A3;&#x4E48;&#x5173;&#x8054;&#x7684;&#x4E3B;document&#x5747;&#x9700;&#x8981;&#x66F4;&#x65B0;<ul>
+<li>talent -&gt; experience -&gt; company -&gt; industry</li>
+<li></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="reference">reference</h3>
 <h4 id="relation">relation</h4>
 <ul>
@@ -1522,6 +1582,15 @@
 </ul>
 </li>
 </ul>
+<h4 id="es-vs-solr-join">es vs solr join</h4>
+<ul>
+<li><a href="https://stackoverflow.com/questions/50343864/how-to-use-join-at-a-same-type-or-index-in-elasticsearch-like-solr" target="_blank">https://stackoverflow.com/questions/50343864/how-to-use-join-at-a-same-type-or-index-in-elasticsearch-like-solr</a></li>
+<li><a href="https://sematext.com/blog/solr-vs-elasticsearch-differences/" target="_blank">https://sematext.com/blog/solr-vs-elasticsearch-differences/</a></li>
+<li><a href="https://logz.io/blog/solr-vs-elasticsearch/" target="_blank">https://logz.io/blog/solr-vs-elasticsearch/</a></li>
+<li><a href="https://stackoverflow.com/questions/31900285/solr-vs-elasticsearch-for-nested-documents" target="_blank">https://stackoverflow.com/questions/31900285/solr-vs-elasticsearch-for-nested-documents</a></li>
+<li>solr&#x548C;es&#x90FD;&#x6709;join&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;es&#x7684;has_child/has_parent&#x7684;api&#x548C;solr&#x4E0D;&#x540C;</li>
+<li>es&#x7684;nested&#x6BD4;&#x8F83;&#x597D;&#x7528;&#xFF0C;solr&#x6CA1;&#x6709;&#x7C7B;&#x4F3C;&#x7684;&#x529F;&#x80FD;</li>
+</ul>
 
                                 
                                 </section>
@@ -1565,7 +1634,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"ElasticSearch Relation","level":"4.3.5.2","depth":3,"next":{"title":"DB 与 Es 数据迁移功能设计","level":"4.3.5.3","depth":3,"path":"4-projects/gig-economy/pg-es/migrate.md","ref":"4-projects/gig-economy/pg-es/migrate.md","articles":[]},"previous":{"title":"名词解释","level":"4.3.5.1","depth":3,"path":"4-projects/gig-economy/pg-es/design.md","ref":"4-projects/gig-economy/pg-es/design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/es-relation.md","mtime":"2019-12-24T13:58:33.389Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T13:59:23.752Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"ElasticSearch Relation","level":"4.3.5.2","depth":3,"next":{"title":"DB 与 Es 数据迁移功能设计","level":"4.3.5.3","depth":3,"path":"4-projects/gig-economy/pg-es/migrate.md","ref":"4-projects/gig-economy/pg-es/migrate.md","articles":[]},"previous":{"title":"名词解释","level":"4.3.5.1","depth":3,"path":"4-projects/gig-economy/pg-es/design.md","ref":"4-projects/gig-economy/pg-es/design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/es-relation.md","mtime":"2019-12-24T14:01:29.457Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-24T14:02:25.861Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
