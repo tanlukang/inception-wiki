@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>基于版本的文档管理 Doc version management · InceptionWiki</title>
+        <title>Alpha版本接触到的ES issues · InceptionWiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,7 +65,7 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="rdms-history-version-design.html" />
+    <link rel="next" href="../inception-summary.html" />
     
     
 
@@ -1175,9 +1175,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="4.3.2.1" data-path="doc-version-management.html">
+        <li class="chapter " data-level="4.3.2.1" data-path="../doc-version/doc-version-management.html">
             
-                <a href="doc-version-management.html">
+                <a href="../doc-version/doc-version-management.html">
             
                     
                     基于版本的文档管理 Doc version management
@@ -1188,9 +1188,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3.2.2" data-path="rdms-history-version-design.html">
+        <li class="chapter " data-level="4.3.2.2" data-path="../doc-version/rdms-history-version-design.html">
             
-                <a href="rdms-history-version-design.html">
+                <a href="../doc-version/rdms-history-version-design.html">
             
                     
                     关系型数据库数据历史管理
@@ -1220,9 +1220,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.3.3.1" data-path="../es-related/issues.html">
+        <li class="chapter active" data-level="4.3.3.1" data-path="issues.html">
             
-                <a href="../es-related/issues.html">
+                <a href="issues.html">
             
                     
                     Alpha版本接触到的ES issues
@@ -1447,7 +1447,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >基于版本的文档管理 Doc version management</a>
+        <a href="../../.." >Alpha版本接触到的ES issues</a>
     </h1>
 </div>
 
@@ -1462,35 +1462,181 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x57FA;&#x4E8E;&#x7248;&#x672C;&#x7684;&#x6587;&#x6863;&#x7BA1;&#x7406;-doc-version-management">&#x57FA;&#x4E8E;&#x7248;&#x672C;&#x7684;&#x6587;&#x6863;&#x7BA1;&#x7406; Doc version management</h1>
-<p>&#x8BE5;&#x8BBE;&#x8BA1;&#x57FA;&#x4E8E;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5728;Elasticsearch&#x6216;Solr&#x7B49;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x4E2D;&#xFF0C;&#x53EA;&#x5B58;&#x50A8;&#x6700;&#x65B0;&#x8BB0;&#x5F55;&#x3002;</p>
-<h3 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;">&#x57FA;&#x672C;&#x6982;&#x5FF5;</h3>
-<blockquote>
-<p>&#x4EE5;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x4E3A;&#x4F8B;&#xFF0C;&#x540C;&#x4E00;&#x7BC7;&#x6587;&#x7AE0;&#x53EF;&#x4EE5;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x6D3B;&#x52A8;&#x7248;&#x672C;&#xFF08;is_active:true&#xFF09;:&#x5F53;&#x524D;&#x5DF2;&#x53D1;&#x5E03;&#x7248;&#x672C;&#xFF08;published&#xFF09;&#xFF0C;&#x8349;&#x7A3F;&#xFF08;draft&#xFF09;&#xFF0C;&#x5BA1;&#x6838;&#x4E2D;&#x7248;&#x672C;&#xFF08;pending&#xFF09;&#xFF0C;&#x4EE5;&#x53CA;&#x4F17;&#x591A;&#x7684;&#x5386;&#x53F2;&#x7248;&#x672C;&#xFF08;is_active:false&#xFF09;&#x3002;&#x56E0;&#x4E3A;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x7684;&#x6D3B;&#x8DC3;&#x7A0B;&#x5EA6;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x5C06;&#x4E0D;&#x6D3B;&#x8DC3;&#x7684;&#x6570;&#x636E;&#x4E0E;&#x6D3B;&#x8DC3;&#x6570;&#x636E;&#xFF0C;&#x8FDB;&#x884C;&#x5206;&#x79BB;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x5728;&#x6D3B;&#x8DC3;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5BF9;&#x7CFB;&#x7EDF;&#x8D44;&#x6E90;&#x7684;&#x6D88;&#x8017;&#x3002;&#x4E5F;&#x80FD;&#x5728;&#x4E00;&#x5B9A;&#x7A0B;&#x5EA6;&#x4E0A;&#x9694;&#x79BB;&#x8BEF;&#x64CD;&#x4F5C;&#x5BF9;&#x6570;&#x636E;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x5177;&#x4F53;&#x5B9E;&#x65BD;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x662F;&#x5C06;&#x6D3B;&#x8DC3;&#x6570;&#x636E;&#x548C;&#x4E0D;&#x6D3B;&#x8DC3;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x5206;&#x8868;&#x6216;&#x662F;&#x5206;&#x5E93;&#x64CD;&#x4F5C;&#x3002;&#x751A;&#x81F3;&#x5728;&#x4E00;&#x6570;&#x636E;&#x91CF;&#x5927;&#x7684;&#x91D1;&#x878D;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x4F1A;&#x5C06;&#x4E0D;&#x6D3B;&#x8DC3;&#x6570;&#x636E;&#xFF0C;&#x5206;&#x6210;&#x51B7;/&#x70ED;&#x6570;&#x636E;&#x3002;&#x5373;&#x5C06;&#x6700;&#x8FD1;&#x7684;&#x4E00;&#x6279;&#x4E0D;&#x6D3B;&#x8DC3;&#x6570;&#x636E;&#x88C5;&#x8F7D;&#x8FDB; DB &#x4E2D;&#xFF0C;&#x5C06;&#x8001;&#x7684;&#x4E00;&#x822C;&#x4E24;&#x4E09;&#x5E74;&#x4E4B;&#x524D;&#x7684;&#x4E0D;&#x6D3B;&#x8DC3;&#x6570;&#x636E;&#x4EE5;&#x786C;&#x76D8;&#x6216;&#x8005;&#x5149;&#x76D8;&#x5F62;&#x5F0F;&#xFF0C;&#x505A;&#x6C38;&#x4E45;&#x4FDD;&#x5B58;&#xFF0C;&#x5728;&#x6709;&#x9700;&#x8981;&#x7684;&#x65F6;&#x5019;&#x624D;&#x52A0;&#x8F7D;&#x5230;&#x7CFB;&#x7EDF;&#x4E2D;&#x3002;</p>
-</blockquote>
-<h4 id="&#x5B9E;&#x4F53;id&#x4E0E;&#x6587;&#x6863;&#x552F;&#x4E00;id">&#x201C;&#x5B9E;&#x4F53;id&#x201D;&#x4E0E;&#x201C;&#x6587;&#x6863;&#x552F;&#x4E00;id&#x201D;</h4>
-<blockquote>
-<p>&#x6BD4;&#x5982;&#x5728;&#x6570;&#x636E;&#x8868; organizaiton &#x548C; person &#x4E2D;&#xFF0C;&#x4EE5;doc_id&#x8868;&#x793A;<code>&#x5B9E;&#x4F53;id</code>&#xFF0C;&#x4EE5;id&#x8868;&#x793A;<code>&#x6587;&#x6863;&#x552F;&#x4E00;id</code>&#x3002;</p>
-</blockquote>
-<h4 id="&#x57FA;&#x672C;&#x5B57;&#x6BB5;&#x548C;&#x63A8;&#x7B97;&#x5B57;&#x6BB5;">&#x57FA;&#x672C;&#x5B57;&#x6BB5;&#x548C;&#x63A8;&#x7B97;&#x5B57;&#x6BB5;</h4>
-<blockquote>
-<p>&#x56E0;&#x4E3A;&#x6587;&#x6863;&#x5386;&#x53F2;&#x7248;&#x672C;&#x7684;&#x6838;&#x5FC3;&#x4F5C;&#x7528;&#x662F;&#xFF0C;&#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x4E0B;&#x7528;&#x6237;&#x624B;&#x52A8;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#x7684;&#x4E00;&#x4E9B;&#x5386;&#x53F2;&#x8F68;&#x8FF9;&#xFF0C;&#x4EE5;&#x4FBF;&#x8FFD;&#x968F;&#x6D3B;&#x52A8;&#x548C;&#x8FD8;&#x539F;&#x6570;&#x636E;&#xFF0C;&#x5176;&#x4E2D;&#x7531;&#x7528;&#x6237;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x6BD4;&#x8F83;&#x80FD;&#x4F53;&#x73B0;&#x4E0A;&#x8FF0;&#x4F5C;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x5F53;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x62E5;&#x6709;&#x5F88;&#x591A;&#x5B57;&#x6BB5;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;&#x6539;&#x6587;&#x6863;&#x5B57;&#x6BB5;&#x6765;&#x6E90;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#xFF0C;&#x5206;&#x4E3A;<code>&#x57FA;&#x672C;&#x5B57;&#x6BB5;</code>&#x548C;<code>&#x63A8;&#x7B97;&#x5B57;&#x6BB5;</code>&#x3002;&#x63A8;&#x7B97;&#x5B57;&#x6BB5;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5F88;&#x591A;&#x5197;&#x4F59;&#x6570;&#x636E;&#xFF0C;&#x867D;&#x7136;&#x548C; DB &#x8BBE;&#x8BA1;&#x7684; ACID &#x539F;&#x5219;&#x6709;&#x51B2;&#x7A81;&#xFF0C;&#x4F46;&#x8FD9;&#x662F;&#x5F53;&#x641C;&#x7D22;&#x5F15;&#x64CE;&#x5728;&#x4E00;&#x4E9B;&#x5173;&#x7CFB;&#x578B;&#x641C;&#x7D22;&#x9700;&#x6C42;&#x4E0D;&#x80FD;&#x5F97;&#x5230;&#x6EE1;&#x8DB3;&#x65F6;&#x5019;&#x7684;&#x4FDD;&#x969C;&#x3002;</p>
-</blockquote>
-<h4 id="&#x6D3B;&#x52A8;&#x6570;&#x636E;&#x4E0E;&#x5386;&#x53F2;&#x6570;&#x636E;&#x5206;&#x79BB;&#x548C;&#x5386;&#x53F2;&#x6570;&#x636E;&#x5207;&#x5272;">&#x6D3B;&#x52A8;&#x6570;&#x636E;&#x4E0E;&#x5386;&#x53F2;&#x6570;&#x636E;&#x5206;&#x79BB;&#x548C;&#x5386;&#x53F2;&#x6570;&#x636E;&#x5207;&#x5272;</h4>
-<p><img src="dvm.png" alt="avatar"></p>
-<h4 id="&#x6570;&#x636E;&#x66F4;&#x65B0;&#x65B9;&#x5F0F;">&#x6570;&#x636E;&#x66F4;&#x65B0;&#x65B9;&#x5F0F;</h4>
+                                <h2 id="alpha&#x7248;&#x672C;&#x63A5;&#x89E6;&#x5230;&#x7684;es-issues">Alpha&#x7248;&#x672C;&#x63A5;&#x89E6;&#x5230;&#x7684;ES issues</h2>
+<h3 id="keyword">keyword</h3>
 <ul>
-<li><p>&#x4FDD;&#x7559;&#x6BCF;&#x4E00;&#x4E2A;&#x5386;&#x53F2;&#x7248;&#x672C;</p>
-<blockquote>
-<p>&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5F53;&#x6709;&#x65B0;&#x7248;&#x672C;&#x6587;&#x6863;&#x751F;&#x6210;&#x65F6;&#xFF0C;&#x76F4;&#x63A5;&#x5C06;&#x5F53;&#x524D;&#x7248;&#x672C;&#x7684; doc &#x548C;&#x5176;&#x4ED6;&#x5173;&#x8054;&#x4FE1;&#x606F;&#xFF08;&#x5728;&#x5176;&#x4ED6;table&#x4E2D;&#xFF09;&#x7684;&#x72B6;&#x6001;&#x7684; is_active &#x8BBE;&#x7F6E;&#x4E3A; false&#xFF0C;insert &#x5230; history &#x8868;&#xFF08;&#x6216;&#x5E93;&#xFF09;&#x4E2D;&#xFF0C;&#x518D;&#x751F;&#x6210;&#x4E00;&#x6761;&#x65B0;&#x7684;doc&#xFF08;&#x9644;&#x5E26;&#x65B0;&#x7684;&#x552F;&#x4E00;id&#xFF09;&#x548C;&#x5176;&#x4ED6;&#x5173;&#x8054;&#x4FE1;&#x606F;&#xFF08;&#x5728;&#x5176;&#x4ED6;table&#x4E2D;&#xFF09;&#xFF0C;&#x65B0;doc&#x7EE7;&#x627F;&#x539F;&#x201C;&#x5B9E;&#x4F53;id&#x201D;(doc_id)&#x3002;</p>
-</blockquote>
+<li>&#x4E00;&#x5B9A;&#x662F;&#x8981;&#x5168;&#x8BCD;&#x5339;&#x914D;&#xFF0C;&#x5927;&#x5C0F;&#x5199;&#x5339;&#x914D;&#xFF0C;&#x5426;&#x4FA7;&#x4F7F;&#x7528;match&#x4E0D;&#x8FD4;&#x56DE;</li>
+<li>** &#x5982;&#x679C;text&#x66F4;&#x597D;&#xFF0C;&#x90A3;&#x4E48;&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x9700;&#x8981;&#x76F4;&#x63A5;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;&#x4E3A;keyword&#xFF0C;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;<ul>
+<li>&#x53EF;&#x679A;&#x4E3E;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF;&#x4E0D;&#x7528;&#x6765;&#x505A;&#x641C;&#x7D22;&#x4F7F;&#x7528;&#xFF0C;&#x4F8B;&#x5982;status=published/draft</li>
+<li>uuid&#x3001;isbn&#x7B49;&#xFF0C;&#x4E0D;&#x592A;&#x53EF;&#x80FD;&#x8FDB;&#x884C;&#x641C;&#x7D22;&#x7684;&#x5B57;&#x7B26;&#x4E32;</li>
+<li>email addresses, hostnames, status codes, zip codes or tags&#xFF0C;&#x53EF;&#x80FD;&#x505A;&#x4E5F;&#x53EF;&#x80FD;&#x4E0D;&#x505A;&#x641C;&#x7D22;&#xFF0C;&#x5373;&#x4F7F;&#x505A;&#x641C;&#x7D22;&#x4E5F;&#x53EF;&#x80FD;&#x7528;text+keyword&#x7684;mapping</li>
+<li>&#x5E76;&#x6CA1;&#x6709;&#x7279;&#x5B9A;&#x7684;&#x573A;&#x666F;&#xFF0C;&#x975E;&#x8981;&#x5B9A;&#x4E49;&#x6210;keyword&#x4E0D;&#x6210;&#xFF0C;&#x6709;&#x4E5F;&#x662F;&#x6BD4;&#x8F83;&#x5C11;&#x6709;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5982;&#x679C;&#x7528;&#x4E86;keyword&#x8FD8;&#x4E0D;&#x4E00;&#x5B9A;&#x80FD;&#x53D8;&#x56DE;&#x6765;text&#xFF0C;&#x5E72;&#x8106;&#x90FD;&#x4F7F;&#x7528;text&#x7B97;&#x4E86;</li>
+</ul>
 </li>
-<li><p>&#x4E0D;&#x751F;&#x6210;&#x5386;&#x53F2;&#x7248;&#x672C;&#x7684;&#x60C5;&#x51B5;</p>
-<blockquote>
-<p>&#x5F53;&#x540C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x8FDE;&#x7EED;&#x5BF9;&#x540C;&#x4E00;&#x4EFD;&#x6587;&#x6863;&#x8FDB;&#x884C;&#x76F8;&#x540C;&#x72B6;&#x6001;&#x4FDD;&#x5B58;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x76F4;&#x63A5; update table &#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x76F4;&#x63A5;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x672C;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x4E00;&#x4E9B;&#x65E0;&#x7528;&#x7248;&#x672C;&#x7684;&#x4EA7;&#x751F;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x4E00;&#x4E2A;editor&#x8FDE;&#x7EED;&#x4FDD;&#x5B58;&#x4E00;&#x4E2A;&#x6587;&#x6863;&#x4E3A; pending &#x72B6;&#x6001;&#xFF0C;&#x6216;&#x8005;&#x7531;&#x6211;&#x4EEC;&#x7CFB;&#x7EDF;&#x5728;&#x6539;&#x53D8;&#x4E86;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x8BA1;&#x7B97;&#x903B;&#x8F91;&#x4E4B;&#x540E;&#xFF0C;&#x7531;&#x7CFB;&#x7EDF;&#x8D26;&#x53F7;&#x8FDE;&#x7EED;&#x4FDD;&#x5B58;&#x7684;&#x4E0D;&#x540C;&#x7248;&#x672C;&#x3002;&#x5C24;&#x5176;&#x662F;&#x540E;&#x8005;&#xFF0C;&#x5728;&#x4E1A;&#x52A1;&#x8FED;&#x4EE3;&#x5FEB;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x4EA7;&#x751F;&#x5F88;&#x591A;&#x6CA1;&#x6709;&#x610F;&#x4E49;&#x7684;&#x5386;&#x53F2;&#x7248;&#x672C;&#x3002;</p>
-</blockquote>
+<li>&#x90E8;&#x5206;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x4E5F;&#x53EF;&#x4EE5;map&#x6210;keyword&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x4E0D;&#x9700;&#x8981;&#x7528;&#x6765;&#x505A;&#x8303;&#x56F4;&#x6BD4;&#x8F83;&#x7B49;&#xFF0C;&#x4F8B;&#x5982;ISBN&#x53F7;&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/keyword.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/keyword.html</a></li>
+<li>** keyword&#x641C;&#x7D22;&#x4F7F;&#x7528;term&#x8FD8;&#x662F;match<ul>
+<li>match&#x80FD;&#x5904;&#x7406;text&#x3001;boolean&#x3001;number&#x5E38;&#x7528;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;</li>
+<li>match&#x4E5F;&#x80FD;&#x641C;&#x7D22;keyword&#xFF0C;&#x4F46;&#x662F;match&#x641C;&#x7D22;&#x65F6;&#x4F1A;&#x7ECF;&#x8FC7;token&#x5904;&#x7406;&#xFF0C;&#x53EF;&#x80FD;&#x5728;&#x641C;&#x7D22;&#x901F;&#x5EA6;&#x4E0A;&#x548C;term&#x7684;&#x76F8;&#x6BD4;&#x4F1A;&#x66F4;&#x6162;</li>
+<li>term&#x6709;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x672C;&#x8EAB;&#x4E0D;&#x652F;&#x6301;fuzziness&#xFF0C;&#x8981;&#x4F7F;&#x7528;term&#x7684;fuzzy query&#xFF0C;&#x4F46;&#x662F;&#x5B98;&#x65B9;&#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x7528;&#x800C;&#x662F;&#x7528;match&#xFF0C;&#x8FD9;&#x6837;&#x4E0D;&#x5982;&#x4F7F;&#x7528;match&#x66F4;&#x52A0;&#x7EDF;&#x4E00;</li>
+<li>&#x53EF;&#x4EE5;&#x5148;&#x6309;&#x7167;&#x5B98;&#x65B9;&#x7684;&#x5B9A;&#x4E49;&#x5148;&#x7528;term&#x5BF9;keyword&#x4F7F;&#x7528;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x5168;&#x90FD;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;match&#xFF0C;&#x540E;&#x7EED;&#x8FDB;&#x884C;&#x6027;&#x80FD;&#x6BD4;&#x8F83;&#xFF1B;&#x5982;&#x679C;&#x7EDF;&#x4E00;&#x90FD;&#x7528;text&#xFF0C;&#x5219;&#x6CA1;&#x6709;term&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x4E86;</li>
+</ul>
 </li>
 </ul>
+<h3 id="text">text</h3>
+<ul>
+<li>&#x4F7F;&#x7528;match&#x5339;&#x914D;&#x5E76;&#x975E;&#x662F;&#x4E00;&#x5B9A;&#x90FD;&#x4F1A;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#xFF0C;&#x6709;&#x76F8;&#x5173;&#x6027;&#x65F6;&#x624D;&#x4F1A;&#x8FD4;&#x56DE;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x5B50;&#x8BCD;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x4F1A;&#x8FD4;&#x56DE;&#xFF0C;&#x4F8B;&#x5982;Market&#x4E0D;&#x4F1A;&#x8FD4;&#x56DE;Marketing&#x7684;&#x6570;&#x636E;&#xFF0C;&#x9700;&#x8981;&#x7528;&#x6A21;&#x7CCA;&#x67E5;&#x8BE2;</li>
+<li>&#x628A;text&#x521B;&#x5EFA;keyword&#x7684;index&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/multi-fields.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/multi-fields.html</a><ul>
+<li>&#x4E00;&#x822C;&#x7528;&#x6765;&#x505A;sort&#x3001;aggs&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x76EE;&#x6D4B;&#x6BD4;&#x8F83;&#x9002;&#x7528;&#x4E8E;&#x77ED;&#x8BCD;&#x8BED;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x957F;&#x53E5;&#x5B50;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x521B;&#x5EFA;keyword&#x7684;index<ul>
+<li>&#x9664;&#x4E86;rich text&#x548C;multiple line text&#x7684;&#x7C7B;&#x578B;&#x4E0D;&#x9700;&#x8981;index&#x6210;keyword&#xFF0C;&#x5176;&#x4ED6;text&#x90FD;&#x9700;&#x8981;index&#x6210;keyword</li>
+</ul>
+</li>
+<li>&#xFF1F;appbase.io&#x7528;&#x5230;&#x4E86;&#x597D;&#x51E0;&#x79CD;analyzer&#xFF08;autosuggest_analyzer&#x3001;english_analyzer&#x3001;ngram_analyzer&#xFF09;&#xFF0C;&#x600E;&#x6837;&#x4F7F;&#x7528;analyzer</li>
+<li>cms&#x6570;&#x636E;&#x7C7B;&#x578B;&#x76F8;&#x5173;&#xFF0C;<a href="http://wiki.inceptionpad.cn/4-projects/gig-economy/pg-related/cms-support-data-type.html" target="_blank">http://wiki.inceptionpad.cn/4-projects/gig-economy/pg-related/cms-support-data-type.html</a><ul>
+<li>text&#x7C7B;&#x578B;index&#x5904;&#x7406;<ul>
+<li>single line text -&gt; text + keyword</li>
+<li>&#xFF1F;rich text/html -&gt; text</li>
+<li>select -&gt; text + keyword</li>
+<li>multi-select -&gt; text + keyword</li>
+<li>radio -&gt; text + keyword</li>
+<li>checkbox -&gt; text + keyword</li>
+<li>json -&gt; object + auto</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#xFF1F;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x5904;&#x7406;<ul>
+<li>&#x539F;&#x5219;&#x4E0A;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x5E94;&#x8BE5;&#x652F;&#x6301;&#x51E0;&#x79CD;&#x57FA;&#x7840;&#x7C7B;&#x578B;&#xFF1A;text&#x3001;integer&#x3001;float&#x3001;date&#x3001;time&#x3001;datetime&#xFF1B;&#x76EE;&#x524D;&#x53EA;&#x53D6;text&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#xFF0C;&#x6CA1;&#x6709;value/text&#x7684;pair option&#x5B58;&#x50A8;<ul>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x4FEE;&#x6539;option text&#x65F6;&#x7684;&#x64CD;&#x4F5C;&#x9EBB;&#x70E6;<ul>
+<li>&#x5141;&#x8BB8;&#x4FEE;&#x6539;&#x65E7;&#x503C;&#xFF0C;&#x4F46;&#x662F;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x65E7;&#x503C;&#x7684;&#x6570;&#x636E;&#x9700;&#x8981;&#x9010;&#x4E2A;&#x624B;&#x52A8;&#x8FC1;&#x79FB;</li>
+<li>&#x4E0D;&#x5141;&#x8BB8;&#x4FEE;&#x6539;&#x65E7;&#x503C;&#xFF0C;&#x53EA;&#x5141;&#x8BB8;&#x65B0;&#x589E;&#xFF0C;&#x5982;&#x679C;&#x65E7;&#x503C;&#x8981;&#x8FC1;&#x79FB;&#xFF0C;&#x5219;&#x8981;&#x624B;&#x52A8;&#x9010;&#x4E2A;&#x8FDB;&#x884C;&#x8FC1;&#x79FB;</li>
+<li>&#x5141;&#x8BB8;&#x4FEE;&#x6539;&#x503C;&#xFF0C;&#x540E;&#x53F0;&#x628A;&#x5386;&#x53F2;&#x503C;&#x5168;&#x90E8;&#x53D8;&#x6210;&#x65B0;&#x503C;&#xFF0C;&#x5E76;&#x4E14;&#x540C;&#x6B65;es</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>pg&#x521B;&#x5EFA;&#x4E00;&#x5F20;&#x989D;&#x5916;&#x7684;&#x8868;+&#x5173;&#x8054;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x64CD;&#x4F5C;&#xFF0C;&#x6709;&#x90E8;&#x5206;cms&#x6839;&#x672C;&#x4E0D;&#x652F;&#x6301;select/checkbox&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4E3A;&#x7684;&#x5C31;&#x662F;&#x5206;&#x5F00;&#x8868;&#x5B58;&#x50A8;&#x66F4;&#x597D;&#x8868;&#x793A;&#x6570;&#x636E;&#x7ED3;&#x6784;<ul>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x591A;&#x5BF9;&#x591A;&#x7ED3;&#x6784;&#x540C;&#x6B65;nested&#x6570;&#x636E;&#x65F6;&#x9700;&#x8981;&#x591A;&#x4E00;&#x5C42;&#xFF0C;&#x9700;&#x8981;&#x51CF;&#x5C11;&#x5C42;&#x7684;&#x8BDD;&#x5219;&#x9700;&#x8981;&#x989D;&#x5916;&#x8FDB;&#x884C;&#x5904;&#x7406;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="match">match</h3>
+<ul>
+<li>fuzzy&#x7684;&#x914D;&#x7F6E;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html#query-dsl-match-query-fuzziness" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html#query-dsl-match-query-fuzziness</a></li>
+<li>&#x4E00;&#x822C;&#x662F;&#x7528;&#x6765;&#x505A;text&#x7C7B;&#x578B;&#x7684;&#x5168;&#x6587;&#x5339;&#x914D;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x5339;&#x914D;keyword&#x3001;number&#x3001;boolean&#xFF0C;&#x5C31;&#x662F;&#x76F4;&#x63A5;&#x5339;&#x914D;&#x7684;&#x573A;&#x666F;&#x4E86;</li>
+</ul>
+<h3 id="multimatch">multi_match</h3>
+<ul>
+<li>index&#x6210;&#x591A;&#x4E2A;field&#x7684;&#x67E5;&#x8BE2;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html#type-most-fields" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-multi-match-query.html#type-most-fields</a></li>
+</ul>
+<h3 id="bool-query">bool query</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html&#xFF0C;4&#x79CD;&#x65B9;&#x6CD5;&#x76F8;&#x4E92;&#x8865;&#x5145;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x662F;&#x4F7F;&#x5F97;&#x6700;&#x540E;&#x7684;score&#x8BA1;&#x7B97;&#x503C;&#x548C;&#x60F3;&#x8981;&#x5F97;&#x5230;&#x7684;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x543B;&#x5408;" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html&#xFF0C;4&#x79CD;&#x65B9;&#x6CD5;&#x76F8;&#x4E92;&#x8865;&#x5145;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x662F;&#x4F7F;&#x5F97;&#x6700;&#x540E;&#x7684;score&#x8BA1;&#x7B97;&#x503C;&#x548C;&#x60F3;&#x8981;&#x5F97;&#x5230;&#x7684;&#x641C;&#x7D22;&#x7ED3;&#x679C;&#x543B;&#x5408;</a></li>
+<li>&#xFF1F;&#x5B9E;&#x73B0;&#x5D4C;&#x5957;&#x6761;&#x4EF6;&#x7684;&#x641C;&#x7D22;<ul>
+<li>&#x5728;migrate&#x4E0A;&#x4F7F;&#x7528;&#xFF0C;&#x6BCF;&#x4E00;&#x7EA7;&#x90FD;&#x53EF;&#x4EE5;&#x5957;bool&#x4F5C;&#x4E3A;subquery </li>
+</ul>
+</li>
+<li>query dsl&#x7684;&#x53EF;&#x89C6;&#x5316;&#x5DE5;&#x5177;&#x4F7F;&#x7528;&#xFF0C;migrate<ul>
+<li>&#x4F7F;&#x7528;&#x95E8;&#x69DB;&#x6709;&#x70B9;&#x592A;&#x9AD8;&#xFF0C;&#x57FA;&#x672C;&#x5BF9;&#x6807;&#x4E86;&#x5B98;&#x65B9;dsl&#xFF0C;&#x4E0D;&#x592A;&#x9002;&#x5408;&#x4F5C;&#x4E3A;c&#x7AEF;&#x4EA7;&#x54C1;&#x4F7F;&#x7528;</li>
+</ul>
+</li>
+<li>must vs should<ul>
+<li><a href="https://stackoverflow.com/questions/28768277/elasticsearch-difference-between-must-and-should-bool-query" target="_blank">https://stackoverflow.com/questions/28768277/elasticsearch-difference-between-must-and-should-bool-query</a></li>
+<li>&#x7ECF;&#x8FC7;&#x6D4B;&#x8BD5;&#xFF0C;&#x5982;&#x679C;query&#x91CC;&#x9762;&#x53EA;&#x6709;should&#x6CA1;&#x6709;must&#xFF0C;should&#x4F1A;&#x628A;score=0&#x7684;&#x7ED3;&#x679C;&#x4E5F;&#x5305;&#x542B;&#x5728;&#x5185;&#x90E8;&#xFF0C;&#x9700;&#x8981;&#x52A0;&#x53C2;&#x6570;&#x624D;&#x80FD;&#x628A;&#x8FD9;&#x4E9B;score=0&#x7684;&#x8FC7;&#x6EE4;&#x6389;&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html#bool-min-should-match&#xFF1B;&#x5728;&#x76EE;&#x524D;&#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x6700;&#x5916;&#x5C42;&#x7528;&#x4E86;must&#xFF0C;&#x5C31;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E86;" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-bool-query.html#bool-min-should-match&#xFF1B;&#x5728;&#x76EE;&#x524D;&#x8BED;&#x53E5;&#x4E2D;&#xFF0C;&#x6700;&#x5916;&#x5C42;&#x7528;&#x4E86;must&#xFF0C;&#x5C31;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x4E86;</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="term">term</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html&#xFF0C;&#x907F;&#x514D;&#x5728;text&#x7C7B;&#x578B;&#x4E0A;&#x8FDB;&#x884C;&#x4F7F;&#x7528;" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-term-query.html&#xFF0C;&#x907F;&#x514D;&#x5728;text&#x7C7B;&#x578B;&#x4E0A;&#x8FDB;&#x884C;&#x4F7F;&#x7528;</a></li>
+</ul>
+<h3 id="sort">sort</h3>
+<ul>
+<li>The order defaults to desc when sorting on the _score, and defaults to asc when sorting on anything else&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html#request-body-search-sort" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/search-request-body.html#request-body-search-sort</a></li>
+<li>text&#x7C7B;&#x578B;&#x7684;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;sort&#xFF0C;&#x4F1A;&#x76F4;&#x63A5;&#x62A5;&#x9519;&#xFF0C;&#x53EA;&#x80FD;&#x628A;text&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;index&#x4E00;&#x4E2A;fields&#x662F;keyword&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;<a href="https://stackoverflow.com/questions/49672496/how-to-sort-on-field-type-text-in-elastic-search" target="_blank">https://stackoverflow.com/questions/49672496/how-to-sort-on-field-type-text-in-elastic-search</a></li>
+<li>&#xFF1F;&#x4F7F;&#x7528;sdk&#x65F6;&#x53D1;&#x73B0;sort&#x7684;&#x5BF9;&#x8C61;&#x5F62;&#x5F0F;&#x7684;&#x5199;&#x6CD5;&#x4E0D;&#x652F;&#x6301;&#xFF0C;&#x9700;&#x8981;&#x67E5;&#x4E00;&#x4E0B;&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_search" target="_blank">https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_search</a></li>
+<li>&#xFF1F;&#x4F7F;&#x7528;painless&#x52A8;&#x6001;&#x8BA1;&#x7B97;&#x6392;&#x5E8F;&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/painless/current/painless-sort-context.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/painless/current/painless-sort-context.html</a></li>
+</ul>
+<h3 id="boost">boost</h3>
+<ul>
+<li>&#x9488;&#x5BF9;&#x5B57;&#x6BB5;&#xFF08;multi-match&#xFF09;&#x6216;&#x8005;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x7684;boost&#xFF0C;&#x76F8;&#x5173;api<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/compound-queries.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/compound-queries.html</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-boost.html#mapping-boost" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/mapping-boost.html#mapping-boost</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.5/query-dsl-term-query.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/7.5/query-dsl-term-query.html</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.5/query-dsl-multi-match-query.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/7.5/query-dsl-multi-match-query.html</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="score">score</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.5/query-filter-context.html#relevance-scores" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/7.5/query-filter-context.html#relevance-scores</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#" target="_blank">https://www.elastic.co/guide/en/elasticsearch/guide/current/relevance-intro.html#</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/guide/current/scoring-theory.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/guide/current/scoring-theory.html</a></li>
+</ul>
+<h3 id="fuzzyfuzziness">fuzzy/fuzziness</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html#query-dsl-match-query-fuzziness" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-match-query.html#query-dsl-match-query-fuzziness</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-fuzzy-query.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-fuzzy-query.html</a></li>
+<li>learn<ul>
+<li><a href="https://qbox.io/blog/elasticsearch-optimization-fuzziness-performance" target="_blank">https://qbox.io/blog/elasticsearch-optimization-fuzziness-performance</a><ul>
+<li>fuzziness=auto+prefix_length=3&#x8DB3;&#x591F;&#x4F7F;&#x7528;&#xFF0C;prefix_length&#x8D8A;&#x5927;&#x6027;&#x80FD;&#x8D8A;&#x9AD8;&#xFF0C;prefix_length&#x8868;&#x793A;&#x4E0D;&#x80FD;&#x5FFD;&#x7565;&#x5339;&#x914D;&#x7684;&#x524D;&#x7F00;&#x5355;&#x8BCD;&#x4E2A;&#x6570;&#xFF0C;&#x5982;&#x679C;&#x662F;3&#xFF0C;&#x8868;&#x793A;&#x5934;3&#x4E2A;&#x5B57;&#x7B26;&#x5FC5;&#x987B;&#x5B8C;&#x5168;&#x5339;&#x914D;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5339;&#x914D;&#xFF0C;&#x5C31;&#x6CA1;&#x6709;&#x540E;&#x7EED;&#x7684;&#x6A21;&#x7CCA;&#x641C;&#x7D22;</li>
+</ul>
+</li>
+<li><a href="https://codingexplained.com/coding/elasticsearch/fuzzy-searches" target="_blank">https://codingexplained.com/coding/elasticsearch/fuzzy-searches</a></li>
+<li><a href="https://www.elastic.co/blog/found-fuzzy-search" target="_blank">https://www.elastic.co/blog/found-fuzzy-search</a><ul>
+<li>&#x5B98;&#x65B9;&#x5EFA;&#x8BAE;&#x4E0D;&#x8981;&#x4F7F;&#x7528;fuzzy query&#xFF0C;&#x56E0;&#x4E3A;match&#x7684;&#x529F;&#x80FD;&#x548C;&#x6B64;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F7F;&#x7528;fuzzy query&#x4F1A;&#x589E;&#x52A0;&#x7406;&#x89E3;&#x6210;&#x672C; </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="wildcard">wildcard</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-wildcard-query.html&#xFF0C;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x597D;&#x50CF;&#x4E0D;&#x662F;&#x5F88;&#x591A;" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-wildcard-query.html&#xFF0C;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x597D;&#x50CF;&#x4E0D;&#x662F;&#x5F88;&#x591A;</a></li>
+</ul>
+<h3 id="array">array</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html&#xFF0C;&#x662F;&#x5426;&#x662F;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x4E0A;&#x597D;&#x50CF;&#x5E76;&#x6CA1;&#x6709;&#x592A;&#x5927;&#x533A;&#x522B;" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/array.html&#xFF0C;&#x662F;&#x5426;&#x662F;&#x6570;&#x7EC4;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x4F7F;&#x7528;&#x4E0A;&#x597D;&#x50CF;&#x5E76;&#x6CA1;&#x6709;&#x592A;&#x5927;&#x533A;&#x522B;</a></li>
+</ul>
+<h3 id="geo">geo</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-bounding-box-query.html&#xFF0C;&#x7B2C;&#x4E00;&#x671F;&#x53EF;&#x4EE5;&#x5148;&#x780D;&#x6389;" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-geo-bounding-box-query.html&#xFF0C;&#x7B2C;&#x4E00;&#x671F;&#x53EF;&#x4EE5;&#x5148;&#x780D;&#x6389;</a></li>
+</ul>
+<h3 id="&#xFF1F;special-query">&#xFF1F;special query</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/specialized-queries.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/specialized-queries.html</a></li>
+<li>script&#xFF0C;<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-script-query.html&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x505A;&#x51FD;&#x6570;&#x5F0F;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x641C;&#x7D22;" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-script-query.html&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x505A;&#x51FD;&#x6570;&#x5F0F;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x641C;&#x7D22;</a></li>
+</ul>
+<h3 id="&#xFF1F;aggs">&#xFF1F;aggs</h3>
+<ul>
+<li>&#xFF1F;&#x53EA;&#x80FD;&#x5728;term&#x4E0A;&#x7528;keyword&#x7C7B;&#x578B;&#x8FDB;&#x884C;&#x805A;&#x5408;&#xFF0C;&#x8BD5;&#x4E86;&#x4E00;&#x4E0B;text&#x7C7B;&#x578B;&#x7684;&#x65E0;&#x6CD5;&#x805A;&#x5408;</li>
+</ul>
+<h3 id="&#xFF1F;querystring">&#xFF1F;query_string</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html</a></li>
+<li>vs dsl<ul>
+<li>&#x4E0D;&#x652F;&#x6301;nested&#x6570;&#x636E;</li>
+<li>&#x76F4;&#x63A5;&#x652F;&#x6301;&#x5D4C;&#x5957;&#x6761;&#x4EF6;&#x67E5;&#x8BE2;&#xFF0C;&#x5E94;&#x8BE5;&#x53EF;&#x4EE5;&#x8F6C;&#x6210;dsl&#x7684;&#x8BED;&#x6CD5;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#xFF1F;script">&#xFF1F;script</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-scripting.html</a><ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/painless/current/painless-guide.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/painless/current/painless-guide.html</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="&#xFF1F;autosuggest">&#xFF1F;autosuggest</h3>
+<ul>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.5/search-search.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/7.5/search-search.html</a></li>
+<li><a href="https://www.elastic.co/guide/en/elasticsearch/reference/7.5/search-suggesters.html" target="_blank">https://www.elastic.co/guide/en/elasticsearch/reference/7.5/search-suggesters.html</a></li>
+</ul>
+<h3 id="&#xFF1F;highlight">&#xFF1F;highlight</h3>
 
                                 
                                 </section>
@@ -1519,7 +1665,7 @@
             
                 
                 
-                <a href="rdms-history-version-design.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 关系型数据库数据历史管理">
+                <a href="../inception-summary.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 项目启动会回顾">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1530,7 +1676,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"基于版本的文档管理 Doc version management","level":"4.3.2.1","depth":3,"next":{"title":"关系型数据库数据历史管理","level":"4.3.2.2","depth":3,"path":"4-projects/gig-economy/doc-version/rdms-history-version-design.md","ref":"4-projects/gig-economy/doc-version/rdms-history-version-design.md","articles":[]},"previous":{"title":"doc-version","level":"4.3.2","depth":2,"ref":"","articles":[{"title":"基于版本的文档管理 Doc version management","level":"4.3.2.1","depth":3,"path":"4-projects/gig-economy/doc-version/doc-version-management.md","ref":"4-projects/gig-economy/doc-version/doc-version-management.md","articles":[]},{"title":"关系型数据库数据历史管理","level":"4.3.2.2","depth":3,"path":"4-projects/gig-economy/doc-version/rdms-history-version-design.md","ref":"4-projects/gig-economy/doc-version/rdms-history-version-design.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/doc-version/doc-version-management.md","mtime":"2019-12-26T03:07:17.332Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-26T03:08:06.371Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Alpha版本接触到的ES issues","level":"4.3.3.1","depth":3,"next":{"title":"项目启动会回顾","level":"4.3.4","depth":2,"path":"4-projects/gig-economy/inception-summary.md","ref":"4-projects/gig-economy/inception-summary.md","articles":[]},"previous":{"title":"es-related","level":"4.3.3","depth":2,"ref":"","articles":[{"title":"Alpha版本接触到的ES issues","level":"4.3.3.1","depth":3,"path":"4-projects/gig-economy/es-related/issues.md","ref":"4-projects/gig-economy/es-related/issues.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/es-related/issues.md","mtime":"2019-12-26T03:07:17.334Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-26T03:08:06.371Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
