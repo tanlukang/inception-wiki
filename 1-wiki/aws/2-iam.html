@@ -68,7 +68,7 @@
     <link rel="next" href="3-sts.html" />
     
     
-    <link rel="prev" href="1-security-summary.html" />
+    <link rel="prev" href="11-cloudformation.html" />
     
 
     </head>
@@ -126,12 +126,12 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.1" data-path="1-security-summary.html">
+        <li class="chapter " data-level="1.2.1" data-path="1-security.html">
             
-                <a href="1-security-summary.html">
+                <a href="1-security.html">
             
                     
-                    安全性、身份和访问管理
+                    Security Overview
             
                 </a>
             
@@ -139,7 +139,33 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.2" data-path="2-iam.html">
+        <li class="chapter " data-level="1.2.2" data-path="10-cloudtrail.html">
+            
+                <a href="10-cloudtrail.html">
+            
+                    
+                    AWS CloudTrail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="11-cloudformation.html">
+            
+                <a href="11-cloudformation.html">
+            
+                    
+                    AWS CloudFormation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="2-iam.html">
             
                 <a href="2-iam.html">
             
@@ -152,7 +178,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.3" data-path="3-sts.html">
+        <li class="chapter " data-level="1.2.5" data-path="3-sts.html">
             
                 <a href="3-sts.html">
             
@@ -165,7 +191,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.4" data-path="4-s3.html">
+        <li class="chapter " data-level="1.2.6" data-path="4-s3.html">
             
                 <a href="4-s3.html">
             
@@ -178,7 +204,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.5" data-path="5-ses.html">
+        <li class="chapter " data-level="1.2.7" data-path="5-ses.html">
             
                 <a href="5-ses.html">
             
@@ -191,12 +217,51 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.6" data-path="6-ec2.html">
+        <li class="chapter " data-level="1.2.8" data-path="6-ec2.html">
             
                 <a href="6-ec2.html">
             
                     
                     Amazon EC2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="7-systemsmanager.html">
+            
+                <a href="7-systemsmanager.html">
+            
+                    
+                    AWS Systems Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="8-config.html">
+            
+                <a href="8-config.html">
+            
+                    
+                    AWS Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="9-cloudwatch.html">
+            
+                <a href="9-cloudwatch.html">
+            
+                    
+                    Amazon CloudWatch
             
                 </a>
             
@@ -1478,10 +1543,14 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="aws-identity-and-access-management-iam">AWS Identity and Access Management (IAM)</h1>
-<p>&#x7528;&#x6237;&#x53EF;&#x4F7F;&#x7528; AWS &#x7BA1;&#x7406;&#x63A7;&#x5236;&#x53F0;&#x3001;AWS CLI &#x6216;&#x901A;&#x8FC7;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x5305;&#x548C; API &#x4ECE;&#x591A;&#x4E2A;&#x53D7;&#x652F;&#x6301;&#x7684;&#x5E73;&#x53F0;&#x8BBF;&#x95EE; AWS &#x670D;&#x52A1;&#x548C;&#x8D44;&#x6E90;&#x3002;&#x7528;&#x6237;&#x548C;&#x7CFB;&#x7EDF;&#x5FC5;&#x987B;&#x7ECF;&#x8FC7;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#x540E;&#x624D;&#x80FD;&#x8BBF;&#x95EE; AWS &#x670D;&#x52A1;&#x548C;&#x8D44;&#x6E90;&#x3002;</p>
-<p>AWS &#x7BA1;&#x7406;&#x63A7;&#x5236;&#x53F0;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;&#x57FA;&#x4E8E; Web &#x7684;&#x65B9;&#x5F0F;&#x6765;&#x7BA1;&#x7406; AWS &#x670D;&#x52A1;&#x3002;&#x4F7F;&#x7528; AWS CLI&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x63A7;&#x5236;&#x591A;&#x9879; AWS &#x670D;&#x52A1;&#x5E76;&#x901A;&#x8FC7;&#x811A;&#x672C;&#x5B9E;&#x73B0;&#x670D;&#x52A1;&#x7684;&#x81EA;&#x52A8;&#x5316;&#x3002;</p>
+<p>&#x7528;&#x6237;&#x53EF;&#x4F7F;&#x7528; <code>AWS &#x7BA1;&#x7406;&#x63A7;&#x5236;&#x53F0;</code> &#x3001;<code>AWS CLI</code> &#x6216;&#x901A;&#x8FC7; <code>&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x5305;&#x548C; API</code> &#x4ECE;&#x591A;&#x4E2A;&#x53D7;&#x652F;&#x6301;&#x7684;&#x5E73;&#x53F0;&#x8BBF;&#x95EE; AWS &#x670D;&#x52A1;&#x548C;&#x8D44;&#x6E90;&#x3002;IAM &#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x60A8;&#x5B89;&#x5168;&#x5730;&#x63A7;&#x5236;&#x5BF9; AWS &#x670D;&#x52A1;&#x548C;&#x8D44;&#x6E90;&#x7684;&#x8BBF;&#x95EE;&#x3002;</p>
 <p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x60A8;&#x662F;&#x8D26;&#x6237;&#x6240;&#x6709;&#x8005;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; Root &#x8D26;&#x6237;&#x76F4;&#x63A5;&#x767B;&#x5F55;&#x63A7;&#x5236;&#x53F0;&#x3002;&#x4E0D;&#x8FC7;&#xFF0C;&#x6211;&#x4EEC;&#x5EFA;&#x8BAE;&#x60A8;&#x4E3A;&#x6BCF;&#x4F4D;&#x7528;&#x6237;&#x521B;&#x5EFA;&#x4E2A;&#x4EBA; IAM &#x7528;&#x6237;&#x5E76;&#x4F7F;&#x7528;&#x4E2A;&#x4EBA;&#x51ED;&#x8BC1;&#x767B;&#x5F55;&#x3002;</p>
-<p><a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html" target="_blank">http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html</a></p>
+<h2 id="&#x7BA1;&#x7406;&#x5458;&#x5FC5;&#x5907;&#x64CD;&#x4F5C;">&#x7BA1;&#x7406;&#x5458;&#x5FC5;&#x5907;&#x64CD;&#x4F5C;</h2>
+<ul>
+<li>&#x521B;&#x5EFA;&#x5206;&#x7EC4;&#xFF0C;&#x9644;&#x52A0;&#x76F8;&#x5E94;&#x6743;&#x9650;&#xFF1B;</li>
+<li>&#x521B;&#x5EFA;&#x7528;&#x6237;&#xFF0C;&#x5C06;&#x7528;&#x6237;&#x52A0;&#x5165;&#x5206;&#x7EC4;&#x4EE5;&#x83B7;&#x5F97;&#x6743;&#x9650;&#xFF0C;&#x7981;&#x6B62;&#x76F4;&#x63A5;&#x5411;&#x7528;&#x6237;&#x9644;&#x52A0;&#x6743;&#x9650;&#xFF1B;</li>
+<li>&#x8BBE;&#x7F6E;&#x5BC6;&#x7801;&#x7B56;&#x7565;&#xFF0C;&#x8DEF;&#x5F84;&#xFF1A;IAM -&gt; &#x8D26;&#x6237;&#x8BBE;&#x7F6E;&#x3002;</li>
+</ul>
 <h2 id="&#x4E3B;&#x8981;&#x6982;&#x5FF5;">&#x4E3B;&#x8981;&#x6982;&#x5FF5;</h2>
 <ul>
 <li>&#x7B56;&#x7565;</li>
@@ -1656,7 +1725,7 @@ aws_secret_access_key = YOUR_AWS_SECRET_ACCESS_KEY
 
             
                 
-                <a href="1-security-summary.html" class="navigation navigation-prev " aria-label="Previous page: 安全性、身份和访问管理">
+                <a href="11-cloudformation.html" class="navigation navigation-prev " aria-label="Previous page: AWS CloudFormation">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -1672,7 +1741,7 @@ aws_secret_access_key = YOUR_AWS_SECRET_ACCESS_KEY
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AWS Identity and Access Management","level":"1.2.2","depth":2,"next":{"title":"AWS Security Token Service","level":"1.2.3","depth":2,"path":"1-wiki/aws/3-sts.md","ref":"1-wiki/aws/3-sts.md","articles":[]},"previous":{"title":"安全性、身份和访问管理","level":"1.2.1","depth":2,"path":"1-wiki/aws/1-security-summary.md","ref":"1-wiki/aws/1-security-summary.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/2-iam.md","mtime":"2019-12-26T03:59:35.760Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-26T04:00:27.828Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AWS Identity and Access Management","level":"1.2.4","depth":2,"next":{"title":"AWS Security Token Service","level":"1.2.5","depth":2,"path":"1-wiki/aws/3-sts.md","ref":"1-wiki/aws/3-sts.md","articles":[]},"previous":{"title":"AWS CloudFormation","level":"1.2.3","depth":2,"path":"1-wiki/aws/11-cloudformation.md","ref":"1-wiki/aws/11-cloudformation.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/2-iam.md","mtime":"2019-12-26T05:12:51.778Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-26T05:13:41.739Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
