@@ -7,12 +7,13 @@ const fs = require('fs');
 const client = new Client({
   node: 'http://localhost:9200'
 });
+
+// 真正使用时可以用的格式：`application_${applicationId}-model_${modelId}-${datetime}`
 const index = 'es-usage';
 
 (async () => {
   // await createIndex();
   // await deleteIndex();
-  // await reindex();
 
   // await updateMapping();
   // await getMapping();
@@ -105,8 +106,6 @@ async function deleteIndex() {
   console.log('deleteIndex', JSON.stringify(result.body, null, '  '));
 }
 
-async function reindex() {}
-
 async function getMapping() {
   // https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_indices_getmapping
   let result = await client.indices.getMapping({
@@ -146,7 +145,8 @@ async function bulkCreateDoc() {
       'action': {
         'create': {
           '_index': index,
-          '_id': faker.random.uuid()
+          // _id可以直接用pgId的字符串
+          '_id': `${item}`
         }
       },
       'value': json
@@ -184,8 +184,10 @@ async function getDocByQuery() {
         bool: {
           should: [{
               match: {
+                // 这里的id是mapping中的id
                 id: 1,
-                // _id: '81b6b5b5-1a48-486b-a6e2-bff190834ac1'
+                // 这里的_id是document的_id，和mapping的id不同；mapping的id=pgId，_id=pgId的字符串形式
+                // _id: '1'
               }
             },
             {
@@ -208,7 +210,8 @@ async function getDocByQuery() {
 async function createDoc() {
   // https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_create
   let result = await client.create({
-    id: faker.random.uuid(),
+    // 这里的id属性实际上是_id，到时候直接用pgId的字符串
+    id: '' + faker.random.number(),
     index,
     body: talent()
   });
@@ -218,7 +221,8 @@ async function createDoc() {
 async function updateDoc() {
   // https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_update
   let result = await client.update({
-    id: '81b6b5b5-1a48-486b-a6e2-bff190834ac1',
+    // 这里的id属性实际上是_id，到时候直接用pgId的字符串
+    id: '1',
     index,
     refresh: true,
     body: {
@@ -256,7 +260,8 @@ async function updateDocByQuery() {
 async function deleteDoc() {
   // https://www.elastic.co/guide/en/elasticsearch/client/javascript-api/current/api-reference.html#_delete
   let result = await client.delete({
-    id: '81b6b5b5-1a48-486b-a6e2-bff190834ac1',
+    // 这里的id属性实际上是_id，到时候直接用pgId的字符串
+    id: '1',
     index,
     refresh: true
   });
