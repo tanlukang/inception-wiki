@@ -19,6 +19,7 @@ const index = 'es-usage';
   // await getMapping();
 
   // await bulkCreateDoc();
+  // await search();
   // await getAllDoc();
   // await getDocByQuery();
   // await createDoc();
@@ -90,6 +91,48 @@ async function createIndex() {
           },
           createdAt: {
             type: 'date'
+          },
+          company: {
+            type: 'nested',
+            properties: {
+              name: {
+                type: 'text',
+                fields: {
+                  raw: {
+                    type: 'keyword'
+                  }
+                }
+              },
+              url: {
+                type: 'text',
+                fields: {
+                  raw: {
+                    type: 'keyword'
+                  }
+                }
+              },
+              industry: {
+                type: 'nested',
+                properties: {
+                  name: {
+                    type: 'text',
+                    fields: {
+                      raw: {
+                        type: 'keyword'
+                      }
+                    }
+                  },
+                  category: {
+                    type: 'text',
+                    fields: {
+                      raw: {
+                        type: 'keyword'
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -136,7 +179,7 @@ async function updateMapping() {
 
 async function bulkCreateDoc() {
   let bulkBody = ``;
-  let list = getList(10);
+  let list = getList(1000);
   let jsonList = [];
   bulkBody = list.map((item) => {
     let json = talent(item);
@@ -159,7 +202,7 @@ async function bulkCreateDoc() {
     body: bulkBody
   });
   console.log(JSON.stringify(result.body, null, '  '));
-  fs.writeFileSync('./talent.json', JSON.stringify(jsonList, null, '  '));
+  fs.writeFileSync('./es-usage.json', JSON.stringify(jsonList, null, '  '));
 }
 
 async function getAllDoc() {
@@ -205,6 +248,182 @@ async function getDocByQuery() {
     }
   });
   console.log('getAllDoc', JSON.stringify(result.body, null, '  '));
+}
+
+async function search() {
+  let queryKeyword = 'Kris';
+  let result = await client.search({
+    index,
+    // 返回字段排除
+    // _source_excludes: ['email', 'phone'],
+    _source: ['firstName', 'dateOfBirth'],
+    // 分页控制
+    // from: 0,
+    size: 1,
+    body: {
+      query: {
+        bool: {
+          // 使用must的原因是，后续widget可能也有对特定字段的关键字搜索，到时候widget的关键字搜索和searchbar的搜索是`AND`的关系
+          must: [
+            // searchbar的关键字查询条件
+            {
+              bool: {
+                // searchbar的关键字查询使用should，对多个字段分别进行搜索
+                should: [{
+                    match: {
+                      firstName: {
+                        'query': queryKeyword,
+                        // 模糊匹配配置
+                        'fuzziness': 'AUTO',
+                        'prefix_length': 3,
+                        // 权重配置，大于1表示加大权重，0-1表示减少权重
+                        'boost': 3
+                      },
+                    }
+                  },
+                  {
+                    match: {
+                      lastName: {
+                        'query': queryKeyword,
+                        'fuzziness': 'AUTO',
+                        'prefix_length': 3,
+                      }
+                    }
+                  },
+                  {
+                    match: {
+                      keyword: {
+                        'query': queryKeyword,
+                        'fuzziness': 'AUTO',
+                        'prefix_length': 3,
+                      }
+                    }
+                  },
+                  {
+                    'nested': {
+                      'path': 'company',
+                      'query': {
+                        bool: {
+                          should: [{
+                            'match': {
+                              'company.name': {
+                                query: queryKeyword,
+                                'fuzziness': 'AUTO',
+                                'prefix_length': 3,
+                              }
+                            }
+                          }, {
+                            nested: {
+                              path: 'company.industry',
+                              query: {
+                                bool: {
+                                  should: [{
+                                      match: {
+                                        'company.industry.name': {
+                                          query: queryKeyword,
+                                          'fuzziness': 'AUTO',
+                                          'prefix_length': 3,
+                                        }
+                                      }
+                                    },
+                                    {
+                                      match: {
+                                        'company.industry.category': {
+                                          query: queryKeyword,
+                                          'fuzziness': 'AUTO',
+                                          'prefix_length': 3,
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              },
+                              'score_mode': 'avg'
+                            }
+                          }]
+                        }
+                      },
+                      'score_mode': 'avg'
+                    }
+                  }
+                ]
+              }
+            }
+          ],
+          // 过滤条件，目前只是全局的过滤条件，后续widget的过滤条件也往里塞
+          filter: [
+            // 匹配的filter都用match，不管是text、keyword、boolean、int
+            {
+              match: {
+                email: {
+                  query: 'hotmail.com'
+                }
+              }
+            },
+            {
+              match: {
+                isActive: {
+                  query: true
+                }
+              }
+            },
+            // 匹配范围的filter使用range
+            {
+              range: {
+                dateOfBirth: {
+                  gte: '2018-07-21',
+                  lte: '2019-11-21'
+                }
+              }
+            }
+          ],
+          // 过滤条件，同上
+          must_not: [{
+            range: {
+              dateOfBirth: {
+                gte: '2019-08-10',
+                lte: '2019-09-10'
+              }
+            }
+          }]
+        },
+      },
+      // 排序，如果不设置sort默认按照_score从大到小排序
+      sort: [
+        // 由于text类型不能sort和aggs，因此text类型数据mapping增加fields，index时独立index出一个keyword类型的raw字段，处理sort和aggs的场景
+        {
+          'firstName.raw': {
+            order: 'asc'
+          }
+        }, {
+          'dateOfBirth': 'desc'
+        },
+        {
+          'company.industry.name.raw': {
+            order: 'desc',
+            nested: {
+              path: 'company',
+              // filter: {
+              //   "term": {
+              //     "company.name": "inc"
+              //   }
+              // },
+              nested: {
+                path: 'company.industry'
+              }
+            }
+          }
+        },
+        '_score'
+      ]
+    },
+    // sort: [
+    //   'firstName.raw:desc',
+    //   'dateOfBirth:desc',
+    //   '_score'
+    // ]
+  });
+  console.log(JSON.stringify(result.body, null, '  '));
 }
 
 async function createDoc() {
@@ -327,6 +546,43 @@ function talent(pgId) {
     bio: faker.lorem.paragraphs(),
     keyword: [faker.random.words(), faker.random.words(), faker.random.words(), faker.random.words()],
     isActive: faker.random.boolean(),
+    dateOfBirth: faker.date.past(),
     createdAt: faker.date.past(),
+    company: companyList({})
+  };
+}
+
+function companyList({
+  count = 2
+}) {
+  let list = [];
+  for (let i = 0; i <= count; i++) {
+    list.push(company(i));
+  }
+  return list;
+}
+
+function company() {
+  return {
+    name: faker.company.companyName(),
+    url: faker.internet.url(),
+    industry: industryList({})
+  };
+}
+
+function industryList({
+  count = 2
+}) {
+  let list = [];
+  for (let i = 0; i <= count; i++) {
+    list.push(industry(i));
+  }
+  return list;
+}
+
+function industry() {
+  return {
+    name: faker.random.words(),
+    category: faker.random.word(),
   };
 }
