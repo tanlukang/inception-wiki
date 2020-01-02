@@ -1567,7 +1567,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="search-view-structure">Search View Structure</h1>
-<pre class="language-"><code>// &#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;ContentModel
+<pre class="language-"><code>// &#x4E00;&#x4E2A;&#x89C6;&#x56FE;&#x5BF9;&#x5E94;&#x591A;&#x4E2A;Content Indecies
 let searchViewConfig = {
     name: &apos;Client View&apos;,
     description: &apos;This view is built for normal client.&apos;,
@@ -1583,12 +1583,12 @@ let searchViewConfig = {
     outputs: [
         {
             // &#x8F93;&#x51FA;&#x7684;&#x5185;&#x5BB9;
-            modelId: 1,
-            modelName: &apos;Talent&apos;,
+            searchIndexId: 1,
             fields: [
                 {
-                    key: &apos;name&apos;,
+                    fieldName: &apos;age&apos;,
                     willReturn: true,
+                    type: &apos;static / dynamic&apos;, // static&#x8868;&#x793A;index&#x4E2D;&#x73B0;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;dynamic&#x8868;&#x793A;index&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;
                     esRule: {
                         // &#x65E0;&#x8BBA;text&#x3001;keyword&#x3001;boolean&#x3001;int&#x54EA;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5339;&#x914D;&#x201C;&#x662F;&#x5426;&#x76F8;&#x7B49;&#x201D;&#x65F6;filter&#x90FD;&#x7528;match&#x3002;
                         match: {
@@ -1606,24 +1606,26 @@ let searchViewConfig = {
                     }
                 },
                 {
-                    key: &apos;email&apos;,
+                    fieldName: &apos;email&apos;,
                     willReturn: false,
+                    type: &apos;static / dynamic&apos;, // static&#x8868;&#x793A;index&#x4E2D;&#x73B0;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;dynamic&#x8868;&#x793A;index&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;
                     esRule: {}
                 }
             ]
         },
         {
-            modelId: 2,
-            modelName: &apos;Company&apos;,
+            searchIndexId: 2,
             fields: [
                 {
-                    key: &apos;name&apos;,
+                    fieldName: &apos;name&apos;,
                     willReturn: true,
+                    type: &apos;static / dynamic&apos;, // static&#x8868;&#x793A;index&#x4E2D;&#x73B0;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;dynamic&#x8868;&#x793A;index&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;
                     esRule: {}
                 },
                 {
-                    key: &apos;industry&apos;,
+                    fieldName: &apos;industry&apos;,
                     willReturn: true,
+                    type: &apos;static / dynamic&apos;, // static&#x8868;&#x793A;index&#x4E2D;&#x73B0;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;dynamic&#x8868;&#x793A;index&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;
                     esRule: {}
                 }
             ]
@@ -1643,23 +1645,23 @@ let searchViewConfig = {
             // &#x8BE5;&#x7EC4;&#x4EF6;&#x5173;&#x8054;&#x7684;ES&#x5B57;&#x6BB5;&#xFF0C;&#x5373;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#x5185;&#x5BB9;&#x9700;&#x8981;&#x7528;&#x54EA;&#x4E9B;ES&#x5B57;&#x6BB5;&#x5339;&#x914D;
             linkedFields: [
                 {
-                    modelId: 1,
-                    modelField: &apos;Talent.name&apos;,
+                    searchIndexId: 1,
+                    fieldName: &apos;name&apos;,
                     esRule: {}
                 },
                 {
-                    modelId: 2,
-                    modelField: &apos;Company.name&apos;,
+                    searchIndexId: 1,
+                    fieldName: &apos;Company.name&apos;,
                     esRule: {}
                 },
                 {
-                    modelId: 1,
-                    modelField: &apos;Talent.Company.name&apos;,
+                    searchIndexId: 2,
+                    fieldName: &apos;name&apos;,
                     esRule: {}
                 },
                 {
-                    modelId: 2,
-                    modelField: &apos;Company.Talent.name&apos;,
+                    searchIndexId: 2,
+                    fieldName: &apos;Talent.name&apos;,
                     esRule: {}
                 }
             ]
@@ -1674,8 +1676,8 @@ let searchViewConfig = {
             },
             linkedFields: [
                 {
-                    modelId: 1,
-                    modelField: &apos;Talent.age&apos;,
+                    searchIndexId: 1,
+                    fieldName: &apos;Talent.age&apos;,
                     esRule: {}
                 }
             ]
@@ -1690,13 +1692,13 @@ let searchViewConfig = {
             },
             linkedFields: [
                 {
-                    modelId: 1,
-                    modelField: &apos;Talent.city&apos;,
+                    searchIndexId: 1,
+                    fieldName: &apos;city&apos;,
                     esRule: {}
                 },
                 {
-                    modelId: 2,
-                    modelField: &apos;Company.city&apos;,
+                    searchIndexId: 2,
+                    fieldName: &apos;city&apos;,
                     esRule: {}
                 }
             ]
@@ -1752,7 +1754,7 @@ let searchViewConfig = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Search View Structure","level":"4.3.6.5","depth":3,"next":{"title":"pg-related","level":"4.3.7","depth":2,"ref":"","articles":[{"title":"pg数据类型alpha支持","level":"4.3.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]}]},"previous":{"title":"review log","level":"4.3.6.4","depth":3,"path":"4-projects/gig-economy/pg-es/research.md","ref":"4-projects/gig-economy/pg-es/research.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/searchview-structure.md","mtime":"2020-01-02T02:10:53.949Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-02T02:12:41.144Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Search View Structure","level":"4.3.6.5","depth":3,"next":{"title":"pg-related","level":"4.3.7","depth":2,"ref":"","articles":[{"title":"pg数据类型alpha支持","level":"4.3.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]}]},"previous":{"title":"review log","level":"4.3.6.4","depth":3,"path":"4-projects/gig-economy/pg-es/research.md","ref":"4-projects/gig-economy/pg-es/research.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/searchview-structure.md","mtime":"2020-01-02T08:57:28.436Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-02T08:58:09.953Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
