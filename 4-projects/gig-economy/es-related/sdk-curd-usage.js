@@ -12,19 +12,23 @@ const client = new Client({
 const index = 'es-usage';
 
 (async () => {
-  // await createIndex();
   // await deleteIndex();
+  // await createIndex();
 
   // await updateMapping();
   // await getMapping();
 
-  // await bulkCreateDoc();
-  // await search();
   // await getAllDoc();
   // await getDocByQuery();
+  await search();
+  // await scriptSearch();
+
+  // await bulkCreateDoc();
   // await createDoc();
+
   // await updateDoc();
   // await updateDocByQuery();
+
   // await deleteDoc();
   // await deleteDocByQuery();
   // await deleteAllDoc();
@@ -92,6 +96,87 @@ async function createIndex() {
           createdAt: {
             type: 'date'
           },
+          address: {
+            properties: {
+              streetName: {
+                type: 'text',
+                fields: {
+                  raw: {
+                    type: 'keyword'
+                  }
+                }
+              },
+              city: {
+                type: 'text',
+                fields: {
+                  raw: {
+                    type: 'keyword'
+                  }
+                }
+              },
+            }
+          },
+          deposit: {
+            properties: {
+              account: {
+                type: 'text',
+                fields: {
+                  raw: {
+                    type: 'keyword'
+                  }
+                }
+              },
+              money: {
+                type: 'integer'
+              }
+            }
+          },
+          // companyObj: {
+          //   properties: {
+          //     name: {
+          //       type: 'text',
+          //       fields: {
+          //         raw: {
+          //           type: 'keyword'
+          //         }
+          //       }
+          //     },
+          //     stock: {
+          //       type: 'double'
+          //     },
+          //     url: {
+          //       type: 'text',
+          //       fields: {
+          //         raw: {
+          //           type: 'keyword'
+          //         }
+          //       }
+          //     },
+          //     industry: {
+          //       properties: {
+          //         name: {
+          //           type: 'text',
+          //           fields: {
+          //             raw: {
+          //               type: 'keyword'
+          //             }
+          //           }
+          //         },
+          //         category: {
+          //           type: 'text',
+          //           fields: {
+          //             raw: {
+          //               type: 'keyword'
+          //             }
+          //           }
+          //         },
+          //         weight: {
+          //           type: 'integer'
+          //         }
+          //       }
+          //     }
+          //   }
+          // },
           company: {
             type: 'nested',
             properties: {
@@ -102,6 +187,9 @@ async function createIndex() {
                     type: 'keyword'
                   }
                 }
+              },
+              stock: {
+                type: 'double'
               },
               url: {
                 type: 'text',
@@ -202,7 +290,7 @@ async function bulkCreateDoc() {
     body: bulkBody
   });
   console.log(JSON.stringify(result.body, null, '  '));
-  fs.writeFileSync('./es-usage.json', JSON.stringify(jsonList, null, '  '));
+  fs.writeFileSync('./sdk-curd-usage.json', JSON.stringify(jsonList, null, '  '));
 }
 
 async function getAllDoc() {
@@ -250,16 +338,281 @@ async function getDocByQuery() {
   console.log('getAllDoc', JSON.stringify(result.body, null, '  '));
 }
 
+async function scriptSearch() {
+  let result = await client.search({
+    index,
+    size: 10,
+    // _source_excludes: ['company'],
+    _source: ['id', 'city', 'money', 'tagWeight'],
+    // _source: true,
+    body: {
+      // 会独立返回在一个fields字段里面，同时_source也要指定为true，否则不返回
+      "script_fields": {
+        // "age": {
+        //   "script": {
+        //     "lang": "expression",
+        //     "source": "doc['age'] * 2"
+        //   }
+        // },
+        // "city": {
+        //   "script": {
+        //     "lang": "painless",
+        //     "source": "doc['address.city.raw'].value"
+        //   }
+        // },
+        // 访问doc里面object array类型
+        // "money": {
+        //   "script": {
+        //     "lang": "painless",
+        //     "source": `
+        //       int total = 0;
+        //       for (int i = 0; i < doc['deposit.money'].length; ++i) { 
+        //         total += doc['deposit.money'][i];
+        //       }
+        //       return total;
+        //     `
+        //   }
+        // },
+        // "tagWeight": {
+        //   "script": {
+        //     "lang": "painless",
+        //     "source": `
+        //       long weight = 0;
+        //       // weight = doc['companyObj.industry.weight'][0];
+        //       for (int i = 0; i < doc['companyObj.industry.weight'].length; ++i) { 
+        //         weight += doc['companyObj.industry.weight'][i];
+        //       }
+        //       return weight;
+        //     `
+        //   }
+        // },
+        // "stock": {
+        //   "script": {
+        //     "lang": "painless",
+        //     // "source": "doc['firstName.raw'].value + ' ' +  doc['lastName.raw'].value",
+        //     // "source": "params['_source'].firstName + ' ' +  params['_source'].lastName",
+        //     // "source": "params['_source'].firstName + ' from: ' + params['_source'].company[0].name",
+        //     // 可以接受多行script，并且reutrn一个值的表达
+        //     // "source": `double sumStock = 0; for (int i = 0; i < params['_source'].company.length; ++i) { sumStock += params['_source'].company[i].stock; } return sumStock;`,
+        //     "source": `
+        //       double sumStock = 0; 
+        //       for (int i = 0; i < params['_source'].company.length; ++i) { 
+        //         sumStock += params['_source'].company[i].stock + 1000.1;
+        //       } 
+        //       return sumStock;
+        //     `,
+        //     "params": {
+        //       "factor": 2.0
+        //     }
+        //   }
+        // }
+      },
+      query: {
+        // match_all: {},
+        // filter script for number cal
+        "bool": {
+          "filter": {
+            "script": {
+              "script": {
+                "lang": "painless",
+                // "source": "(doc['age'].value + doc['weight'].value) > 120000",
+                "source": `
+                  int total = 0;
+                  for (int i = 0; i < 3; ++i) { 
+                    total += doc['deposit.money'][i];
+                  } 
+                  return !!(total > 200000);
+                `,
+                // "source": `
+                //   double sumStock = 0; 
+                //   for (int i = 0; i < 3; ++i) { 
+                //     sumStock += doc['weight'].value + 1000.1;
+                //   } 
+                //   return !!(sumStock > 100000);
+                // `,
+                // 访问object类型数据，以及子fields
+                // "source": "(doc['address.city.raw'].value) == 'Bruenville'",
+                // 不支持_source的访问，官方文档的context不支持
+                // "source": "(doc['company[0].stock'].value) > 120000",
+                // "source": `double sumStock = 0; for (int i = 0; i < params['_source'].company.length; ++i) { sumStock += params['_source'].company[i].stock; } return sumStock > 12000.1;`,
+                // "source": `
+                //   double sumStock = 0; 
+                //   for (int i = 0; i < params['_source'].company.length; ++i) { 
+                //     sumStock += params['_source'].company[i].stock + 1000.1;
+                //   } 
+                //   return !!(sumStock > 100000);
+                // `,
+              }
+            }
+          }
+
+          // 可以运行，但是结果不正确
+          // filter: {
+          //   nested: {
+          //     path: 'company',
+          //     query: {
+          //       script: {
+          //         script: {
+          //           lang: 'painless',
+          //           source: `doc['company.stock'] == 27024.204`
+          //         }
+          //       }
+          //     }
+          //   }
+          // }
+        },
+
+        // filter script for string match
+        // "bool": {
+        //   "filter": {
+        //     "script": {
+        //       "script": {
+        //         "source": "doc['firstName.raw'].value == 'Macey'",
+        //         "lang": "painless"
+        //       }
+        //     }
+        //   }
+        // },
+
+        // function_score
+        // "function_score": {
+        //   "query": {
+        //     "match_all": {},
+        //     // 可用，就是不知道这样写会不会影响score
+        //     // "match": {
+        //     //   "isActive": true
+        //     // },
+        //     // common match
+        //     // bool: {
+        //     //   should: [{
+        //     //       match: {
+        //     //         keyword: 'music'
+        //     //       }
+        //     //     },
+        //     //     {
+        //     //       match: {
+        //     //         keyword: 'loan'
+        //     //       }
+        //     //     }
+        //     //   ],
+        //     //   filter: {
+        //     //     "match": {
+        //     //       "isActive": true
+        //     //     }
+        //     //   }
+        //     // },
+        //     // nested query test
+        //     // bool: {
+        //     //   filter: {
+        //     //     nested: {
+        //     //       path: 'company',
+        //     //       query: {
+        //     //         match: {
+        //     //           'company.name': 'inc'
+        //     //         }
+        //     //       }
+        //     //     }
+        //     //   }
+        //     // }
+        //   },
+        //   "boost": "5",
+        //   "functions": [
+        //     // common filter
+        //     {
+        //       "filter": [{
+        //         "match": {
+        //           "keyword": "modular"
+        //         }
+        //       }, {
+        //         "range": {
+        //           "age": {
+        //             "gt": 20000
+        //           }
+        //         }
+        //       }],
+        //       "random_score": {},
+        //       "weight": 23
+        //     },
+        //     {
+        //       filter: [{
+        //         nested: {
+        //           path: 'company',
+        //           query: {
+        //             nested: {
+        //               path: 'company.industry',
+        //               query: {
+        //                 match: {
+        //                   'company.industry.name': 'interface'
+        //                 }
+        //               }
+        //             }
+        //           }
+        //         }
+        //       }],
+        //       "weight": 1000
+        //     }
+        //   ],
+        //   "max_boost": 100000,
+        //   "score_mode": "sum",
+        //   "boost_mode": "multiply",
+        //   "min_score": 0
+
+        //   // 自定义score计算
+        //   // "script_score": {
+        //   //   "script": {
+        //   //     // "source": "doc['age'].value / 100",
+        //   //     "source": "params['_source'].company[0].stock + doc['weight'].value"
+        //   //     // "source": `
+        //   //     //     double sumStock = 0; 
+        //   //     //     for (int i = 0; i < params['_source'].company.length; ++i) { 
+        //   //     //       sumStock += params['_source'].company[i].stock + 1000.1;
+        //   //     //     } 
+        //   //     //     return sumStock;
+        //   //     //   `,
+        //   //   }
+        //   // },
+        // }
+      },
+      // sort: [{
+      //     "_script": {
+      //       "type": "number",
+      //       "script": {
+      //         "lang": "painless",
+      //         // "source": "(doc['age'].value) * params.factor",
+      //         "source": `
+      //             double sumStock = 0; 
+      //             for (int i = 0; i < params['_source'].company.length; ++i) { 
+      //               sumStock += params['_source'].company[i].stock + 1000.1;
+      //             } 
+      //             return sumStock;
+      //           `,
+      //         "params": {
+      //           "factor": 1.5
+      //         }
+      //       },
+      //       "order": "asc"
+      //     }
+      //   },
+      //   {
+      //     "firstName.raw": "desc"
+      //   },
+      //   '_score'
+      // ]
+    }
+  });
+  console.log('scriptSearch', JSON.stringify(result.body, null, '  '));
+}
+
 async function search() {
-  let queryKeyword = 'Kris';
+  let queryKeyword = 'interface';
   let result = await client.search({
     index,
     // 返回字段排除
     // _source_excludes: ['email', 'phone'],
-    _source: ['firstName', 'dateOfBirth'],
+    _source: ['id', 'firstName'],
     // 分页控制
     // from: 0,
-    size: 1,
+    size: 2,
     body: {
       query: {
         bool: {
@@ -296,6 +649,7 @@ async function search() {
                         'query': queryKeyword,
                         'fuzziness': 'AUTO',
                         'prefix_length': 3,
+                        'operator': 'AND'
                       }
                     }
                   },
@@ -378,43 +732,62 @@ async function search() {
             }
           ],
           // 过滤条件，同上
-          must_not: [{
-            range: {
-              dateOfBirth: {
-                gte: '2019-08-10',
-                lte: '2019-09-10'
-              }
-            }
-          }]
+          // must_not: [{
+          //     range: {
+          //       dateOfBirth: {
+          //         gte: '2019-08-10',
+          //         lte: '2019-09-10'
+          //       }
+          //     }
+          //   },
+          //   {
+          //     nested: {
+          //       path: 'company',
+          //       query: {
+          //         bool: {
+          //           filter: {
+          //             range: {
+          //               'company.stock': {
+          //                 gte: 50000.1
+          //               }
+          //             }
+          //           }
+          //         }
+          //       }
+          //     }
+          //   }
+          // ]
         },
       },
       // 排序，如果不设置sort默认按照_score从大到小排序
       sort: [
         // 由于text类型不能sort和aggs，因此text类型数据mapping增加fields，index时独立index出一个keyword类型的raw字段，处理sort和aggs的场景
+        // sorts配置是一个数组，按照数组的配置从前往后进行排序，当前项相同时才会用后一项进行排序
+        '_score',
         {
           'firstName.raw': {
             order: 'asc'
           }
-        }, {
-          'dateOfBirth': 'desc'
         },
-        {
-          'company.industry.name.raw': {
-            order: 'desc',
-            nested: {
-              path: 'company',
-              // filter: {
-              //   "term": {
-              //     "company.name": "inc"
-              //   }
-              // },
-              nested: {
-                path: 'company.industry'
-              }
-            }
-          }
-        },
-        '_score'
+        // {
+        //   'dateOfBirth': 'desc'
+        // },
+        // {
+        //   'company.industry.name.raw': {
+        //     order: 'desc',
+        //     nested: {
+        //       path: 'company',
+        //       // filter: {
+        //       //   "term": {
+        //       //     "company.name": "inc"
+        //       //   }
+        //       // },
+        //       nested: {
+        //         path: 'company.industry'
+        //       }
+        //     }
+        //   }
+        // },
       ]
     },
     // sort: [
@@ -548,7 +921,22 @@ function talent(pgId) {
     isActive: faker.random.boolean(),
     dateOfBirth: faker.date.past(),
     createdAt: faker.date.past(),
-    company: companyList({})
+    address: {
+      streetName: faker.address.streetName(),
+      city: faker.address.city(),
+    },
+    deposit: [{
+      account: faker.finance.account(),
+      money: faker.random.number(),
+    }, {
+      account: faker.finance.account(),
+      money: faker.random.number(),
+    }, {
+      account: faker.finance.account(),
+      money: faker.random.number(),
+    }],
+    company: companyList({}),
+    // companyObj: companyList({}),
   };
 }
 
@@ -566,6 +954,7 @@ function company() {
   return {
     name: faker.company.companyName(),
     url: faker.internet.url(),
+    stock: faker.random.number() + parseFloat(Math.random().toFixed(3)),
     industry: industryList({})
   };
 }
@@ -584,5 +973,6 @@ function industry() {
   return {
     name: faker.random.words(),
     category: faker.random.word(),
+    // weight: faker.random.number()
   };
 }
