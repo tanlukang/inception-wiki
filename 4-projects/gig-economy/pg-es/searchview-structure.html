@@ -1623,29 +1623,32 @@ let searchViewConfig = {
         {
             // &#x8F93;&#x51FA;&#x7684;&#x5185;&#x5BB9;
             searchIndexId: 1,
+            willReturn: true,
             fields: [
                 {
                     fieldName: &apos;age&apos;,
+                    fieldType: &apos;integer&apos;,
                     willReturn: true,
                     type: &apos;static / dynamic&apos;, // static&#x8868;&#x793A;index&#x4E2D;&#x73B0;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;dynamic&#x8868;&#x793A;index&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;
                     esRule: {
                         // &#x65E0;&#x8BBA;text&#x3001;keyword&#x3001;boolean&#x3001;int&#x54EA;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5339;&#x914D;&#x201C;&#x662F;&#x5426;&#x76F8;&#x7B49;&#x201D;&#x65F6;filter&#x90FD;&#x7528;match&#x3002;
                         match: {
-                            isActive: {
-                                query: true
+                            age: {
+                                query: 30
                             }
                         },
                         // &#x4E00;&#x822C;&#x5BF9;&#x4E8E;&#x6570;&#x5B57;&#x6216;&#x65E5;&#x671F;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5339;&#x914D;&#x8303;&#x56F4;&#x65F6;&#xFF0C;filter&#x4F7F;&#x7528;range&#x3002;
                         range: {
-                            dateOfBirth: {
-                                gte: &apos;2019-07-21&apos;,
-                                lte: &apos;2019-10-21&apos;
+                            age: {
+                                gte: 18,
+                                lte: 60
                             }
                         }
                     }
                 },
                 {
                     fieldName: &apos;email&apos;,
+                    fieldType: &apos;text&apos;,
                     willReturn: false,
                     type: &apos;static / dynamic&apos;, // static&#x8868;&#x793A;index&#x4E2D;&#x73B0;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;dynamic&#x8868;&#x793A;index&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;
                     esRule: {}
@@ -1654,15 +1657,18 @@ let searchViewConfig = {
         },
         {
             searchIndexId: 2,
+            willReturn: false,
             fields: [
                 {
                     fieldName: &apos;name&apos;,
+                    fieldType: &apos;text&apos;,
                     willReturn: true,
                     type: &apos;static / dynamic&apos;, // static&#x8868;&#x793A;index&#x4E2D;&#x73B0;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;dynamic&#x8868;&#x793A;index&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;
                     esRule: {}
                 },
                 {
                     fieldName: &apos;industry&apos;,
+                    fieldType: &apos;text&apos;,
                     willReturn: true,
                     type: &apos;static / dynamic&apos;, // static&#x8868;&#x793A;index&#x4E2D;&#x73B0;&#x6709;&#x7684;&#x5B57;&#x6BB5;&#xFF0C;dynamic&#x8868;&#x793A;index&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x6BB5;
                     esRule: {}
@@ -1679,14 +1685,17 @@ let searchViewConfig = {
             widgetId: 1,
             name: &apos;SearchBar&apos;,
             config: {
-                size: big
+                size: &apos;big&apos;
             },
             // &#x8BE5;&#x7EC4;&#x4EF6;&#x5173;&#x8054;&#x7684;ES&#x5B57;&#x6BB5;&#xFF0C;&#x5373;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#x5185;&#x5BB9;&#x9700;&#x8981;&#x7528;&#x54EA;&#x4E9B;ES&#x5B57;&#x6BB5;&#x5339;&#x914D;
             linkedFields: [
                 {
                     searchIndexId: 1,
                     fieldName: &apos;name&apos;,
-                    esRule: {}
+                    esRule: {
+                        &quot;boost&quot;: 3,
+                        &quot;operator&quot;: &quot;AND | OR&quot;  // &#x540E;&#x7AEF;&#x67E5;&#x8BE2;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x201D;OR&#x201C;&#xFF0C;&#x8FD9;&#x91CC;&#x201C;AND&#x201D;&#x548C;&#x201C;OR&#x201D;&#x5927;&#x5199;
+                    }
                 },
                 {
                     searchIndexId: 1,
@@ -1711,7 +1720,7 @@ let searchViewConfig = {
             widgetId: 2,
             name: &apos;RangeBar&apos;,
             config: {
-                size: small
+                size: &apos;small&apos;
             },
             linkedFields: [
                 {
@@ -1793,7 +1802,7 @@ let searchViewConfig = {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Search View Structure","level":"4.3.6.5","depth":3,"next":{"title":"pg-related","level":"4.3.7","depth":2,"ref":"","articles":[{"title":"pg数据类型alpha支持","level":"4.3.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]}]},"previous":{"title":"review log","level":"4.3.6.4","depth":3,"path":"4-projects/gig-economy/pg-es/research.md","ref":"4-projects/gig-economy/pg-es/research.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/searchview-structure.md","mtime":"2020-01-06T13:04:39.967Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-06T13:05:37.188Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Search View Structure","level":"4.3.6.5","depth":3,"next":{"title":"pg-related","level":"4.3.7","depth":2,"ref":"","articles":[{"title":"pg数据类型alpha支持","level":"4.3.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]}]},"previous":{"title":"review log","level":"4.3.6.4","depth":3,"path":"4-projects/gig-economy/pg-es/research.md","ref":"4-projects/gig-economy/pg-es/research.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/searchview-structure.md","mtime":"2020-01-08T12:39:24.008Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-08T12:40:09.609Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
