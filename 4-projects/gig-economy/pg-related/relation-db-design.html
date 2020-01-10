@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>review log · InceptionWiki</title>
+        <title>Model关系数据库设计 · InceptionWiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="searchview-structure.html" />
     
-    
-    <link rel="prev" href="migrate.html" />
+    <link rel="prev" href="cms-support-data-type.html" />
     
 
     </head>
@@ -1436,9 +1434,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.3.6.1" data-path="design.html">
+        <li class="chapter " data-level="4.3.6.1" data-path="../pg-es/design.html">
             
-                <a href="design.html">
+                <a href="../pg-es/design.html">
             
                     
                     名词解释
@@ -1449,9 +1447,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3.6.2" data-path="es-relation.html">
+        <li class="chapter " data-level="4.3.6.2" data-path="../pg-es/es-relation.html">
             
-                <a href="es-relation.html">
+                <a href="../pg-es/es-relation.html">
             
                     
                     ElasticSearch Relation
@@ -1462,9 +1460,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3.6.3" data-path="migrate.html">
+        <li class="chapter " data-level="4.3.6.3" data-path="../pg-es/migrate.html">
             
-                <a href="migrate.html">
+                <a href="../pg-es/migrate.html">
             
                     
                     DB 与 Es 数据迁移功能设计
@@ -1475,9 +1473,9 @@
             
         </li>
     
-        <li class="chapter active" data-level="4.3.6.4" data-path="research.html">
+        <li class="chapter " data-level="4.3.6.4" data-path="../pg-es/research.html">
             
-                <a href="research.html">
+                <a href="../pg-es/research.html">
             
                     
                     review log
@@ -1488,9 +1486,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3.6.5" data-path="searchview-structure.html">
+        <li class="chapter " data-level="4.3.6.5" data-path="../pg-es/searchview-structure.html">
             
-                <a href="searchview-structure.html">
+                <a href="../pg-es/searchview-structure.html">
             
                     
                     Search View Structure
@@ -1520,9 +1518,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.3.7.1" data-path="../pg-related/cms-support-data-type.html">
+        <li class="chapter " data-level="4.3.7.1" data-path="cms-support-data-type.html">
             
-                <a href="../pg-related/cms-support-data-type.html">
+                <a href="cms-support-data-type.html">
             
                     
                     pg数据类型alpha支持
@@ -1533,9 +1531,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.3.7.2" data-path="../pg-related/relation-db-design.html">
+        <li class="chapter active" data-level="4.3.7.2" data-path="relation-db-design.html">
             
-                <a href="../pg-related/relation-db-design.html">
+                <a href="relation-db-design.html">
             
                     
                     Model关系数据库设计
@@ -1618,7 +1616,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >review log</a>
+        <a href="../../.." >Model关系数据库设计</a>
     </h1>
 </div>
 
@@ -1633,134 +1631,300 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="review-log">review log</h3>
+                                <h1 id="model&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;">Model&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;</h1>
+<h4 id="&#x8868;&#x7ED3;&#x6784;">&#x8868;&#x7ED3;&#x6784;</h4>
+<p>&#x8868;&#x540D;
+ContentModelRelations</p>
+<p>&#x5B57;&#x6BB5;</p>
 <ul>
-<li>20191114<ul>
-<li>&#x5B9E;&#x73B0;pg-&gt;es&#x540C;&#x6B65;&#x6570;&#x636E;&#x7684;&#x65B9;&#x5F0F;&#x6709;&#x51E0;&#x79CD;<ul>
-<li>&#x57FA;&#x4E8E;&#x63D2;&#x4EF6;<ul>
-<li>&#x5E38;&#x89C1;&#x7684;&#x51E0;&#x4E2A;&#x63D2;&#x4EF6;&#x90FD;&#x9700;&#x8981;&#x5728;db&#x4E0A;&#x88C5;&#x63D2;&#x4EF6;&#xFF0C;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x4E0A;&#x4E0D;&#x592A;&#x5B9E;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;db&#x548C;es&#x5168;&#x90E8;&#x90FD;&#x4EA4;&#x7ED9;aws&#x6258;&#x7BA1;</li>
-<li>&#x4E00;&#x822C;&#x7684;&#x63D2;&#x4EF6;&#x4F7F;&#x7528;&#x65F6;&#x9488;&#x5BF9;db&#x4E2D;&#x5355;&#x8868;&#x5BF9;es&#x4E2D;&#x5355;index&#x7684;&#x540C;&#x6B65;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7684;&#x573A;&#x666F;&#x66F4;&#x52A0;&#x590D;&#x6742;&#xFF0C;&#x9700;&#x8981;&#x652F;&#x6301;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x805A;&#x5408;&#x540E;&#x5012;&#x5165;&#x5230;index</li>
+<li>id</li>
+<li>type<ul>
+<li>oneToOne</li>
+<li>oneToMany</li>
+<li>manyToMany</li>
 </ul>
 </li>
-<li>&#x57FA;&#x4E8E;&#x6846;&#x67B6;/&#x5E93;<ul>
-<li>laravel&#x6709;EloquentOrm+Scout&#x7684;&#x5E93;&#x53EF;&#x4EE5;&#x540C;&#x6B65;model&#x5230;es&#x4E0A;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;migrate&#x7684;&#x573A;&#x666F;&#xFF0C;&#x5728;node&#x4E2D;&#x4F3C;&#x4E4E;&#x6CA1;&#x627E;&#x5230;&#x6BD4;&#x8F83;&#x6210;&#x719F;&#x7684;&#x5E93;&#xFF0C;&#x6253;&#x901A;orm&#x548C;es</li>
-<li>&#x5982;&#x679C;&#x6709;&#x5E93;&#x53EF;&#x4EE5;&#x7528;&#xFF0C;&#x9700;&#x8981;&#x652F;&#x6301;&#x591A;&#x8868;&#x6570;&#x636E;&#x805A;&#x5408;&#x7684;&#x573A;&#x666F;</li>
+<li>description</li>
+<li>tableName</li>
 </ul>
-</li>
-<li>&#x81EA;&#x884C;&#x8BBE;&#x8BA1;&#x5B9E;&#x73B0;&#xFF08;&#x901A;&#x7528;&#x7684;&#x6E90;+&#x76EE;&#x6807;&#x6570;&#x636E;&#x540C;&#x6B65;&#x7B56;&#x7565;&#xFF09;<ul>
-<li>&#x57FA;&#x4E8E;queue<ul>
-<li>&#x628A;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x629B;&#x7ED9;queue&#xFF0C;&#x7531;queue&#x8C03;&#x5EA6;&#x6267;&#x884C;&#x540C;&#x6B65;&#x4EFB;&#x52A1;</li>
-</ul>
-</li>
-<li>&#x57FA;&#x4E8E;cronjob<ul>
-<li>&#x5B9A;&#x671F;&#x68C0;&#x67E5;DB&#x4E2D;&#x6709;&#x6CA1;&#x6709;&#x65B0;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5C31;&#x5199;&#x5165;es</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>&#x7531;&#x4E8E;&#x8003;&#x8651;&#x5230;&#x7B2C;&#x4E00;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x9879;&#x76EE;&#x7684;&#x5E95;&#x5C42;&#x8BBE;&#x65BD;&#x548C;&#x6280;&#x672F;&#x6808;&#x4E0D;&#x5408;&#x9002;&#xFF0C;&#x56E0;&#x6B64;&#x8FD8;&#x662F;&#x8003;&#x8651;&#x81EA;&#x884C;&#x8BBE;&#x8BA1;&#x5B9E;&#x73B0;&#x7684;&#x65B9;&#x5F0F;&#x3002;&#x5177;&#x4F53;&#x7684;&#x7B56;&#x7565;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x4E0B;&#x9762;es&#x5B98;&#x65B9;&#x5173;&#x4E8E;sync&#x7684;&#x6587;&#x7AE0;</li>
-</ul>
-</li>
-</ul>
-<h3 id="keyword-extend">keyword extend</h3>
+<h4 id="&#x6837;&#x4F8B;&#x6570;&#x636E;">&#x6837;&#x4F8B;&#x6570;&#x636E;</h4>
+<p>contentModel</p>
 <ul>
-<li>database sync/replication/transform</li>
-<li>replicated to Elasticsearch</li>
-<li>replication strategy</li>
-<li>data sync strategy</li>
-<li>change data capture</li>
-<li>ETL&#xFF08;extract transform load&#xFF09;</li>
+<li>Talent (contentModelId == 1)</li>
+<li>Experience (contentModelId == 2)</li>
+<li>Company (contentModelId == 3)</li>
+<li>Industry (contentModelId == 4)</li>
+<li>Location (contentModelId == 5)</li>
+<li>Role (contentModelId == 6)</li>
 </ul>
-<h3 id="reference">reference</h3>
+<p>&#x5173;&#x7CFB;&#x5B9E;&#x4F8B;</p>
+<ol>
+<li>Talent : Experience = 1 : n
+```
+// &#x5916;&#x952E;talentId&#x5E94;&#x8BE5;&#x548C;talent&#x653E;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5BF9;&#x4E8E;talent&#xFF0C;&#x201C;&#x5916;&#x201D;&#x5305;&#x542B;&#x7684;&#x610F;&#x601D;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x5185;&#x952E;id&#xFF0C;&#x548C;&#x4E00;&#x4E2A;&#x5916;&#x952E;talentId&#xFF0C;&#x5916;&#x952E;&#x662F;&#x7ED9;&#x522B;&#x7684;model&#x7528;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; Experience, Company, Industry, Role &#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x3002;</li>
+</ol>
+<p>{
+    id: 1,
+    type: &quot;oneToMany&quot;,
+    description: [
+        {
+            contentModelId: 1,
+            foreignKey: &apos;talentId&apos;,
+            alias: { 
+                contentModelId: 2,
+                contentModelAlias: &apos;experiences&apos;
+            }
+        },
+        {
+            contentModelId: 2,
+            foreignKey: null,
+            alias: { 
+                contentModelId: 1,
+                contentModelAlias: &apos;talent&apos;
+            }
+        }
+    ],
+    tableName: null
+}</p>
+<pre class="language-"><code>- &#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Experience&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x589E;&#x52A0;talentId&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x5916;&#x952E;&#xFF1B;
+- &#x5220;&#x9664;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Experience&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x5220;&#x9664;talentId&#x5B57;&#x6BB5;&#xFF1B;
+- &#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;
+
+2. Company : Industry = n : n
+</code></pre><p>{
+    id: 2,
+    type: &quot;manyToMany&quot;,
+    description: [
+        {
+            contentModelId: 3,
+            foreignKey: &apos;companyId&apos;,
+            alias: { 
+                contentModelId: 4,
+                contentModelAlias: &apos;industries&apos;
+            }
+        },
+        {
+            contentModelId: 4,
+            foreignKey: &apos;industryId&apos;,
+            alias: { 
+                contentModelId: 3,
+                contentModelAlias: &apos;companies&apos;
+            }
+        }
+    ],
+    tableName: &apos;Companies<em>Industries</em>${now()}&apos;
+}</p>
+<pre class="language-"><code>- &#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x521B;&#x5EFA;`Companies_Industries_${now()}`&#x5173;&#x7CFB;&#x8868;&#xFF0C;&#x4E14;&#x8BE5;&#x5173;&#x7CFB;&#x8868;&#x4EE5; (companyId + industryId) &#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF1B;
+- &#x5220;&#x9664;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5220;&#x9664;`Companies_Industries_${now()}`&#x5173;&#x7CFB;&#x8868;&#xFF1B;
+- &#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;
+
+3. Company : Location = 1 : 1
+</code></pre><p>{
+    id: 3,
+    type: &quot;oneToOne&quot;,
+    description: [
+        {
+            contentModelId: 3,
+            foreignKey: null,
+            alias: { 
+                contentModelId: 5,
+                contentModelAlias: &apos;location&apos;
+            }
+        },
+        {
+            contentModelId: 5,
+            foreignKey: &apos;locationId&apos;,
+            alias: { 
+                contentModelId: 3,
+                contentModelAlias: &apos;company&apos;
+            }
+        }
+    ],
+    tableName: null
+}</p>
+<pre class="language-"><code>- &#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Company&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x589E;&#x52A0;locationId&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x5916;&#x952E;&#xFF1B;
+- &#x5220;&#x9664;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Company&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x5220;&#x9664;locationId&#x5B57;&#x6BB5;&#xFF1B;
+- &#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;
+
+4. Talent : Company : Role = n : n : n
+</code></pre><p>// relationAlias &#x662F;&#x7CFB;&#x7EDF;&#x6839;&#x636E;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x591A;&#x4E2A; alias &#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0D;&#x9700;&#x8981;&#x5F00;&#x653E;&#x7ED9;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;
+{
+    id: 4,
+    type: &quot;manyToMany&quot;,
+    description: [
+        {
+            contentModelId: 1,
+            foreignKey: &apos;talentId&apos;,
+            aliases: [
+                { 
+                    contentModelId: 3,
+                    contentModelAlias: &apos;companies&apos;
+                },
+                { 
+                    contentModelId: 6,
+                    contentModelAlias: &apos;roles&apos;
+                }
+            ],
+            relationAlias: &apos;company<em>role_set&apos;
+        },
+        {
+            contentModelId: 3,
+            foreignKey: &apos;companyId&apos;,
+            aliases: [
+                { 
+                    contentModelId: 1,
+                    contentModelAlias: &apos;talents&apos;
+                },
+                { 
+                    contentModelId: 6,
+                    contentModelAlias: &apos;roles&apos;
+                }
+            ],
+            relationAlias: &apos;talent_role_set&apos;
+        },
+        {
+            contentModelId: 6,
+            foreignKey: &apos;roleId&apos;,
+            aliases: [
+                { 
+                    contentModelId: 1,
+                    contentModelAlias: &apos;talents&apos;
+                },
+                { 
+                    contentModelId: 3,
+                    contentModelAlias: &apos;companies&apos;
+                }
+            ],
+            relationAlias: &apos;talent_company_set&apos;
+        }
+    ],
+    tableName: &apos;Talents_Companies_Roles</em>${now()}&apos;
+}
+```</p>
 <ul>
-<li><p>201911&#x6708;&#x4E4B;&#x524D;&#x5B8F;&#x658C;&#x3001;&#x7C73;&#x83B1;&#x7684;&#x4E00;&#x4E9B;&#x65B9;&#x6848;&#x8BBE;&#x8BA1;</p>
+<li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x521B;&#x5EFA;<code>Talents_Companies_Roles_${now()}</code>&#x5173;&#x7CFB;&#x8868;&#xFF0C;&#x4E14;&#x8BE5;&#x5173;&#x7CFB;&#x8868;&#x4EE5; (talentId + companyId + roleId) &#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF1B;</li>
+<li>&#x5220;&#x9664;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5220;&#x9664;<code>Talents_Companies_Roles_${now()}</code>&#x5173;&#x7CFB;&#x8868;&#xFF1B;</li>
+<li>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</li>
+</ul>
+<h4 id="issues">issues</h4>
 <ul>
-<li><a href="https://docs.google.com/document/d/19XnxKGw7KMBW_o7IWM1pCR179HdqWLilxYgk7L43c-A/edit" target="_blank">https://docs.google.com/document/d/19XnxKGw7KMBW_o7IWM1pCR179HdqWLilxYgk7L43c-A/edit</a><ul>
-<li>&#x9700;&#x6C42;&#x63CF;&#x8FF0;</li>
+<li>&#x4E4B;&#x524D;&#x7684;&#x8868;&#x8BBE;&#x8BA1;&#x89C1;&#xFF0C;<a href="http://wiki.inceptionpad.cn/4-projects/gig-economy/database/db-design.html&#xFF0C;&#x66F4;&#x65B0;&#x4E3B;&#x8981;&#x6709;" target="_blank">http://wiki.inceptionpad.cn/4-projects/gig-economy/database/db-design.html&#xFF0C;&#x66F4;&#x65B0;&#x4E3B;&#x8981;&#x6709;</a><ul>
+<li>&#x628A;<code>sourceContentModelId</code>&#x548C;<code>targetContentModelId</code>&#x6539;&#x6210;&#x4E86;<code>contentModelId []</code><ul>
+<li>&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x4E0B;&#xFF0C;&#x5173;&#x8054;&#x7684;&#x8868;&#x53EF;&#x80FD;&#x8D85;&#x8FC7;2&#x4E2A;&#xFF0C;&#x4F8B;&#x5982;user&#x3001;org&#x3001;role&#x5206;&#x522B;&#x4E3A;&#x4E09;&#x5F20;&#x8868;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x5173;&#x7CFB;&#x8868;User_Org_Role&#x5206;&#x522B;&#x4EE5;userId&#x3001;orgId&#x3001;roleId&#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x4E2A;user&#x5728;org&#x4E2D;&#x7684;role&#xFF0C;&#x5E76;&#x4E14;role&#x53EF;&#x80FD;&#x662F;&#x591A;&#x91CD;&#x7684;&#x3002;&#x4E3A;&#x4E86;&#x652F;&#x6301;&#x8FD9;&#x79CD;&#x6269;&#x5C55;&#x6027;&#x628A;<code>contentModelId</code>&#x8BBE;&#x8BA1;&#x6210;[]&#x7684;&#x5F62;&#x5F0F;&#x3002;</li>
 </ul>
 </li>
-<li><a href="https://docs.google.com/document/d/1YYG8ptvuzuvShioIE168fuLj06N_ptCjL0_4R1Qln7M/edit" target="_blank">https://docs.google.com/document/d/1YYG8ptvuzuvShioIE168fuLj06N_ptCjL0_4R1Qln7M/edit</a><ul>
-<li>&#x57FA;&#x4E8E;lambda+sqs&#x7684;&#x540C;&#x6B65;&#x65B9;&#x6848;</li>
+<li>&#x65B0;&#x589E;<code>fkFieldName []</code><ul>
+<li>&#x8BE5;&#x5B57;&#x6BB5;&#x8868;&#x793A;&#x5728;db&#x4E2D;&#x5916;&#x952E;&#x7684;fieldName&#xFF0C;&#x4F8B;&#x5982;talentId&#x3001;companyId&#xFF1B;&#x5982;&#x679C;&#x5BF9;&#x5E94;&#x7684;model&#x6CA1;&#x6709;&#x5916;&#x952E;&#xFF0C;&#x5219;&#x5728;&#x5B58;&#x50A8;&#x65F6;&#x7559;&#x7A7A;</li>
+<li>&#x5F53;model&#x7684;relation&#x521B;&#x5EFA;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;model&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x65B0;&#x589E;&#x5916;&#x952E;&#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x628A;&#x8BE5;&#x5916;&#x952E;&#x5B57;&#x6BB5;&#x4FDD;&#x5B58;&#x5728;<code>fkFieldName</code>&#x4E2D;&#xFF0C;&#x5F53;relation&#x88AB;&#x5220;&#x9664;&#x65F6;&#xFF0C;model&#x5BF9;&#x5E94;&#x7684;&#x5916;&#x952E;&#x4E5F;&#x8981;&#x5220;&#x9664;</li>
+<li>&#x7531;&#x4E8E;&#x5916;&#x952E;&#x5B57;&#x6BB5;&#x662F;&#x521B;&#x5EFA;relation&#x65F6;&#x521B;&#x5EFA;&#x7684;&#xFF0C;&#x975E;&#x7528;&#x6237;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x7684;fields&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x4FDD;&#x5B58;&#x5728;ContentModelFields&#x8868;&#x4E2D;&#xFF0C;&#x76EE;&#x524D;&#x4E5F;&#x6682;&#x65F6;&#x6CA1;&#x770B;&#x5230;&#x4FDD;&#x5B58;&#x5728;ContentModelFields&#x8868;&#x4E2D;&#x7684;&#x5FC5;&#x8981;</li>
 </ul>
 </li>
-<li><a href="https://drive.google.com/drive/u/1/folders/1X-1URYrUy_tyx7nNfzmuW86Yg8M_zTHP" target="_blank">https://drive.google.com/drive/u/1/folders/1X-1URYrUy_tyx7nNfzmuW86Yg8M_zTHP</a><ul>
-<li>&#x57FA;&#x4E8E;lambda+sqs&#x540C;&#x6B65;&#x65B9;&#x6848;&#x56FE;&#x793A;</li>
+<li>&#x65B0;&#x589E;<code>fkField []</code><ul>
+<li>&#x8BE5;&#x5B57;&#x6BB5;&#x8868;&#x793A;&#x540E;&#x7EED;&#x67E5;&#x8BE2;&#x6216;&#x7F16;&#x8F91;model&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x5728;&#x5173;&#x8054;&#x67E5;&#x8BE2;&#x4E2D;&#x548C;&#x5F53;&#x524D;model&#x6709;&#x5173;&#x7CFB;&#x7684;&#x5176;&#x4ED6;model&#x6570;&#x636E;&#x7684;&#x5B57;&#x6BB5;&#x8868;&#x793A;<ul>
+<li>&#x4F8B;&#x5982;&#x7C7B;&#x4F3C;&#x5728;strapi&#x4E2D;&#x7684;&#x4F7F;&#x7528;&#x573A;&#x666F;&#xFF0C;&#x7F16;&#x8F91;talnet&#x65F6;&#x540C;&#x65F6;&#x7F16;&#x8F91;&#x548C;&#x8BE5;talent&#x76F8;&#x5173;&#x8054;&#x7684;experience&#xFF0C;&#x5728;&#x9875;&#x9762;&#x4E0A;&#x5448;&#x73B0;&#x65F6;&#x7528;<code>experiences</code>&#x7684;&#x5B57;&#x6BB5;&#x8868;&#x793A;</li>
+<li>&#x53E6;&#x4E00;&#x79CD;&#x573A;&#x666F;&#x662F;&#x4E00;&#x4E2A;model&#x5173;&#x8054;&#x5230;&#x53E6;&#x4E00;model&#x591A;&#x6B21;&#xFF0C;&#x5173;&#x8054;&#x65F6;&#x5916;&#x952E;&#x4F7F;&#x7528;&#x4E0D;&#x540C;fieldName&#x7684;&#x573A;&#x666F;&#xFF1B;&#x5728;AvidentHealth&#x4E2D;&#xFF0C;PatientProfile&#x8868;&#x6709;userId&#x548C;createdByUserId&#x4E24;&#x4E2A;&#x5B57;&#x6BB5;&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;&#x5173;&#x8054;&#x8BE5;PatientProfile&#x7684;user&#x548C;&#x521B;&#x5EFA;&#x8BE5;PatientProfile&#x7684;user&#xFF0C;&#x5728;&#x5173;&#x8054;&#x67E5;&#x8BE2;&#x4E2D;&#x5206;&#x522B;&#x7528;<code>user</code>&#x548C;<code>createdByUser</code>&#x6765;&#x8868;&#x793A;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x6570;&#x636E;</li>
 </ul>
 </li>
-<li><a href="https://docs.google.com/document/d/1m3D8aDxb7UYBGczY1_KgvDy_HHvpeELvfAZDBtGMxnU/edit#" target="_blank">https://docs.google.com/document/d/1m3D8aDxb7UYBGczY1_KgvDy_HHvpeELvfAZDBtGMxnU/edit#</a><ul>
-<li>laravel&#x7684;EloquentOrm+Scout&#x540C;&#x6B65;&#x63D2;&#x4EF6;&#xFF0C;<a href="https://laravel.com/docs/5.8/scout#introduction" target="_blank">https://laravel.com/docs/5.8/scout#introduction</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p><a href="https://www.elastic.co/blog/found-keeping-elasticsearch-in-sync&#xFF08;es&#x5B98;&#x65B9;&#x7684;introduction&#xFF09;" target="_blank">https://www.elastic.co/blog/found-keeping-elasticsearch-in-sync&#xFF08;es&#x5B98;&#x65B9;&#x7684;introduction&#xFF09;</a></p>
-<ul>
-<li>&#x6027;&#x80FD;&#x7684;&#x6765;&#x6E90;<ul>
-<li>http&#x8BF7;&#x6C42;&#x8FC7;&#x591A;&#x4F1A;&#x5F71;&#x54CD;&#x5BA2;&#x6237;&#x7AEF;&#x6027;&#x80FD;</li>
-<li>update&#x5BF9;&#x4E8E;es&#x662F;&#x6027;&#x80FD;&#x8017;&#x8D39;&#x6BD4;&#x8F83;&#x9AD8;&#x7684;&#xFF0C;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;bulk api&#x8FDB;&#x884C;&#x64CD;&#x4F5C;</li>
-<li>&#x961F;&#x5217;&#x53EF;&#x4EE5;&#x9650;&#x5236;&#x7CFB;&#x7EDF;&#x74F6;&#x9888;&#xFF0C;&#x9632;&#x6B62;&#x6253;&#x7206;es</li>
-</ul>
-</li>
-<li>&#x57FA;&#x4E8E;queue&#x7684;&#x4F7F;&#x7528;</li>
-<li>&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;+&#x6279;&#x91CF;&#x66F4;&#x65B0;<ul>
-<li>&#x4E00;&#x822C;&#x5904;&#x7406;&#x53EA;&#x9700;&#x8981;&#x63D2;&#x5165;&#x7684;&#x8D44;&#x6E90;</li>
-<li>&#x9519;&#x8BEF;&#x5904;&#x7406;&#x3001;&#x91CD;&#x8BD5;&#x7B49;&#xFF0C;&#x90FD;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x6765;&#x7EF4;&#x62A4;</li>
-</ul>
-</li>
-<li>&#x961F;&#x5217;&#x7684;&#x95EE;&#x9898;<ul>
-<li>&#x5168;&#x91CF;index</li>
+<li>&#xFF1F;&#x5B9E;&#x73B0;&#x65F6;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x5355;&#x590D;&#x6570;&#x7684;&#x8868;&#x793A;&#x65B9;&#x5F0F;<ul>
+<li>&#x5728;oneToOne&#x548C;oneToMany&#x7684;relation&#x4E2D;&#xFF0C;&#x5B58;&#x5728;&#x5355;&#x6570;&#x8868;&#x793A;</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a href="https://www.elastic.co/blog/how-to-keep-elasticsearch-synchronized-with-a-relational-database-using-logstash" target="_blank">https://www.elastic.co/blog/how-to-keep-elasticsearch-synchronized-with-a-relational-database-using-logstash</a></p>
-<ul>
-<li>&#x57FA;&#x4E8E;logstash&#x7684;&#x5B9A;&#x671F;&#x8F6E;&#x8BAD;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x9700;&#x8981;&#x88C5;&#x63D2;&#x4EF6;</li>
-<li>&#x6700;&#x6709;&#x4EF7;&#x503C;&#x7684;&#x70B9;&#xFF0C;&#x8BA8;&#x8BBA;&#x4E86;&#x83B7;&#x53D6;&#x9700;&#x8981;&#x540C;&#x6B65;&#x7684;&#x6570;&#x636E;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;<ul>
-<li>(UNIX_TIMESTAMP(modification_time) &gt; :sql_last_value AND modification_time &lt; NOW()) ORDER BY modification_time ASC</li>
+</ul>
+</li>
+<li>&#x5916;&#x952E;&#x7EA6;&#x675F;&#x8BBE;&#x7F6E;<ul>
+<li>oneToOne<ul>
+<li><code>ON DELETE SET NULL ON UPDATE CASCADE</code>&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x7AEF;&#x5220;&#x9664;&#x65F6;&#xFF0C;&#x53E6;&#x4E00;&#x7AEF;&#x628A;&#x5916;&#x952E;&#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;null&#xFF0C;&#x5982;&#x679C;&#x5173;&#x8054;&#x7684;&#x4E3B;&#x952E;&#x66F4;&#x65B0;&#xFF0C;&#x5916;&#x952E;&#x4E5F;&#x540C;&#x65F6;&#x66F4;&#x65B0;</li>
+</ul>
+</li>
+<li>oneToMany<ul>
+<li><code>ON DELETE SET NULL ON UPDATE CASCADE</code>&#xFF0C;&#x8868;&#x793A;&#x4E00;&#x7AEF;&#x5220;&#x9664;&#x65F6;&#xFF0C;&#x53E6;&#x4E00;&#x7AEF;&#x628A;&#x5916;&#x952E;&#x7684;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;null&#xFF0C;&#x5982;&#x679C;&#x5173;&#x8054;&#x7684;&#x4E3B;&#x952E;&#x66F4;&#x65B0;&#xFF0C;&#x5916;&#x952E;&#x4E5F;&#x540C;&#x65F6;&#x66F4;&#x65B0;</li>
+</ul>
+</li>
+<li>manyToMany<ul>
+<li><code>ON DELETE CASCADE ON UPDATE CASCADE</code>&#xFF0C;&#x8868;&#x793A;&#x4EFB;&#x4F55;&#x4E00;&#x7AEF;&#x5220;&#x9664;&#x65F6;&#xFF0C;&#x628A;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x4E5F;&#x5220;&#x9664;&#xFF0C;&#x5982;&#x679C;&#x5173;&#x8054;&#x7684;&#x4E3B;&#x952E;&#x66F4;&#x65B0;&#xFF0C;&#x5916;&#x952E;&#x4E5F;&#x540C;&#x65F6;&#x66F4;&#x65B0;</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a href="https://stackoverflow.com/questions/43688180/simplest-way-to-get-data-from-aws-mysql-rds-to-aws-elasticsearch" target="_blank">https://stackoverflow.com/questions/43688180/simplest-way-to-get-data-from-aws-mysql-rds-to-aws-elasticsearch</a></p>
-<ul>
-<li>&#x8BA8;&#x8BBA;&#x662F;&#x5426;&#x6709;aws&#x539F;&#x751F;&#x540C;&#x6B65;pg-es&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#xFF0C;Here&apos;s a good article explaining how to connect it all together, namely:<ul>
-<li>how to stream RDS data into a Kinesis Stream</li>
-<li>configuring a Lambda function to handle the stream</li>
-<li>push the data to your AWS ES instance</li>
+<li>&#x4E00;&#x5BF9;&#x4E00;&#x3001;&#x4E00;&#x5BF9;&#x591A;&#x3001;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x5728;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x8BBE;&#x8BA1;<ul>
+<li>&#x53C2;&#x8003;<ul>
+<li><a href="https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de" target="_blank">https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de</a></li>
+<li><a href="https://www.ntu.edu.sg/home/ehchua/programming/sql/Relational_Database_Design.html" target="_blank">https://www.ntu.edu.sg/home/ehchua/programming/sql/Relational_Database_Design.html</a></li>
+<li><a href="https://launchschool.com/books/sql/read/table_relationships" target="_blank">https://launchschool.com/books/sql/read/table_relationships</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2019/02/orm-tutorial.html" target="_blank">http://www.ruanyifeng.com/blog/2019/02/orm-tutorial.html</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a href="https://www.quora.com/What-is-the-best-way-to-sync-Postgres-and-ElasticSearch" target="_blank">https://www.quora.com/What-is-the-best-way-to-sync-Postgres-and-ElasticSearch</a></p>
-<ul>
-<li><a href="https://github.com/debezium/debezium&#xFF08;change" target="_blank">https://github.com/debezium/debezium&#xFF08;change</a> data capture&#x5E73;&#x53F0;&#xFF09;</li>
-<li><a href="https://github.com/appbaseio/abc&#xFF08;appbase&#x7684;&#x547D;&#x4EE4;&#x884C;&#x540C;&#x6B65;&#x5DE5;&#x5177;&#xFF0C;&#x4F46;&#x53EA;&#x662F;&#x5B8C;&#x6210;&#x5355;&#x6B21;&#x540C;&#x6B65;&#xFF09;" target="_blank">https://github.com/appbaseio/abc&#xFF08;appbase&#x7684;&#x547D;&#x4EE4;&#x884C;&#x540C;&#x6B65;&#x5DE5;&#x5177;&#xFF0C;&#x4F46;&#x53EA;&#x662F;&#x5B8C;&#x6210;&#x5355;&#x6B21;&#x540C;&#x6B65;&#xFF09;</a></li>
-<li><a href="https://www.elastic.co/products/logstash&#xFF08;logstash&#x4E13;&#x95E8;&#x5C31;&#x662F;&#x505A;&#x8FD9;&#x5757;&#x4E1C;&#x897F;&#xFF09;" target="_blank">https://www.elastic.co/products/logstash&#xFF08;logstash&#x4E13;&#x95E8;&#x5C31;&#x662F;&#x505A;&#x8FD9;&#x5757;&#x4E1C;&#x897F;&#xFF09;</a></li>
+<li>&#xFF1F;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x8868;&#x662F;&#x7528;&#x591A;&#x4E2A;&#x5916;&#x952E;&#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF0C;&#x8FD8;&#x662F;&#x7528;&#x4E00;&#x4E2A;&#x81EA;&#x589E;id&#x4F5C;&#x4E3A;&#x81EA;&#x589E;&#x4E3B;&#x952E;<ul>
+<li>&#x53C2;&#x8003;<ul>
+<li><a href="https://stackoverflow.com/questions/2190272/sql-many-to-many-table-primary-key" target="_blank">https://stackoverflow.com/questions/2190272/sql-many-to-many-table-primary-key</a></li>
+<li><a href="https://stackoverflow.com/questions/790334/sql-do-you-need-an-auto-incremental-primary-key-for-many-many-tables" target="_blank">https://stackoverflow.com/questions/790334/sql-do-you-need-an-auto-incremental-primary-key-for-many-many-tables</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Associative_entity" target="_blank">https://en.wikipedia.org/wiki/Associative_entity</a></li>
 </ul>
 </li>
-<li><p><a href="https://www.quora.com/How-do-I-sync-data-between-PostgreSQL-and-Elasticsearch" target="_blank">https://www.quora.com/How-do-I-sync-data-between-PostgreSQL-and-Elasticsearch</a></p>
-<ul>
-<li>Batch Sync: Write an application/script to pull the data from PosgreSQL to index into Elasticsearch. You can schedule this job to be executed at a specific time you wish.</li>
-<li>Real-time Sync: Right after you insert/update a record into PostgreSQL successfully, you send a request to index/update this record to Elasticsearch. This is often done with a task queue system, like Celery.</li>
 </ul>
 </li>
-<li><p><a href="http://hood.ie/blog/beyond-progressive-web-apps-part-2.html" target="_blank">http://hood.ie/blog/beyond-progressive-web-apps-part-2.html</a></p>
-<ul>
-<li>&#x4F7F;&#x7528;&#x4E00;&#x5F20;&#x72EC;&#x7ACB;&#x7684;&#x8868;&#xFF0C;&#x6765;&#x8BB0;&#x5F55;&#x66F4;&#x65B0;&#x7684;id&#xFF0C;&#x7531;client&#x90A3;&#x8FB9;&#x8FDB;&#x884C;&#x62C9;&#x53D6;&#xFF1B;&#x548C;&#x8F6E;&#x8BAD;&#x62C9;&#x53D6;&#x662F;&#x53E6;&#x4E00;&#x79CD;&#x6A21;&#x5F0F;</li>
+<li>&#xFF1F;&#x662F;&#x5426;&#x5141;&#x8BB8;&#x4E24;&#x4E2A;&#x6A21;&#x578B;&#x4E4B;&#x95F4;&#x7684;relation&#x521B;&#x5EFA;&#x591A;&#x6B21;<ul>
+<li>&#x7406;&#x8BBA;&#x4E0A;&#x5141;&#x8BB8;&#xFF0C;&#x5E76;&#x4E14;&#x4E5F;&#x6709;&#x8FD9;&#x6837;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x4F46;&#x662F;&#x8981;&#x505A;&#x597D;<code>fkFieldName</code>&#x3001;<code>fkField</code>&#x3001;<code>tableName</code>&#x7684;&#x91CD;&#x590D;&#x6821;&#x9A8C;</li>
 </ul>
 </li>
-<li><p><a href="https://stackoverflow.com/questions/39667292/postgres-with-elasticsearch-keep-in-sync-nodejs" target="_blank">https://stackoverflow.com/questions/39667292/postgres-with-elasticsearch-keep-in-sync-nodejs</a></p>
-<ul>
-<li>&#x7528;redis&#x7684;pub/sub&#x6A21;&#x5F0F;&#x5B9E;&#x73B0;</li>
-<li>&#x81EA;&#x884C;&#x7528;cron-job&#x5B9E;&#x73B0;</li>
+<li>&#xFF1F;&#x662F;&#x5426;&#x9700;&#x8981;manyToOne&#x7684;relation<ul>
+<li>&#x548C;oneToMany&#x7684;&#x533A;&#x522B;&#x53EA;&#x662F;&#x65B9;&#x5411;&#x76F8;&#x53CD;&#x800C;&#x5DF2;</li>
 </ul>
 </li>
-<li><p><a href="https://www.jianshu.com/p/629f698a7c58" target="_blank">https://www.jianshu.com/p/629f698a7c58</a></p>
-<ul>
-<li>&#x51E0;&#x79CD;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x63D2;&#x4EF6;&#x7684;&#x540C;&#x6B65;&#x6570;&#x636E;&#x65B9;&#x6848;</li>
+<li>&#xFF1F;&#x662F;&#x5426;&#x9700;&#x8981;oneWay&#x548C;manyWay&#x7684;&#x5355;&#x5411;relation<ul>
+<li>&#x8868;&#x793A;&#x5355;&#x5411;&#x5173;&#x7CFB;&#xFF1B;&#x4F8B;&#x5982;company&#x548C;industry&#x7684;&#x5173;&#x7CFB;&#x5982;&#x679C;manyWay&#xFF0C;&#x8868;&#x793A;&#x5173;&#x7CFB;&#x5355;&#x5411;&#xFF0C;&#x5728;&#x7F16;&#x8F91;company&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x5173;&#x8054;&#x7684;industry&#xFF0C;&#x4F46;&#x662F;&#x5728;&#x7F16;&#x8F91;industry&#x65F6;&#x65E0;&#x6CD5;&#x9009;&#x62E9;&#x5173;&#x8054;&#x7684;company&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x521B;&#x5EFA;index&#x65F6;&#xFF0C;company index&#x4E0B;&#x6709;industries&#x5B57;&#x6BB5;&#xFF0C;&#x4F46;&#x662F;industry index&#x4E0B;&#x6CA1;&#x6709;companies&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li>&#xFF1F;&#x662F;&#x5426;&#x652F;&#x6301;&#x5728;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x8868;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x5B57;&#x6BB5;</li>
+<li>&#xFF1F;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x628A;&#x6240;&#x6709;&#x5173;&#x7CFB;&#xFF08;1:1&#x3001;1:m&#x3001;m:n&#xFF09;&#x90FD;&#x62BD;&#x6210;&#x72EC;&#x7ACB;&#x7684;&#x5173;&#x7CFB;&#x8868;&#xFF08;associative/junction table&#xFF09;<ul>
+<li>&#x597D;&#x5904;<ul>
+<li>&#x4E0D;&#x9700;&#x8981;&#x4FEE;&#x6539;model&#x672C;&#x8EAB;&#x7684;&#x6570;&#x636E;&#x8868;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x65B0;&#x589E;&#x5173;&#x7CFB;&#x8868;</li>
+<li>&#x51E0;&#x79CD;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x7684;&#x6280;&#x672F;&#x5B9E;&#x73B0;&#x7EDF;&#x4E00;&#xFF0C;&#x53EA;&#x662F;&#x5728;&#x5916;&#x952E;&#x4E0A;&#x7684;&#x552F;&#x4E00;&#x7EA6;&#x675F;&#x4E0D;&#x540C;<ul>
+<li>1:1&#xFF0C;&#x4E24;&#x4FA7;&#x5916;&#x952E;&#x90FD;&#x552F;&#x4E00;</li>
+<li>1:m&#xFF0C;&#x53F3;&#x4FA7;&#x5916;&#x952E;&#x552F;&#x4E00;</li>
+<li>m:n&#xFF0C;&#x4E24;&#x4FA7;&#x5916;&#x952E;&#x7684;&#x7EC4;&#x5408;&#x552F;&#x4E00;</li>
+</ul>
+</li>
+<li>&#x51E0;&#x79CD;&#x5173;&#x8054;&#x5173;&#x7CFB;&#x53EF;&#x4EE5;&#x968F;&#x610F;&#x66F4;&#x6539;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x5173;&#x7CFB;&#x8868;&#x4E2D;&#x5916;&#x952E;&#x552F;&#x4E00;&#x6027;&#xFF08;&#x6307;&#x5916;&#x952E;&#x7684;&#x503C;&#x662F;&#x5426;&#x53EA;&#x80FD;&#x51FA;&#x73B0;&#x4E00;&#x6B21;&#xFF09;&#xFF0C;&#x4F46;&#x662F;&#x5197;&#x4F59;&#x7684;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x9700;&#x8981;&#x6E05;&#x7406;<ul>
+<li>1:1 -&gt; 1:m&#xFF0C;&#x5220;&#x9664;&#x5DE6;&#x4FA7;&#x7684;&#x5916;&#x952E;&#x552F;&#x4E00;&#x6027;</li>
+<li>1:m -&gt; 1:1&#xFF0C;&#x589E;&#x52A0;&#x53F3;&#x4FA7;&#x5916;&#x952E;&#x7684;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x5E76;&#x628A;&#x591A;&#x4F59;&#x7684;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5220;&#x9664;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x7B2C;&#x4E00;&#x6761;</li>
+<li>1:1 -&gt; m:n&#xFF0C;&#x5220;&#x9664;&#x4E24;&#x4FA7;&#x5916;&#x952E;&#x552F;&#x4E00;&#x6027;</li>
+<li>m:n -&gt; 1:1&#xFF0C;&#x589E;&#x52A0;&#x4E24;&#x4FA7;&#x5916;&#x952E;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x5E76;&#x628A;&#x591A;&#x4F59;&#x7684;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5220;&#x9664;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x7B2C;&#x4E00;&#x6761;</li>
+<li>1:m -&gt; m:n&#xFF0C;&#x5220;&#x9664;&#x53F3;&#x4FA7;&#x7684;&#x5916;&#x952E;&#x552F;&#x4E00;&#x6027;</li>
+<li>m:n -&gt; 1:m&#xFF0C;&#x589E;&#x52A0;&#x53F3;&#x4FA7;&#x7684;&#x5916;&#x952E;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x5E76;&#x628A;&#x591A;&#x4F59;&#x7684;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5220;&#x9664;&#xFF0C;&#x53EA;&#x4FDD;&#x7559;&#x7B2C;&#x4E00;&#x6761;</li>
+</ul>
+</li>
+<li>&#x540E;&#x7EED;&#x505A;model&#x6570;&#x636E;&#x7684;reversion&#x65F6;&#xFF0C;&#x7531;&#x4E8E;model&#x7684;&#x6570;&#x636E;&#x8868;&#x672C;&#x8EAB;&#x6CA1;&#x6709;&#x52A0;&#x5165;&#x5916;&#x952E;&#x7B49;&#x4F9D;&#x8D56;&#xFF0C;&#x8BBE;&#x8BA1;history&#x8868;&#x4F1A;&#x7A0D;&#x5FAE;&#x7EDF;&#x4E00;&#x70B9;<ul>
+<li>model&#x6570;&#x636E;&#x8868; + history&#x8868;</li>
+<li>&#x8868;&#x793A;relation&#x7684;&#x6570;&#x636E;&#x8868; + relation history&#x8868;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x574F;&#x5904;<ul>
+<li>&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x4E2D;&#x4E00;&#x822C;&#x4E00;&#x5BF9;&#x591A;&#x7684;&#x5173;&#x7CFB;&#x6700;&#x591A;&#xFF0C;&#x5982;&#x679C;&#x5173;&#x7CFB;&#x90FD;&#x8868;&#x793A;&#x5728;&#x72EC;&#x7ACB;&#x5173;&#x7CFB;&#x8868;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x7EF4;&#x62A4;&#x7684;&#x4E2D;&#x95F4;&#x8868;&#x4F1A;&#x591A;&#x5F88;&#x591A;</li>
+<li>&#x65E0;&#x6CD5;&#x5728;&#x5BFC;&#x5165;&#x5230;ER&#x56FE;&#x65F6;&#x8868;&#x793A;&#x6B63;&#x786E;&#x7684;&#x5173;&#x7CFB;</li>
+<li>&#x8FC7;&#x591A;&#x7684;&#x4E2D;&#x95F4;&#x8868;&#x5E76;&#x8868;&#x67E5;&#x8BE2;&#x65F6;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#xFF0C;&#x4F46;&#x662F;&#x6CA1;&#x6709;&#x5927;&#x89C4;&#x6A21;&#x6D4B;&#x8BD5;&#x8FC7;</li>
+<li>&#x4E0D;&#x592A;&#x7B26;&#x5408;&#x5E38;&#x89C1;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5173;&#x7CFB;&#x8BBE;&#x8BA1;&#x65B9;&#x5F0F;<ul>
+<li>&#x867D;&#x7136;&#x662F;&#x505A;&#x7684;&#x9ED1;&#x76D2;headless CMS&#xFF0C;&#x4F46;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x5E0C;&#x671B;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x4E0A;&#x5C3D;&#x91CF;&#x4F7F;&#x7528;&#x901A;&#x7528;&#x7684;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x6837;&#x540E;&#x7EED;&#x5982;&#x679C;&#x4E0D;&#x7528;&#x6211;&#x4EEC;&#x7684;CMS&#xFF0C;&#x8FD8;&#x662F;&#x80FD;&#x628A;DB&#x5BFC;&#x51FA;&#x6765;&#x81EA;&#x5DF1;&#x5F00;&#x53D1;&#xFF0C;&#x5E76;&#x4E14;&#x901A;&#x7528;&#x7684;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x5728;&#x6027;&#x80FD;&#x548C;&#x53EF;&#x7528;&#x6027;&#x4E0A;&#x662F;&#x6709;&#x8FC7;&#x9A8C;&#x8BC1;&#x7684;&#xFF1B;&#x5E76;&#x4E14;CMS&#x90E8;&#x5206;&#x4F5C;&#x4E3A;&#x540E;&#x7EED;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x57FA;&#x7840;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;&#x9700;&#x8981;&#x9075;&#x5FAA;&#x4E00;&#x4E2A;&#x8F83;&#x5E38;&#x7528;&#x7684;best practice</li>
+<li>&#x5E38;&#x89C1;&#x6570;&#x636E;&#x5E93;&#x5173;&#x7CFB;&#x8BBE;&#x8BA1;&#x53C2;&#x8003;<ul>
+<li><a href="https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de" target="_blank">https://stackoverflow.com/questions/7296846/how-to-implement-one-to-one-one-to-many-and-many-to-many-relationships-while-de</a></li>
+<li><a href="https://www.ntu.edu.sg/home/ehchua/programming/sql/Relational_Database_Design.html" target="_blank">https://www.ntu.edu.sg/home/ehchua/programming/sql/Relational_Database_Design.html</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x53C2;&#x8003;<ul>
+<li><a href="https://stackoverflow.com/questions/50767249/what-are-the-pros-and-cons-of-associative-table" target="_blank">https://stackoverflow.com/questions/50767249/what-are-the-pros-and-cons-of-associative-table</a></li>
+<li><a href="https://stackoverflow.com/questions/843772/can-a-junction-table-join-table-also-be-used-for-a-one-to-many-relationship" target="_blank">https://stackoverflow.com/questions/843772/can-a-junction-table-join-table-also-be-used-for-a-one-to-many-relationship</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1791,14 +1955,10 @@
 
             
                 
-                <a href="migrate.html" class="navigation navigation-prev " aria-label="Previous page: DB 与 Es 数据迁移功能设计">
+                <a href="cms-support-data-type.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: pg数据类型alpha支持">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="searchview-structure.html" class="navigation navigation-next " aria-label="Next page: Search View Structure">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -1807,7 +1967,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"review log","level":"4.3.6.4","depth":3,"next":{"title":"Search View Structure","level":"4.3.6.5","depth":3,"path":"4-projects/gig-economy/pg-es/searchview-structure.md","ref":"4-projects/gig-economy/pg-es/searchview-structure.md","articles":[]},"previous":{"title":"DB 与 Es 数据迁移功能设计","level":"4.3.6.3","depth":3,"path":"4-projects/gig-economy/pg-es/migrate.md","ref":"4-projects/gig-economy/pg-es/migrate.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/research.md","mtime":"2020-01-10T08:45:02.235Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T08:46:07.134Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Model关系数据库设计","level":"4.3.7.2","depth":3,"next":{"title":"official-website","level":"4.4","depth":1,"ref":"","articles":[{"title":"what we do","level":"4.4.1","depth":2,"path":"4-projects/official-website/information-structure.md","ref":"4-projects/official-website/information-structure.md","articles":[]}]},"previous":{"title":"pg数据类型alpha支持","level":"4.3.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/relation-db-design.md","mtime":"2020-01-10T08:45:02.235Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T08:46:07.134Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
