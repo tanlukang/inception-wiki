@@ -1648,7 +1648,7 @@ ContentModelRelations</p>
 <li>tableName</li>
 </ul>
 <h4 id="&#x6837;&#x4F8B;&#x6570;&#x636E;">&#x6837;&#x4F8B;&#x6570;&#x636E;</h4>
-<p>contentModel</p>
+<p>Content models</p>
 <ul>
 <li>Talent (contentModelId == 1)</li>
 <li>Experience (contentModelId == 2)</li>
@@ -1659,161 +1659,164 @@ ContentModelRelations</p>
 </ul>
 <p>&#x5173;&#x7CFB;&#x5B9E;&#x4F8B;</p>
 <ol>
-<li>Talent : Experience = 1 : n</li>
-</ol>
-<pre class="language-"><code>// &#x5916;&#x952E;talentId&#x5E94;&#x8BE5;&#x548C;talent&#x653E;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5BF9;&#x4E8E;talent&#xFF0C;&#x201C;&#x5916;&#x201D;&#x5305;&#x542B;&#x7684;&#x610F;&#x601D;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x5185;&#x952E;id&#xFF0C;&#x548C;&#x4E00;&#x4E2A;&#x5916;&#x952E;talentId&#xFF0C;&#x5916;&#x952E;&#x662F;&#x7ED9;&#x522B;&#x7684;model&#x7528;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; Experience, Company, Industry, Role &#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x3002;
-
-{
-    id: 1,
-    type: &quot;oneToMany&quot;,
-    description: [
-        {
-            contentModelId: 1,
-            foreignKey: &apos;talentId&apos;,
-            alias: { 
-                contentModelId: 2,
-                contentModelAlias: &apos;experiences&apos;
-            }
-        },
-        {
-            contentModelId: 2,
-            foreignKey: null,
-            alias: { 
-                contentModelId: 1,
-                contentModelAlias: &apos;talent&apos;
-            }
-        }
-    ],
-    tableName: null
-}
+<li><p>Talent : Experience = 1 : n</p>
+<pre class="language-"><code> // &#x5916;&#x952E;talentId&#x5E94;&#x8BE5;&#x548C;talent&#x653E;&#x5728;&#x4E00;&#x8D77;&#xFF0C;&#x5BF9;&#x4E8E;talent&#xFF0C;&#x201C;&#x5916;&#x201D;&#x5305;&#x542B;&#x7684;&#x610F;&#x601D;&#x662F;&#x6709;&#x4E00;&#x4E2A;&#x5185;&#x952E;id&#xFF0C;&#x548C;&#x4E00;&#x4E2A;&#x5916;&#x952E;talentId&#xFF0C;&#x5916;&#x952E;&#x662F;&#x7ED9;&#x522B;&#x7684;model&#x7528;&#x7684;&#xFF0C;&#x53EF;&#x4EE5;&#x662F; Experience, Company, Industry, Role &#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x3002;
+ {
+     id: 1,
+     type: &quot;oneToMany&quot;,
+     description: [
+         {
+             contentModelId: 1,
+             foreignKey: &apos;talentId&apos;,
+             alias: { 
+                 contentModelId: 2,
+                 contentModelAlias: &apos;experiences&apos;
+             }
+         },
+         {
+             contentModelId: 2,
+             foreignKey: null,
+             alias: { 
+                 contentModelId: 1,
+                 contentModelAlias: &apos;talent&apos;
+             }
+         }
+     ],
+     tableName: null
+ }
 </code></pre><ul>
 <li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Experience&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x589E;&#x52A0;talentId&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x5916;&#x952E;&#xFF1B;</li>
 <li>&#x5220;&#x9664;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Experience&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x5220;&#x9664;talentId&#x5B57;&#x6BB5;&#xFF1B;</li>
-<li><p>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</p>
-</li>
-<li><p>Company : Industry = n : n</p>
-</li>
+<li>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</li>
 </ul>
-<pre class="language-"><code>{
-    id: 2,
-    type: &quot;manyToMany&quot;,
-    description: [
-        {
-            contentModelId: 3,
-            foreignKey: &apos;companyId&apos;,
-            alias: { 
-                contentModelId: 4,
-                contentModelAlias: &apos;industries&apos;
-            }
-        },
-        {
-            contentModelId: 4,
-            foreignKey: &apos;industryId&apos;,
-            alias: { 
-                contentModelId: 3,
-                contentModelAlias: &apos;companies&apos;
-            }
-        }
-    ],
-    tableName: &apos;Companies_Industries_${now()}&apos;
-}
+</li>
+</ol>
+<ol>
+<li><p>Company : Industry = n : n</p>
+<pre class="language-"><code> {
+     id: 2,
+     type: &quot;manyToMany&quot;,
+     description: [
+         {
+             contentModelId: 3,
+             foreignKey: &apos;companyId&apos;,
+             alias: { 
+                 contentModelId: 4,
+                 contentModelAlias: &apos;industries&apos;
+             }
+         },
+         {
+             contentModelId: 4,
+             foreignKey: &apos;industryId&apos;,
+             alias: { 
+                 contentModelId: 3,
+                 contentModelAlias: &apos;companies&apos;
+             }
+         }
+     ],
+     tableName: &apos;Companies_Industries_${now()}&apos;
+ }
 </code></pre><ul>
 <li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x521B;&#x5EFA;<code>Companies_Industries_${now()}</code>&#x5173;&#x7CFB;&#x8868;&#xFF0C;&#x4E14;&#x8BE5;&#x5173;&#x7CFB;&#x8868;&#x4EE5; (companyId + industryId) &#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF1B;</li>
 <li>&#x5220;&#x9664;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5220;&#x9664;<code>Companies_Industries_${now()}</code>&#x5173;&#x7CFB;&#x8868;&#xFF1B;</li>
-<li><p>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</p>
-</li>
-<li><p>Company : Location = 1 : 1</p>
-</li>
+<li>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</li>
 </ul>
-<pre class="language-"><code>{
-    id: 3,
-    type: &quot;oneToOne&quot;,
-    description: [
-        {
-            contentModelId: 3,
-            foreignKey: null,
-            alias: { 
-                contentModelId: 5,
-                contentModelAlias: &apos;location&apos;
-            }
-        },
-        {
-            contentModelId: 5,
-            foreignKey: &apos;locationId&apos;,
-            alias: { 
-                contentModelId: 3,
-                contentModelAlias: &apos;company&apos;
-            }
-        }
-    ],
-    tableName: null
-}
+</li>
+</ol>
+<ol>
+<li><p>Company : Location = 1 : 1</p>
+<pre class="language-"><code> {
+     id: 3,
+     type: &quot;oneToOne&quot;,
+     description: [
+         {
+             contentModelId: 3,
+             foreignKey: null,
+             alias: { 
+                 contentModelId: 5,
+                 contentModelAlias: &apos;location&apos;
+             }
+         },
+         {
+             contentModelId: 5,
+             foreignKey: &apos;locationId&apos;,
+             alias: { 
+                 contentModelId: 3,
+                 contentModelAlias: &apos;company&apos;
+             }
+         }
+     ],
+     tableName: null
+ }
 </code></pre><ul>
 <li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Company&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x589E;&#x52A0;locationId&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x5916;&#x952E;&#xFF1B;</li>
 <li>&#x5220;&#x9664;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Company&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x5220;&#x9664;locationId&#x5B57;&#x6BB5;&#xFF1B;</li>
-<li><p>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</p>
-</li>
-<li><p>Talent : Company : Role = n : n : n</p>
-</li>
+<li>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</li>
 </ul>
-<pre class="language-"><code>// relationAlias &#x662F;&#x7CFB;&#x7EDF;&#x6839;&#x636E;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x591A;&#x4E2A; alias &#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0D;&#x9700;&#x8981;&#x5F00;&#x653E;&#x7ED9;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;
-{
-    id: 4,
-    type: &quot;manyToMany&quot;,
-    description: [
-        {
-            contentModelId: 1,
-            foreignKey: &apos;talentId&apos;,
-            aliases: [
-                { 
-                    contentModelId: 3,
-                    contentModelAlias: &apos;companies&apos;
-                },
-                { 
-                    contentModelId: 6,
-                    contentModelAlias: &apos;roles&apos;
-                }
-            ],
-            relationAlias: &apos;company_role_set&apos;
-        },
-        {
-            contentModelId: 3,
-            foreignKey: &apos;companyId&apos;,
-            aliases: [
-                { 
-                    contentModelId: 1,
-                    contentModelAlias: &apos;talents&apos;
-                },
-                { 
-                    contentModelId: 6,
-                    contentModelAlias: &apos;roles&apos;
-                }
-            ],
-            relationAlias: &apos;talent_role_set&apos;
-        },
-        {
-            contentModelId: 6,
-            foreignKey: &apos;roleId&apos;,
-            aliases: [
-                { 
-                    contentModelId: 1,
-                    contentModelAlias: &apos;talents&apos;
-                },
-                { 
-                    contentModelId: 3,
-                    contentModelAlias: &apos;companies&apos;
-                }
-            ],
-            relationAlias: &apos;talent_company_set&apos;
-        }
-    ],
-    tableName: &apos;Talents_Companies_Roles_${now()}&apos;
-}
+</li>
+</ol>
+<ol>
+<li><p>Talent : Company : Role = n : n : n</p>
+<pre class="language-"><code> // relationAlias &#x662F;&#x7CFB;&#x7EDF;&#x6839;&#x636E;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x591A;&#x4E2A; alias &#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;&#xFF0C;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0D;&#x9700;&#x8981;&#x5F00;&#x653E;&#x7ED9;&#x7528;&#x6237;&#x8FDB;&#x884C;&#x4FEE;&#x6539;&#x3002;
+ {
+     id: 4,
+     type: &quot;manyToMany&quot;,
+     description: [
+         {
+             contentModelId: 1,
+             foreignKey: &apos;talentId&apos;,
+             aliases: [
+                 { 
+                     contentModelId: 3,
+                     contentModelAlias: &apos;companies&apos;
+                 },
+                 { 
+                     contentModelId: 6,
+                     contentModelAlias: &apos;roles&apos;
+                 }
+             ],
+             relationAlias: &apos;company_role_set&apos;
+         },
+         {
+             contentModelId: 3,
+             foreignKey: &apos;companyId&apos;,
+             aliases: [
+                 { 
+                     contentModelId: 1,
+                     contentModelAlias: &apos;talents&apos;
+                 },
+                 { 
+                     contentModelId: 6,
+                     contentModelAlias: &apos;roles&apos;
+                 }
+             ],
+             relationAlias: &apos;talent_role_set&apos;
+         },
+         {
+             contentModelId: 6,
+             foreignKey: &apos;roleId&apos;,
+             aliases: [
+                 { 
+                     contentModelId: 1,
+                     contentModelAlias: &apos;talents&apos;
+                 },
+                 { 
+                     contentModelId: 3,
+                     contentModelAlias: &apos;companies&apos;
+                 }
+             ],
+             relationAlias: &apos;talent_company_set&apos;
+         }
+     ],
+     tableName: &apos;Talents_Companies_Roles_${now()}&apos;
+ }
 </code></pre><ul>
 <li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x521B;&#x5EFA;<code>Talents_Companies_Roles_${now()}</code>&#x5173;&#x7CFB;&#x8868;&#xFF0C;&#x4E14;&#x8BE5;&#x5173;&#x7CFB;&#x8868;&#x4EE5; (talentId + companyId + roleId) &#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF1B;</li>
 <li>&#x5220;&#x9664;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5220;&#x9664;<code>Talents_Companies_Roles_${now()}</code>&#x5173;&#x7CFB;&#x8868;&#xFF1B;</li>
 <li>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</li>
 </ul>
+</li>
+</ol>
 <h4 id="issues">issues</h4>
 <ul>
 <li>&#x4E4B;&#x524D;&#x7684;&#x8868;&#x8BBE;&#x8BA1;&#x89C1;&#xFF0C;<a href="http://wiki.inceptionpad.cn/4-projects/gig-economy/database/db-design.html&#xFF0C;&#x66F4;&#x65B0;&#x4E3B;&#x8981;&#x6709;" target="_blank">http://wiki.inceptionpad.cn/4-projects/gig-economy/database/db-design.html&#xFF0C;&#x66F4;&#x65B0;&#x4E3B;&#x8981;&#x6709;</a><ul>
@@ -1975,7 +1978,7 @@ ContentModelRelations</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Model关系数据库设计","level":"4.3.7.2","depth":3,"next":{"title":"official-website","level":"4.4","depth":1,"ref":"","articles":[{"title":"what we do","level":"4.4.1","depth":2,"path":"4-projects/official-website/information-structure.md","ref":"4-projects/official-website/information-structure.md","articles":[]}]},"previous":{"title":"pg数据类型alpha支持","level":"4.3.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/relation-db-design.md","mtime":"2020-01-10T08:53:21.402Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T08:54:05.423Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Model关系数据库设计","level":"4.3.7.2","depth":3,"next":{"title":"official-website","level":"4.4","depth":1,"ref":"","articles":[{"title":"what we do","level":"4.4.1","depth":2,"path":"4-projects/official-website/information-structure.md","ref":"4-projects/official-website/information-structure.md","articles":[]}]},"previous":{"title":"pg数据类型alpha支持","level":"4.3.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/relation-db-design.md","mtime":"2020-01-10T09:06:51.186Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-10T09:07:45.015Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
