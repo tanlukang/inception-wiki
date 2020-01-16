@@ -1727,10 +1727,8 @@ ContentModelRelations</p>
              }
          }
      ],
-     relationTable: {
-         contentModelId: 2,
-         name: &apos;Experiences&apos;
-     }
+     relationTableId: 2,
+     relationTableName: null
  }
 </code></pre><ul>
 <li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Experience&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x589E;&#x52A0;talentId&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x5916;&#x952E;&#xFF1B;</li>
@@ -1762,10 +1760,8 @@ ContentModelRelations</p>
              }
          }
      ],
-     relationTable: {
-         contentModelId: null,
-         name: &apos;Companies_Industries_${now()}&apos;
-     }
+     relationTableId: null,
+     relationTableName: &apos;Companies_Industries_${now()}&apos;
  }
 </code></pre><ul>
 <li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x521B;&#x5EFA;<code>Companies_Industries_${now()}</code>&#x5173;&#x7CFB;&#x8868;&#xFF0C;&#x4E14;&#x8BE5;&#x5173;&#x7CFB;&#x8868;&#x4EE5; (companyId + industryId) &#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF1B;</li>
@@ -1797,11 +1793,8 @@ ContentModelRelations</p>
              }
          }
      ],
-     relationTable: {
-         contentModelId: 3,
-         name: &apos;Companies&apos;
-     }
-
+     relationTableId: 3,
+     relationTableName: null
  }
 </code></pre><ul>
 <li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x5728;Company&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8868;&#x4E2D;&#x589E;&#x52A0;locationId&#x5B57;&#x6BB5;&#x4F5C;&#x4E3A;&#x5916;&#x952E;&#xFF1B;</li>
@@ -1863,10 +1856,8 @@ ContentModelRelations</p>
              relationAlias: &apos;talent_company_set&apos;
          }
      ],
-     relationTable: {
-         contentModelId: null,
-         name: &apos;Talents_Companies_Roles_${now()}&apos;
-     }
+     relationTableId: null,
+     relationTableName: &apos;Talents_Companies_Roles_${now()}&apos;
  }
 </code></pre><ul>
 <li>&#x521B;&#x5EFA;relation&#x65F6;&#xFF0C;&#x540C;&#x65F6;&#x521B;&#x5EFA;<code>Talents_Companies_Roles_${now()}</code>&#x5173;&#x7CFB;&#x8868;&#xFF0C;&#x4E14;&#x8BE5;&#x5173;&#x7CFB;&#x8868;&#x4EE5; (talentId + companyId + roleId) &#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF1B;</li>
@@ -1874,6 +1865,408 @@ ContentModelRelations</p>
 <li>&#x4E0D;&#x5141;&#x8BB8;&#x66F4;&#x65B0;relation&#x3002;</li>
 </ul>
 </li>
+</ol>
+<h4 id="user-experience">User Experience</h4>
+<p>Content models</p>
+<ul>
+<li>Talent (contentModelId == 1)</li>
+<li>Experience (contentModelId == 2)</li>
+<li>Company (contentModelId == 3)</li>
+<li>Industry (contentModelId == 4)</li>
+<li>Location (contentModelId == 5)</li>
+<li>Role (contentModelId == 6)</li>
+</ul>
+<p>&#x5173;&#x7CFB;&#x5B9E;&#x4F8B;</p>
+<ol>
+<li><p>Talent : Experience = 1 : n</p>
+<pre class="language-"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">1</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Please select models you want to create relation.
+
+ User action:
+     &apos;Talent&apos; and &apos;Experience&apos;
+
+ Code:
+     {
+         description: [
+             {
+                 contentModelId: 1,
+             },
+             {
+                 contentModelId: 2,
+             }
+         ],
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">2</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select relation for these models. (Generate foreign key by API)
+
+ User action:
+     1 &apos;Talent&apos; to n &apos;Experience&apos;
+
+ Code:
+     {
+         type: &quot;oneToMany&quot;,
+         description: [
+             {
+                 contentModelId: 1,
+                 foreignKey: &apos;talentId&apos;, // Call API getForeignKeyByContentModelId(1);
+             },
+             {
+                 contentModelId: 2,
+                 foreignKey: null,
+             }
+         ],
+         relationTableId: 2,
+         relationTableName: null
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">3</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select the content models you want to attach to this model, then naming their alias.
+
+ User action:
+     On the Talent side, it has been default selected &apos;Experience&apos;, user types &apos;experiences&apos; as the alias.
+     On the Experience side, it has been default selected &apos;Talent&apos;, user types &apos;talent&apos; as the alias.
+
+ Code:
+     {
+         type: &quot;oneToMany&quot;,
+         description: [
+             {
+                 contentModelId: 1,
+                 foreignKey: &apos;talentId&apos;, // Call API getForeignKeyByContentModelId(1);
+                 alias: { 
+                     contentModelId: 2,
+                     contentModelAlias: &apos;experiences&apos;
+                 }
+             },
+             {
+                 contentModelId: 2,
+                 foreignKey: null,
+                 alias: { 
+                     contentModelId: 1,
+                     contentModelAlias: &apos;talent&apos;
+                 }
+             }
+         ],
+         relationTableId: 2,
+         relationTableName: null
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">4</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Please confirm the relation settings.
+
+ User action:
+     Confirm
+</code></pre></li>
+<li><p>Company : Industry = n : n</p>
+<pre class="language-"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">1</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Please select models you want to create relation.
+
+ User action:
+     &apos;Company&apos; and &apos;Industry&apos;
+
+ Code:
+     {
+         description: [
+             {
+                 contentModelId: 3,
+             },
+             {
+                 contentModelId: 4,
+             }
+         ],
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">2</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select relation for these models. (Generate foreign key by API)
+
+ User action:
+     n &apos;Company&apos; to n &apos;Industry&apos;
+
+ Code:
+     {
+         type: &quot;manyToMany&quot;,
+         description: [
+             {
+                 contentModelId: 3,
+                 foreignKey: &apos;companyId&apos;, // Call API getForeignKeyByContentModelId(3);
+             },
+             {
+                 contentModelId: 4,
+                 foreignKey: &apos;industryId&apos;, // Call API getForeignKeyByContentModelId(4);
+             }
+         ],
+         relationTableId: null,
+         relationTableName: &apos;Companies_Industries_${now()}&apos; // Call API getRelationTableNameByContentModelIds([3, 4]);
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">3</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select the content models you want to attach to this model, then naming their alias.
+
+ User action:
+     On the Company side, it has been default selected &apos;Industry&apos;, user types &apos;industries&apos; as the alias.
+     On the Experience side, it has been default selected &apos;Company&apos;, user types &apos;companies&apos; as the alias.
+
+ Code:
+     {
+         type: &quot;manyToMany&quot;,
+         description: [
+             {
+                 contentModelId: 3,
+                 foreignKey: &apos;companyId&apos;, // Call API getForeignKeyByContentModelId(3);
+                 alias: { 
+                     contentModelId: 4,
+                     contentModelAlias: &apos;industries&apos;
+                 }
+             },
+             {
+                 contentModelId: 4,
+                 foreignKey: &apos;industryId&apos;, // Call API getForeignKeyByContentModelId(4);
+                 alias: { 
+                     contentModelId: 3,
+                     contentModelAlias: &apos;companies&apos;
+                 }
+             }
+         ],
+         relationTableId: null,
+         relationTableName: &apos;Companies_Industries_${now()}&apos; // Call API getRelationTableNameByContentModelIds([3, 4]);
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">4</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Please confirm the relation settings.
+
+ User action:
+     Confirm
+</code></pre></li>
+<li><p>Company : Location = 1 : 1</p>
+<pre class="language-"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">1</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Please select models you want to create relation.
+
+ User action:
+     &apos;Company&apos; and &apos;Location&apos;
+
+ Code:
+     {
+         description: [
+             {
+                 contentModelId: 3,
+             },
+             {
+                 contentModelId: 5,
+             }
+         ],
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">2</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select relation for these models. (Generate foreign key by API)
+
+ User action:
+     1 &apos;Company&apos; to 1 &apos;Location&apos;
+
+ Code:
+     {
+         type: &quot;oneToOne&quot;,
+         description: [
+             {
+                 contentModelId: 3,
+                 foreignKey: null,
+             },
+             {
+                 contentModelId: 5,
+                 foreignKey: &apos;locationId&apos;,  // Call API getForeignKeyByContentModelId(5);
+             }
+         ],
+         relationTableId: 3,
+         relationTableName: null
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">3</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select the content models you want to attach to this model, then naming their alias.
+
+ User action:
+     On the Company side, it has been default selected &apos;Location&apos;, user types &apos;location&apos; as the alias.
+     On the Location side, it has been default selected &apos;Company&apos;, user types &apos;company&apos; as the alias.
+
+ Code:
+     {
+         type: &quot;oneToOne&quot;,
+         description: [
+             {
+                 contentModelId: 3,
+                 foreignKey: null,
+                 alias: { 
+                     contentModelId: 5,
+                     contentModelAlias: &apos;location&apos;
+                 }
+             },
+             {
+                 contentModelId: 5,
+                 foreignKey: &apos;locationId&apos;,  // Call API getForeignKeyByContentModelId(5);
+                 alias: { 
+                     contentModelId: 3,
+                     contentModelAlias: &apos;company&apos;
+                 }
+             }
+         ],
+         relationTableId: 3,
+         relationTableName: null
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">4</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Please confirm the relation settings.
+
+ User action:
+     Confirm
+</code></pre></li>
+<li><p>Talent : Company : Role = n : n : n</p>
+<pre class="language-"><code> <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">1</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select models you want to create relation.
+
+ User action:
+     &apos;Talent&apos;, &apos;Company&apos; and &apos;Role&apos;
+
+ Code:
+     {
+         description: [
+             {
+                 contentModelId: 1,
+             },
+             {
+                 contentModelId: 3,
+             },
+             {
+                 contentModelId: 6,
+             }
+         ],
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">2</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select relation for these models. (Generate foreign by API)
+
+ User action:
+     n &apos;Talent&apos; to n &apos;Company&apos; to n &apos;Role&apos;
+
+ Code:
+     {
+         type: &quot;manyToMany&quot;,
+         description: [
+             {
+                 contentModelId: 1,
+                 foreignKey: &apos;talentId&apos;, // Call API getForeignKeyByContentModelId(1);
+             },
+             {
+                 contentModelId: 3,
+                 foreignKey: &apos;companyId&apos;, // Call API getForeignKeyByContentModelId(3);
+             },
+             {
+                 contentModelId: 6,
+                 foreignKey: &apos;roleId&apos;, // Call API getForeignKeyByContentModelId(6);
+             },
+         ],
+         relationTableId: null,
+         relationTableName: &apos;Talents_Companies_Roles_${now()}&apos; // Call API getRelationTableNameByContentModelIds([1, 3, 6]);
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">3</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Select the content models you want to attach to this model, then naming their alias.
+
+ User action:
+     On the Talent side, multiple selects content model and types its alias by list[Company, Role].
+     On the Company side, multiple selects content model and types its alias by list[Talent, Role].
+     On the Role side, multiple selects content model and types its alias by list[Talent, Company].
+
+ Code:
+     {
+         type: &quot;oneToMany&quot;,
+         description: [
+             {
+                 contentModelId: 1,
+                 foreignKey: &apos;talentId&apos;,
+                 aliases: [
+                     { 
+                         contentModelId: 3,
+                         contentModelAlias: &apos;companies&apos;
+                     },
+                     { 
+                         contentModelId: 6,
+                         contentModelAlias: &apos;roles&apos;
+                     }
+                 ],
+                 relationAlias: &apos;company_role_set&apos;
+             },
+             {
+                 contentModelId: 3,
+                 foreignKey: &apos;companyId&apos;,
+                 aliases: [
+                     { 
+                         contentModelId: 1,
+                         contentModelAlias: &apos;talents&apos;
+                     },
+                     { 
+                         contentModelId: 6,
+                         contentModelAlias: &apos;roles&apos;
+                     }
+                 ],
+                 relationAlias: &apos;talent_role_set&apos;
+             },
+             {
+                 contentModelId: 6,
+                 foreignKey: &apos;roleId&apos;,
+                 aliases: [
+                     { 
+                         contentModelId: 1,
+                         contentModelAlias: &apos;talents&apos;
+                     },
+                     { 
+                         contentModelId: 3,
+                         contentModelAlias: &apos;companies&apos;
+                     }
+                 ],
+                 relationAlias: &apos;talent_company_set&apos;
+             }
+         ],
+         relationTableId: null,
+         relationTableName: &apos;Talents_Companies_Roles_${now()}&apos; // Call API getRelationTableNameByContentModelIds([1, 3, 6]);
+     }
+
+ <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>Step</span> <span class="token attr-name">4</span><span class="token punctuation">&gt;</span></span>
+
+ System says:
+     Please confirm the relation settings.
+
+ User action:
+     Confirm
+</code></pre></li>
 </ol>
 <h4 id="issues">issues</h4>
 <ul>
@@ -2036,7 +2429,7 @@ ContentModelRelations</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Model关系数据库设计","level":"4.4.7.2","depth":3,"next":{"title":"official-website","level":"4.5","depth":1,"ref":"","articles":[{"title":"what we do","level":"4.5.1","depth":2,"path":"4-projects/official-website/information-structure.md","ref":"4-projects/official-website/information-structure.md","articles":[]}]},"previous":{"title":"pg数据类型alpha支持","level":"4.4.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/relation-db-design.md","mtime":"2020-01-14T10:09:22.839Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T10:10:11.045Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Model关系数据库设计","level":"4.4.7.2","depth":3,"next":{"title":"official-website","level":"4.5","depth":1,"ref":"","articles":[{"title":"what we do","level":"4.5.1","depth":2,"path":"4-projects/official-website/information-structure.md","ref":"4-projects/official-website/information-structure.md","articles":[]}]},"previous":{"title":"pg数据类型alpha支持","level":"4.4.7.1","depth":3,"path":"4-projects/gig-economy/pg-related/cms-support-data-type.md","ref":"4-projects/gig-economy/pg-related/cms-support-data-type.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/relation-db-design.md","mtime":"2020-01-16T07:36:59.652Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-16T07:38:03.852Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
