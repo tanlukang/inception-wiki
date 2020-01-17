@@ -204,7 +204,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.7" data-path="2-iam.html">
+        <li class="chapter " data-level="1.2.7" data-path="13-sns.html">
+            
+                <a href="13-sns.html">
+            
+                    
+                    Amazon Simple Notification Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="2-iam.html">
             
                 <a href="2-iam.html">
             
@@ -217,7 +230,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.8" data-path="3-sts.html">
+        <li class="chapter " data-level="1.2.9" data-path="3-sts.html">
             
                 <a href="3-sts.html">
             
@@ -230,7 +243,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.2.9" data-path="4-s3.html">
+        <li class="chapter active" data-level="1.2.10" data-path="4-s3.html">
             
                 <a href="4-s3.html">
             
@@ -243,7 +256,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.10" data-path="5-ses.html">
+        <li class="chapter " data-level="1.2.11" data-path="5-ses.html">
             
                 <a href="5-ses.html">
             
@@ -256,7 +269,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.11" data-path="6-ec2.html">
+        <li class="chapter " data-level="1.2.12" data-path="6-ec2.html">
             
                 <a href="6-ec2.html">
             
@@ -269,7 +282,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.12" data-path="7-systemsmanager.html">
+        <li class="chapter " data-level="1.2.13" data-path="7-systemsmanager.html">
             
                 <a href="7-systemsmanager.html">
             
@@ -282,7 +295,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.13" data-path="8-config.html">
+        <li class="chapter " data-level="1.2.14" data-path="8-config.html">
             
                 <a href="8-config.html">
             
@@ -295,7 +308,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.14" data-path="9-cloudwatch.html">
+        <li class="chapter " data-level="1.2.15" data-path="9-cloudwatch.html">
             
                 <a href="9-cloudwatch.html">
             
@@ -1794,16 +1807,26 @@ use Aws\S3\Exception\S3Exception;
 </li>
 </ol>
 <h4 id="batch-operations">Batch Operations</h4>
-<p>&#x5C06;&#x8D26;&#x53F7; 111122223333 &#x4E0B;&#x7684; S3 source-bucket &#x6570;&#x636E;&#x8FC1;&#x79FB;&#x5230;&#x8D26;&#x53F7; 444455556666 &#x4E0B;&#x7684; S3 target-bucket &#x4E2D;&#x3002;</p>
-<pre class="language-"><code>1. &#x5728; 111122223333 &#x4E2D;&#x521B;&#x5EFA; source-bucket &#x7684; Inventory&#xFF1B;
-2. &#x8BBE;&#x7F6E; Inventory &#x7684;&#x5B58;&#x50A8;&#x5730;&#x5740;&#x4E3A; target-bucket&#xFF1B;
-3. &#x6BCF;&#x534A;&#x5929;&#x5728; target-bucket &#x4E2D;&#x68C0;&#x67E5;&#x4E00;&#x4E0B; Inventory &#x662F;&#x5426;&#x751F;&#x6210;&#xFF1B;
-4. &#x5728; 444455556666 &#x7684; IAM &#x4E2D;&#x521B;&#x5EFA;&#x9644;&#x52A0;&#x76F8;&#x5E94;&#x6743;&#x9650;&#x7684;&#x89D2;&#x8272; S3BatchOperationsRole&#xFF1B;
-5. &#x5728; 444455556666 &#x7684; S3 &#x4E2D;&#x521B;&#x5EFA; Batch operations jobs&#xFF0C;&#x5E76;&#x6307;&#x5B9A; S3BatchOperationsRole&#xFF1B;
-6. &#x542F;&#x52A8; Batch operations jobs&#x3002;
-</code></pre><p>&#x521B;&#x5EFA; S3BatchOperationsRole &#x7684;&#x8FC7;&#x7A0B;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x6863; 
-<a href="https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/batch-ops-create-job.html#create-job-permissions" target="_blank">https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/batch-ops-create-job.html#create-job-permissions</a></p>
-
+<ol>
+<li><p>&#x9700;&#x6C42;&#xFF1A;&#x5C06;&#x8D26;&#x53F7; 111122223333 &#x4E0B;&#x7684; S3 source-bucket &#x6570;&#x636E;&#x8FC1;&#x79FB;&#x5230;&#x8D26;&#x53F7; 444455556666 &#x4E0B;&#x7684; S3 target-bucket &#x4E2D;&#x3002;</p>
+</li>
+<li><p>&#x65B9;&#x6848;&#xFF1A;</p>
+<ol>
+<li>&#x5728; 111122223333 &#x4E2D;&#x521B;&#x5EFA; source-bucket &#x7684; Inventory&#xFF1B;</li>
+<li>&#x8BBE;&#x7F6E; Inventory &#x7684;&#x5B58;&#x50A8;&#x5730;&#x5740;&#x4E3A; target-bucket&#xFF1B;</li>
+<li>&#x6BCF;&#x534A;&#x5929;&#x5728; target-bucket &#x4E2D;&#x68C0;&#x67E5;&#x4E00;&#x4E0B; Inventory &#x662F;&#x5426;&#x751F;&#x6210;&#xFF1B;</li>
+<li>&#x5728; 444455556666 &#x7684; IAM &#x4E2D;&#x521B;&#x5EFA;&#x9644;&#x52A0;&#x76F8;&#x5E94;&#x6743;&#x9650;&#x7684;&#x89D2;&#x8272; S3BatchOperationsRole&#xFF1B;</li>
+<li>&#x5728; 444455556666 &#x7684; S3 &#x4E2D;&#x521B;&#x5EFA; Batch operations jobs&#xFF0C;&#x5E76;&#x6307;&#x5B9A; S3BatchOperationsRole&#xFF1B;</li>
+<li>&#x542F;&#x52A8; Batch operations jobs&#x3002;</li>
+</ol>
+</li>
+<li><p>&#x521B;&#x5EFA; S3BatchOperationsRole &#x7684;&#x8FC7;&#x7A0B;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x6863;</p>
+<p> <a href="https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/batch-ops-create-job.html#create-job-permissions" target="_blank">https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/batch-ops-create-job.html#create-job-permissions</a></p>
+</li>
+</ol>
+<h4 id="&#x8DE8;&#x8D26;&#x53F7;-ec2-&#x63A5;&#x5165;-s3">&#x8DE8;&#x8D26;&#x53F7; EC2 &#x63A5;&#x5165; S3</h4>
+<pre class="language-"><code>&#x53C2;&#x8003; https://amazonaws-china.com/cn/premiumsupport/knowledge-center/s3-instance-access-bucket/
+</code></pre>
                                 
                                 </section>
                             
@@ -1846,7 +1869,7 @@ use Aws\S3\Exception\S3Exception;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Amazon Simple Storage Service","level":"1.2.9","depth":2,"next":{"title":"Amazon Simple Email Service","level":"1.2.10","depth":2,"path":"1-wiki/aws/5-ses.md","ref":"1-wiki/aws/5-ses.md","articles":[]},"previous":{"title":"AWS Security Token Service","level":"1.2.8","depth":2,"path":"1-wiki/aws/3-sts.md","ref":"1-wiki/aws/3-sts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/4-s3.md","mtime":"2020-01-17T10:08:19.112Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-17T10:10:26.003Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Amazon Simple Storage Service","level":"1.2.10","depth":2,"next":{"title":"Amazon Simple Email Service","level":"1.2.11","depth":2,"path":"1-wiki/aws/5-ses.md","ref":"1-wiki/aws/5-ses.md","articles":[]},"previous":{"title":"AWS Security Token Service","level":"1.2.9","depth":2,"path":"1-wiki/aws/3-sts.md","ref":"1-wiki/aws/3-sts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/4-s3.md","mtime":"2020-01-17T10:51:30.058Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-17T10:52:16.447Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
