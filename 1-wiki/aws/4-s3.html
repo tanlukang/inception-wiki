@@ -1680,7 +1680,25 @@
                                 
                                 <h1 id="amazon-simple-storage-service">Amazon Simple Storage Service</h1>
 <p>Amazon S3 &#x63D0;&#x4F9B;&#x7684;&#x8BBF;&#x95EE;&#x7B56;&#x7565;&#x9009;&#x9879;&#x5927;&#x81F4;&#x53EF;&#x5206;&#x4E3A;&#x57FA;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x7B56;&#x7565;&#x548C;&#x7528;&#x6237;&#x7B56;&#x7565;&#x4E24;&#x7C7B;&#x3002;&#x9644;&#x52A0;&#x5230;&#x8D44;&#x6E90; (&#x5B58;&#x50A8;&#x6876;&#x548C;&#x5BF9;&#x8C61;) &#x7684;&#x8BBF;&#x95EE;&#x7B56;&#x7565;&#x79F0;&#x4E3A;&#x57FA;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x7B56;&#x7565;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5B58;&#x50A8;&#x6876;&#x7B56;&#x7565;&#x548C;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x5217;&#x8868; (ACL) &#x5C31;&#x662F;&#x57FA;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x7B56;&#x7565;&#x3002;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x5C06;&#x8BBF;&#x95EE;&#x7B56;&#x7565;&#x9644;&#x52A0;&#x5230;&#x60A8;&#x8D26;&#x6237;&#x4E2D;&#x7684;&#x7528;&#x6237;&#x3002;&#x8FD9;&#x4E9B;&#x7B56;&#x7565;&#x79F0;&#x4E3A;&#x7528;&#x6237;&#x7B56;&#x7565;&#x3002;&#x60A8;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x4F7F;&#x7528;&#x57FA;&#x4E8E;&#x8D44;&#x6E90;&#x7684;&#x7B56;&#x7565;&#x3001;&#x7528;&#x6237;&#x7B56;&#x7565;&#x6216;&#x8FD9;&#x4E9B;&#x7B56;&#x7565;&#x7684;&#x67D0;&#x79CD;&#x7EC4;&#x5408;&#x6765;&#x7BA1;&#x7406;&#x60A8;&#x7684; Amazon S3 &#x8D44;&#x6E90;&#x6743;&#x9650;&#x3002;</p>
-<h3 id="&#x5E94;&#x7528;&#x793A;&#x4F8B;">&#x5E94;&#x7528;&#x793A;&#x4F8B;</h3>
+<h2 id="inventory">Inventory</h2>
+<p>Amazon S3 &#x6E05;&#x5355;&#x63D0;&#x4F9B;&#x60A8;&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x5143;&#x6570;&#x636E;&#x7684;&#x5E73;&#x9762;&#x6587;&#x4EF6;&#x5217;&#x8868;&#xFF0C;&#x8BE5;&#x5217;&#x8868;&#x5C06;&#x6709;&#x8BA1;&#x5212;&#x5730;&#x53D6;&#x4EE3; Amazon S3 &#x540C;&#x6B65; List API &#x64CD;&#x4F5C;&#x3002;Amazon S3 &#x6E05;&#x5355;&#x6BCF;&#x5929;&#x6216;&#x6BCF;&#x5468;&#x4E3A; S3 &#x5B58;&#x50A8;&#x6876;&#x6216;&#x5171;&#x4EAB;&#x524D;&#x7F00;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x5373;&#xFF0C;&#x5176;&#x540D;&#x79F0;&#x4EE5;&#x76F8;&#x540C;&#x5B57;&#x7B26;&#x4E32;&#x5F00;&#x5934;&#x7684;&#x5BF9;&#x8C61;&#xFF09;&#x63D0;&#x4F9B;&#x7528;&#x4E8E;&#x5217;&#x51FA;&#x60A8;&#x7684;&#x5BF9;&#x8C61;&#x53CA;&#x5176;&#x5BF9;&#x5E94;&#x5143;&#x6570;&#x636E;&#x7684;&#x9017;&#x53F7;&#x5206;&#x9694;&#x503C; (CSV)&#x3001;Apache &#x4F18;&#x5316;&#x7684;&#x884C;&#x5217;&#x5F0F; (ORC) &#x6216; Apache Parquet (Parquet) &#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x3002;&#x6709;&#x5173;&#x66F4;&#x591A;&#x4FE1;&#x606F;&#xFF0C;&#x8BF7;&#x53C2;&#x9605;Amazon Simple Storage Service &#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6307;&#x5357;&#x4E2D;&#x7684; Amazon S3 &#x6E05;&#x5355;&#x3002;</p>
+<h4 id="&#x914D;&#x7F6E;&#x65B9;&#x6CD5;">&#x914D;&#x7F6E;&#x65B9;&#x6CD5;</h4>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x4EA4;&#x4ED8;&#x7B2C;&#x4E00;&#x4EFD;&#x62A5;&#x544A;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x591A;&#x8FBE; 48 &#x5C0F;&#x65F6;&#x3002;</p>
+<ol>
+<li><p>&#x767B;&#x5F55; AWS &#x7BA1;&#x7406;&#x63A7;&#x5236;&#x53F0;&#x5E76;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x7F51;&#x5740;&#x6253;&#x5F00; Amazon S3 &#x63A7;&#x5236;&#x53F0;&#xFF1A;<a href="https://console.aws.amazon.com/s3/" target="_blank">https://console.aws.amazon.com/s3/</a> &#x3002;</p>
+</li>
+<li><p>&#x5728; Bucket name (&#x5B58;&#x50A8;&#x6876;&#x540D;&#x79F0;) &#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x9009;&#x62E9;&#x8981;&#x4E3A;&#x5176;&#x914D;&#x7F6E; Amazon S3 &#x6E05;&#x5355;&#x7684;&#x5B58;&#x50A8;&#x6876;&#x7684;&#x540D;&#x79F0;&#x3002;</p>
+</li>
+<li><p>&#x9009;&#x62E9; Management (&#x7BA1;&#x7406;) &#x9009;&#x9879;&#x5361;&#xFF0C;&#x7136;&#x540E;&#x9009;&#x62E9; Inventory (&#x6E05;&#x5355;)&#x3002;</p>
+</li>
+<li><p>&#x9009;&#x62E9; Add new (&#x65B0;&#x589E;)&#x3002;</p>
+</li>
+<li><p>&#x952E;&#x5165;&#x6E05;&#x5355;&#x7684;&#x540D;&#x79F0;&#x5E76;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;</p>
+</li>
+</ol>
+<p>&#x9009;&#x62E9;&#x8981;&#x5C06;&#x62A5;&#x544A;&#x4FDD;&#x5B58;&#x5230;&#x7684;&#x76EE;&#x6807;&#x5B58;&#x50A8;&#x6876;&#x3002;&#x76EE;&#x6807;&#x5B58;&#x50A8;&#x6876;&#x5FC5;&#x987B;&#x4F4D;&#x4E8E;&#x4E0E;&#x60A8;&#x4E3A;&#x5176;&#x8BBE;&#x7F6E;&#x6E05;&#x5355;&#x7684;&#x5B58;&#x50A8;&#x6876;&#x76F8;&#x540C;&#x7684; AWS &#x533A;&#x57DF;&#x4E2D;&#x3002;&#x76EE;&#x6807;&#x5B58;&#x50A8;&#x6876;&#x53EF;&#x5904;&#x4E8E;&#x4E0D;&#x540C;&#x7684; AWS &#x8D26;&#x6237;&#x4E2D;&#x3002;</p>
+<h2 id="&#x5E94;&#x7528;&#x573A;&#x666F;">&#x5E94;&#x7528;&#x573A;&#x666F;</h2>
+<h4 id="api-operations">API Operations</h4>
 <ol>
 <li><p>&#x521B;&#x5EFA; Policy&#xFF0C;&#x547D;&#x540D;&#x4E3A; <code>AppInEC2AccessS3</code></p>
 <pre class="language-"><code>{
@@ -1759,22 +1777,32 @@ use Aws\S3\Exception\S3Exception;
      echo $e-&gt;getMessage() . PHP_EOL;
  }
 </code></pre></li>
-</ol>
-<h3 id="&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;">&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;</h3>
-<p><a href="https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html" target="_blank">https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html</a></p>
+<li><p>&#x9047;&#x5230;&#x7684;&#x95EE;&#x9898;
+<a href="https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html" target="_blank">https://docs.aws.amazon.com/zh_cn/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html</a></p>
 <pre class="language-"><code>{
-    &quot;Version&quot;: &quot;2012-10-17&quot;,
-    &quot;Statement&quot;: [
-        {
-            &quot;Sid&quot;: &quot;abcdTrustPolicy&quot;,
-            &quot;Effect&quot;: &quot;Allow&quot;,
-            &quot;Action&quot;: &quot;sts:AssumeRole&quot;,
-            &quot;Principal&quot;: {&quot;Service&quot;: &quot;ec2.amazonaws.com&quot;}
-        }
-    ]
+ &quot;Version&quot;: &quot;2012-10-17&quot;,
+ &quot;Statement&quot;: [
+     {
+         &quot;Sid&quot;: &quot;abcdTrustPolicy&quot;,
+         &quot;Effect&quot;: &quot;Allow&quot;,
+         &quot;Action&quot;: &quot;sts:AssumeRole&quot;,
+         &quot;Principal&quot;: {&quot;Service&quot;: &quot;ec2.amazonaws.com&quot;}
+     }
+ ]
 }
-</code></pre><p>&#x95EE;&#x9898;&#x89E3;&#x7B54;&#xFF1A;
-<a href="https://stackoverflow.com/questions/45478585/aws-trust-policy-has-prohibited-field-principal" target="_blank">https://stackoverflow.com/questions/45478585/aws-trust-policy-has-prohibited-field-principal</a></p>
+</code></pre><p> &#x95EE;&#x9898;&#x89E3;&#x7B54;&#xFF1A;<a href="https://stackoverflow.com/questions/45478585/aws-trust-policy-has-prohibited-field-principal" target="_blank">https://stackoverflow.com/questions/45478585/aws-trust-policy-has-prohibited-field-principal</a></p>
+</li>
+</ol>
+<h4 id="batch-operations">Batch Operations</h4>
+<p>&#x5C06;&#x8D26;&#x53F7; 111122223333 &#x4E0B;&#x7684; S3 source-bucket &#x6570;&#x636E;&#x8FC1;&#x79FB;&#x5230;&#x8D26;&#x53F7; 444455556666 &#x4E0B;&#x7684; S3 target-bucket &#x4E2D;&#x3002;</p>
+<pre class="language-"><code>1. &#x5728; 111122223333 &#x4E2D;&#x521B;&#x5EFA; source-bucket &#x7684; Inventory&#xFF1B;
+2. &#x8BBE;&#x7F6E; Inventory &#x7684;&#x5B58;&#x50A8;&#x5730;&#x5740;&#x4E3A; target-bucket&#xFF1B;
+3. &#x6BCF;&#x534A;&#x5929;&#x5728; target-bucket &#x4E2D;&#x68C0;&#x67E5;&#x4E00;&#x4E0B; Inventory &#x662F;&#x5426;&#x751F;&#x6210;&#xFF1B;
+4. &#x5728; 444455556666 &#x7684; IAM &#x4E2D;&#x521B;&#x5EFA;&#x9644;&#x52A0;&#x76F8;&#x5E94;&#x6743;&#x9650;&#x7684;&#x89D2;&#x8272; S3BatchOperationsRole&#xFF1B;
+5. &#x5728; 444455556666 &#x7684; S3 &#x4E2D;&#x521B;&#x5EFA; Batch operations jobs&#xFF0C;&#x5E76;&#x6307;&#x5B9A; S3BatchOperationsRole&#xFF1B;
+6. &#x542F;&#x52A8; Batch operations jobs&#x3002;
+</code></pre><p>&#x521B;&#x5EFA; S3BatchOperationsRole &#x7684;&#x8FC7;&#x7A0B;&#x53C2;&#x8003;&#x5B98;&#x65B9;&#x6587;&#x6863; 
+<a href="https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/batch-ops-create-job.html#create-job-permissions" target="_blank">https://docs.aws.amazon.com/zh_cn/AmazonS3/latest/dev/batch-ops-create-job.html#create-job-permissions</a></p>
 
                                 
                                 </section>
@@ -1818,7 +1846,7 @@ use Aws\S3\Exception\S3Exception;
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Amazon Simple Storage Service","level":"1.2.9","depth":2,"next":{"title":"Amazon Simple Email Service","level":"1.2.10","depth":2,"path":"1-wiki/aws/5-ses.md","ref":"1-wiki/aws/5-ses.md","articles":[]},"previous":{"title":"AWS Security Token Service","level":"1.2.8","depth":2,"path":"1-wiki/aws/3-sts.md","ref":"1-wiki/aws/3-sts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/4-s3.md","mtime":"2020-01-16T07:36:59.635Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-16T07:38:03.852Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Amazon Simple Storage Service","level":"1.2.9","depth":2,"next":{"title":"Amazon Simple Email Service","level":"1.2.10","depth":2,"path":"1-wiki/aws/5-ses.md","ref":"1-wiki/aws/5-ses.md","articles":[]},"previous":{"title":"AWS Security Token Service","level":"1.2.8","depth":2,"path":"1-wiki/aws/3-sts.md","ref":"1-wiki/aws/3-sts.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/4-s3.md","mtime":"2020-01-17T03:26:51.653Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-17T03:27:36.115Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
