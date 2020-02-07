@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>名词解释 · InceptionWiki</title>
+        <title>BaaS & Headless CMS · InceptionWiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -64,8 +64,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
-    
-    <link rel="next" href="es-relation.html" />
     
     
 
@@ -1492,9 +1490,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="4.4.6.1" data-path="design.html">
+        <li class="chapter " data-level="4.4.6.1" data-path="../pg-es/design.html">
             
-                <a href="design.html">
+                <a href="../pg-es/design.html">
             
                     
                     名词解释
@@ -1505,9 +1503,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4.6.2" data-path="es-relation.html">
+        <li class="chapter " data-level="4.4.6.2" data-path="../pg-es/es-relation.html">
             
-                <a href="es-relation.html">
+                <a href="../pg-es/es-relation.html">
             
                     
                     ElasticSearch Relation
@@ -1518,9 +1516,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4.6.3" data-path="migrate.html">
+        <li class="chapter " data-level="4.4.6.3" data-path="../pg-es/migrate.html">
             
-                <a href="migrate.html">
+                <a href="../pg-es/migrate.html">
             
                     
                     DB 与 Es 数据迁移功能设计
@@ -1531,9 +1529,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4.6.4" data-path="research.html">
+        <li class="chapter " data-level="4.4.6.4" data-path="../pg-es/research.html">
             
-                <a href="research.html">
+                <a href="../pg-es/research.html">
             
                     
                     review log
@@ -1544,9 +1542,9 @@
             
         </li>
     
-        <li class="chapter " data-level="4.4.6.5" data-path="searchview-structure.html">
+        <li class="chapter " data-level="4.4.6.5" data-path="../pg-es/searchview-structure.html">
             
-                <a href="searchview-structure.html">
+                <a href="../pg-es/searchview-structure.html">
             
                     
                     Search View Structure
@@ -1621,9 +1619,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.4.8.1" data-path="../product/baas-vs-headless-cms.html">
+        <li class="chapter active" data-level="4.4.8.1" data-path="baas-vs-headless-cms.html">
             
-                <a href="../product/baas-vs-headless-cms.html">
+                <a href="baas-vs-headless-cms.html">
             
                     
                     BaaS & Headless CMS
@@ -1706,7 +1704,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >名词解释</a>
+        <a href="../../.." >BaaS & Headless CMS</a>
     </h1>
 </div>
 
@@ -1721,105 +1719,496 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x540D;&#x8BCD;&#x89E3;&#x91CA;">&#x540D;&#x8BCD;&#x89E3;&#x91CA;</h3>
+                                <h1 id="baas--headless-cms">BaaS &amp; Headless CMS</h1>
+<h3 id="headless-cms">Headless CMS</h3>
 <ul>
-<li>data collection<ul>
-<li>&#x4E1A;&#x52A1;&#x6570;&#x636E;&#x96C6;&#x5408;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x865A;&#x62DF;&#x6982;&#x5FF5;&#xFF0C;&#x4F8B;&#x5982;&#x5305;&#x542B;&#x4E86;experience&#x8868;&#x548C;talent&#x8868;&#x7684;&#x6570;&#x636E;&#x805A;&#x5408;&#xFF0C;&#x547D;&#x540D;&#x4E3A;titan</li>
-<li>&#x4E00;&#x822C;&#x7531;pg&#x4E2D;&#x7684;&#x4E00;&#x5F20;&#x8868;&#x6216;&#x8005;&#x591A;&#x5F20;&#x8868;&#x805A;&#x5408;&#x7EC4;&#x6210;&#xFF0C;&#x4F8B;&#x5982;talent&#x548C;experience&#x548C;&#x4E00;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#xFF0C;&#x90A3;&#x4E48;&#x63D2;&#x5165;&#x5230;es&#x524D;&#x9700;&#x8981;&#x5148;&#x628A;experience&#x4E2D;&#x7684;&#x6570;&#x636E;&#x805A;&#x5408;&#x5230;
-talent&#x4E0A;&#xFF0C;&#x7EC4;&#x6210;&#x4E00;&#x4E2A;&#x5927;json&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x540C;&#x6B65;</li>
-<li>&#x7CFB;&#x7EDF;&#x4E2D;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;data collection</li>
+<li>&#x4ECB;&#x7ECD;<ul>
+<li><a href="https://www.contentful.com/r/knowledgebase/what-is-headless-cms/" target="_blank">https://www.contentful.com/r/knowledgebase/what-is-headless-cms/</a></li>
+<li><a href="https://www.contentful.com/r/knowledgebase/content-as-a-service/" target="_blank">https://www.contentful.com/r/knowledgebase/content-as-a-service/</a></li>
+<li><a href="https://www.contentful.com/resources/the-ultimate-guide-to-headless-cms/" target="_blank">https://www.contentful.com/resources/the-ultimate-guide-to-headless-cms/</a></li>
+<li><a href="https://scotch.io/bar-talk/the-future-of-websites-headless-cmss" target="_blank">https://scotch.io/bar-talk/the-future-of-websites-headless-cmss</a></li>
 </ul>
 </li>
-<li>data source<ul>
-<li>pg&#x4E2D;&#x4FDD;&#x5B58;&#x7684;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x4F8B;&#x5982;talent&#x3001;experience&#x3001;company&#x7B49;&#xFF0C;&#x5206;&#x522B;&#x4E3A;&#x4E0D;&#x540C;&#x6570;&#x636E;&#x6E90;  </li>
+<li>&#x8D44;&#x6E90;<ul>
+<li><a href="https://headlesscms.org/" target="_blank">https://headlesscms.org/</a></li>
+<li><a href="https://jamstack.org/" target="_blank">https://jamstack.org/</a></li>
+<li><a href="https://jamstack.wtf/" target="_blank">https://jamstack.wtf/</a></li>
 </ul>
 </li>
-<li>search index<ul>
-<li>es&#x4E2D;&#x5B58;&#x50A8;data collection&#x7684;&#x8868;</li>
-<li>&#x5728;index&#x4E2D;&#x7684;&#x6BCF;&#x4E2A;document&#x90FD;&#x6709;id/pg_id&#x5B57;&#x6BB5;&#xFF0C;&#x6307;&#x5411;data source&#x4E2D;&#x7684;&#x539F;&#x59CB;&#x8BB0;&#x5F55;</li>
+<li>&#x5546;&#x4E1A;&#x4EA7;&#x54C1;<ul>
+<li><a href="https://www.contentful.com/&#xFF0C;&#x63A8;&#x8350;&#x8BD5;&#x7528;&#xFF0C;headless" target="_blank">https://www.contentful.com/&#xFF0C;&#x63A8;&#x8350;&#x8BD5;&#x7528;&#xFF0C;headless</a> cms&#x4EA7;&#x54C1;&#x7684;&#x8001;&#x5927;<ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x6587;&#x6863;&#x975E;&#x5E38;&#x5B8C;&#x5584;&#xFF0C;&#x628A;&#x6574;&#x4E2A;&#x4EA7;&#x54C1;&#x8BBE;&#x8BA1;&#x63CF;&#x8FF0;&#x5F97;&#x6BD4;&#x8F83;&#x6E05;&#x6670;&#xFF0C;&#x4F8B;&#x5982;data model&#x90E8;&#x5206;&#xFF08;<a href="https://www.contentful.com/developers/docs/concepts/data-model/&#xFF09;" target="_blank">https://www.contentful.com/developers/docs/concepts/data-model/&#xFF09;</a></li>
+<li>&#x7F16;&#x8F91;content&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x7F16;&#x8F91;&#x5185;&#x90E8;&#x5173;&#x8054;&#x7684;content&#xFF0C;&#x5E76;&#x4E14;&#x5E26;&#x6709;&#x72B6;&#x6001;</li>
+<li>&#x591A;&#x8BED;&#x8A00;&#x7BA1;&#x7406;&#xFF08;&#x82F1;&#x8BED;/&#x6CD5;&#x8BED;&#xFF09;</li>
+<li>&#x652F;&#x6301;&#x5168;&#x6587;&#x641C;&#x7D22;&#xFF0C;&#x6709;es&#x7684;&#x63D2;&#x4EF6;</li>
+<li>&#x7F16;&#x8F91;&#x63D2;&#x4EF6;&#x76F4;&#x63A5;&#x81EA;&#x5DF1;&#x5B9A;&#x5236;</li>
+<li>ref&#x53EF;&#x4EE5;&#x5173;&#x8054;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#xFF0C;&#x4E0D;&#x4EC5;&#x4EC5;&#x5305;&#x542B;&#x4E00;&#x79CD;&#xFF08;&#x89E3;&#x51B3;&#x4E86;group+group array&#x7684;&#x95EE;&#x9898;&#xFF09;</li>
+<li>&#x63D0;&#x4F9B;&#x9884;&#x89C8;&#x7684;api&#xFF0C;&#x81EA;&#x5DF1;&#x7684;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x6765;&#x5339;&#x914D;&#x9884;&#x89C8;&#x7684;content</li>
+<li>&#x652F;&#x6301;es&#x7C7B;&#x4F3C;&#x8BED;&#x6CD5;&#x7684;&#x5168;&#x6587;&#x641C;&#x7D22;&#xFF0C;&#x4EE5;&#x53CA;martketplace&#x652F;&#x6301;es&#xFF0C;<a href="https://www.contentful.com/developers/marketplace/" target="_blank">https://www.contentful.com/developers/marketplace/</a></li>
+<li>env&#x652F;&#x6301;&#x5F00;&#x53D1;&#x3001;&#x6D4B;&#x8BD5;&#x3001;&#x6B63;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x5206;&#x79BB;</li>
+<li>&#x652F;&#x6301;&#x591A;&#x4EBA;&#x534F;&#x4F5C;&#x65F6;&#x7684;comment</li>
 </ul>
 </li>
-<li>queue command<ul>
-<li>&#x6267;&#x884C;&#x540C;&#x6B65;&#x547D;&#x4EE4;&#x7684;&#x6307;&#x4EE4;&#xFF0C;&#x5148;&#x7531;&#x7CFB;&#x7EDF;&#x5411;queue&#x53D1;&#x51FA;&#xFF0C;&#x518D;&#x7531;queue&#x56DE;&#x8C03;&#x7CFB;&#x7EDF;&#x6267;&#x884C;&#x5B9E;&#x9645;&#x7684;&#x540C;&#x6B65;&#x64CD;&#x4F5C;&#xFF08;&#x65B0;&#x589E;/&#x66F4;&#x65B0;/&#x5220;&#x9664;&#xFF09;</li>
-<li>&#x6BCF;&#x6761;&#x6307;&#x4EE4;&#x53EF;&#x80FD;&#x6D89;&#x53CA;&#x5230;&#x5355;&#x6761;&#x6570;&#x636E;&#x6216;&#x591A;&#x6761;&#x6570;&#x636E;&#x7684;&#x540C;&#x6B65;&#x64CD;&#x4F5C;</li>
-<li>&#x5177;&#x4F53;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;data collection&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;queue</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x6CA1;&#x6709;workflow&#x7BA1;&#x7406;&#xFF0C;&#x53EA;&#x6709;&#x7B80;&#x5355;&#x7684;draft+published</li>
+<li>ref&#x53EA;&#x6709;1-n&#x6216;&#x8005;1-1&#xFF0C;&#x6CA1;&#x6709;n-n</li>
 </ul>
 </li>
 </ul>
-<h3 id="&#x540C;&#x6B65;&#x573A;&#x666F;">&#x540C;&#x6B65;&#x573A;&#x666F;</h3>
+</li>
+<li><a href="https://kontent.ai/&#xFF0C;&#x63A8;&#x8350;&#x8BD5;&#x7528;" target="_blank">https://kontent.ai/&#xFF0C;&#x63A8;&#x8350;&#x8BD5;&#x7528;</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x7F16;&#x8F91;&#x4F53;&#x9A8C;&#x6BD4;&#x8F83;&#x5E72;&#x51C0;&#xFF0C;&#x5E26;&#x62D6;&#x62FD;</li>
+<li>&#x81EA;&#x5B9A;&#x4E49;workflow</li>
+<li>&#x5355;&#x72EC;&#x9488;&#x5BF9;web&#x7684;&#x4F18;&#x5316;&#xFF08;seo meta&#xFF0C;<a href="https://docs.kontent.ai/tutorials/develop-apps/optimize-for-the-web/creating-seo-friendly-urls&#xFF09;" target="_blank">https://docs.kontent.ai/tutorials/develop-apps/optimize-for-the-web/creating-seo-friendly-urls&#xFF09;</a></li>
+<li>&#x6574;&#x4E2A;&#x529F;&#x80FD;&#x7684;&#x5B8C;&#x5584;&#x5EA6;&#x8981;&#x6BD4;contentful&#x66F4;&#x9AD8;&#xFF0C;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#x89C1;&#x5230;&#x6700;&#x5B8C;&#x5584;&#x3001;&#x6700;&#x53CB;&#x597D;&#x7684;headless cms</li>
+<li>&#x6587;&#x6863;&#x975E;&#x5E38;&#x5B8C;&#x5584;</li>
+<li>comment&#x529F;&#x80FD;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://prismic.io/&#xFF0C;&#x63A8;&#x8350;&#x8BD5;&#x7528;" target="_blank">https://prismic.io/&#xFF0C;&#x63A8;&#x8350;&#x8BD5;&#x7528;</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>slice&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x8BA9;&#x5185;&#x5BB9;&#x7F16;&#x8F91;&#x8005;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x52A8;&#x6001;&#x5185;&#x5BB9;&#xFF08;&#x5728;&#x540C;&#x4E00;&#x5757;&#x5185;&#x5BB9;&#x7684;&#x5730;&#x65B9;&#xFF0C;&#x6311;&#x9009;&#x4E00;&#x79CD;group&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF09;</li>
+<li>&#x7F16;&#x8F91;&#x5185;&#x5BB9;&#x7684;&#x7406;&#x89E3;&#x4E0A;&#xFF0C;&#x6BD4;&#x8F83;&#x7EC6;&#x817B;&#xFF08;link&#x3001;embed&#x7B49;&#x4E00;&#x4E9B;type&#xFF1B;image&#x8FD8;&#x6709;size&#x8BBE;&#x7F6E;&#xFF09;</li>
+<li>content&#x4E2D;tab&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x4F30;&#x8BA1;&#x662F;&#x505A;&#x9875;&#x9762;&#x5185;&#x5BB9;&#x5206;&#x5757;&#x4F7F;&#x7528;&#x7684;&#xFF08;<a href="https://user-guides.prismic.io/en/articles/764589-how-to-prepare-your-content-for-seo&#xFF09;" target="_blank">https://user-guides.prismic.io/en/articles/764589-how-to-prepare-your-content-for-seo&#xFF09;</a></li>
+<li>schema&#x7F16;&#x8F91;&#x652F;&#x6301;json+ux&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x590D;&#x5236;json&#x6765;&#x751F;&#x6210;schema</li>
+<li>&#x5BF9;&#x4E8E;richtext&#xFF0C;&#x652F;&#x6301;html tag&#x7684;&#x652F;&#x6301;</li>
+<li>preview sdk+live edit button&#xFF08;<a href="https://prismic.io/docs/reactjs/beyond-the-api/in-website-edit-button&#xFF0C;https://prismic.io/docs/reactjs/beyond-the-api/in-website-preview&#xFF09;" target="_blank">https://prismic.io/docs/reactjs/beyond-the-api/in-website-edit-button&#xFF0C;https://prismic.io/docs/reactjs/beyond-the-api/in-website-preview&#xFF09;</a></li>
+<li>sdk&#x63D0;&#x4F9B;&#x5F97;&#x6BD4;&#x8F83;&#x975E;&#x5E38;&#x5B8C;&#x5584;&#xFF0C;&#x524D;&#x540E;&#x7AEF;&#x90FD;&#x6709;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x6CA1;&#x6709;workflow+role/permission&#x7684;&#x7BA1;&#x7406;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://graphcms.com" target="_blank">https://graphcms.com</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>schema field type&#x652F;&#x6301;&#x6BD4;&#x8F83;&#x4E30;&#x5BCC;</li>
+<li>ref&#x652F;&#x6301;&#x5B8C;&#x6574;&#x7684;&#x51E0;&#x79CD;&#x7C7B;&#x578B;&#xFF08;sql like&#xFF09;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>permission&#x548C;workflow&#x7684;&#x529F;&#x80FD;&#x6682;&#x65F6;&#x8FD8;&#x6CA1;&#x6709;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://buttercms.com" target="_blank">https://buttercms.com</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x4E13;&#x95E8;&#x63D0;&#x4F9B;&#x4E86;blog&#x7C7B;&#x578B;&#x7684;page&#xFF0C;&#x5E26;&#x6709;seo&#x7684;&#x8BBE;&#x7F6E;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x4F3C;&#x4E4E;&#x6CA1;&#x6709;update page/collection &#x7ED3;&#x6784;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>get&#x7684;api&#xFF0C;collection&#x6CA1;&#x6709;nested&#x67E5;&#x8BE2;&#x51FA;&#x6765;&#xFF0C;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x989D;&#x5916;&#x4E8C;&#x6B21;&#x67E5;&#x8BE2;</li>
+<li>blog&#x7684;&#x683C;&#x5F0F;&#x975E;&#x5E38;&#x56FA;&#x5B9A;&#xFF1A;meta+seo+title+body&#xFF0C;author&#x3001;category&#x3001;tag&#x7684;&#x7F16;&#x8F91;&#x4E0D;&#x591F;&#x7075;&#x6D3B;&#x53EF;&#x7F16;&#x8F91;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://www.contentstack.com" target="_blank">https://www.contentstack.com</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x6587;&#x6863;&#x7279;&#x522B;&#x5B8C;&#x6574;&#xFF0C;&#x5173;&#x4E8E;&#x4EA7;&#x54C1;&#x4F7F;&#x7528;&#x548C;&#x8BF4;&#x660E;&#x90FD;&#x5F88;&#x5B8C;&#x5584;&#xFF0C;&#x57FA;&#x672C;&#x53EF;&#x901A;&#x8FC7;&#x770B;&#x6587;&#x6863;&#x77E5;&#x9053;&#x662F;&#x600E;&#x6837;&#x7684;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x9700;&#x8981;request demo&#xFF0C;&#x6CA1;&#x6709;&#x53EF;&#x8FD0;&#x884C;&#x7684;demo</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://www.sanity.io/&#xFF0C;&#x53EA;&#x662F;&#x4E00;&#x4E2A;headless" target="_blank">https://www.sanity.io/&#xFF0C;&#x53EA;&#x662F;&#x4E00;&#x4E2A;headless</a> cms&#xFF0C;&#x9700;&#x8981;&#x672C;&#x5730;&#x8FD0;&#x884C;&#x670D;&#x52A1;&#x6765;&#x542F;&#x52A8;&#x6570;&#x636E;&#x7F16;&#x8F91;&#xFF0C;&#x6BD4;&#x8F83;&#x4E0D;&#x53CB;&#x597D;</li>
+<li><a href="https://www.storyblok.com/&#xFF0C;The" target="_blank">https://www.storyblok.com/&#xFF0C;The</a> Only Headless CMS with a Visual Editor<ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x9884;&#x89C8;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x5728;preview&#x7684;html&#x4E0A;&#x52A0;&#x4E86;sdk&#xFF0C;hack&#x5143;&#x7D20;&#xFF0C;&#x5F53;&#x70B9;&#x51FB;&#x5143;&#x7D20;&#x65F6;&#xFF0C;&#x89E6;&#x53D1;editor&#x8FDB;&#x884C;&#x7F16;&#x8F91;&#x5BF9;&#x5E94;&#x5143;&#x7D20;&#x7684;content</li>
+<li>workflow &amp; branch&#x7684;setup&#x90FD;&#x5F88;&#x6709;&#x53C2;&#x8003;&#x4EF7;&#x503C;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>page&#x7ED3;&#x6784;&#x90E8;&#x5206;&#x548C;dapt&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#xFF0C;&#x96BE;&#x4EE5;&#x7406;&#x89E3;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://craftcms.com/" target="_blank">https://craftcms.com/</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>data model&#x7684;&#x8BBE;&#x8BA1;&#x53EF;&#x53C2;&#x8003;</li>
+<li>&#x9884;&#x89C8;&#x7684;UX&#x6BD4;&#x8F83;&#x68D2;&#xFF0C;&#x8F93;&#x5165;&#x5B8C;&#x6210;&#x540E;&#x91CD;&#x65B0;&#x5237;&#x65B0;</li>
+<li>&#x8BBE;&#x7F6E;&#x6A21;&#x677F;&#xFF0C;&#x5E26;&#x6709;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x6A21;&#x677F;&#x6307;&#x4EE4;</li>
+<li>&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x8FDB;&#x884C;&#x5B89;&#x88C5;&#x90E8;&#x7F72;&#xFF0C;<a href="https://github.com/craftcms/cms" target="_blank">https://github.com/craftcms/cms</a></li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x6838;&#x5FC3;&#x6982;&#x5FF5;&#x6BD4;&#x8F83;&#x590D;&#x6742;</li>
+<li>&#x5141;&#x8BB8;&#x81EA;&#x5DF1;&#x90E8;&#x7F72;&#x4F46;&#x662F;&#x57FA;&#x4E8E;php</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5F00;&#x6E90;&#x9879;&#x76EE;<ul>
+<li><a href="https://strapi.io/&#xFF0C;&#x57FA;&#x4E8E;node.js" target="_blank">https://strapi.io/&#xFF0C;&#x57FA;&#x4E8E;node.js</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>headless cms&#x7684;&#x57FA;&#x672C;&#x529F;&#x80FD;&#x90FD;&#x5305;&#x542B;</li>
+<li>&#x63D0;&#x4F9B;&#x591A;&#x79CD;db&#x7684;adapter&#xFF08;&#x5305;&#x62EC;pg&#xFF09;</li>
+<li>&#x4EE3;&#x7801;&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;&#x6BD4;&#x8F83;&#x597D;&#xFF0C;&#x57FA;&#x4E8E;&#x63D2;&#x4EF6;&#x7CFB;&#x7EDF;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x6570;&#x636E;&#x6A21;&#x578B;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#x5728;db&#xFF0C;&#x800C;&#x662F;&#x5B58;&#x6210;&#x672C;&#x5730;json&#xFF0C;&#x6BCF;&#x6B21;&#x4FEE;&#x6539;&#x9700;&#x8981;&#x91CD;&#x542F;server&#xFF0C;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x90E8;&#x7F72;&#x591A;&#x53F0;&#x670D;&#x52A1;</li>
+<li>&#x6CA1;&#x6709;&#x8FC7;&#x591A;&#x7684;sdk&#x548C;api&#xFF0C;restful api&#x53EA;&#x662F;&#x9488;&#x5BF9;&#x7B80;&#x5355;&#x7684;&#x767B;&#x5F55;&#x3001;&#x6570;&#x636E;curd</li>
+<li>&#x6CA1;&#x6709;workflow&#x7684;&#x8BBE;&#x8BA1;</li>
+<li>role &amp; permission&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x53EA;&#x662F;&#x9488;&#x5BF9;&#x529F;&#x80FD;&#xFF0C;&#x6CA1;&#x6709;&#x5BF9;&#x5177;&#x4F53;&#x6570;&#x636E;&#x5B9E;&#x4F53;&#x7684;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#x63CF;&#x8FF0;</li>
+<li>relation&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x591A;&#x5BF9;&#x591A;&#x7684;&#x5173;&#x8054;&#x8868;&#x7528;&#x4E86;id&#x4F5C;&#x4E3A;&#x4E3B;&#x952E;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x7528;&#x5916;&#x952E;&#x7684;&#x7EC4;&#x5408;&#x4F5C;&#x4E3A;&#x4E3B;&#x952E;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://ghost.org/&#xFF0C;&#x57FA;&#x4E8E;node.js" target="_blank">https://ghost.org/&#xFF0C;&#x57FA;&#x4E8E;node.js</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>blog&#x7CFB;&#x7EDF;&#x786E;&#x5B9E;&#x5F88;&#x7B80;&#x6D01;&#xFF0C;&#x901F;&#x5EA6;&#x4E5F;&#x975E;&#x5E38;&#x5FEB;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x4F46;&#x53EA;&#x662F;&#x7BA1;&#x7406;blog&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E0D;&#x80FD;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x9002;&#x7528;&#x573A;&#x666F;&#x592A;&#x7A84;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x7279;&#x6027;<ul>
+<li>custom data model with relation</li>
+<li>assets management (files &amp; images)</li>
+<li>management dashboard</li>
+<li>user &amp; role &amp; permission</li>
+<li>workflow</li>
+<li>reversion</li>
+<li>app &amp; environment</li>
+<li>development<ul>
+<li>restful api</li>
+<li>graphql</li>
+<li>webhook</li>
+<li>sdk</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5E94;&#x7528;&#x573A;&#x666F;<ul>
+<li>headless cms&#x5BF9;&#x6807;&#x7684;&#x662F;wordpress&#x8FD9;&#x4E9B;cms&#xFF0C;&#x4E3B;&#x8981;&#x7BA1;&#x7406;&#x4E00;&#x4E9B;&#x7C7B;&#x4F3C;blog&#x7C7B;&#x578B;&#x7684;&#x5F31;&#x903B;&#x8F91;&#x6570;&#x636E;&#xFF0C;&#x670D;&#x52A1;&#x7684;&#x89D2;&#x8272;&#x662F;developer&#x548C;editor&#xFF0C;&#x5927;&#x6982;&#x5DE5;&#x4F5C;&#x6D41;&#x5982;&#x4E0B;<ul>
+<li>developer&#x5728;cms&#x4E0A;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x6A21;&#x578B;</li>
+<li>developer&#x6839;&#x636E;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x4F7F;&#x7528;cms&#x63D0;&#x4F9B;&#x7684;sdk/api&#xFF0C;&#x5199;&#x5E94;&#x7528;&#x7684;&#x540E;&#x7AEF;&#x548C;&#x524D;&#x7AEF;&#x4EE3;&#x7801;&#xFF0C;&#x5E76;&#x90E8;&#x7F72;&#x5E94;&#x7528;</li>
+<li>editor&#x5728;cms&#x5E73;&#x53F0;&#x4E0A;&#x7F16;&#x8F91;content&#xFF0C;content&#x53D1;&#x5E03;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x65F6;&#x66F4;&#x65B0;&#x5230;&#x5E94;&#x7528;&#x4E0A;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="mbaas">(m)BaaS</h3>
 <ul>
-<li>&#x5168;&#x91CF;&#x540C;&#x6B65;&#x5355;&#x4E2A;data collection<ul>
-<li>&#x5982;&#x679C;es&#x4E2D;alias&#x672A;&#x5B58;&#x5728;&#xFF0C;&#x521B;&#x5EFA;alias</li>
-<li>&#x521B;&#x5EFA;index&#xFF0C;&#x4EE5;&#x65F6;&#x95F4;&#x6233;&#x4F5C;&#x4E3A;&#x547D;&#x540D;&#x533A;&#x5206;</li>
-<li>&#x6784;&#x9020;&#x5904;&#x7406;&#x5206;&#x6279;&#x6B21;&#x6570;&#x636E;&#x7684;queue command&#xFF0C;&#x5411;queue&#x53D1;&#x51FA;<ul>
-<li>&#x4F8B;&#x5982;&#x8981;&#x540C;&#x6B65;1000&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5206;&#x6210;20&#x6279;&#xFF0C;&#x6BCF;&#x6B21;&#x5199;&#x5165;50&#x6761;&#x8BB0;&#x5F55;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x6784;&#x9020;20&#x6761;queue command</li>
+<li>&#x4ECB;&#x7ECD;<ul>
+<li><a href="https://blog.back4app.com/2019/07/24/backend-as-a-service-baas/" target="_blank">https://blog.back4app.com/2019/07/24/backend-as-a-service-baas/</a></li>
+<li><a href="https://www.cloudflare.com/learning/serverless/glossary/backend-as-a-service-baas/" target="_blank">https://www.cloudflare.com/learning/serverless/glossary/backend-as-a-service-baas/</a></li>
+<li><a href="https://buttercms.com/blog/5-baas-backend-as-a-service-tools" target="_blank">https://buttercms.com/blog/5-baas-backend-as-a-service-tools</a></li>
 </ul>
 </li>
-<li>&#x7531;queue&#x56DE;&#x8C03;&#x7CFB;&#x7EDF;&#xFF0C;&#x5206;&#x6279;&#x6B21;&#x6267;&#x884C;&#x540C;&#x6B65;&#x6307;&#x4EE4;</li>
-<li>&#x540C;&#x6B65;&#x5B8C;&#x6210;&#xFF0C;&#x628A;alias&#x6307;&#x5411;&#x65B0;&#x7684;index</li>
-<li>&#x5220;&#x9664;&#x8001;&#x7684;index</li>
+<li>&#x8BA8;&#x8BBA;<ul>
+<li><a href="https://www.zhihu.com/question/29600252" target="_blank">https://www.zhihu.com/question/29600252</a></li>
+<li><a href="https://www.v2ex.com/t/175389" target="_blank">https://www.v2ex.com/t/175389</a></li>
+<li><a href="https://www.v2ex.com/t/200196" target="_blank">https://www.v2ex.com/t/200196</a></li>
 </ul>
 </li>
-<li>&#x5355;&#x4E2A;data source&#x6570;&#x636E;&#x66F4;&#x65B0;&#x65F6;&#x540C;&#x6B65;<ul>
-<li>&#x65B0;&#x589E;<ul>
-<li>&#x901A;&#x8FC7;data source&#x548C;data collection&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x6784;&#x9020;&#x65B0;&#x589E;&#x6570;&#x636E;&#x7684;queue command</li>
-<li>&#x53D1;&#x51FA;queue command</li>
+<li>&#x4EA7;&#x54C1;<ul>
+<li><a href="https://parseplatform.org/&#xFF0C;baas&#x7684;&#x9F3B;&#x7956;&#xFF0C;&#x4E4B;&#x524D;&#x88AB;facebook&#x6536;&#x8D2D;&#x4E86;&#xFF0C;&#x4F46;&#x540E;&#x9762;facebook&#x53C8;&#x628A;&#x9879;&#x76EE;&#x505C;&#x4E86;&#xFF08;&#x4E0D;&#x7B26;&#x5408;&#x516C;&#x53F8;&#x6218;&#x7565;&#xFF09;&#xFF0C;&#x540E;&#x7EED;&#x5F00;&#x6E90;&#x540E;&#x662F;&#x76EE;&#x524D;star&#x6700;&#x9AD8;&#x7684;BaaS&#x5F00;&#x6E90;&#x9879;&#x76EE;" target="_blank">https://parseplatform.org/&#xFF0C;baas&#x7684;&#x9F3B;&#x7956;&#xFF0C;&#x4E4B;&#x524D;&#x88AB;facebook&#x6536;&#x8D2D;&#x4E86;&#xFF0C;&#x4F46;&#x540E;&#x9762;facebook&#x53C8;&#x628A;&#x9879;&#x76EE;&#x505C;&#x4E86;&#xFF08;&#x4E0D;&#x7B26;&#x5408;&#x516C;&#x53F8;&#x6218;&#x7565;&#xFF09;&#xFF0C;&#x540E;&#x7EED;&#x5F00;&#x6E90;&#x540E;&#x662F;&#x76EE;&#x524D;star&#x6700;&#x9AD8;&#x7684;BaaS&#x5F00;&#x6E90;&#x9879;&#x76EE;</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x6709;&#x5927;&#x90E8;&#x5206;baas&#x6240;&#x9700;&#x8981;&#x5177;&#x5907;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x6587;&#x6863;&#x3001;api&#x3001;sdk&#x7684;&#x5468;&#x8FB9;&#x4E5F;&#x6BD4;&#x8F83;&#x5B8C;&#x5584;</li>
+<li>&#x652F;&#x6301;pg&#x548C;mongodb&#x4F5C;&#x4E3A;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x5E93;&#xFF1B;&#x4F7F;&#x7528;pg&#x65F6;&#xFF0C;&#x5173;&#x7CFB;&#x7684;&#x5904;&#x7406;&#x548C;&#x5E38;&#x89C4;&#x5173;&#x7CFB;&#x578B;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5904;&#x7406;&#x57FA;&#x672C;&#x4E00;&#x81F4;</li>
 </ul>
 </li>
-<li>&#x66F4;&#x65B0;<ul>
-<li>&#x901A;&#x8FC7;data source&#x548C;data collection&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x6784;&#x9020;&#x66F4;&#x65B0;&#x6570;&#x636E;&#x7684;queue command</li>
-<li>&#x53D1;&#x51FA;queue command</li>
-</ul>
-</li>
-<li>&#x5220;&#x9664;<ul>
-<li>&#x901A;&#x8FC7;data source&#x548C;data collection&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x6784;&#x9020;&#x5220;&#x9664;&#x6570;&#x636E;&#x7684;queue command</li>
-<li>&#x53D1;&#x51FA;queue command</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>user&#x6CA1;&#x6709;&#x5E26;phone register/login&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x652F;&#x6301;&#x591A;&#x4E2A;email</li>
+<li>&#x6CA1;&#x6709;sms&#x7684;&#x670D;&#x52A1;</li>
+<li>&#x81EA;&#x5E26;&#x7684;dashboard&#x6BD4;&#x8F83;&#x7B80;&#x964B;</li>
 </ul>
 </li>
 </ul>
 </li>
-<li>&#x6E05;&#x9664;search index<ul>
-<li>&#x5220;&#x9664;index</li>
-<li>es&#x4E2D;alias&#x6307;&#x5411;null</li>
+<li><a href="https://firebase.google.com/&#xFF0C;google&#x7684;mBaaS&#x5E73;&#x53F0;&#xFF0C;&#x76EE;&#x524D;&#x5546;&#x7528;baas&#x4E2D;&#x6BD4;&#x8F83;&#x706B;&#x7684;" target="_blank">https://firebase.google.com/&#xFF0C;google&#x7684;mBaaS&#x5E73;&#x53F0;&#xFF0C;&#x76EE;&#x524D;&#x5546;&#x7528;baas&#x4E2D;&#x6BD4;&#x8F83;&#x706B;&#x7684;</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x9664;&#x4E86;baas&#x7684;&#x529F;&#x80FD;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#x548C;mobile&#x76F8;&#x5173;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x4F8B;&#x5982;ads&#x3001;analysis&#x3001;crash-report&#x3001;ML tool&#x7B49;</li>
+<li>&#x6709;&#x4E00;&#x5957;&#x524D;&#x7AEF;/app&#x4F7F;&#x7528;&#x7684;ui lib</li>
+<li>&#x5BF9;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x751A;&#x81F3;&#x63D0;&#x4F9B;&#x4E86;transactions</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x6CA1;&#x6709;acl&#x6A21;&#x5757;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6743;&#x9650;&#x63A7;&#x5236;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5199;&#x4ED6;&#x7684;security rule</li>
+<li>&#x6587;&#x6863;&#x5173;&#x7CFB;&#x7684;&#x8BBE;&#x8BA1;&#x6BD4;&#x8F83;&#x504F;&#x5411;&#x4E8E;noSql&#xFF0C;&#x6CA1;&#x6709;rdbms&#x7684;&#x65B9;&#x6848;</li>
 </ul>
 </li>
 </ul>
-<h3 id="&#x540C;&#x6B65;&#x6267;&#x884C;">&#x540C;&#x6B65;&#x6267;&#x884C;</h3>
+</li>
+<li><a href="https://aws.amazon.com/amplify/&#xFF0C;aws&#x8FD1;&#x4E24;&#x5E74;&#x624D;&#x63A8;&#x51FA;&#x7684;baas&#x5E73;&#x53F0;" target="_blank">https://aws.amazon.com/amplify/&#xFF0C;aws&#x8FD1;&#x4E24;&#x5E74;&#x624D;&#x63A8;&#x51FA;&#x7684;baas&#x5E73;&#x53F0;</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x5927;&#x90E8;&#x5206;&#x670D;&#x52A1;&#x90FD;&#x548C;aws&#x7684;&#x670D;&#x52A1;&#x6253;&#x901A;</li>
+<li>&#x6709;&#x4E00;&#x4E9B;VR/AR/ML/AI&#x4E4B;&#x7C7B;&#x7684;&#x4E00;&#x4E9B;&#x529F;&#x80FD;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li>&#x6BD4;parse&#x548C;firebase&#x66F4;&#x52A0;cli&#x5DE5;&#x5177;&#x5316;&#x66F4;&#x52A0;&#x590D;&#x6742;&#xFF0C;&#x5BF9;&#x4E8E;&#x666E;&#x901A;&#x5F00;&#x53D1;&#x8005;&#x800C;&#x8A00;&#x4E0A;&#x624B;&#x6210;&#x672C;&#x66F4;&#x9AD8;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://www.leancloud.cn/&#xFF0C;&#x65E9;&#x671F;&#x6284;&#x88AD;parse&#x505A;&#x7684;baas&#xFF0C;&#x529F;&#x80FD;&#x548C;sdk&#x8BBE;&#x8BA1;&#x4E0A;&#x90FD;&#x548C;parse&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#xFF0C;&#x6709;cn&#x548C;&#x6D77;&#x5916;&#x7248;" target="_blank">https://www.leancloud.cn/&#xFF0C;&#x65E9;&#x671F;&#x6284;&#x88AD;parse&#x505A;&#x7684;baas&#xFF0C;&#x529F;&#x80FD;&#x548C;sdk&#x8BBE;&#x8BA1;&#x4E0A;&#x90FD;&#x548C;parse&#x6BD4;&#x8F83;&#x7C7B;&#x4F3C;&#xFF0C;&#x6709;cn&#x548C;&#x6D77;&#x5916;&#x7248;</a><ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>&#x6BD4;parse&#x591A;&#x4E86;&#x4E00;&#x4E9B;&#x529F;&#x80FD;&#xFF0C;&#x4F8B;&#x5982;phone register/login&#x3001;im/chat&#x3001;hosting&#x3001;sms&#x3001;game&#x7B49;</li>
+<li>&#x6587;&#x6863;&#x6BD4;&#x8F83;&#x9F50;&#x5168;&#xFF0C;&#x5982;&#x679C;&#x4F7F;&#x7528;parse&#x4F5C;&#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;baas&#xFF0C;&#x8981;&#x8865;&#x5168;&#x54EA;&#x4E9B;&#x529F;&#x80FD;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53C2;&#x8003;leancloud&#x7684;&#x4EA7;&#x54C1;&#x5B9E;&#x73B0;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="https://www.back4app.com/&#xFF0C;parse&#x7684;&#x6258;&#x7BA1;&#x670D;&#x52A1;" target="_blank">https://www.back4app.com/&#xFF0C;parse&#x7684;&#x6258;&#x7BA1;&#x670D;&#x52A1;</a></li>
+<li><a href="https://www.sashido.io/&#xFF0C;parse&#x7684;&#x6258;&#x7BA1;&#x670D;&#x52A1;" target="_blank">https://www.sashido.io/&#xFF0C;parse&#x7684;&#x6258;&#x7BA1;&#x670D;&#x52A1;</a></li>
+<li><a href="https://backendless.com/&#xFF0C;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5E38;&#x89C4;&#x7684;baas" target="_blank">https://backendless.com/&#xFF0C;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5E38;&#x89C4;&#x7684;baas</a></li>
+</ul>
+</li>
+<li>&#x7279;&#x6027;<ul>
+<li>data<ul>
+<li>database<ul>
+<li>schema(less)</li>
+<li>relation</li>
+<li>realtime/observe</li>
+</ul>
+</li>
+<li>storage</li>
+<li>cache</li>
+</ul>
+</li>
+<li>service<ul>
+<li>auth<ul>
+<li>service<ul>
+<li>signup</li>
+<li>login</li>
+<li>forget password</li>
+<li>device management</li>
+</ul>
+</li>
+<li>provider<ul>
+<li>email</li>
+<li>username</li>
+<li>phone</li>
+<li>biometric </li>
+<li>3rd</li>
+<li>anonymous</li>
+<li>custom</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>acl</li>
+<li>email</li>
+<li>sms</li>
+<li>chat</li>
+<li>notification</li>
+</ul>
+</li>
+<li>engine&#xFF08;cloud code&#xFF09;<ul>
+<li>function</li>
+<li>application</li>
+<li>cron</li>
+<li>pub/sub</li>
+<li>queue<ul>
+<li><a href="https://github.com/Automattic/kue" target="_blank">https://github.com/Automattic/kue</a></li>
+</ul>
+</li>
+<li>hook</li>
+</ul>
+</li>
+<li>other<ul>
+<li>config</li>
+<li>image toolkit</li>
+<li>ML toolkit</li>
+</ul>
+</li>
+<li>app<ul>
+<li>crash</li>
+<li>analystic</li>
+<li>performance</li>
+<li>dynamic link</li>
+<li>ads</li>
+<li>in-app message</li>
+</ul>
+</li>
+<li>development<ul>
+<li>restful api</li>
+<li>sdk<ul>
+<li>node.js</li>
+<li>php</li>
+<li>js</li>
+<li>native</li>
+</ul>
+</li>
+<li>graphql</li>
+</ul>
+</li>
+<li>deployment<ul>
+<li>docker</li>
+</ul>
+</li>
+<li>hosting</li>
+</ul>
+</li>
+<li>&#x5E94;&#x7528;&#x573A;&#x666F;<ul>
+<li>baas&#x5E73;&#x53F0;&#x628A;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x5E93;&#x3001;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x3001;&#x7F13;&#x5B58;&#x548C;&#x4E00;&#x4E9B;&#x9AD8;&#x9891;&#x4F7F;&#x7528;&#x7684;&#x670D;&#x52A1;&#xFF08;&#x7528;&#x6237;&#x3001;&#x6743;&#x9650;&#x3001;&#x63A8;&#x9001;&#x7B49;&#xFF09;&#x90FD;&#x505A;&#x4E86;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;&#x6CA1;&#x6709;&#x8FD0;&#x7EF4;&#x8D44;&#x6E90;&#x3001;&#x4E91;&#x670D;&#x52A1;&#x57FA;&#x7840;&#x7684;&#x5F00;&#x53D1;&#x56E2;&#x961F;&#x5FEB;&#x901F;&#x5F00;&#x53D1;&#x5E94;&#x7528;&#xFF0C;&#x4F7F;&#x7528;baas&#x7684;&#x89D2;&#x8272;&#x4E3B;&#x8981;&#x662F;developer</li>
+</ul>
+</li>
+</ul>
+<h3 id="baas-vs-headless-cms">BaaS vs Headless CMS</h3>
 <ul>
-<li>&#x65B0;&#x589E;&#x6570;&#x636E;&#x540C;&#x6B65;<ul>
-<li>&#x67E5;&#x8BE2;es&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x662F;&#x5426;&#x5B58;&#x5728;<ul>
-<li>&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x6267;&#x884C;&#x5220;&#x9664;</li>
+<li>&#x76F8;&#x540C;&#x70B9;<ul>
+<li>&#x90FD;&#x6709;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5EFA;&#x6A21;&#xFF08;&#x5B57;&#x6BB5;&#x548C;&#x5173;&#x7CFB;&#xFF09;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x90E8;&#x5206;BaaS&#x7684;&#x5E95;&#x5C42;&#x6570;&#x636E;&#x5E93;mongodb&#x8FD9;&#x79CD;schemless&#x7684;noSQL&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x751A;&#x81F3;&#x4E0D;&#x9700;&#x8981;&#x5EFA;&#x6A21;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;&#xFF08;&#x8FD0;&#x884C;&#x65F6;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x5B57;&#x6BB5;&#xFF09;</li>
 </ul>
 </li>
-<li>&#x6784;&#x9020;&#x9700;&#x8981;&#x540C;&#x6B65;&#x7684;data collection&#x7684;&#x5355;&#x6761;&#x6570;&#x636E;</li>
-<li>&#x901A;&#x8FC7;es sdk&#x628A;&#x6570;&#x636E;&#x5199;&#x5165;index</li>
-</ul>
-</li>
-<li>&#x66F4;&#x65B0;&#x6570;&#x636E;&#x540C;&#x6B65;<ul>
-<li>&#x67E5;&#x8BE2;es&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x662F;&#x5426;&#x5B58;&#x5728;<ul>
-<li>&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x6267;&#x884C;&#x5220;&#x9664;</li>
-</ul>
-</li>
-<li>&#x6784;&#x9020;&#x9700;&#x8981;&#x540C;&#x6B65;&#x7684;data collection&#x7684;&#x5355;&#x6761;&#x6570;&#x636E;</li>
-<li>&#x901A;&#x8FC7;es sdk&#x628A;&#x6570;&#x636E;&#x5199;&#x5165;index</li>
-</ul>
-</li>
-<li>&#x5220;&#x9664;&#x6570;&#x636E;&#x540C;&#x6B65;<ul>
-<li>&#x67E5;&#x8BE2;es&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x662F;&#x5426;&#x5B58;&#x5728;<ul>
-<li>&#x5DF2;&#x5B58;&#x5728;&#xFF0C;&#x6267;&#x884C;&#x5220;&#x9664;</li>
+<li>&#x4E0D;&#x540C;&#x70B9;<ul>
+<li>BaaS&#x5728;&#x4EA7;&#x54C1;&#x7684;&#x5B9A;&#x4F4D;&#x4E0A;&#x66F4;&#x52A0;&#x5E95;&#x5C42;&#xFF0C;&#x4F5C;&#x4E3A;&#x5E94;&#x7528;&#x5F00;&#x53D1;&#x7684;&#x670D;&#x52A1;&#x7AEF;&#x57FA;&#x7840;&#xFF0C;&#x7ED9;developr&#x4F7F;&#x7528;&#xFF0C;&#x56E0;&#x6B64;&#x5E95;&#x5C42;&#x7684;&#x529F;&#x80FD;&#x8981;&#x591A;&#x5F88;&#x591A;</li>
+<li>headless cms&#x7684;&#x5B9A;&#x4F4D;&#x66F4;&#x4E0A;&#x5C42;&#xFF0C;&#x4E00;&#x822C;&#x9002;&#x7528;&#x4E8E;blog&#x7C7B;&#x578B;&#x7684;&#x5F31;&#x903B;&#x8F91;&#x5E94;&#x7528;&#xFF0C;&#x5728;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x4E0A;&#x6CA1;&#x6709;&#x8FC7;&#x591A;&#x7684;&#x5C01;&#x88C5;&#xFF08;&#x8054;&#x8868;&#x67E5;&#x8BE2;&#x4E4B;&#x7C7B;&#x7684;&#xFF09;&#xFF0C;&#x7ED9;developer&#x548C;editor&#x4F7F;&#x7528;&#xFF0C;&#x524D;&#x8005;&#x8D1F;&#x8D23;&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x548C;&#x5199;&#x5E94;&#x7528;&#x6765;&#x6D88;&#x8D39;&#x6570;&#x636E;&#xFF0C;&#x540E;&#x8005;&#x8D1F;&#x8D23;&#x7F16;&#x8F91;&#x548C;&#x53D1;&#x5E03;&#x6570;&#x636E;&#x6761;&#x76EE;</li>
+<li>** &#x4E00;&#x79CD;&#x6BD4;&#x8F83;&#x7406;&#x60F3;&#x7684;&#x67B6;&#x6784;&#x662F;&#xFF0C;&#x4EE5;BaaS&#x4F5C;&#x4E3A;&#x5E95;&#x5C42;&#xFF0C;&#x57FA;&#x4E8E;&#x5728;BaaS&#x7684;&#x6570;&#x636E;&#x5C42;&#x6253;&#x9020;headless CMS&#xFF0C;&#x628A;headless CMS&#x770B;&#x6210;&#x662F;&#x4E00;&#x79CD;&#x666E;&#x901A;&#x7684;&#x5E94;&#x7528;</li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<h3 id="queue-command&#x683C;&#x5F0F;">queue command&#x683C;&#x5F0F;</h3>
+<h3 id="baas-vs-&#x76EE;&#x524D;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;">BaaS vs &#x76EE;&#x524D;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;</h3>
 <ul>
-<li>{
-&quot;action&quot;: &quot;insert&quot; | &quot;update&quot; | &quot;delete&quot;,
-&quot;collection&quot;: &quot;titan&quot;,
-&quot;id&quot;: [1,2,3],
-&quot;errorHandle&quot;: &quot;strict&quot; | &quot;loose&quot; 
-}</li>
+<li>&#x76EE;&#x524D;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;<ul>
+<li>&#x8FD0;&#x7EF4;<ul>
+<li>ec2&#xFF0C;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;</li>
+<li>elb&#xFF0C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;</li>
+<li>rds&#xFF0C;&#x6570;&#x636E;&#x5E93;</li>
+<li>s3&#xFF0C;&#x6587;&#x4EF6;&#x5B58;&#x50A8;</li>
+<li>ses&#xFF0C;&#x90AE;&#x4EF6;&#x670D;&#x52A1;</li>
+<li>sns&#xFF0C;&#x63A8;&#x9001;</li>
+<li>sms&#xFF0C;&#x77ED;&#x4FE1;</li>
+<li>redis&#xFF0C;&#x7F13;&#x5B58;</li>
+<li>elasticsearch&#xFF0C;&#x641C;&#x7D22;</li>
+</ul>
+</li>
+<li>&#x5F00;&#x53D1;<ul>
+<li>&#x4F7F;&#x7528;orm&#x6216;&#x8005;&#x539F;&#x751F;sql&#xFF0C;&#x6765;curd&#x6570;&#x636E;</li>
+<li>&#x4F7F;&#x7528;aws sdk&#xFF0C;&#x6765;&#x8C03;&#x7528;aws&#x7684;&#x670D;&#x52A1;&#xFF08;s3&#x3001;sns&#x3001;ses&#xFF09;</li>
+<li>&#x5982;&#x679C;&#x662F;&#x7528;laravel&#x8FD9;&#x79CD;&#x5927;&#x800C;&#x5168;&#x7684;&#x6846;&#x67B6;&#xFF0C;auth&#x3001;acl&#x7B49;&#x9AD8;&#x9891;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x7528;&#x63D2;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x5B89;&#x88C5;&#x4F7F;&#x7528;</li>
+<li>&#x5982;&#x679C;&#x662F;node.js&#x7684;&#x6846;&#x67B6;&#xFF0C;auth&#x3001;acl&#x3001;notification&#x8FD9;&#x7C7B;&#x9AD8;&#x9891;&#x670D;&#x52A1;&#x76EE;&#x524D;&#x8FD8;&#x6CA1;&#x6709;&#xFF0C;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x5C01;&#x88C5;<ul>
+<li>&#x68B3;&#x7406;&#x670D;&#x52A1;&#x9700;&#x6C42;<ul>
+<li>&#x628A;&#x76F8;&#x5173;&#x7684;&#x4E00;&#x4E9B;saas&#xFF08;&#x4F8B;&#x5982;auth0&#xFF09;&#x6216;&#x8005;&#x4EA7;&#x54C1;&#x90FD;review&#x4E00;&#x904D;</li>
+</ul>
+</li>
+<li>&#x8BBE;&#x8BA1;&#x6570;&#x636E;&#x5E93;&#x7ED3;&#x6784;</li>
+<li>&#x628A;&#x4EE3;&#x7801;&#x7EC4;&#x7EC7;&#x6210;&#x53EF;&#x5FEB;&#x901F;&#x590D;&#x7528;&#x7684;&#x5F62;&#x5F0F;<ul>
+<li>&#x80FD;&#x8DD1;&#x901A;&#x7684;&#x6837;&#x677F;&#x4EE3;&#x7801;&#xFF0C;&#x5177;&#x4F53;&#x5F00;&#x53D1;&#x65F6;&#x6839;&#x636E;&#x7528;&#x7684;&#x6846;&#x67B6;&#x548C;&#x5305;&#x8FDB;&#x884C;&#x6539;&#x5199;</li>
+<li>&#xFF08;&#x7EDF;&#x4E00;&#xFF09;&#x5F00;&#x53D1;&#x6846;&#x67B6;&#x4E2D;&#x7684;&#x63D2;&#x4EF6;</li>
+<li>&#xFF08;&#x65E0;&#x8BED;&#x8A00;&#x4F9D;&#x8D56;&#xFF0C;&#x65E0;&#x6846;&#x67B6;&#x4F9D;&#x8D56;&#xFF0C;&#x53EF;&#x72EC;&#x7ACB;&#x90E8;&#x7F72;&#xFF09;&#x5FAE;&#x670D;&#x52A1;&#x6216;serverless function</li>
+<li>&#xFF08;&#x65E0;&#x8BED;&#x8A00;&#x4F9D;&#x8D56;&#xFF0C;&#x65E0;&#x6846;&#x67B6;&#x4F9D;&#x8D56;&#xFF0C;&#x53EF;&#x72EC;&#x7ACB;&#x90E8;&#x7F72;&#xFF09;&#x5FAE;&#x670D;&#x52A1;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;baas&#xFF0C;&#x4E0D;&#x8FC7;&#x53EA;&#x6709;service</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x4F7F;&#x7528;&#x5F00;&#x6E90;&#x7684;BaaS&#xFF08;Parse&#xFF09;<ul>
+<li>&#x8FD0;&#x7EF4;<ul>
+<li>&#x540C;&#x4E0A;</li>
+<li>parse&#x7684;&#x670D;&#x52A1;&#x9700;&#x8981;&#x90E8;&#x7F72;&#xFF0C;&#x53EF;&#x4EE5;&#x548C;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x4E00;&#x8D77;&#x90E8;&#x7F72;</li>
+</ul>
+</li>
+<li>&#x5F00;&#x53D1;<ul>
+<li>&#x4F7F;&#x7528;parse&#x63D0;&#x4F9B;&#x7684;sdk&#xFF0C;&#x6765;curd&#x6570;&#x636E;</li>
+<li>&#x4F7F;&#x7528;parse&#x63D0;&#x4F9B;&#x7684;sdk&#xFF0C;&#x6765;&#x8C03;&#x7528;&#x670D;&#x52A1;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x4F7F;&#x7528;&#x5546;&#x7528;&#x6536;&#x8D39;&#x7684;BaaS&#xFF08;&#x5927;&#x6982;&#x7387;&#x4E0D;&#x4F1A;&#x4F7F;&#x7528;&#xFF09;<ul>
+<li>&#x8FD0;&#x7EF4;<ul>
+<li>ec2&#xFF0C;&#x5E94;&#x7528;&#x670D;&#x52A1;&#x5668;</li>
+<li>elb&#xFF0C;&#x8D1F;&#x8F7D;&#x5747;&#x8861;</li>
+<li>&#x5728;BaaS&#x4E0A;&#x521B;&#x5EFA;&#x5E94;&#x7528;</li>
+</ul>
+</li>
+<li>&#x5F00;&#x53D1;<ul>
+<li>&#x4F7F;&#x7528;baas&#x63D0;&#x4F9B;&#x7684;sdk&#xFF0C;&#x6765;curd&#x6570;&#x636E;</li>
+<li>&#x4F7F;&#x7528;bass&#x63D0;&#x4F9B;&#x7684;sdk&#xFF0C;&#x6765;&#x8C03;&#x7528;&#x670D;&#x52A1;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x4F7F;&#x7528;BaaS&#x548C;&#x76EE;&#x524D;&#x7684;&#x5F00;&#x53D1;&#x65B9;&#x5F0F;&#x76F8;&#x6BD4;<ul>
+<li>&#x4F18;&#x70B9;<ul>
+<li>baas&#x7684;&#x6570;&#x636E;&#x65B9;&#x6848;&#xFF0C;&#x8282;&#x7701;&#x4E86;&#x4E00;&#x4E9B;&#x6570;&#x636E;&#x7684;&#x9009;&#x578B;&#x548C;&#x8BBE;&#x8BA1;&#x7684;&#x65F6;&#x95F4;<ul>
+<li>relation data</li>
+<li>realtime data event</li>
+</ul>
+</li>
+<li><em>*</em> &#x90E8;&#x5206;&#x9AD8;&#x9891;service&#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x7701;&#x53BB;&#x4E86;&#x5F00;&#x53D1;&#x7EF4;&#x62A4;&#x7684;&#x65F6;&#x95F4;<ul>
+<li>auth</li>
+<li>acl</li>
+<li>notification</li>
+<li>chat</li>
+</ul>
+</li>
+<li>&#x4E00;&#x4E9B;&#x989D;&#x5916;&#x529F;&#x80FD;&#x7684;&#x96C6;&#x5408;&#xFF08;&#x4F46;&#x8FD9;&#x4E9B;&#x529F;&#x80FD;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x76EE;&#x524D;&#x6765;&#x8BF4;&#x4F7F;&#x7528;&#x9891;&#x7387;&#x6BD4;&#x8F83;&#x4F4E;&#xFF0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x7528;&#x522B;&#x7684;&#x65B9;&#x5F0F;&#x6765;&#x5B9E;&#x73B0;&#xFF09;<ul>
+<li>serverless function</li>
+<li>config</li>
+<li>firebase&#x5728;app&#x548C;ml&#x7684;&#x529F;&#x80FD;</li>
+</ul>
+</li>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7684;&#x662F;&#x5546;&#x7528;&#x7684;baas&#xFF0C;&#x8282;&#x7701;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x8FD0;&#x7EF4;&#x548C;&#x540E;&#x7EED;&#x8FD0;&#x7EF4;&#x7684;&#x65F6;&#x95F4;</li>
+</ul>
+</li>
+<li>&#x7F3A;&#x70B9;<ul>
+<li><em>*</em> &#x6570;&#x636E;&#x90E8;&#x5206;&#x548C;&#x4F7F;&#x7528;db&#x539F;&#x751F;&#x65B9;&#x6848;&#x76F8;&#x6BD4;&#xFF0C;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x90A3;&#x4E48;&#x7075;&#x6D3B;&#x548C;&#x5F3A;&#x5927;<ul>
+<li>&#x4E8B;&#x52A1;&#x3001;&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x7B49;&#x4E00;&#x4E9B;&#x7279;&#x6027;</li>
+<li>sql table join&#x7684;&#x4FBF;&#x6377;&#x6027;</li>
+<li>&#x6027;&#x80FD;&#x4F18;&#x5316;</li>
+<li>&#x5B57;&#x6BB5;&#x7EA6;&#x675F;</li>
+<li>&#x6570;&#x636E;&#x5E93;orm&#x548C;&#x6846;&#x67B6;&#x6253;&#x901A;</li>
+</ul>
+</li>
+<li><em>*</em> &#x9700;&#x8981;&#x989D;&#x5916;&#x5B66;&#x4E60;&#x4E00;&#x6574;&#x5957;sdk&#x548C;api&#xFF0C;&#x6709;&#x4E00;&#x5B9A;&#x4E0A;&#x624B;&#x6210;&#x672C;<ul>
+<li>&#x6700;&#x5E38;&#x7528;&#x662F;DB&#x5B58;&#x50A8;&#x7684;sdk&#xFF0C;&#x548C;&#x539F;&#x751F;&#x7684;db&#x76F8;&#x6BD4;&#x4E5F;&#x53EA;&#x662F;sdk&#x4E0D;&#x540C;&#x800C;&#x5DF2;&#xFF0C;&#x5982;&#x679C;&#x628A;orm&#x7528;&#x719F;&#x4E86;&#xFF0C;&#x4F7F;&#x7528;&#x54EA;&#x4E2A;&#x5199;&#x5DEE;&#x522B;&#x5E76;&#x4E0D;&#x5927;</li>
+<li>&#x5BF9;&#x4E8E;&#x4E00;&#x4E9B;&#x9AD8;&#x9891;service&#x7684;&#x5C01;&#x88C5;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x6574;&#x7406;&#x597D;&#x8BBE;&#x8BA1;&#x548C;&#x9700;&#x6C42;&#x540E;&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;&#xFF0C;&#x6216;&#x8005;&#x627E;&#x66F4;&#x597D;&#x7684;&#x65B9;&#x6848;&#xFF0C;&#x76F4;&#x63A5;&#x7528;parse&#x7684;&#x4E0D;&#x4E00;&#x5B9A;&#x597D;&#x7528;&#x6216;&#x6269;&#x5C55;&#x6027;&#x5F3A;&#xFF1B;&#x7528;parse&#x7684;&#x597D;&#x5904;&#x53EF;&#x80FD;&#x662F;&#x514D;&#x53BB;&#x4E86;&#x81EA;&#x5DF1;&#x8C03;&#x7814;&#x548C;&#x8BBE;&#x8BA1;&#x8FD9;&#x90E8;&#x5206;&#x9700;&#x6C42;&#x7684;&#x65F6;&#x95F4;</li>
+</ul>
+</li>
+<li>&#x5BF9;&#x4E8E;&#x5F00;&#x53D1;&#x8005;&#x6765;&#x8BF4;&#x662F;&#x4E00;&#x4E2A;&#x9ED1;&#x76D2;&#xFF0C;&#x51FA;&#x73B0;&#x95EE;&#x9898;&#x96BE;&#x4EE5;debug<ul>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5F00;&#x6E90;&#x65B9;&#x6848;&#xFF08;parse&#xFF09;&#xFF0C;&#x9700;&#x8981;&#x4E13;&#x95E8;&#x6709;&#x4EBA;&#x7EF4;&#x62A4;&#x5E73;&#x53F0;&#x672C;&#x8EAB;&#x4EE3;&#x7801;</li>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;&#x5546;&#x7528;&#x65B9;&#x6848;&#xFF0C;&#x9047;&#x5230;&#x95EE;&#x9898;&#x63D0;&#x5DE5;&#x5355;&#xFF0C;&#x4EE5;&#x53CA;&#x540E;&#x7EED;&#x9879;&#x76EE;&#x5E9F;&#x5F03;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x5B58;&#x5728;&#x98CE;&#x9669;</li>
+</ul>
+</li>
+<li>&#x5B9A;&#x5236;&#x5316;&#x5F00;&#x53D1;&#x6216;&#x6269;&#x5C55;&#x6210;&#x672C;&#xFF0C;&#x4E3B;&#x8981;&#x4F9D;&#x8D56;&#x5E73;&#x53F0;&#x7684;&#x652F;&#x6301;&#x7A0B;&#x5EA6;</li>
+<li>&#x589E;&#x52A0;&#x5E94;&#x7528;&#x7684;&#x67B6;&#x6784;&#x3001;&#x90E8;&#x7F72;&#x3001;&#x6027;&#x80FD;&#x7684;&#x590D;&#x6742;&#x7A0B;&#x5EA6;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="gig&#x540E;&#x7EED;&#x7684;&#x53D1;&#x5C55;">Gig&#x540E;&#x7EED;&#x7684;&#x53D1;&#x5C55;</h3>
+<ul>
+<li>&#x5F00;&#x53D1;&#x5230;&#x76EE;&#x524D;&#x4E3A;&#x6B62;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x529F;&#x80FD;&#x4E3A;cms + search&#x7684;&#x6570;&#x636E;&#x7BA1;&#x7406;&#x5DE5;&#x5177;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x6C89;&#x6DC0;&#x4E86;&#x4E00;&#x5957;&#x5E94;&#x7528;&#x4F7F;&#x7528;pg&#x548C;es&#x7684;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;</li>
+<li>&#x5982;&#x679C;&#x7EE7;&#x7EED;&#x5F80;&#x4E0A;&#x5C42;&#x4EA7;&#x54C1;&#x505A;&#xFF0C;&#x53EF;&#x80FD;&#x4F1A;&#x662F;&#x4E00;&#x4E2A;headless cms&#xFF08;search&#xFF09;&#xFF0C;&#x4F46;&#x662F;headless cms&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#x4F7F;&#x7528;&#x573A;&#x666F;&#x7684;&#x5C40;&#x9650;&#x6027;&#xFF0C;&#x5E73;&#x53F0;&#x65E0;&#x6CD5;&#x627F;&#x8F7D;&#x8FC7;&#x591A;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x903B;&#x8F91;</li>
+<li>&#x5982;&#x679C;&#x7EE7;&#x7EED;&#x5F80;&#x5E95;&#x5C42;&#x4EA7;&#x54C1;&#x505A;&#xFF0C;&#x5C31;&#x662F;&#x5F80;BaaS&#x7684;&#x65B9;&#x5411;&#xFF0C;&#x628A;&#x540E;&#x7EED;&#x5E94;&#x7528;&#x7684;&#x5B58;&#x50A8;&#x7BA1;&#x7406;&#xFF08;database&#x3001;file&#x3001;cache&#xFF09;&#x548C;&#x9AD8;&#x9891;&#x670D;&#x52A1;&#xFF08;auth&#x3001;acl&#x3001;notification&#xFF09;&#x5168;&#x90E8;&#x63A5;&#x8D70;<ul>
+<li>&#x5148;&#x8BD5;&#x7528;baas&#xFF08;parse&#xFF09;&#x6765;&#x5F00;&#x53D1;&#x5E94;&#x7528;&#xFF0C;review&#x4E00;&#x4E0B;&#x8FD9;&#x79CD;&#x5F00;&#x53D1;&#x6A21;&#x5F0F;&#x662F;&#x5426;&#x5408;&#x9002;</li>
+<li>&#x5982;&#x679C;&#x89C9;&#x5F97;baas&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x5408;&#x7406;&#xFF0C;&#x76F4;&#x63A5;&#x57FA;&#x4E8E;parse&#x6765;&#x505A;gig&#xFF08;headless cms + search&#xFF09;<ul>
+<li>gig&#x76EE;&#x524D;&#x7684;curd api&#x8BBE;&#x8BA1;&#xFF0C;&#x548C;&#x4F20;&#x7EDF;sql&#x5F00;&#x53D1;&#x76F8;&#x6BD4;&#xFF0C;&#x6027;&#x80FD;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x6709;&#x6548;&#x6027;&#x4E0A;&#x5DEE;&#x522B;&#x90FD;&#x6BD4;&#x8F83;&#x660E;&#x663E;&#xFF0C;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x4F7F;&#x7528;</li>
+<li>&#x5C01;&#x88C5;&#x51FA;parse&#x7EA7;&#x522B;&#x7684;&#x67E5;&#x8BE2;&#x662F;&#x6BD4;&#x8F83;&#x9EBB;&#x70E6;&#x7684;&#xFF0C;&#x8FD8;&#x4E0D;&#x5982;&#x76F4;&#x63A5;&#x5C31;&#x7528;parse&#x6765;&#x505A;</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
                                 
@@ -1849,10 +2238,6 @@ talent&#x4E0A;&#xFF0C;&#x7EC4;&#x6210;&#x4E00;&#x4E2A;&#x5927;json&#xFF0C;&#x518
             
                 
                 
-                <a href="es-relation.html" class="navigation navigation-next navigation-unique" aria-label="Next page: ElasticSearch Relation">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
             
         
     </div>
@@ -1860,7 +2245,7 @@ talent&#x4E0A;&#xFF0C;&#x7EC4;&#x6210;&#x4E00;&#x4E2A;&#x5927;json&#xFF0C;&#x518
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"名词解释","level":"4.4.6.1","depth":3,"next":{"title":"ElasticSearch Relation","level":"4.4.6.2","depth":3,"path":"4-projects/gig-economy/pg-es/es-relation.md","ref":"4-projects/gig-economy/pg-es/es-relation.md","articles":[]},"previous":{"title":"pg-es","level":"4.4.6","depth":2,"ref":"","articles":[{"title":"名词解释","level":"4.4.6.1","depth":3,"path":"4-projects/gig-economy/pg-es/design.md","ref":"4-projects/gig-economy/pg-es/design.md","articles":[]},{"title":"ElasticSearch Relation","level":"4.4.6.2","depth":3,"path":"4-projects/gig-economy/pg-es/es-relation.md","ref":"4-projects/gig-economy/pg-es/es-relation.md","articles":[]},{"title":"DB 与 Es 数据迁移功能设计","level":"4.4.6.3","depth":3,"path":"4-projects/gig-economy/pg-es/migrate.md","ref":"4-projects/gig-economy/pg-es/migrate.md","articles":[]},{"title":"review log","level":"4.4.6.4","depth":3,"path":"4-projects/gig-economy/pg-es/research.md","ref":"4-projects/gig-economy/pg-es/research.md","articles":[]},{"title":"Search View Structure","level":"4.4.6.5","depth":3,"path":"4-projects/gig-economy/pg-es/searchview-structure.md","ref":"4-projects/gig-economy/pg-es/searchview-structure.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/design.md","mtime":"2020-02-07T01:35:59.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-07T01:36:46.175Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"BaaS & Headless CMS","level":"4.4.8.1","depth":3,"next":{"title":"official-website","level":"4.5","depth":1,"ref":"","articles":[{"title":"what we do","level":"4.5.1","depth":2,"path":"4-projects/official-website/information-structure.md","ref":"4-projects/official-website/information-structure.md","articles":[]}]},"previous":{"title":"product","level":"4.4.8","depth":2,"ref":"","articles":[{"title":"BaaS & Headless CMS","level":"4.4.8.1","depth":3,"path":"4-projects/gig-economy/product/baas-vs-headless-cms.md","ref":"4-projects/gig-economy/product/baas-vs-headless-cms.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/product/baas-vs-headless-cms.md","mtime":"2020-02-07T01:35:59.778Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-07T01:36:46.175Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
