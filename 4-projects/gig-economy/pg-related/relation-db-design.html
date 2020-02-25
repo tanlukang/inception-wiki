@@ -65,6 +65,8 @@
     <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="single-way-desgin.html" />
+    
     
     <link rel="prev" href="relation-api-draft.html" />
     
@@ -1699,6 +1701,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.4.7.4" data-path="single-way-desgin.html">
+            
+                <a href="single-way-desgin.html">
+            
+                    
+                    单向关系的设计
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1921,6 +1936,7 @@ ContentModelRelations</p>
              foreignKey: &apos;talentId&apos;,
              alias: { 
                  contentModelId: 2,
+                 willReturn: true,
                  contentModelAlias: &apos;experiences&apos;
              }
          },
@@ -1929,6 +1945,7 @@ ContentModelRelations</p>
              foreignKey: null,
              alias: { 
                  contentModelId: 1,
+                 willReturn: true,
                  contentModelAlias: &apos;talent&apos;
              }
          }
@@ -1954,6 +1971,7 @@ ContentModelRelations</p>
              foreignKey: &apos;companyId&apos;,
              alias: { 
                  contentModelId: 4,
+                 willReturn:true,
                  contentModelAlias: &apos;industries&apos;
              }
          },
@@ -1962,6 +1980,7 @@ ContentModelRelations</p>
              foreignKey: &apos;industryId&apos;,
              alias: { 
                  contentModelId: 3,
+                 willReturn: true,
                  contentModelAlias: &apos;companies&apos;
              }
          }
@@ -1987,6 +2006,7 @@ ContentModelRelations</p>
              foreignKey: null,
              alias: { 
                  contentModelId: 5,
+                 willReturn: true,
                  contentModelAlias: &apos;location&apos;
              }
          },
@@ -1995,6 +2015,7 @@ ContentModelRelations</p>
              foreignKey: &apos;locationId&apos;,
              alias: { 
                  contentModelId: 3,
+                 willReturn: true,
                  contentModelAlias: &apos;company&apos;
              }
          }
@@ -2022,10 +2043,12 @@ ContentModelRelations</p>
              aliases: [
                  { 
                      contentModelId: 3,
+                     willReturn: true,
                      contentModelAlias: &apos;companies&apos;
                  },
                  { 
                      contentModelId: 6,
+                     willReturn: true,
                      contentModelAlias: &apos;roles&apos;
                  }
              ],
@@ -2037,10 +2060,12 @@ ContentModelRelations</p>
              aliases: [
                  { 
                      contentModelId: 1,
+                     willReturn: true,
                      contentModelAlias: &apos;talents&apos;
                  },
                  { 
                      contentModelId: 6,
+                     willReturn: true,
                      contentModelAlias: &apos;roles&apos;
                  }
              ],
@@ -2052,10 +2077,12 @@ ContentModelRelations</p>
              aliases: [
                  { 
                      contentModelId: 1,
+                     willReturn: true,
                      contentModelAlias: &apos;talents&apos;
                  },
                  { 
                      contentModelId: 3,
+                     willReturn: true,
                      contentModelAlias: &apos;companies&apos;
                  }
              ],
@@ -2236,6 +2263,7 @@ ContentModelRelations</p>
                  foreignKey: &apos;companyId&apos;, // Call API getForeignKeyByContentModelId(3);
                  alias: { 
                      contentModelId: 4,
+                     willReturn: true,
                      contentModelAlias: &apos;industries&apos;
                  }
              },
@@ -2244,6 +2272,7 @@ ContentModelRelations</p>
                  foreignKey: &apos;industryId&apos;, // Call API getForeignKeyByContentModelId(4);
                  alias: { 
                      contentModelId: 3,
+                     willReturn: true,
                      contentModelAlias: &apos;companies&apos;
                  }
              }
@@ -2324,6 +2353,7 @@ ContentModelRelations</p>
                  foreignKey: null,
                  alias: { 
                      contentModelId: 5,
+                     willReturn: true,
                      contentModelAlias: &apos;location&apos;
                  }
              },
@@ -2332,6 +2362,7 @@ ContentModelRelations</p>
                  foreignKey: &apos;locationId&apos;,  // Call API getForeignKeyByContentModelId(5);
                  alias: { 
                      contentModelId: 3,
+                     willReturn: true,
                      contentModelAlias: &apos;company&apos;
                  }
              }
@@ -2421,10 +2452,12 @@ ContentModelRelations</p>
                  aliases: [
                      { 
                          contentModelId: 3,
+                         willReturn: true,
                          contentModelAlias: &apos;companies&apos;
                      },
                      { 
                          contentModelId: 6,
+                         willReturn: true,
                          contentModelAlias: &apos;roles&apos;
                      }
                  ],
@@ -2436,10 +2469,12 @@ ContentModelRelations</p>
                  aliases: [
                      { 
                          contentModelId: 1,
+                         willReturn: true,
                          contentModelAlias: &apos;talents&apos;
                      },
                      { 
                          contentModelId: 6,
+                         willReturn: true,
                          contentModelAlias: &apos;roles&apos;
                      }
                  ],
@@ -2451,10 +2486,12 @@ ContentModelRelations</p>
                  aliases: [
                      { 
                          contentModelId: 1,
+                         willReturn: true,
                          contentModelAlias: &apos;talents&apos;
                      },
                      { 
                          contentModelId: 3,
+                         willReturn: true,
                          contentModelAlias: &apos;companies&apos;
                      }
                  ],
@@ -2623,10 +2660,14 @@ ContentModelRelations</p>
 
             
                 
-                <a href="relation-api-draft.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 实例数据">
+                <a href="relation-api-draft.html" class="navigation navigation-prev " aria-label="Previous page: 实例数据">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="single-way-desgin.html" class="navigation navigation-next " aria-label="Next page: 单向关系的设计">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -2635,7 +2676,7 @@ ContentModelRelations</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Model关系数据库设计","level":"4.4.7.3","depth":3,"next":{"title":"product","level":"4.4.8","depth":2,"ref":"","articles":[{"title":"BaaS & Headless CMS","level":"4.4.8.1","depth":3,"path":"4-projects/gig-economy/product/baas-vs-headless-cms.md","ref":"4-projects/gig-economy/product/baas-vs-headless-cms.md","articles":[]}]},"previous":{"title":"实例数据","level":"4.4.7.2","depth":3,"path":"4-projects/gig-economy/pg-related/relation-api-draft.md","ref":"4-projects/gig-economy/pg-related/relation-api-draft.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/relation-db-design.md","mtime":"2020-02-25T15:19:00.752Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-25T15:20:13.724Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Model关系数据库设计","level":"4.4.7.3","depth":3,"next":{"title":"单向关系的设计","level":"4.4.7.4","depth":3,"path":"4-projects/gig-economy/pg-related/single-way-desgin.md","ref":"4-projects/gig-economy/pg-related/single-way-desgin.md","articles":[]},"previous":{"title":"实例数据","level":"4.4.7.2","depth":3,"path":"4-projects/gig-economy/pg-related/relation-api-draft.md","ref":"4-projects/gig-economy/pg-related/relation-api-draft.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-related/relation-db-design.md","mtime":"2020-02-25T15:20:16.050Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-25T15:20:59.053Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
