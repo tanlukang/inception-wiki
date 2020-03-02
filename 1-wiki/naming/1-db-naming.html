@@ -1945,14 +1945,14 @@
 <ul>
 <li>&#x5927;&#x9A7C;&#x5CF0;&#x547D;&#x540D;</li>
 <li>&#x4E0D;&#x80FD;&#x6709;&#x62FC;&#x5199;&#x9519;&#x8BEF;</li>
+<li>&#x5C3D;&#x91CF;&#x63A5;&#x8FD1;&#x4E1A;&#x52A1;&#x903B;&#x8F91; &#x5E76;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x7684;&#x539F;&#x7406;&#x547D;&#x540D; &#x6BD4;&#x5982;orders</li>
 <li>&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x7F29;&#x5199;&#xFF08;&#x56FD;&#x9645;&#x901A;&#x7528;&#x7F29;&#x5199;&#x9664;&#x5916;&#xFF09;</li>
 <li>&#x4F7F;&#x7528;&#x590D;&#x6570;&#x5F62;&#x5F0F;</li>
-<li>&#x590D;&#x6570;&#x7684;&#x89C4;&#x5219;&#x53C2;&#x8003;&#x8BCD;&#x5178;&#x6BD4;&#x5982; staff&#x800C;&#x4E0D;&#x662F;staffs&#xFF0C;orm&#x4E2D;&#x5E94;&#x8BE5;&#x58F0;&#x660E;&#x522B;&#x540D;</li>
-<li>&#x4E1A;&#x52A1;&#x9020;&#x8BCD;&#x9700;&#x5C06;&#x4E0D;&#x540C;&#x5355;&#x8BCD;&#x62FC;&#x5728;&#x4E00;&#x8D77; </li>
-<li>&#x5982;&#x679C;&#x662F;&#x5408;&#x6210;&#x8BCD;&#xFF0C;&#x4F7F;&#x7528;&#x4E0B;&#x5212;&#x7EBF;&#x5206;&#x5272;&#xFF0C;&#x5E76;&#x4E14;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x52A0;&#x590D;&#x6570; </li>
-<li>&#x5355;&#x8868;&#x6700;&#x591A;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x4E0B;&#x5212;&#x7EBF;&#x4E14;&#x4E0B;&#x5212;&#x7EBF;&#x540E;&#x7F00;&#x5FC5;&#x987B;&#x662F;&#x5E38;&#x89C1;&#x7684;&#x542B;&#x4E49;</li>
-<li>&#x591A;&#x5BF9;&#x591A;&#x5173;&#x7CFB;&#x8868; &#x91C7;&#x7528; relation<em>&#x590D;&#x6570;</em>&#x590D;&#x6570;,&#x6700;&#x591A;&#x51FA;&#x73B0; 4&#x4E2A;&#x4E0B;&#x5212;&#x7EBF; </li>
-<li>&#x5C3D;&#x91CF;&#x63A5;&#x8FD1;&#x4E1A;&#x52A1;&#x903B;&#x8F91; &#x5E76;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x7684;&#x539F;&#x7406;&#x547D;&#x540D; &#x6BD4;&#x5982;orders</li>
+<li>&#x590D;&#x6570;&#x7684;&#x89C4;&#x5219;&#x53C2;&#x8003;&#x8BCD;&#x5178;&#x6BD4;&#x5982; Staff&#x800C;&#x4E0D;&#x662F;Staffs&#xFF0C;ORM&#x4E2D;&#x5E94;&#x8BE5;&#x58F0;&#x660E;&#x522B;&#x540D;</li>
+<li>&#x4E1A;&#x52A1;&#x9020;&#x8BCD;&#x6216;&#x5408;&#x6210;&#x8BCD;&#x9700;&#x5C06;&#x4E0D;&#x540C;&#x5355;&#x8BCD;&#x62FC;&#x5728;&#x4E00;&#x8D77;</li>
+<li>&#x53EA;&#x6709;&#x5728;&#x5173;&#x7CFB;&#x8868;&#x547D;&#x540D;&#x65F6;&#x53EF;&#x4EE5;&#x51FA;&#x73B0;&#x4E0B;&#x5212;&#x7EBF;</li>
+<li>&#x4E0B;&#x5212;&#x7EBF;&#x7684;&#x6570;&#x91CF;&#x7B49;&#x4E8E;&#x5173;&#x8054;&#x8868;&#x4E2D;&#x5916;&#x952E;&#x6570;&#x91CF;&#x51CF;1</li>
+<li>&#x5386;&#x53F2;&#x8868;&#x7684;&#x547D;&#x540D;&#x4EE5;__Versions&#x7ED3;&#x5C3E;&#xFF0C;&#x6B64;&#x5904;&#x4E3A;&#x53CC;&#x4E0B;&#x5212;&#x7EBF;</li>
 </ul>
 <h4 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h4>
 <ul>
@@ -1964,7 +1964,8 @@
 <li>DataModelFields &#x4E1A;&#x52A1;&#x9020;&#x8BCD;+&#x5408;&#x6210;&#x8BCD;</li>
 <li>CompanyJobs_Users &#x5173;&#x7CFB;&#x8868;</li>
 <li>CompanyJobLogs_Users &#x5173;&#x7CFB;&#x8868;</li>
-<li><p>CompanyJobLogs_UserLogs &#x5173;&#x7CFB;&#x8868; </p>
+<li>CompanyJobLogs_UserLogs &#x5173;&#x7CFB;&#x8868; </li>
+<li><p>Jobs__Versions</p>
 </li>
 <li><p>Users</p>
 </li>
@@ -2039,7 +2040,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"数据库命名","level":"1.5.1","depth":2,"next":{"title":"React Directory Structure","level":"1.5.2","depth":2,"path":"1-wiki/naming/2-react-directory-structure.md","ref":"1-wiki/naming/2-react-directory-structure.md","articles":[]},"previous":{"title":"naming","level":"1.5","depth":1,"ref":"","articles":[{"title":"数据库命名","level":"1.5.1","depth":2,"path":"1-wiki/naming/1-db-naming.md","ref":"1-wiki/naming/1-db-naming.md","articles":[]},{"title":"React Directory Structure","level":"1.5.2","depth":2,"path":"1-wiki/naming/2-react-directory-structure.md","ref":"1-wiki/naming/2-react-directory-structure.md","articles":[]},{"title":"变量命名","level":"1.5.3","depth":2,"path":"1-wiki/naming/3-var-naming.md","ref":"1-wiki/naming/3-var-naming.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/naming/1-db-naming.md","mtime":"2020-03-02T08:31:58.596Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-02T08:32:56.984Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"数据库命名","level":"1.5.1","depth":2,"next":{"title":"React Directory Structure","level":"1.5.2","depth":2,"path":"1-wiki/naming/2-react-directory-structure.md","ref":"1-wiki/naming/2-react-directory-structure.md","articles":[]},"previous":{"title":"naming","level":"1.5","depth":1,"ref":"","articles":[{"title":"数据库命名","level":"1.5.1","depth":2,"path":"1-wiki/naming/1-db-naming.md","ref":"1-wiki/naming/1-db-naming.md","articles":[]},{"title":"React Directory Structure","level":"1.5.2","depth":2,"path":"1-wiki/naming/2-react-directory-structure.md","ref":"1-wiki/naming/2-react-directory-structure.md","articles":[]},{"title":"变量命名","level":"1.5.3","depth":2,"path":"1-wiki/naming/3-var-naming.md","ref":"1-wiki/naming/3-var-naming.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/naming/1-db-naming.md","mtime":"2020-03-02T08:33:17.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-02T08:34:36.947Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
