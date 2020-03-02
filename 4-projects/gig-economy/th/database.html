@@ -1976,7 +1976,7 @@
 <li>text</li>
 </ul>
 </li>
-<li>militarySrv / backup: militarySrvId (fk)<ul>
+<li>militarySrv<ul>
 <li>text</li>
 </ul>
 </li>
@@ -1988,7 +1988,7 @@
 <li>text</li>
 </ul>
 </li>
-<li>interestStage / backup: interestStageId (fk)<ul>
+<li>interestStage<ul>
 <li>text</li>
 </ul>
 </li>
@@ -2012,7 +2012,7 @@
 <li>text []</li>
 </ul>
 </li>
-<li>interestTargets / backup: m:n relation<ul>
+<li>interestTargets<ul>
 <li>text []</li>
 </ul>
 </li>
@@ -2074,7 +2074,7 @@
 <li>bool</li>
 </ul>
 </li>
-<li>expType / backup: expTypeId (fk)<ul>
+<li>expType<ul>
 <li>text</li>
 </ul>
 </li>
@@ -2109,11 +2109,11 @@
 <li>text []</li>
 </ul>
 </li>
-<li>expRevenue / backup: expRevenueId (fk)<ul>
+<li>expRevenue<ul>
 <li>int</li>
 </ul>
 </li>
-<li>expSize / backup: expSizeId (fk)<ul>
+<li>expSize<ul>
 <li>int</li>
 </ul>
 </li>
@@ -2185,80 +2185,258 @@
 <li>text []</li>
 </ul>
 </li>
-<li>organizationType / backup: organizationTypeId (fk)<ul>
+<li>organizationType<ul>
 <li>text</li>
 </ul>
 </li>
+<li>companyType<ul>
+<li>text</li>
 </ul>
 </li>
-<li><p>backup: MilitarySrv</p>
+<li>location<ul>
+<li>json</li>
+</ul>
+</li>
+<li>revenueHistory<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>employeeCountHistory<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>miniTags<ul>
+<li>alias</li>
+</ul>
+</li>
+<li>culture<ul>
+<li>text</li>
+</ul>
+</li>
+<li>hasMentorship<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>mentorshipDesp<ul>
+<li>text</li>
+</ul>
+</li>
+<li>hasEducationReimbursement<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>reimbursementDesp<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>admiredCompanies<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>competitorCompanies<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>similarCompanies<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>keywords<ul>
+<li>text []</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>MiniTags</p>
 <ul>
-<li>name<ul>
+<li>title <ul>
 <li>text</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>backup: InterestStage</p>
+<li><p>Departments</p>
 <ul>
-<li>name<ul>
+<li>title <ul>
 <li>text</li>
 </ul>
 </li>
+<li>parentId (fk)</li>
 </ul>
 </li>
-<li><p>backup: InterestTargets</p>
+<li><p>Jobs</p>
 <ul>
-<li>name<ul>
-<li>text</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>backup: ExpType</p>
-<ul>
-<li>name<ul>
-<li>text</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>backup: ExpRevenue</p>
-<ul>
-<li>name<ul>
-<li>text</li>
-</ul>
-</li>
-<li>min<ul>
+<li>companyId (fk)<ul>
 <li>int</li>
 </ul>
 </li>
-<li>max<ul>
-<li>int</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>backup: ExpSize</p>
-<ul>
-<li>name<ul>
+<li>companyName<ul>
 <li>text</li>
 </ul>
 </li>
-<li>min<ul>
+<li>companyUrl<ul>
+<li>text</li>
+</ul>
+</li>
+<li>companyLocation<ul>
+<li>json</li>
+</ul>
+</li>
+<li>companyType<ul>
+<li>text</li>
+</ul>
+</li>
+<li>companyIndustries<ul>
+<li>alias</li>
+</ul>
+</li>
+<li>companyRevenue<ul>
 <li>int</li>
 </ul>
 </li>
-<li>max<ul>
+<li>companyRevenueGrowthPercent<ul>
 <li>int</li>
 </ul>
 </li>
+<li>companyEmployeeCount<ul>
+<li>int</li>
 </ul>
 </li>
-<li><p>backup: OrganizationTypes</p>
-<ul>
-<li>name<ul>
+<li>companyEmployeeCountGrowthPercent<ul>
 <li>int</li>
+</ul>
+</li>
+<li>companyCulture<ul>
+<li>text</li>
+</ul>
+</li>
+<li>companyHasMentorship<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>companyMentorshipDesp<ul>
+<li>text</li>
+</ul>
+</li>
+<li>companyHasEducationReimbursement<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>companyHasReimbursementDesp<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>companyAdmiredCompanies<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>positionTitle<ul>
+<li>text</li>
+</ul>
+</li>
+<li>positionRoleId (fk)</li>
+<li>positionTravelPercent<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionSaleType<ul>
+<li>text</li>
+</ul>
+</li>
+<li>positionBase<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionOTE<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionQuotaTarget<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionClientType<ul>
+<li>text []</li>
+</ul>
+</li>
+<li>positionDepartments<ul>
+<li>alias</li>
+</ul>
+</li>
+<li>positionProductFileUrl<ul>
+<li>text</li>
+</ul>
+</li>
+<li>positionOverview<ul>
+<li>text</li>
+</ul>
+</li>
+<li>teamSize<ul>
+<li>int</li>
+</ul>
+</li>
+<li>saleTools<ul>
+<li>text []</li>
+</ul>
+</li>
+<li>saleModels<ul>
+<li>text []</li>
+</ul>
+</li>
+<li>saleMethods<ul>
+<li>text []</li>
+</ul>
+</li>
+<li>career<ul>
+<li>text</li>
+</ul>
+</li>
+<li>training<ul>
+<li>text</li>
+</ul>
+</li>
+<li>teamVideoUrl<ul>
+<li>text</li>
+</ul>
+</li>
+<li>dealPercent<ul>
+<li>int</li>
+</ul>
+</li>
+<li>has401K<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>contributionDegree<ul>
+<li>text</li>
+</ul>
+</li>
+<li>hasSharingProfit<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>sharingDetail<ul>
+<li>text</li>
+</ul>
+</li>
+<li>isEquity<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>hasHealthMedical<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>hasHealthDental<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>hasHealthVision<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>additionDocumentUrl<ul>
+<li>text</li>
 </ul>
 </li>
 </ul>
@@ -2266,6 +2444,19 @@
 </ul>
 <h3 id="relations">Relations</h3>
 <ul>
+<li><p>Departments - Departments = 1 : m</p>
+<ul>
+<li>field<ul>
+<li>parentId</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>children</li>
+<li>parent</li>
+</ul>
+</li>
+</ul>
+</li>
 <li><p>Roles - Roles = 1 : m</p>
 <ul>
 <li>field<ul>
@@ -2441,20 +2632,113 @@
 </li>
 </ul>
 </li>
-<li><p>backup: Talents - InterestTargets = m : n</p>
+<li><p>Organizations - MiniTags = n : m</p>
 <ul>
-<li>Talents_Interest_Targets</li>
+<li>table<ul>
+<li>Organizations_MiniTags</li>
 </ul>
 </li>
-<li><p>backup: Talents - MilitarySrv = m : 1</p>
+<li>field<ul>
+<li>organizationId</li>
+<li>miniTagId</li>
+</ul>
 </li>
-<li><p>backup: Talents - InterestStage = m : 1</p>
+<li>alias<ul>
+<li>organizations</li>
+<li>miniTags</li>
+</ul>
 </li>
-<li><p>backup: Organizations - OrganizationTypes = m : 1</p>
+</ul>
+</li>
+<li><p>Job - Organizations = m : 1</p>
+<ul>
+<li>field<ul>
+<li>companyId</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>jobs</li>
+<li>organization</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Job - Roles = m : 1</p>
+<ul>
+<li>field<ul>
+<li>positionRoleId</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>jobs</li>
+<li>positionRole</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Jobs - MiniTags = n : m </p>
+<ul>
+<li>table<ul>
+<li>Jobs_CompanyMiniTags</li>
+</ul>
+</li>
+<li>field<ul>
+<li>jobId</li>
+<li>miniTagId</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>jobs</li>
+<li>companyMiniTags</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Jobs - Industries = m : n</p>
+<ul>
+<li>table<ul>
+<li>Jobs_CompanyIndustries</li>
+</ul>
+</li>
+<li>field<ul>
+<li>jobId</li>
+<li>industryId</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>jobs</li>
+<li>companyIndustries</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Jobs - Departments = m : m</p>
+<ul>
+<li>table<ul>
+<li>Jobs_PositionDepartments</li>
+</ul>
+</li>
+<li>field<ul>
+<li>jobId</li>
+<li>departmentId</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>jobs</li>
+<li>positionDepartments</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 <h3 id="discussion">discussion</h3>
 <ul>
+<li>_delete</li>
+<li>history reversion design</li>
+<li>_syncStatus<ul>
+<li>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x786E;&#x4FDD;&#x6570;&#x636E;&#x540C;&#x6B65;&#x72B6;&#x6001;</li>
+</ul>
+</li>
 <li>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF; or &#x5173;&#x8054;&#x5173;&#x7CFB;<ul>
 <li>militarySrv</li>
 <li>interestStage</li>
@@ -2468,47 +2752,6 @@
 <li>&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6848;</li>
 </ul>
 </li>
-<li>deleted&#x5B57;&#x6BB5;<ul>
-<li>&#x6682;&#x65F6;&#x5F53;&#x6210;&#x666E;&#x901A;&#x5B57;&#x6BB5;&#x5904;&#x7406;</li>
-</ul>
-</li>
-</ul>
-<h3 id="issues">issues</h3>
-<ul>
-<li>&#x652F;&#x6301;array<ul>
-<li>&#x540E;&#x7EED;&#x5F00;&#x53D1;&#x8BA1;&#x5212;</li>
-</ul>
-</li>
-<li>review model&#x81EA;&#x8EAB;&#x5230;&#x81EA;&#x8EAB;&#x7684;&#x5173;&#x8054;&#x662F;&#x5426;&#x53EF;&#x884C;<ul>
-<li>&#x53EF;&#x884C;</li>
-</ul>
-</li>
-<li>&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;&#x8868;&#x80FD;&#x5426;&#x52A0;&#x5B57;&#x6BB5;<ul>
-<li>&#x540E;&#x7EED;&#x5F00;&#x53D1;&#x8BA1;&#x5212;</li>
-</ul>
-</li>
-<li>reversion<ul>
-<li>review</li>
-</ul>
-</li>
-</ul>
-<h3 id="todo">todo</h3>
-<ul>
-<li>&#x529F;&#x80FD;review</li>
-<li>&#x642D;&#x5EFA;staging&#x73AF;&#x5883;<ul>
-<li>aws&#x8D44;&#x6E90;&#x521B;&#x5EFA;</li>
-<li>be staging&#x5206;&#x652F;&#x90E8;&#x7F72;</li>
-<li>fe now&#x90E8;&#x7F72;</li>
-</ul>
-</li>
-<li>es index<ul>
-<li>&#x624B;&#x52A8;&#x5EFA;&#x7ACB;index</li>
-<li>mock&#x6570;&#x636E;&#x751F;&#x6210;</li>
-</ul>
-</li>
-<li>&#x5728;staging&#x73AF;&#x5883;&#x4E0A;&#x521B;&#x5EFA;models&#xFF0C;&#x83B7;&#x5F97;id</li>
-<li>&#x540E;&#x7AEF;mock&#x63A5;&#x53E3;</li>
-<li>api&#x6587;&#x6863;</li>
 </ul>
 
                                 
@@ -2545,7 +2788,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Source","level":"4.4.9.1","depth":3,"next":{"title":"es","level":"4.4.9.2","depth":3,"ref":"","articles":[{"title":"thes","level":"4.4.9.2.1","depth":4,"ref":"","articles":[]}]},"previous":{"title":"th","level":"4.4.9","depth":2,"ref":"","articles":[{"title":"Source","level":"4.4.9.1","depth":3,"path":"4-projects/gig-economy/th/database.md","ref":"4-projects/gig-economy/th/database.md","articles":[]},{"title":"es","level":"4.4.9.2","depth":3,"ref":"","articles":[{"title":"thes","level":"4.4.9.2.1","depth":4,"ref":"","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/th/database.md","mtime":"2020-02-27T03:00:39.564Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-02-27T03:01:30.152Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Source","level":"4.4.9.1","depth":3,"next":{"title":"es","level":"4.4.9.2","depth":3,"ref":"","articles":[{"title":"thes","level":"4.4.9.2.1","depth":4,"ref":"","articles":[]}]},"previous":{"title":"th","level":"4.4.9","depth":2,"ref":"","articles":[{"title":"Source","level":"4.4.9.1","depth":3,"path":"4-projects/gig-economy/th/database.md","ref":"4-projects/gig-economy/th/database.md","articles":[]},{"title":"es","level":"4.4.9.2","depth":3,"ref":"","articles":[{"title":"thes","level":"4.4.9.2.1","depth":4,"ref":"","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/th/database.md","mtime":"2020-03-02T08:18:01.930Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-02T08:18:52.028Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
