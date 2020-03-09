@@ -2190,6 +2190,9 @@
 <li>id</li>
 <li>email</li>
 <li>password</li>
+<li>firstName</li>
+<li>middleName</li>
+<li>lastName</li>
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
@@ -2206,7 +2209,7 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="individualusers">IndividualUsers</h1>
+<h1 id="memberusers">MemberUsers</h1>
 <ul>
 <li>id</li>
 <li>organizationId (References <code>Organizations</code> table <code>id</code> column)</li>
@@ -2217,7 +2220,7 @@
 <li>middleName</li>
 <li>lastName</li>
 <li>phone</li>
-<li>normalUserTypeId (References <code>NormalUserTypes</code> table <code>id</code> column)</li>
+<li>memberTypeId (References <code>MemberTypes</code> table <code>id</code> column)</li>
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
@@ -2239,7 +2242,7 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="individualusertypes">IndividualUserTypes</h1>
+<h1 id="membertypes">MemberTypes</h1>
 <ul>
 <li>id</li>
 <li>organizationId (References <code>Organizations</code> table <code>id</code> column)</li>
@@ -2247,7 +2250,7 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="individualusergroups">IndividualUserGroups</h1>
+<h1 id="membergroups">MemberGroups</h1>
 <ul>
 <li>id</li>
 <li>organizationId (References <code>Organizations</code> table <code>id</code> column)</li>
@@ -2255,10 +2258,10 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="individualusersgroups">IndividualUsers_Groups</h1>
+<h1 id="memberusersmembergroups">MemberUsers_MemberGroups</h1>
 <ul>
-<li>individualUserId (References <code>NormalUsers</code> table <code>id</code> column)</li>
-<li>individualUserGroupId (References <code>NormalUserGroups</code> table <code>id</code> column)</li>
+<li>memberUserId (References <code>MemberUsers</code> table <code>id</code> column)</li>
+<li>memberGroupId (References <code>MemberGroups</code> table <code>id</code> column)</li>
 </ul>
 <h1 id="departmentaliases">DepartmentAliases</h1>
 <ul>
@@ -2279,6 +2282,137 @@
 <li>level (Start from 0, 0 means the single root for organization)</li>
 <li>organizationId</li>
 <li>name</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h1 id="eventtemplates">EventTemplates</h1>
+<ul>
+<li>id</li>
+<li>organizationId</li>
+<li>name</li>
+<li>instructionForMember</li>
+<li>instructionForAdmin</li>
+<li>icon</li>
+<li>whiteIcon</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h1 id="events">Events</h1>
+<ul>
+<li>id</li>
+<li>organizationId</li>
+<li>initiatorId</li>
+<li>initiatorType<ul>
+<li>Type: enum</li>
+<li>Values: &quot;system_user&quot;, &quot;organization_user&quot;, &quot;member_user&quot;</li>
+</ul>
+</li>
+<li>terminatorId</li>
+<li>terminatorType<ul>
+<li>Type: enum</li>
+<li>Values: &quot;system_user&quot;, &quot;organization_user&quot;, &quot;member_user&quot;</li>
+</ul>
+</li>
+<li>eventTemplateId</li>
+<li>startDate</li>
+<li>endDate</li>
+<li>type<ul>
+<li>Type: enum</li>
+<li>Values: drill, emergency</li>
+</ul>
+</li>
+<li>name</li>
+<li>instructionForMember</li>
+<li>instructionForAdmin</li>
+<li>map</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h1 id="eventsmembertypes">Events_MemberTypes</h1>
+<ul>
+<li>eventId</li>
+<li>memberTypeId</li>
+</ul>
+<h1 id="helptypes">HelpTypes</h1>
+<ul>
+<li>id</li>
+<li>name</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h1 id="leoaccounts">LeoAccounts</h1>
+<ul>
+<li>id</li>
+<li>username</li>
+<li>plainPassword</li>
+<li>eventId</li>
+<li>active<ul>
+<li>Type: boolean (If event ends, this value set to be false)</li>
+</ul>
+</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h1 id="eventcheckins">EventCheckins</h1>
+<ul>
+<li>id</li>
+<li>eventId</li>
+<li>memberUserId</li>
+<li>smsStatus<ul>
+<li>Type: enum</li>
+<li>Values: &quot;not_sent&quot;, &quot;sent&quot;, &quot;failed&quot;</li>
+</ul>
+</li>
+<li>emailStatus<ul>
+<li>Type: enum</li>
+<li>Values: &quot;not_sent&quot;, &quot;sent&quot;, &quot;failed&quot;</li>
+</ul>
+</li>
+<li>status<ul>
+<li>Type: enum</li>
+<li>Values: &quot;unacknowledged&quot;, &quot;acknowledged&quot;, &quot;safe&quot;, &quot;need_help&quot;, &quot;not_in_area&quot;</li>
+</ul>
+</li>
+<li>statusDate</li>
+<li>departmentId</li>
+<li>customDepartmentName (If departmentId is null, set this value)</li>
+<li>nearbyPeopleCount</li>
+<li>reportedById (member user who report)</li>
+<li>helpTypeId</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h1 id="broadcasts">Broadcasts</h1>
+<ul>
+<li>id</li>
+<li>creatorId</li>
+<li>creatorType<ul>
+<li>Type: enum</li>
+<li>Values: &quot;system_user&quot;, &quot;organization_user&quot;, &quot;member_user&quot;</li>
+</ul>
+</li>
+<li>content</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h1 id="broadcastsmembertypes">BroadCasts_MemberTypes</h1>
+<ul>
+<li>broadcastId</li>
+<li>memberTypeId</li>
+</ul>
+<h1 id="broadcastreceivers">BroadcastReceivers</h1>
+<ul>
+<li>id</li>
+<li>broadcastId</li>
+<li>memberUserId</li>
+<li>smsStatus<ul>
+<li>Type: &quot;not_sent&quot;, &quot;sent&quot;, &quot;failed&quot;</li>
+</ul>
+</li>
+<li>emailStatus:<ul>
+<li>Type: &quot;not_sent&quot;, &quot;sent&quot;, &quot;failed&quot;</li>
+</ul>
+</li>
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
@@ -2321,7 +2455,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SystemUsers","level":"4.6.2","depth":2,"next":{"title":"data_analysis","level":"5.1","depth":1,"ref":"","articles":[{"title":"readme.md","level":"5.1.1","depth":2,"path":"5-data science/data_analysis/readme.md","ref":"5-data science/data_analysis/readme.md","articles":[]}]},"previous":{"title":"用户系统设计","level":"4.6.1","depth":2,"path":"4-projects/pinpoint/business-design.md","ref":"4-projects/pinpoint/business-design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/pinpoint/db.md","mtime":"2020-03-04T10:39:31.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-04T10:40:13.394Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SystemUsers","level":"4.6.2","depth":2,"next":{"title":"data_analysis","level":"5.1","depth":1,"ref":"","articles":[{"title":"readme.md","level":"5.1.1","depth":2,"path":"5-data science/data_analysis/readme.md","ref":"5-data science/data_analysis/readme.md","articles":[]}]},"previous":{"title":"用户系统设计","level":"4.6.1","depth":2,"path":"4-projects/pinpoint/business-design.md","ref":"4-projects/pinpoint/business-design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/pinpoint/db.md","mtime":"2020-03-09T13:20:00.229Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T13:21:02.222Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
