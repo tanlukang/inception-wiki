@@ -1,0 +1,2060 @@
+{
+	"firstName": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"lastName": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"middleName": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"email": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"phone": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"location": {
+		"properties": {}
+	},
+	"socialLink": {
+		"properties": {}
+	},
+	"profileImg": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"militarySrvId": {
+		"type": "integer"
+	},
+	"militarySrv": {
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			}
+		}
+	},
+	"militaryBranch": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"bio": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"resumeLink": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"interestStageId": {
+		"type": "integer"
+	},
+	"interestStage": {
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			}
+		}
+	},
+	"interestBaseMin": {
+		"type": "integer"
+	},
+	"interestBaseMax": {
+		"type": "integer"
+	},
+	"interestOteMin": {
+		"type": "integer"
+	},
+	"interestOteMax": {
+		"type": "integer"
+	},
+	"preferredRoleLevelId": {
+		"type": "integer"
+	},
+	"preferredRoleLevel": {
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			}
+		}
+	},
+	"interestRoles": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			}
+		}
+	},
+	"interestLocs": {
+		"type": "nested",
+		"properties": {}
+	},
+	"interestRelocation": {
+		"type": "boolean"
+	},
+	"interestRemote": {
+		"type": "boolean"
+	},
+	"interestIndustries": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"level": {
+				"type": "integer"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			}
+		}
+	},
+	"productAndService": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"interestProducts": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"interestClientTypes": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			}
+		}
+	},
+	"interestTravel": {
+		"type": "integer"
+	},
+	"interestDesp": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"interestEquity": {
+		"type": "boolean"
+	},
+	"interestSalesCycleMin": {
+		"type": "integer"
+	},
+	"interestSalesCycleMax": {
+		"type": "integer"
+	},
+	"interestSalesTypes": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			}
+		}
+	},
+	"workSalesYears": {
+		"type": "integer"
+	},
+	"workIndustries": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"level": {
+				"type": "integer"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			},
+			"years": {
+				"type": "integer"
+			}
+		}
+	},
+	"workRoles": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			},
+			"years": {
+				"type": "integer"
+			}
+		}
+	},
+	"workRoleLevels": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			},
+			"years": {
+				"type": "integer"
+			}
+		}
+	},
+	"workTools": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"workMethods": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"workInternational": {
+		"type": "boolean"
+	},
+	"workInternationalList": {
+		"type": "nested",
+		"properties": {}
+	},
+	"workSalesTypes": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			},
+			"years": {
+				"type": "integer"
+			}
+		}
+	},
+	"workProductService": {
+		"type": "nested",
+		"properties": {}
+	},
+	"workClientTypes": {
+		"type": "nested",
+		"properties": {
+			"name": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"category": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"parentId": {
+				"type": "integer"
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			},
+			"years": {
+				"type": "integer"
+			}
+		}
+	},
+	"workDealSize": {
+		"type": "nested",
+		"properties": {}
+	},
+	"workSalesCycle": {
+		"type": "nested",
+		"properties": {}
+	},
+	"id": {
+		"type": "integer"
+	},
+	"createdAt": {
+		"type": "date"
+	},
+	"updatedAt": {
+		"type": "date"
+	},
+	"_deleted": {
+		"type": "boolean"
+	},
+	"_state": {
+		"analyzer": "standard",
+		"fields": {
+			"completion": {
+				"type": "completion"
+			},
+			"english": {
+				"analyzer": "english",
+				"type": "text"
+			},
+			"ngram": {
+				"analyzer": "ngram_analyzer",
+				"type": "text"
+			},
+			"raw": {
+				"type": "keyword"
+			}
+		},
+		"type": "text"
+	},
+	"experiences": {
+		"type": "nested",
+		"properties": {
+			"expCurrent": {
+				"type": "boolean"
+			},
+			"expTypeId": {
+				"type": "integer"
+			},
+			"expType": {
+				"properties": {
+					"name": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"category": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"parentId": {
+						"type": "integer"
+					},
+					"id": {
+						"type": "integer"
+					},
+					"createdAt": {
+						"type": "date"
+					},
+					"updatedAt": {
+						"type": "date"
+					},
+					"_deleted": {
+						"type": "boolean"
+					}
+				}
+			},
+			"expTitle": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"talentId": {
+				"type": "integer"
+			},
+			"organizationId": {
+				"type": "integer"
+			},
+			"roleId": {
+				"type": "integer"
+			},
+			"role": {
+				"properties": {
+					"name": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"category": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"parentId": {
+						"type": "integer"
+					},
+					"id": {
+						"type": "integer"
+					},
+					"createdAt": {
+						"type": "date"
+					},
+					"updatedAt": {
+						"type": "date"
+					},
+					"_deleted": {
+						"type": "boolean"
+					}
+				}
+			},
+			"expSalesTypeId": {
+				"type": "integer"
+			},
+			"expSalesType": {
+				"properties": {
+					"name": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"category": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"parentId": {
+						"type": "integer"
+					},
+					"id": {
+						"type": "integer"
+					},
+					"createdAt": {
+						"type": "date"
+					},
+					"updatedAt": {
+						"type": "date"
+					},
+					"_deleted": {
+						"type": "boolean"
+					}
+				}
+			},
+			"expStart": {
+				"type": "date"
+			},
+			"expEnd": {
+				"type": "date"
+			},
+			"expBase": {
+				"type": "integer"
+			},
+			"expOte": {
+				"type": "integer"
+			},
+			"expProducts": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"expTerritories": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"expRevenue": {
+				"type": "integer"
+			},
+			"expSize": {
+				"type": "integer"
+			},
+			"industries": {
+				"type": "nested",
+				"properties": {
+					"name": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"level": {
+						"type": "integer"
+					},
+					"parentId": {
+						"type": "integer"
+					},
+					"id": {
+						"type": "integer"
+					},
+					"createdAt": {
+						"type": "date"
+					},
+					"updatedAt": {
+						"type": "date"
+					},
+					"_deleted": {
+						"type": "boolean"
+					}
+				}
+			},
+			"expQuotas": {
+				"type": "nested",
+				"properties": {}
+			},
+			"expAwards": {
+				"type": "nested",
+				"properties": {}
+			},
+			"otherSkills": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"references": {
+				"type": "nested",
+				"properties": {}
+			},
+			"id": {
+				"type": "integer"
+			},
+			"createdAt": {
+				"type": "date"
+			},
+			"updatedAt": {
+				"type": "date"
+			},
+			"_deleted": {
+				"type": "boolean"
+			},
+			"_state": {
+				"analyzer": "standard",
+				"fields": {
+					"completion": {
+						"type": "completion"
+					},
+					"english": {
+						"analyzer": "english",
+						"type": "text"
+					},
+					"ngram": {
+						"analyzer": "ngram_analyzer",
+						"type": "text"
+					},
+					"raw": {
+						"type": "keyword"
+					}
+				},
+				"type": "text"
+			},
+			"organization": {
+				"properties": {
+					"name": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"url": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"organizationTypeId": {
+						"type": "integer"
+					},
+					"organizationType": {
+						"properties": {
+							"name": {
+								"analyzer": "standard",
+								"fields": {
+									"completion": {
+										"type": "completion"
+									},
+									"english": {
+										"analyzer": "english",
+										"type": "text"
+									},
+									"ngram": {
+										"analyzer": "ngram_analyzer",
+										"type": "text"
+									},
+									"raw": {
+										"type": "keyword"
+									}
+								},
+								"type": "text"
+							},
+							"category": {
+								"analyzer": "standard",
+								"fields": {
+									"completion": {
+										"type": "completion"
+									},
+									"english": {
+										"analyzer": "english",
+										"type": "text"
+									},
+									"ngram": {
+										"analyzer": "ngram_analyzer",
+										"type": "text"
+									},
+									"raw": {
+										"type": "keyword"
+									}
+								},
+								"type": "text"
+							},
+							"parentId": {
+								"type": "integer"
+							},
+							"id": {
+								"type": "integer"
+							},
+							"createdAt": {
+								"type": "date"
+							},
+							"updatedAt": {
+								"type": "date"
+							},
+							"_deleted": {
+								"type": "boolean"
+							}
+						}
+					},
+					"industries": {
+						"type": "nested",
+						"properties": {
+							"name": {
+								"analyzer": "standard",
+								"fields": {
+									"completion": {
+										"type": "completion"
+									},
+									"english": {
+										"analyzer": "english",
+										"type": "text"
+									},
+									"ngram": {
+										"analyzer": "ngram_analyzer",
+										"type": "text"
+									},
+									"raw": {
+										"type": "keyword"
+									}
+								},
+								"type": "text"
+							},
+							"level": {
+								"type": "integer"
+							},
+							"parentId": {
+								"type": "integer"
+							},
+							"id": {
+								"type": "integer"
+							},
+							"createdAt": {
+								"type": "date"
+							},
+							"updatedAt": {
+								"type": "date"
+							},
+							"_deleted": {
+								"type": "boolean"
+							}
+						}
+					},
+					"location": {
+						"properties": {}
+					},
+					"companyTypeId": {
+						"type": "integer"
+					},
+					"companyType": {
+						"properties": {
+							"name": {
+								"analyzer": "standard",
+								"fields": {
+									"completion": {
+										"type": "completion"
+									},
+									"english": {
+										"analyzer": "english",
+										"type": "text"
+									},
+									"ngram": {
+										"analyzer": "ngram_analyzer",
+										"type": "text"
+									},
+									"raw": {
+										"type": "keyword"
+									}
+								},
+								"type": "text"
+							},
+							"category": {
+								"analyzer": "standard",
+								"fields": {
+									"completion": {
+										"type": "completion"
+									},
+									"english": {
+										"analyzer": "english",
+										"type": "text"
+									},
+									"ngram": {
+										"analyzer": "ngram_analyzer",
+										"type": "text"
+									},
+									"raw": {
+										"type": "keyword"
+									}
+								},
+								"type": "text"
+							},
+							"parentId": {
+								"type": "integer"
+							},
+							"id": {
+								"type": "integer"
+							},
+							"createdAt": {
+								"type": "date"
+							},
+							"updatedAt": {
+								"type": "date"
+							},
+							"_deleted": {
+								"type": "boolean"
+							}
+						}
+					},
+					"revenueHistory": {
+						"type": "nested",
+						"properties": {}
+					},
+					"employeeCountHistory": {
+						"type": "nested",
+						"properties": {}
+					},
+					"miniTags": {
+						"type": "nested",
+						"properties": {
+							"name": {
+								"analyzer": "standard",
+								"fields": {
+									"completion": {
+										"type": "completion"
+									},
+									"english": {
+										"analyzer": "english",
+										"type": "text"
+									},
+									"ngram": {
+										"analyzer": "ngram_analyzer",
+										"type": "text"
+									},
+									"raw": {
+										"type": "keyword"
+									}
+								},
+								"type": "text"
+							},
+							"category": {
+								"analyzer": "standard",
+								"fields": {
+									"completion": {
+										"type": "completion"
+									},
+									"english": {
+										"analyzer": "english",
+										"type": "text"
+									},
+									"ngram": {
+										"analyzer": "ngram_analyzer",
+										"type": "text"
+									},
+									"raw": {
+										"type": "keyword"
+									}
+								},
+								"type": "text"
+							},
+							"parentId": {
+								"type": "integer"
+							},
+							"id": {
+								"type": "integer"
+							},
+							"createdAt": {
+								"type": "date"
+							},
+							"updatedAt": {
+								"type": "date"
+							},
+							"_deleted": {
+								"type": "boolean"
+							}
+						}
+					},
+					"culture": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"hasMentorship": {
+						"type": "boolean"
+					},
+					"mentorshipDesp": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"hasEducationReimbursement": {
+						"type": "boolean"
+					},
+					"reimbursementDesp": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"admiredCompanies": {
+						"type": "nested",
+						"properties": {}
+					},
+					"competitorCompanies": {
+						"type": "nested",
+						"properties": {}
+					},
+					"similarCompanies": {
+						"type": "nested",
+						"properties": {}
+					},
+					"stockExchange": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"tickerSymbol": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"description": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"keywords": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"publicPrivate": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"salesCulture": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"salesLeadershipOverview": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"salesTrainingProvided": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"salesToolsUsed": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"salesTeamVideo": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					},
+					"id": {
+						"type": "integer"
+					},
+					"createdAt": {
+						"type": "date"
+					},
+					"updatedAt": {
+						"type": "date"
+					},
+					"_deleted": {
+						"type": "boolean"
+					},
+					"_state": {
+						"analyzer": "standard",
+						"fields": {
+							"completion": {
+								"type": "completion"
+							},
+							"english": {
+								"analyzer": "english",
+								"type": "text"
+							},
+							"ngram": {
+								"analyzer": "ngram_analyzer",
+								"type": "text"
+							},
+							"raw": {
+								"type": "keyword"
+							}
+						},
+						"type": "text"
+					}
+				}
+			}
+		}
+	}
+}

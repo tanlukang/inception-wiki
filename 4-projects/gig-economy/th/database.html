@@ -1922,6 +1922,19 @@
             
         </li>
     
+        <li class="chapter " data-level="4.4.9.3" >
+            
+                <span>
+            
+                    
+                    pg
+            
+                </span>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2186,8 +2199,6 @@
                                 <h3 id="source">Source</h3>
 <ul>
 <li><a href="https://docs.google.com/spreadsheets/d/17Skq4jZQhv4NWOP4BaE7uyLGFF2X8GyR8nFHlWeS-Hg/edit#gid=0" target="_blank">https://docs.google.com/spreadsheets/d/17Skq4jZQhv4NWOP4BaE7uyLGFF2X8GyR8nFHlWeS-Hg/edit#gid=0</a></li>
-<li>org.sql</li>
-<li>industry.sql</li>
 </ul>
 <h3 id="tables">Tables</h3>
 <ul>
@@ -2217,12 +2228,21 @@
 <li>json</li>
 </ul>
 </li>
+<li>socialLink<ul>
+<li>json</li>
+</ul>
+</li>
 <li>profileImg<ul>
 <li>text</li>
 </ul>
 </li>
-<li>militarySrv<ul>
-<li>text</li>
+<li>militarySrvId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>militarySrv</li>
+<li>talents</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>militaryBranch<ul>
@@ -2233,16 +2253,58 @@
 <li>text</li>
 </ul>
 </li>
-<li>interestStage<ul>
+<li>resumeLink<ul>
 <li>text</li>
 </ul>
 </li>
-<li>interestBase<ul>
+<li>interestStageId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>interestStage</li>
+<li>talents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>interestBaseMin<ul>
 <li>int</li>
 </ul>
 </li>
-<li>interestOte<ul>
+<li>interestBaseMax<ul>
 <li>int</li>
+</ul>
+</li>
+<li>interestOteMin<ul>
+<li>int</li>
+</ul>
+</li>
+<li>interestOteMax<ul>
+<li>int</li>
+</ul>
+</li>
+<li>preferredRoleLevelId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>preferredRoleLevel</li>
+<li>talents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>interestRoles (alias - Values)<ul>
+<li>table<ul>
+<li>Talents_InterestRoles<ul>
+<li>talentId</li>
+<li>roleId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>interestRoles</li>
+<li>talents</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>interestLocs<ul>
@@ -2253,24 +2315,148 @@
 <li>bool</li>
 </ul>
 </li>
+<li>interestRemote<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>interestIndustries (alias - Industries)<ul>
+<li>table<ul>
+<li>Talents_InterestIndustries<ul>
+<li>talentId</li>
+<li>industryId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>interestIndustries</li>
+<li>talents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>productAndService<ul>
+<li>text []</li>
+</ul>
+</li>
 <li>interestProducts<ul>
 <li>text []</li>
 </ul>
 </li>
-<li>interestTargets<ul>
-<li>text []</li>
+<li>interestClientTypes (alias - Values)<ul>
+<li>table<ul>
+<li>Talents_InterestClientTypes<ul>
+<li>talentId</li>
+<li>clientTypeId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>interestClientTypes</li>
+<li>talents</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>interestTravel<ul>
 <li>int</li>
 </ul>
 </li>
-<li>interestDesp<ul>
+<li>interestDesc<ul>
 <li>text</li>
+</ul>
+</li>
+<li>interestEquity<ul>
+<li>bool</li>
+</ul>
+</li>
+<li>interestSalesCycleMin<ul>
+<li>int</li>
+</ul>
+</li>
+<li>interestSalesCycleMax<ul>
+<li>int</li>
+</ul>
+</li>
+<li>interestSalesTypes (alias - Values)<ul>
+<li>table<ul>
+<li>Talents_InterestSalesTypes<ul>
+<li>talentId</li>
+<li>salesTypeId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>interestSalesTypes</li>
+<li>talents</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>workSalesYears<ul>
 <li>int</li>
+</ul>
+</li>
+<li>workIndustries (alias - Industries)<ul>
+<li>table<ul>
+<li>Talents_WorkIndustries<ul>
+<li>talentId</li>
+<li>industryId</li>
+<li>years<ul>
+<li>int</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>workIndustries</li>
+<li>talents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>workRoles (alias - Values)<ul>
+<li>table<ul>
+<li>Talents_WorkRoles<ul>
+<li>talentId</li>
+<li>roleId</li>
+<li>years<ul>
+<li>int</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>workRoles</li>
+<li>talents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>workRoleLevels (alias - Values)<ul>
+<li>table<ul>
+<li>Talents_WorkRoleLevels<ul>
+<li>talentId</li>
+<li>roleLevelId</li>
+<li>years<ul>
+<li>int</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>workRoleLevels</li>
+<li>talents</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>workTools<ul>
@@ -2281,34 +2467,64 @@
 <li>text []</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>Roles</p>
-<ul>
-<li>name<ul>
-<li>text</li>
-</ul>
-</li>
-<li>level<ul>
-<li>int</li>
-</ul>
-</li>
-<li>parentId (fk)</li>
-</ul>
-</li>
-<li><p>Industries</p>
-<ul>
-<li>name<ul>
-<li>text</li>
-</ul>
-</li>
-<li>level<ul>
-<li>int</li>
-</ul>
-</li>
-<li>parentId (fk)</li>
-<li>deleted<ul>
+<li>workInternational<ul>
 <li>bool</li>
+</ul>
+</li>
+<li>workInternationalList<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>workSalesTypes (alias - Values)<ul>
+<li>table<ul>
+<li>Talents_WorkSalesType<ul>
+<li>talentId</li>
+<li>salesTypeId</li>
+<li>years<ul>
+<li>int</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>workSalesTypes</li>
+<li>talents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>workProductService<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>workClientTypes (alias - Values)<ul>
+<li>table<ul>
+<li>Talents_WorkClientType<ul>
+<li>talentId</li>
+<li>clientTypeId</li>
+<li>years<ul>
+<li>int</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>workClientTypes</li>
+<li>talents</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>workDealSize<ul>
+<li>json []</li>
+</ul>
+</li>
+<li>workSalesCycle<ul>
+<li>json []</li>
 </ul>
 </li>
 </ul>
@@ -2319,17 +2535,55 @@
 <li>bool</li>
 </ul>
 </li>
-<li>expType<ul>
-<li>text</li>
+<li>expTypeId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>expType</li>
+<li>experiences</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>expTitle<ul>
 <li>text</li>
 </ul>
 </li>
-<li>talentId (fk)</li>
-<li>organizationId (fk)</li>
-<li>roleId (fk) </li>
+<li>talentId (fk - Talents)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>talent</li>
+<li>experiences</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>organizationId (fk - Organizations)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>organization</li>
+<li>experiences</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>roleId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>role</li>
+<li>experiences</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>expSalesTypeId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>expSalesType</li>
+<li>experiences</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>expStart<ul>
 <li>timestamp</li>
 </ul>
@@ -2362,6 +2616,22 @@
 <li>int</li>
 </ul>
 </li>
+<li>industries (alias - Industries)<ul>
+<li>table<ul>
+<li>Experiences_Industries<ul>
+<li>experienceId</li>
+<li>industryId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>industries</li>
+<li>experiences</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>expQuotas<ul>
 <li>json []</li>
 </ul>
@@ -2386,60 +2656,46 @@
 <li>text</li>
 </ul>
 </li>
-<li>website<ul>
+<li>url<ul>
 <li>text</li>
 </ul>
 </li>
-<li>private<ul>
-<li>bool</li>
-</ul>
-</li>
-<li>stockExchange<ul>
-<li>text</li>
-</ul>
-</li>
-<li>tickerSymbol<ul>
-<li>text</li>
-</ul>
-</li>
-<li>numberOfEmployees<ul>
+<li>organizationTypeId (fk - Values)<ul>
 <li>int</li>
+<li>alias<ul>
+<li>organizationType</li>
+<li>organizations</li>
 </ul>
 </li>
-<li>keyCompetitor<ul>
-<li>text</li>
 </ul>
 </li>
-<li>companyRank<ul>
-<li>int</li>
+<li>industries (alias - Industries)<ul>
+<li>table<ul>
+<li>Organizations_Industries<ul>
+<li>organizationId</li>
+<li>industryId</li>
 </ul>
 </li>
-<li>untracked<ul>
-<li>bool</li>
 </ul>
 </li>
-<li>description<ul>
-<li>text</li>
+<li>alias<ul>
+<li>industries</li>
+<li>organizations</li>
 </ul>
 </li>
-<li>deleted<ul>
-<li>bool</li>
-</ul>
-</li>
-<li>categories<ul>
-<li>text []</li>
-</ul>
-</li>
-<li>organizationType<ul>
-<li>text</li>
-</ul>
-</li>
-<li>companyType<ul>
-<li>text</li>
 </ul>
 </li>
 <li>location<ul>
 <li>json</li>
+</ul>
+</li>
+<li>companyTypeId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>companyType</li>
+<li>organizations</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>revenueHistory<ul>
@@ -2450,8 +2706,20 @@
 <li>json []</li>
 </ul>
 </li>
-<li>miniTags<ul>
-<li>alias</li>
+<li>miniTags (alias - Values)<ul>
+<li>table<ul>
+<li>Organizations_MiniTags<ul>
+<li>organizationId</li>
+<li>miniTagId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>miniTags</li>
+<li>organizations</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>culture<ul>
@@ -2462,7 +2730,7 @@
 <li>bool</li>
 </ul>
 </li>
-<li>mentorshipDesp<ul>
+<li>mentorshipDesc<ul>
 <li>text</li>
 </ul>
 </li>
@@ -2470,8 +2738,8 @@
 <li>bool</li>
 </ul>
 </li>
-<li>reimbursementDesp<ul>
-<li>bool</li>
+<li>reimbursementDesc<ul>
+<li>text</li>
 </ul>
 </li>
 <li>admiredCompanies<ul>
@@ -2486,35 +2754,50 @@
 <li>json []</li>
 </ul>
 </li>
+<li>stockExchange<ul>
+<li>text</li>
+</ul>
+</li>
+<li>tickerSymbol<ul>
+<li>text</li>
+</ul>
+</li>
+<li>description<ul>
+<li>text</li>
+</ul>
+</li>
 <li>keywords<ul>
 <li>text []</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>MiniTags</p>
-<ul>
-<li>title <ul>
+<li>publicPrivate<ul>
 <li>text</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><p>Departments</p>
-<ul>
-<li>title <ul>
+<li>salesCulture<ul>
 <li>text</li>
 </ul>
 </li>
-<li>parentId (fk)</li>
+<li>salesLeadershipOverview<ul>
+<li>text</li>
+</ul>
+</li>
+<li>salesTrainingProvided<ul>
+<li>text</li>
+</ul>
+</li>
+<li>salesToolsUsed<ul>
+<li>text []</li>
+</ul>
+</li>
+<li>salesTeamVideo<ul>
+<li>text</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><p>Jobs</p>
 <ul>
-<li>companyId (fk)<ul>
-<li>int</li>
-</ul>
-</li>
 <li>companyName<ul>
 <li>text</li>
 </ul>
@@ -2523,16 +2806,42 @@
 <li>text</li>
 </ul>
 </li>
+<li>orgId (fk - Organizations)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>organization</li>
+<li>jobs</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>companyLocation<ul>
 <li>json</li>
 </ul>
 </li>
-<li>companyType<ul>
-<li>text</li>
+<li>companyTypeId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>companyType</li>
+<li>jobs</li>
 </ul>
 </li>
-<li>companyIndustries<ul>
-<li>alias</li>
+</ul>
+</li>
+<li>companyIndustries (alias - Industries)<ul>
+<li>table<ul>
+<li>Jobs_CompanyIndustries<ul>
+<li>jobId</li>
+<li>industryId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>companyIndustries</li>
+<li>jobs</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>companyRevenue<ul>
@@ -2551,6 +2860,26 @@
 <li>int</li>
 </ul>
 </li>
+<li>companyMiniTags (alias - Values)<ul>
+<li>table<ul>
+<li>Jobs_CompanyMiniTags<ul>
+<li>jobId</li>
+<li>miniTagId</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>companyMiniTags</li>
+<li>jobs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>companyDescription<ul>
+<li>text</li>
+</ul>
+</li>
 <li>companyCulture<ul>
 <li>text</li>
 </ul>
@@ -2559,7 +2888,7 @@
 <li>bool</li>
 </ul>
 </li>
-<li>companyMentorshipDesp<ul>
+<li>companyMentorshipDesc<ul>
 <li>text</li>
 </ul>
 </li>
@@ -2567,7 +2896,7 @@
 <li>bool</li>
 </ul>
 </li>
-<li>companyHasReimbursementDesp<ul>
+<li>companyHasReimbursementDesc<ul>
 <li>bool</li>
 </ul>
 </li>
@@ -2575,40 +2904,118 @@
 <li>json []</li>
 </ul>
 </li>
+<li>startDate<ul>
+<li>timestamp</li>
+</ul>
+</li>
 <li>positionTitle<ul>
 <li>text</li>
 </ul>
 </li>
-<li>positionRoleId (fk)</li>
+<li>positionRoleTypeId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>positionRoleType</li>
+<li>jobs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>positionSalesTypeId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>positionSalesType</li>
+<li>jobs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>positionRoleId (fk - Values)<ul>
+<li>int</li>
+<li>alias<ul>
+<li>positionRole</li>
+<li>jobs</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>positionTravelPercent<ul>
 <li>int</li>
 </ul>
 </li>
-<li>positionSaleType<ul>
-<li>text</li>
-</ul>
-</li>
-<li>positionBase<ul>
-<li>int</li>
-</ul>
-</li>
-<li>positionOTE<ul>
-<li>int</li>
-</ul>
-</li>
-<li>positionQuotaTarget<ul>
-<li>int</li>
-</ul>
-</li>
-<li>positionClientType<ul>
+<li>productSoldTypes<ul>
 <li>text []</li>
 </ul>
 </li>
-<li>positionDepartments<ul>
-<li>alias</li>
+<li>positionBaseMin<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionBaseMax<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionOTEMin<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionOTEMax<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionQuotaTargetMin<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionQuotaTargetMax<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionClientTypes (alias - Values)<ul>
+<li>table<ul>
+<li>Jobs_PositionClientTypes<ul>
+<li>jobId</li>
+<li>clientTypeId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>positionClientTypes</li>
+<li>jobs</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>positionDepartments (alias - Values)<ul>
+<li>table<ul>
+<li>Jobs_PositionDepartments<ul>
+<li>jobId</li>
+<li>departmentId</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>alias<ul>
+<li>positionDepartments</li>
+<li>jobs</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>positionProductFileUrl<ul>
+<li>text</li>
+</ul>
+</li>
+<li>positionSalesCycleMin<ul>
+<li>int</li>
+</ul>
+</li>
+<li>positionSalesCycleMax<ul>
+<li>int</li>
+</ul>
+</li>
+<li>fieldInside<ul>
 <li>text</li>
 </ul>
 </li>
@@ -2616,7 +3023,27 @@
 <li>text</li>
 </ul>
 </li>
+<li>dealPercent<ul>
+<li>int</li>
+</ul>
+</li>
+<li>teamReportingTo<ul>
+<li>text</li>
+</ul>
+</li>
+<li>teamLinkedin<ul>
+<li>text</li>
+</ul>
+</li>
 <li>teamSize<ul>
+<li>int</li>
+</ul>
+</li>
+<li>teamSizeMin<ul>
+<li>int</li>
+</ul>
+</li>
+<li>teamSizeMax<ul>
 <li>int</li>
 </ul>
 </li>
@@ -2640,12 +3067,16 @@
 <li>text</li>
 </ul>
 </li>
-<li>teamVideoUrl<ul>
-<li>text</li>
+<li>isBDRSDRSupport<ul>
+<li>bool</li>
 </ul>
 </li>
-<li>dealPercent<ul>
+<li>newSalesHireLastYear<ul>
 <li>int</li>
+</ul>
+</li>
+<li>teamVideoUrl<ul>
+<li>text</li>
 </ul>
 </li>
 <li>has401K<ul>
@@ -2680,321 +3111,96 @@
 <li>bool</li>
 </ul>
 </li>
+<li>otherBenefits<ul>
+<li>text</li>
+</ul>
+</li>
 <li>additionDocumentUrl<ul>
 <li>text</li>
 </ul>
 </li>
+<li>awards<ul>
+<li>text []</li>
 </ul>
 </li>
 </ul>
-<h3 id="relations">Relations</h3>
+</li>
+<li><p>Industries</p>
 <ul>
-<li><p>Departments - Departments = 1 : m</p>
+<li>name<ul>
+<li>text</li>
+</ul>
+</li>
+<li>order<ul>
+<li>int</li>
+</ul>
+</li>
+<li>parentId (fk - Industries)<ul>
+<li>int</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Values</p>
 <ul>
-<li>field<ul>
-<li>parentId</li>
+<li>name<ul>
+<li>text</li>
 </ul>
 </li>
-<li>alias<ul>
-<li>children</li>
-<li>parent</li>
+<li>order<ul>
+<li>int</li>
 </ul>
 </li>
+<li>parentId (fk - Values)<ul>
+<li>int</li>
 </ul>
 </li>
-<li><p>Roles - Roles = 1 : m</p>
-<ul>
-<li>field<ul>
-<li>parentId</li>
+<li>category<ul>
+<li>text<ul>
+<li>militarySrv<ul>
+<li>Active, Veteran, None</li>
 </ul>
 </li>
-<li>alias<ul>
-<li>children</li>
-<li>parent</li>
+<li>interestStage<ul>
+<li>Actively looking, Passively Looking, Not Looking at this time</li>
 </ul>
 </li>
+<li>roleLevel / roleType<ul>
+<li>Manager of Managers, Manager of Sales Professionals, Individual Contributor</li>
 </ul>
 </li>
-<li><p>Industries - Industries = 1 : m</p>
-<ul>
-<li>field<ul>
-<li>parentId</li>
+<li>role<ul>
+<li>Field Sales/AE, Inside Sales, Account Management, BDR/SDR, Client Success, Channel Sales, Sales Engineer</li>
 </ul>
 </li>
-<li>alias<ul>
-<li>children</li>
-<li>parent</li>
+<li>clientType / companyType<ul>
+<li>Enterprise, Mid-market, SMB, Startup, Consumer</li>
 </ul>
 </li>
+<li>salesType<ul>
+<li>New Business, Account Management, Hybrid</li>
 </ul>
 </li>
-<li><p>Talents - Roles = m : n</p>
-<ul>
-<li>table<ul>
-<li>Talents_Interest_Roles</li>
+<li>expType<ul>
+<li>work, education, certificate</li>
 </ul>
 </li>
-<li>field<ul>
-<li>talentId</li>
-<li>roleId</li>
+<li>organizationType<ul>
+<li>?</li>
 </ul>
 </li>
-<li>alias<ul>
-<li>talent</li>
-<li>interestRoles</li>
+<li>miniTags<ul>
+<li>?</li>
 </ul>
 </li>
+<li>department<ul>
+<li>C-Suite, IT, Marketing, Sales, Other</li>
 </ul>
 </li>
-<li><p>Talents - Industries = m : n</p>
-<ul>
-<li>table<ul>
-<li>Talents_Interest_Industries</li>
 </ul>
 </li>
-<li>field<ul>
-<li>talentId</li>
-<li>industryId</li>
 </ul>
 </li>
-<li>alias<ul>
-<li>talent</li>
-<li>interestIndustries</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Talents - Industries = m : n</p>
-<ul>
-<li>table<ul>
-<li>Talents_Work_Industries</li>
-</ul>
-</li>
-<li>field<ul>
-<li>talent</li>
-<li>industryId</li>
-<li>years</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>talent</li>
-<li>workIndustries</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Talents - Roles = m : n</p>
-<ul>
-<li>table<ul>
-<li>Talents_Work_Roles</li>
-</ul>
-</li>
-<li>field<ul>
-<li>talentId</li>
-<li>roleId</li>
-<li>years</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>talent</li>
-<li>workRoles</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Talents - Experiences = 1 : m</p>
-<ul>
-<li>field<ul>
-<li>talentId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>talent</li>
-<li>experiences</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Experiences - Organizations = m : 1</p>
-<ul>
-<li>field<ul>
-<li>organizationId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>experiences</li>
-<li>organization</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Experiences - Roles = m : 1</p>
-<ul>
-<li>field<ul>
-<li>roleId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>experiences</li>
-<li>role</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Experiences - Industries = m : n</p>
-<ul>
-<li>table<ul>
-<li>Experiences_Industries</li>
-</ul>
-</li>
-<li>field<ul>
-<li>experienceId</li>
-<li>industryId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>experiences</li>
-<li>industries</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Organizations - Industries = m : m</p>
-<ul>
-<li>table<ul>
-<li>Organizations_Industries</li>
-</ul>
-</li>
-<li>field<ul>
-<li>organizationId</li>
-<li>industryId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>organizations</li>
-<li>industries</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Organizations - MiniTags = n : m</p>
-<ul>
-<li>table<ul>
-<li>Organizations_MiniTags</li>
-</ul>
-</li>
-<li>field<ul>
-<li>organizationId</li>
-<li>miniTagId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>organizations</li>
-<li>miniTags</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Job - Organizations = m : 1</p>
-<ul>
-<li>field<ul>
-<li>companyId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>jobs</li>
-<li>organization</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Job - Roles = m : 1</p>
-<ul>
-<li>field<ul>
-<li>positionRoleId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>jobs</li>
-<li>positionRole</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Jobs - MiniTags = n : m </p>
-<ul>
-<li>table<ul>
-<li>Jobs_CompanyMiniTags</li>
-</ul>
-</li>
-<li>field<ul>
-<li>jobId</li>
-<li>miniTagId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>jobs</li>
-<li>companyMiniTags</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Jobs - Industries = m : n</p>
-<ul>
-<li>table<ul>
-<li>Jobs_CompanyIndustries</li>
-</ul>
-</li>
-<li>field<ul>
-<li>jobId</li>
-<li>industryId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>jobs</li>
-<li>companyIndustries</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>Jobs - Departments = m : m</p>
-<ul>
-<li>table<ul>
-<li>Jobs_PositionDepartments</li>
-</ul>
-</li>
-<li>field<ul>
-<li>jobId</li>
-<li>departmentId</li>
-</ul>
-</li>
-<li>alias<ul>
-<li>jobs</li>
-<li>positionDepartments</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="discussion">discussion</h3>
-<ul>
-<li>_delete</li>
-<li>history reversion design</li>
-<li>_syncStatus<ul>
-<li>&#x4E00;&#x4E2A;&#x53EF;&#x80FD;&#x65E0;&#x6CD5;&#x786E;&#x4FDD;&#x6570;&#x636E;&#x540C;&#x6B65;&#x72B6;&#x6001;</li>
-</ul>
-</li>
-<li>&#x5B57;&#x7B26;&#x4E32;&#x5E38;&#x91CF; or &#x5173;&#x8054;&#x5173;&#x7CFB;<ul>
-<li>militarySrv</li>
-<li>interestStage</li>
-<li>interestTargets</li>
-<li>expType</li>
-<li>expRevenue</li>
-<li>expSize</li>
-</ul>
-</li>
-<li>work industry + years&#xFF0C;&#x548C;work role + years&#x8BBE;&#x8BA1;&#x6210;&#x5173;&#x8054;&#x8868;+&#x5B57;&#x6BB5;&#xFF0C;&#x8FD8;&#x662F;&#x751F;&#x6210;&#x4E2D;&#x95F4;&#x6A21;&#x578B;<ul>
-<li>&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6848;</li>
 </ul>
 </li>
 </ul>
@@ -3033,7 +3239,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Source","level":"4.4.9.1","depth":3,"next":{"title":"es","level":"4.4.9.2","depth":3,"ref":"","articles":[{"title":"thes","level":"4.4.9.2.1","depth":4,"ref":"","articles":[]}]},"previous":{"title":"th","level":"4.4.9","depth":2,"ref":"","articles":[{"title":"Source","level":"4.4.9.1","depth":3,"path":"4-projects/gig-economy/th/database.md","ref":"4-projects/gig-economy/th/database.md","articles":[]},{"title":"es","level":"4.4.9.2","depth":3,"ref":"","articles":[{"title":"thes","level":"4.4.9.2.1","depth":4,"ref":"","articles":[]}]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/th/database.md","mtime":"2020-03-09T13:20:00.217Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-09T13:21:02.222Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Source","level":"4.4.9.1","depth":3,"next":{"title":"es","level":"4.4.9.2","depth":3,"ref":"","articles":[{"title":"thes","level":"4.4.9.2.1","depth":4,"ref":"","articles":[]}]},"previous":{"title":"th","level":"4.4.9","depth":2,"ref":"","articles":[{"title":"Source","level":"4.4.9.1","depth":3,"path":"4-projects/gig-economy/th/database.md","ref":"4-projects/gig-economy/th/database.md","articles":[]},{"title":"es","level":"4.4.9.2","depth":3,"ref":"","articles":[{"title":"thes","level":"4.4.9.2.1","depth":4,"ref":"","articles":[]}]},{"title":"pg","level":"4.4.9.3","depth":3,"ref":"","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/th/database.md","mtime":"2020-03-17T03:06:35.953Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-17T03:08:33.043Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
