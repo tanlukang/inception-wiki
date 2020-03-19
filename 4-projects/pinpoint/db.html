@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>SystemUsers · InceptionWiki</title>
+        <title>Pinpoint Database Design · InceptionWiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -2013,7 +2013,7 @@
                 <a href="db.html">
             
                     
-                    SystemUsers
+                    Pinpoint Database Design
             
                 </a>
             
@@ -2211,7 +2211,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >SystemUsers</a>
+        <a href="../.." >Pinpoint Database Design</a>
     </h1>
 </div>
 
@@ -2226,7 +2226,9 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="systemusers">SystemUsers</h1>
+                                <h1 id="pinpoint-database-design">Pinpoint Database Design</h1>
+<h2 id="&#x8D26;&#x53F7;&#x76F8;&#x5173;">&#x8D26;&#x53F7;&#x76F8;&#x5173;</h2>
+<h4 id="systemusers">SystemUsers</h4>
 <ul>
 <li>id</li>
 <li>email</li>
@@ -2237,7 +2239,7 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="organizationusers">OrganizationUsers</h1>
+<h4 id="organizationusers">OrganizationUsers</h4>
 <ul>
 <li>id</li>
 <li>organizationId (References <code>Organzations</code> table <code>id</code> column)</li>
@@ -2250,7 +2252,7 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="memberusers">MemberUsers</h1>
+<h4 id="memberusers">MemberUsers</h4>
 <ul>
 <li>id</li>
 <li>organizationId (References <code>Organizations</code> table <code>id</code> column)</li>
@@ -2265,7 +2267,21 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="organizations">Organizations</h1>
+<h4 id="leoaccounts">LeoAccounts</h4>
+<ul>
+<li>id</li>
+<li>username</li>
+<li>plainPassword</li>
+<li>eventId</li>
+<li>active<ul>
+<li>Type: boolean (If event ends, this value set to be false)</li>
+</ul>
+</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h2 id="organization-&#x76F8;&#x5173;">Organization &#x76F8;&#x5173;</h2>
+<h4 id="organizations">Organizations</h4>
 <ul>
 <li>id</li>
 <li>name</li>
@@ -2283,28 +2299,7 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="membertypes">MemberTypes</h1>
-<ul>
-<li>id</li>
-<li>organizationId (References <code>Organizations</code> table <code>id</code> column)</li>
-<li>name</li>
-<li>createdAt</li>
-<li>updatedAt</li>
-</ul>
-<h1 id="membergroups">MemberGroups</h1>
-<ul>
-<li>id</li>
-<li>organizationId (References <code>Organizations</code> table <code>id</code> column)</li>
-<li>name</li>
-<li>createdAt</li>
-<li>updatedAt</li>
-</ul>
-<h1 id="memberusersmembergroups">MemberUsers_MemberGroups</h1>
-<ul>
-<li>memberUserId (References <code>MemberUsers</code> table <code>id</code> column)</li>
-<li>memberGroupId (References <code>MemberGroups</code> table <code>id</code> column)</li>
-</ul>
-<h1 id="departmentaliases">DepartmentAliases</h1>
+<h4 id="departmentaliases">DepartmentAliases</h4>
 <ul>
 <li>id</li>
 <li>parentId</li>
@@ -2315,7 +2310,7 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="departments">Departments</h1>
+<h4 id="departments">Departments</h4>
 <ul>
 <li>id</li>
 <li>parentId</li>
@@ -2326,7 +2321,30 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="eventtemplates">EventTemplates</h1>
+<h2 id="member-&#x76F8;&#x5173;">Member &#x76F8;&#x5173;</h2>
+<h4 id="membertypes">MemberTypes</h4>
+<ul>
+<li>id</li>
+<li>organizationId (References <code>Organizations</code> table <code>id</code> column)</li>
+<li>name</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h4 id="membergroups">MemberGroups</h4>
+<ul>
+<li>id</li>
+<li>organizationId (References <code>Organizations</code> table <code>id</code> column)</li>
+<li>name</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h4 id="memberusersmembergroups">MemberUsers_MemberGroups</h4>
+<ul>
+<li>memberUserId (References <code>MemberUsers</code> table <code>id</code> column)</li>
+<li>memberGroupId (References <code>MemberGroups</code> table <code>id</code> column)</li>
+</ul>
+<h2 id="event-&#x76F8;&#x5173;">Event &#x76F8;&#x5173;</h2>
+<h4 id="eventtemplates">EventTemplates</h4>
 <ul>
 <li>id</li>
 <li>organizationId</li>
@@ -2338,7 +2356,7 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="events">Events</h1>
+<h4 id="events">Events</h4>
 <ul>
 <li>id</li>
 <li>organizationId</li>
@@ -2369,32 +2387,19 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="eventsmembertypes">Events_MemberTypes</h1>
+<h4 id="eventsmembertypes">Events_MemberTypes</h4>
 <ul>
 <li>eventId</li>
 <li>memberTypeId</li>
 </ul>
-<h1 id="helptypes">HelpTypes</h1>
+<h4 id="helptypes">HelpTypes</h4>
 <ul>
 <li>id</li>
 <li>name</li>
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="leoaccounts">LeoAccounts</h1>
-<ul>
-<li>id</li>
-<li>username</li>
-<li>plainPassword</li>
-<li>eventId</li>
-<li>active<ul>
-<li>Type: boolean (If event ends, this value set to be false)</li>
-</ul>
-</li>
-<li>createdAt</li>
-<li>updatedAt</li>
-</ul>
-<h1 id="eventcheckins">EventCheckins</h1>
+<h4 id="eventcheckins">EventCheckins</h4>
 <ul>
 <li>id</li>
 <li>eventId</li>
@@ -2423,7 +2428,8 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="broadcasts">Broadcasts</h1>
+<h2 id="broadcast-&#x76F8;&#x5173;">Broadcast &#x76F8;&#x5173;</h2>
+<h4 id="broadcasts">Broadcasts</h4>
 <ul>
 <li>id</li>
 <li>organizationId</li>
@@ -2437,12 +2443,12 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
-<h1 id="broadcastsmembertypes">BroadCasts_MemberTypes</h1>
+<h4 id="broadcastsmembertypes">BroadCasts_MemberTypes</h4>
 <ul>
 <li>broadcastId</li>
 <li>memberTypeId</li>
 </ul>
-<h1 id="broadcastreceivers">BroadcastReceivers</h1>
+<h4 id="broadcastreceivers">BroadcastReceivers</h4>
 <ul>
 <li>id</li>
 <li>broadcastId</li>
@@ -2455,6 +2461,28 @@
 <li>Type: &quot;not_sent&quot;, &quot;sent&quot;, &quot;failed&quot;</li>
 </ul>
 </li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h2 id="message-&#x76F8;&#x5173;">Message &#x76F8;&#x5173;</h2>
+<h4 id="messages">Messages</h4>
+<ul>
+<li>id</li>
+<li>eventId</li>
+<li>senderId</li>
+<li>senderUserType</li>
+<li>content &#xFF08;&#x5982;&#x679C;&#x662F;&#x56FE;&#x7247;&#xFF0C;content&#x4E3A;&#x56FE;&#x7247;&#x7684;&#x6587;&#x4EF6;&#x540D;&#xFF09;</li>
+<li>isImage</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h4 id="messagereceivers">MessageReceivers</h4>
+<ul>
+<li>id</li>
+<li>messageId</li>
+<li>receiverId</li>
+<li>receiverUserType</li>
+<li>watchedAt</li>
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
@@ -2501,7 +2529,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SystemUsers","level":"4.6.2","depth":2,"next":{"title":"front-end-code-standard.md","level":"4.6.3","depth":2,"path":"4-projects/pinpoint/front-end-code-standard.md","ref":"4-projects/pinpoint/front-end-code-standard.md","articles":[]},"previous":{"title":"用户系统设计","level":"4.6.1","depth":2,"path":"4-projects/pinpoint/business-design.md","ref":"4-projects/pinpoint/business-design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/pinpoint/db.md","mtime":"2020-03-19T08:19:30.726Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-19T08:20:16.229Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pinpoint Database Design","level":"4.6.2","depth":2,"next":{"title":"front-end-code-standard.md","level":"4.6.3","depth":2,"path":"4-projects/pinpoint/front-end-code-standard.md","ref":"4-projects/pinpoint/front-end-code-standard.md","articles":[]},"previous":{"title":"用户系统设计","level":"4.6.1","depth":2,"path":"4-projects/pinpoint/business-design.md","ref":"4-projects/pinpoint/business-design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/pinpoint/db.md","mtime":"2020-03-19T08:21:43.088Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-19T08:22:35.613Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
