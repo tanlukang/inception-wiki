@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>AWS Config · InceptionWiki</title>
+        <title>AWS Compliance · InceptionWiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -65,10 +65,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="9-cloudwatch.html" />
+    <link rel="next" href="2-iam.html" />
     
     
-    <link rel="prev" href="7-systemsmanager.html" />
+    <link rel="prev" href="13-sns.html" />
     
 
     </head>
@@ -314,7 +314,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.8" data-path="14-compliance.html">
+        <li class="chapter active" data-level="1.3.8" data-path="14-compliance.html">
             
                 <a href="14-compliance.html">
             
@@ -405,7 +405,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.15" data-path="8-config.html">
+        <li class="chapter " data-level="1.3.15" data-path="8-config.html">
             
                 <a href="8-config.html">
             
@@ -2250,7 +2250,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >AWS Config</a>
+        <a href="../.." >AWS Compliance</a>
     </h1>
 </div>
 
@@ -2265,46 +2265,41 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="aws-config">AWS Config</h1>
-<p>AWS Config &#x63D0;&#x4F9B;&#x4E86;&#x5173;&#x4E8E;&#x60A8;&#x7684; AWS &#x8D26;&#x6237;&#x4E2D; AWS &#x8D44;&#x6E90;&#x914D;&#x7F6E;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x5305;&#x62EC;&#x8D44;&#x6E90;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x8054;&#x65B9;&#x5F0F;&#x4EE5;&#x53CA;&#x8D44;&#x6E90;&#x4EE5;&#x524D;&#x7684;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#xFF0C;&#x8BA9;&#x60A8;&#x4E86;&#x89E3;&#x8D44;&#x6E90;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x5173;&#x7CFB;&#x5982;&#x4F55;&#x968F;&#x7740;&#x7684;&#x65F6;&#x95F4;&#x7684;&#x63A8;&#x79FB;&#x800C;&#x66F4;&#x6539;&#x3002;</p>
-<p>AWS &#x8D44;&#x6E90; &#x662F;&#x60A8;&#x53EF;&#x4EE5;&#x5728; AWS &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x4E00;&#x79CD;&#x5B9E;&#x4F53;&#xFF0C;&#x4F8B;&#x5982; Amazon Elastic Compute Cloud (EC2) &#x5B9E;&#x4F8B;&#x3001;Amazon Elastic Block Store (EBS) &#x5377;&#x3001;&#x5B89;&#x5168;&#x7EC4;&#x6216; Amazon Virtual Private Cloud (VPC)&#x3002;</p>
-<h2 id="&#x4F7F;&#x7528;&#x573A;&#x666F;">&#x4F7F;&#x7528;&#x573A;&#x666F;</h2>
-<p>&#x5F53;&#x60A8;&#x5728; AWS &#x4E0A;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x65F6;&#xFF0C;&#x60A8;&#x901A;&#x5E38;&#x8981;&#x4F7F;&#x7528; AWS &#x8D44;&#x6E90;&#xFF0C;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x5FC5;&#x987B;&#x5171;&#x540C;&#x521B;&#x5EFA;&#x4E0E;&#x7BA1;&#x7406;&#x3002;&#x968F;&#x7740;&#x5BF9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x9700;&#x6C42;&#x7684;&#x4E0D;&#x65AD;&#x589E;&#x52A0;&#xFF0C;&#x8BB0;&#x5F55;&#x60A8;&#x7684; AWS &#x8D44;&#x6E90;&#x7684;&#x9700;&#x6C42;&#x4E5F;&#x5728;&#x4E0D;&#x65AD;&#x589E;&#x52A0;&#x3002;AWS Config &#x53EF;&#x4EE5;&#x5728;&#x4EE5;&#x4E0B;&#x573A;&#x666F;&#x4E2D;&#x5E2E;&#x52A9;&#x60A8;&#x76D1;&#x7763;&#x81EA;&#x5DF1;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8D44;&#x6E90;&#xFF1A;</p>
-<h4 id="&#x8D44;&#x6E90;&#x7BA1;&#x7406;">&#x8D44;&#x6E90;&#x7BA1;&#x7406;</h4>
-<p>&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x5730;&#x7BA1;&#x7406;&#x60A8;&#x7684;&#x8D44;&#x6E90;&#x914D;&#x7F6E;&#x5E76;&#x68C0;&#x6D4B;&#x8D44;&#x6E90;&#x7684;&#x9519;&#x8BEF;&#x914D;&#x7F6E;&#xFF0C;&#x60A8;&#x9700;&#x968F;&#x65F6;&#x8BE6;&#x7EC6;&#x4E86;&#x89E3;&#x5B58;&#x5728;&#x54EA;&#x4E9B;&#x8D44;&#x6E90;&#x4EE5;&#x53CA;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x7684;&#x914D;&#x7F6E;&#x65B9;&#x5F0F;&#x3002;AWS Config &#x53EF;&#x4EE5;&#x5728;&#x8D44;&#x6E90;&#x88AB;&#x521B;&#x5EFA;&#x3001;&#x4FEE;&#x6539;&#x6216;&#x5220;&#x9664;&#x65F6;&#x5411;&#x60A8;&#x53D1;&#x9001;&#x901A;&#x77E5;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x60A8;&#x901A;&#x8FC7;&#x5BF9;&#x5404;&#x4E2A;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x8F6E;&#x8BE2;&#x6765;&#x76D1;&#x63A7;&#x8FD9;&#x4E9B;&#x8D44;&#x6E90;&#x66F4;&#x6539;&#x3002;</p>
-<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; AWS Config &#x89C4;&#x5219;&#x6765;&#x8BC4;&#x4F30;&#x60A8;&#x7684; AWS &#x8D44;&#x6E90;&#x7684;&#x914D;&#x7F6E;&#x8BBE;&#x7F6E;&#x3002;&#x5F53; AWS Config &#x68C0;&#x6D4B;&#x5230;&#x4E0D;&#x7B26;&#x5408;&#x67D0;&#x9879;&#x89C4;&#x5219;&#x4E2D;&#x7684;&#x6761;&#x4EF6;&#x7684;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;AWS Config &#x4F1A;&#x5C06;&#x5176;&#x6807;&#x8BB0;&#x4E3A;&#x4E0D;&#x5408;&#x89C4;&#x8D44;&#x6E90;&#x5E76;&#x53D1;&#x9001;&#x901A;&#x77E5;&#x3002;AWS Config &#x4F1A;&#x5728;&#x60A8;&#x7684;&#x8D44;&#x6E90;&#x88AB;&#x521B;&#x5EFA;&#x3001;&#x66F4;&#x6539;&#x6216;&#x5220;&#x9664;&#x65F6;&#x6301;&#x7EED;&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x8BC4;&#x4F30;&#x3002;</p>
-<h4 id="&#x5BA1;&#x8BA1;&#x4E0E;&#x5408;&#x89C4;&#x6027;">&#x5BA1;&#x8BA1;&#x4E0E;&#x5408;&#x89C4;&#x6027;</h4>
-<p>&#x60A8;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x9891;&#x7E41;&#x5BA1;&#x8BA1;&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x5176;&#x7B26;&#x5408;&#x5185;&#x90E8;&#x7B56;&#x7565;&#x4E0E;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;&#x3002;&#x4E3A;&#x4E86;&#x8BC1;&#x5B9E;&#x5408;&#x89C4;&#x6027;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x8D44;&#x6E90;&#x7684;&#x5386;&#x53F2;&#x914D;&#x7F6E;&#x3002;AWS Config &#x53EF;&#x4EE5;&#x63D0;&#x4F9B;&#x8FD9;&#x4E00;&#x4FE1;&#x606F;&#x3002;</p>
-<h4 id="&#x5BF9;&#x914D;&#x7F6E;&#x66F4;&#x6539;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x4E0E;&#x6545;&#x969C;&#x6392;&#x9664;">&#x5BF9;&#x914D;&#x7F6E;&#x66F4;&#x6539;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x4E0E;&#x6545;&#x969C;&#x6392;&#x9664;</h4>
-<p>&#x5F53;&#x60A8;&#x4F7F;&#x7528;&#x76F8;&#x4E92;&#x4F9D;&#x8D56;&#x7684;&#x591A;&#x4E2A; AWS &#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x4E00;&#x9879;&#x8D44;&#x6E90;&#x914D;&#x7F6E;&#x7684;&#x66F4;&#x6539;&#x53EF;&#x80FD;&#x5BF9;&#x76F8;&#x5173;&#x8D44;&#x6E90;&#x9020;&#x6210;&#x610F;&#x5916;&#x540E;&#x679C;&#x3002;&#x5229;&#x7528; AWS Config&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x60A8;&#x51C6;&#x5907;&#x4FEE;&#x6539;&#x7684;&#x8D44;&#x6E90;&#x5982;&#x4F55;&#x4E0E;&#x5176;&#x4ED6;&#x8D44;&#x6E90;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x5E76;&#x8BC4;&#x4F30;&#x66F4;&#x6539;&#x6240;&#x4EA7;&#x751F;&#x7684;&#x5F71;&#x54CD;&#x3002;</p>
-<p>&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; AWS Config &#x63D0;&#x4F9B;&#x7684;&#x8D44;&#x6E90;&#x5386;&#x53F2;&#x914D;&#x7F6E;&#x6765;&#x89E3;&#x51B3;&#x95EE;&#x9898;&#xFF0C;&#x5E76;&#x786E;&#x5B9A;&#x95EE;&#x9898;&#x8D44;&#x6E90;&#x7684;&#x6700;&#x540E;&#x6B63;&#x786E;&#x914D;&#x7F6E;&#x3002;</p>
-<h4 id="&#x5B89;&#x5168;&#x5206;&#x6790;">&#x5B89;&#x5168;&#x5206;&#x6790;</h4>
-<p>&#x8981;&#x5206;&#x6790;&#x6F5C;&#x5728;&#x7684;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x6709;&#x5173;&#x60A8;&#x7684; AWS &#x8D44;&#x6E90;&#x914D;&#x7F6E;&#x7684;&#x8BE6;&#x7EC6;&#x5386;&#x53F2;&#x4FE1;&#x606F;&#xFF0C;&#x4F8B;&#x5982;&#x5411;&#x60A8;&#x7684;&#x7528;&#x6237;&#x6388;&#x4E88;&#x7684; AWS Identity and Access Management (IAM) &#x6743;&#x9650;&#x6216;&#x8005;&#x63A7;&#x5236;&#x5BF9;&#x8D44;&#x6E90;&#x7684;&#x8BBF;&#x95EE;&#x7684; Amazon EC2 &#x5B89;&#x5168;&#x7EC4;&#x89C4;&#x5219;&#x3002;</p>
-<p>&#x60A8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; AWS Config &#x968F;&#x65F6;&#x67E5;&#x770B; AWS Config &#x6B63;&#x5728;&#x8BB0;&#x5F55;&#x7684;&#x5206;&#x914D;&#x7ED9; IAM &#x7528;&#x6237;&#x3001;&#x7EC4;&#x6216;&#x89D2;&#x8272;&#x7684; IAM &#x7B56;&#x7565;&#x3002;&#x8FD9;&#x4E00;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x60A8;&#x786E;&#x5B9A;&#x7528;&#x6237;&#x5728;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x5185;&#x5177;&#x5907;&#x7684;&#x6743;&#x9650;&#xFF1A;&#x4F8B;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x7528;&#x6237; John Doe &#x5728; 2015 &#x5E74; 1 &#x6708; 1 &#x65E5;&#x662F;&#x5426;&#x62E5;&#x6709;&#x4FEE;&#x6539; Amazon VPC &#x8BBE;&#x7F6E;&#x7684;&#x6743;&#x9650;&#x3002;</p>
-<p>&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; AWS Config &#x6765;&#x67E5;&#x770B;&#x60A8;&#x7684; EC2 &#x5B89;&#x5168;&#x7EC4;&#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5305;&#x62EC;&#x5728;&#x7279;&#x5B9A;&#x65F6;&#x95F4;&#x6253;&#x5F00;&#x7684;&#x7AEF;&#x53E3;&#x89C4;&#x5219;&#x3002;&#x8FD9;&#x4E00;&#x4FE1;&#x606F;&#x53EF;&#x4EE5;&#x5E2E;&#x60A8;&#x786E;&#x5B9A;&#x5B89;&#x5168;&#x7EC4;&#x662F;&#x5426;&#x4F1A;&#x963B;&#x6B62;&#x4F20;&#x5165; TCP &#x6D41;&#x91CF;&#x4F20;&#x8F93;&#x81F3;&#x7279;&#x5B9A;&#x7AEF;&#x53E3;&#x3002;</p>
-<h2 id="&#x64CD;&#x4F5C;&#x65B9;&#x5F0F;">&#x64CD;&#x4F5C;&#x65B9;&#x5F0F;</h2>
-<h4 id="&#x9996;&#x5148;&#x5728;&#x8BBE;&#x7F6E;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x542F;&#x52A8;">&#x9996;&#x5148;&#x5728;&#x8BBE;&#x7F6E;&#x9875;&#x9762;&#x8FDB;&#x884C;&#x542F;&#x52A8;</h4>
-<p>&#x8981;&#x8BB0;&#x5F55;&#x7684;&#x8D44;&#x6E90;&#x7C7B;&#x578B;&#xFF1A;</p>
+                                <h1 id="aws-compliance">AWS Compliance</h1>
+<p>&#x5B89;&#x5168;&#x5408;&#x89C4;&#x76F8;&#x5173;&#x7684;&#x670D;&#x52A1;</p>
 <ul>
-<li>&#x8BB0;&#x5F55;&#x6240;&#x6709;&#x8D44;&#x6E90;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E2A;&#x6708;&#x540E;&#x89C2;&#x5BDF;&#x8D26;&#x5355;&#x60C5;&#x51B5;&#x3002;&#xFF08;&#x4E00;&#x5468;&#x7684;&#x8D39;&#x7528;&#x5927;&#x6982;&#x662F;&#xFFE5;2.5&#xFF09;</li>
-<li>&#x8BB0;&#x5F55;&#x6307;&#x5B9A;&#x8D44;&#x6E90;&#xFF0C;&#x5982; <code>IAM: Group</code></li>
+<li>Security Hub</li>
+<li>Trusted Advisor</li>
+<li>Config</li>
+<li>CloudTrail</li>
+<li>CloudWatch</li>
 </ul>
-<p>&#x6307;&#x5B9A; S3 &#x5B58;&#x50A8;&#x6876;&#xFF1A; </p>
+<h2 id="&#x901A;&#x8FC7;cloudformation&#x5B8C;&#x6210;hipaa-compliance">&#x901A;&#x8FC7;CloudFormation&#x5B8C;&#x6210;HIPAA Compliance</h2>
+<h4 id="&#x90E8;&#x7F72;&#x524D;&#x6B65;&#x9AA4;">&#x90E8;&#x7F72;&#x524D;&#x6B65;&#x9AA4;</h4>
+<p><a href="https://docs.aws.amazon.com/zh_cn/quickstart/latest/compliance-hipaa/pre-deployment.html" target="_blank">https://docs.aws.amazon.com/zh_cn/quickstart/latest/compliance-hipaa/pre-deployment.html</a></p>
+<h4 id="&#x90E8;&#x7F72;&#x6B65;&#x9AA4;">&#x90E8;&#x7F72;&#x6B65;&#x9AA4;</h4>
+<p><a href="https://docs.aws.amazon.com/zh_cn/quickstart/latest/compliance-hipaa/deployment.html" target="_blank">https://docs.aws.amazon.com/zh_cn/quickstart/latest/compliance-hipaa/deployment.html</a></p>
+<h4 id="&#x95EE;&#x9898;&#x6392;&#x67E5;">&#x95EE;&#x9898;&#x6392;&#x67E5;</h4>
+<p>&#x7B2C;&#x4E00;&#x6B21; CloudFormation Stack &#x6CA1;&#x6709;&#x6267;&#x884C;&#x6210;&#x529F;&#x3002;</p>
+<p>&#x53EF;&#x80FD;&#x539F;&#x56E0;&#xFF1A;</p>
 <ul>
-<li>&#x60A8;&#x7684;&#x5B58;&#x50A8;&#x6876;&#x5C06;&#x63A5;&#x6536;&#x914D;&#x7F6E;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x548C;&#x914D;&#x7F6E;&#x5FEB;&#x7167;&#x6587;&#x4EF6;&#xFF0C;&#x5176;&#x4E2D;&#x5305;&#x542B; AWS Config &#x8BB0;&#x5F55;&#x7684;&#x8D44;&#x6E90;&#x7684;&#x8BE6;&#x7EC6;&#x4FE1;&#x606F;&#x3002;</li>
+<li>&#x53CD;&#x9988;&#x4FE1;&#x606F;&#x663E;&#x793A; Application Stack &#x90E8;&#x7F72;&#x8D85;&#x65F6;&#x3002;</li>
+<li>Database &#x7684;&#x5BC6;&#x7801;&#x542B;&#x6709;&#x7279;&#x6B8A;&#x5B57;&#x7B26;&#xFF0C;&#x53EF;&#x80FD;&#x4E0D;&#x7B26;&#x5408;&#x6807;&#x51C6;&#x3002;</li>
 </ul>
-<p>&#x5C06;&#x914D;&#x7F6E;&#x66F4;&#x6539;&#x548C;&#x901A;&#x77E5;&#x6D41;&#x5F0F;&#x4F20;&#x8F93;&#x5230; Amazon SNS &#x4E3B;&#x9898;&#xFF1A;</p>
+<h4 id="&#x518D;&#x6B21;&#x90E8;&#x7F72;">&#x518D;&#x6B21;&#x90E8;&#x7F72;</h4>
 <ul>
-<li>&#x521B;&#x5EFA; <code>AWS_Config_Changed_Topic</code> &#x5E76;&#x8FDB;&#x884C;&#x90AE;&#x4EF6;&#x8BA2;&#x9605;&#xFF0C;&#x5F53;&#x88AB;&#x914D;&#x7F6E;&#x53D8;&#x5316;&#x65F6;&#x4F1A;&#x6536;&#x5230;&#x901A;&#x77E5;&#x90AE;&#x4EF6;&#x3002;</li>
-<li>&#x540C;&#x65F6;&#x6BCF;&#x5929;&#x4E5F;&#x4F1A;&#x6536;&#x5230;<code>Configuration History Delivery Completed</code> &#x7684;&#x90AE;&#x4EF6;&#x901A;&#x77E5;&#xFF0C;&#x8868;&#x660E;&#x914D;&#x7F6E;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#x5DF2;&#x7ECF;&#x5B58;&#x5165; Amazon S3 &#x5B58;&#x50A8;&#x6876;&#x3002;</li>
-<li>&#x6BCF;&#x79CD;&#x8D44;&#x6E90;&#x5BF9;&#x5E94;&#x4E00;&#x4EFD;&#x5386;&#x53F2;&#x8BB0;&#x5F55;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5982;&#x679C;&#x4F60;&#x5BF9;30&#x79CD;&#x8D44;&#x6E90;&#x7684;&#x914D;&#x7F6E;&#x8FDB;&#x884C;&#x8BB0;&#x5F55;&#xFF0C;&#x6BCF;&#x5929;&#x540C;&#x4E00;&#x65F6;&#x95F4;&#x4F1A;&#x6536;&#x5230;30&#x4E2A; <code>Configuration History Delivery Completed</code> &#x90AE;&#x4EF6;&#x3002;</li>
+<li>&#x6E05;&#x7406;&#x4E0A;&#x4E00;&#x6B21;&#x90E8;&#x7F72;&#x9057;&#x7559;&#x4E0B;&#x7684; S3 Bucket&#xFF0C;&#x65E0;&#x6CD5; Delete &#x7684;&#x8981;&#x5148; Empty &#x518D; Delete&#x3002;</li>
+<li>Database &#x5BC6;&#x7801;&#x4E3A;&#x5B57;&#x6BCD;&#x6570;&#x5B57;&#x7EC4;&#x5408;&#xFF0C;&#x5305;&#x542B;&#x5927;&#x5199;&#x5B57;&#x6BCD;&#x3002;</li>
+<li>&#x5728; Advanced &#x8BBE;&#x7F6E;&#x4E2D;&#xFF0C;&#x7981;&#x7528; Rollback&#xFF0C;&#x82E5;&#x518D;&#x9047;&#x5230;&#x95EE;&#x9898;&#x8054;&#x7CFB; AWS Support&#x3002;</li>
 </ul>
-<h4 id="&#x67E5;&#x770B;&#x89C4;&#x5219;">&#x67E5;&#x770B;&#x89C4;&#x5219;</h4>
-<p>&#x5728;&#x89C4;&#x5219;&#x5217;&#x8868;&#x4E2D;&#x53EF;&#x4EE5;&#x627E;&#x5230; <code>iam-group-has-users-check</code> &#x8FD9;&#x6761;&#x89C4;&#x5219;&#xFF0C;&#x8FD9;&#x662F;&#x4E00;&#x6761;&#x9488;&#x5BF9; <code>IAM: Group</code> &#x8D44;&#x6E90;&#x7684;&#x89C4;&#x5219;&#x3002;&#x4E3A;&#x4E86;&#x6D4B;&#x8BD5;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#xFF0C;&#x6211;&#x4EEC;&#x5728; IAM &#x4E2D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7EC4;&#xFF0C;&#x5E76;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x5230;&#x8FD9;&#x4E2A;&#x7EC4;&#xFF0C;&#x8FC7;&#x4E00;&#x4F1A;&#x4FBF;&#x6536;&#x5230;&#x4E86;&#x4E24;&#x5C01; Subject &#x4E3A; <code>AWS Notifications</code> &#x7684;&#x90AE;&#x4EF6;&#xFF0C;&#x5185;&#x5BB9;&#x5206;&#x522B;&#x4E3A;&#x53D1;&#x73B0;&#x4E86;&#x65B0;&#x7684; IAM Group &#xFF0C;&#x548C; <code>iam-group-has-users-check</code> &#x8BE5;&#x89C4;&#x5219;&#x5408;&#x89C4;&#x3002;</p>
-<h4 id="&#x589E;&#x5220;&#x89C4;&#x5219;">&#x589E;&#x5220;&#x89C4;&#x5219;</h4>
-<p>&#x589E;&#x5220;&#x89C4;&#x5219;&#x4E0D;&#x662F;&#x6307;&#x521B;&#x5EFA;&#x6216;&#x8005;&#x5220;&#x9664;&#x89C4;&#x5219;&#x672C;&#x8EAB;&#xFF0C;&#x800C;&#x662F;&#x6307;&#x662F;&#x5426;&#x5E94;&#x7528;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#x3002;&#x4EE5; <code>iam-group-has-users-check</code> &#x4E3A;&#x4F8B;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x518D;&#x60F3;&#x5E94;&#x7528;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x89C4;&#x5219;&#x5217;&#x8868;&#x4E2D;&#x627E;&#x5230;&#x76F8;&#x5E94;&#x7684;&#x6761;&#x76EE;&#x70B9;&#x51FB; <em>&#x7F16;&#x8F91;&#x89C4;&#x5219;</em> &#x8FDB;&#x884C;&#x79FB;&#x9664;&#x3002;&#x82E5;&#x60F3;&#x91CD;&#x65B0;&#x5E94;&#x7528;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#xFF0C;&#x70B9;&#x51FB; <em>&#x6DFB;&#x52A0;&#x89C4;&#x5219;</em> &#x5728; AWS &#x6258;&#x7BA1;&#x7684;&#x89C4;&#x5219;&#x4E2D;&#x627E;&#x5230;&#x8FD9;&#x6761;&#x89C4;&#x5219;&#xFF0C;&#x70B9;&#x51FB;&#x8FDB;&#x5165;&#x89C4;&#x5219;&#x63CF;&#x8FF0;&#x9875;&#xFF0C;&#x70B9;&#x51FB; <em>&#x4FDD;&#x5B58;</em> &#xFF0C;&#x8FD4;&#x56DE;&#x5230;&#x89C4;&#x5219;&#x5217;&#x8868;&#x9875;&#x53D8;&#x4F1A;&#x770B;&#x5230;&#x8BE5;&#x89C4;&#x5219;&#x53C8;&#x51FA;&#x73B0;&#x4E86;&#x3002;</p>
-<h4 id="&#x63D0;&#x793A;">&#x63D0;&#x793A;</h4>
-<p>AWS Config &#x63A7;&#x5236;&#x9762;&#x677F;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x662F;&#x5B9E;&#x65F6;&#x53D8;&#x5316;&#x7684;&#xFF0C;&#x6709;&#x4E00;&#x5B9A;&#x65F6;&#x5EF6;&#x3002;</p>
+<h4 id="&#x90E8;&#x7F72;&#x6210;&#x529F;">&#x90E8;&#x7F72;&#x6210;&#x529F;</h4>
+<p>&#x5728; Stack -&gt; Outputs &#x4E2D;&#x627E;&#x5230;&#x5E94;&#x7528;&#x5165;&#x53E3;&#x3002;</p>
+<h4 id="&#x6700;&#x7EC8;&#x7531;&#x4E8E;cloudformation&#x6A21;&#x677F;&#x592A;&#x8001;&#x4E86;&#x653E;&#x5F03;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;">&#x6700;&#x7EC8;&#x7531;&#x4E8E;CloudFormation&#x6A21;&#x677F;&#x592A;&#x8001;&#x4E86;&#x653E;&#x5F03;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;</h4>
+<h2 id="the-automating-hipaa-compliance-series">The Automating HIPAA Compliance Series</h2>
+<p><a href="https://amazonaws-china.com/cn/blogs/security/how-to-automate-hipaa-compliance-part-1-use-the-cloud-to-protect-the-cloud/" target="_blank">https://amazonaws-china.com/cn/blogs/security/how-to-automate-hipaa-compliance-part-1-use-the-cloud-to-protect-the-cloud/</a></p>
+<p><a href="https://amazonaws-china.com/cn/blogs/security/how-to-use-aws-service-catalog-for-code-deployments-part-2-of-the-automating-hipaa-compliance-series/" target="_blank">https://amazonaws-china.com/cn/blogs/security/how-to-use-aws-service-catalog-for-code-deployments-part-2-of-the-automating-hipaa-compliance-series/</a></p>
+<p><a href="https://amazonaws-china.com/cn/blogs/security/how-to-translate-hipaa-controls-to-aws-cloudformation-templates-part-3-of-the-automating-hipaa-compliance-series/" target="_blank">https://amazonaws-china.com/cn/blogs/security/how-to-translate-hipaa-controls-to-aws-cloudformation-templates-part-3-of-the-automating-hipaa-compliance-series/</a></p>
+<p><a href="https://amazonaws-china.com/cn/blogs/security/how-to-use-aws-config-to-help-with-required-hipaa-audit-controls-part-4-of-the-automating-hipaa-compliance-series/" target="_blank">https://amazonaws-china.com/cn/blogs/security/how-to-use-aws-config-to-help-with-required-hipaa-audit-controls-part-4-of-the-automating-hipaa-compliance-series/</a></p>
 
                                 
                                 </section>
@@ -2332,12 +2327,12 @@
 
             
                 
-                <a href="7-systemsmanager.html" class="navigation navigation-prev " aria-label="Previous page: AWS Systems Manager">
+                <a href="13-sns.html" class="navigation navigation-prev " aria-label="Previous page: Amazon Simple Notification Service">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="9-cloudwatch.html" class="navigation navigation-next " aria-label="Next page: Amazon CloudWatch">
+                <a href="2-iam.html" class="navigation navigation-next " aria-label="Next page: AWS Identity and Access Management">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -2348,7 +2343,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"AWS Config","level":"1.3.15","depth":2,"next":{"title":"Amazon CloudWatch","level":"1.3.16","depth":2,"path":"1-wiki/aws/9-cloudwatch.md","ref":"1-wiki/aws/9-cloudwatch.md","articles":[]},"previous":{"title":"AWS Systems Manager","level":"1.3.14","depth":2,"path":"1-wiki/aws/7-systemsmanager.md","ref":"1-wiki/aws/7-systemsmanager.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/8-config.md","mtime":"2020-04-10T06:21:52.764Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T06:23:01.908Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"AWS Compliance","level":"1.3.8","depth":2,"next":{"title":"AWS Identity and Access Management","level":"1.3.9","depth":2,"path":"1-wiki/aws/2-iam.md","ref":"1-wiki/aws/2-iam.md","articles":[]},"previous":{"title":"Amazon Simple Notification Service","level":"1.3.7","depth":2,"path":"1-wiki/aws/13-sns.md","ref":"1-wiki/aws/13-sns.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"1-wiki/aws/14-compliance.md","mtime":"2020-04-10T06:21:52.763Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-10T06:23:01.908Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
