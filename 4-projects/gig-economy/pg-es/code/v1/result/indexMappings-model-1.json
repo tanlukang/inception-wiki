@@ -1,0 +1,299 @@
+{
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"firstName": {
+			"type": "text"
+		},
+		"lastName": {
+			"type": "text"
+		},
+		"preferredRoleLevel": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"interestRoles": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"militarySrv": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"interestStage": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"interestSalesTypes": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"workSalesTypes": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"workClientTypes": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"interestIndustries": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"workIndustries": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"experiences": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"expTitle": {
+					"type": "text"
+				},
+				"expCurrent": {
+					"type": "boolean"
+				},
+				"expType": {
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"name": {
+							"type": "text"
+						},
+						"order": {
+							"type": "integer"
+						}
+					}
+				},
+				"expSalesType": {
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"name": {
+							"type": "text"
+						},
+						"order": {
+							"type": "integer"
+						}
+					}
+				},
+				"organization": {
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"name": {
+							"type": "text"
+						},
+						"url": {
+							"type": "text"
+						},
+						"companyType": {
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"name": {
+									"type": "text"
+								},
+								"order": {
+									"type": "integer"
+								}
+							}
+						},
+						"organizationType": {
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"name": {
+									"type": "text"
+								},
+								"order": {
+									"type": "integer"
+								}
+							}
+						},
+						"industries": {
+							"type": "nested",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"name": {
+									"type": "text"
+								},
+								"order": {
+									"type": "integer"
+								}
+							}
+						},
+						"miniTags": {
+							"type": "nested",
+							"properties": {
+								"id": {
+									"type": "integer"
+								},
+								"name": {
+									"type": "text"
+								},
+								"order": {
+									"type": "integer"
+								}
+							}
+						}
+					}
+				},
+				"industries": {
+					"type": "nested",
+					"properties": {
+						"id": {
+							"type": "integer"
+						},
+						"name": {
+							"type": "text"
+						},
+						"order": {
+							"type": "integer"
+						}
+					}
+				}
+			}
+		},
+		"interestClientTypes": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"workRoles": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"workRoleLevels": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		}
+	}
+}

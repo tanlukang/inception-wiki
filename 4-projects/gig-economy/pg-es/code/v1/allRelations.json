@@ -1,0 +1,890 @@
+[{
+		"id": 52,
+		"relationTable": {
+			"name": "valueTalents",
+			"contentModelId": 1
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "preferredRoleLevel"
+				},
+				"foreignKey": null,
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents3"
+				},
+				"foreignKey": "preferredRoleLevelId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 53,
+		"relationTable": {
+			"name": "Talents_InterestRoles",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "interestRoles"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents4"
+				},
+				"foreignKey": "roleId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 70,
+		"relationTable": {
+			"name": "valueOrganizations",
+			"contentModelId": 5
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 5,
+					"contentModelAlias": "organizations"
+				},
+				"foreignKey": "companyTypeId",
+				"contentModelId": 2
+			},
+			{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "companyType"
+				},
+				"foreignKey": null,
+				"contentModelId": 5
+			}
+		]
+	},
+	{
+		"id": 63,
+		"relationTable": {
+			"name": "organizationJobs",
+			"contentModelId": 6
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs"
+				},
+				"foreignKey": "organizationId",
+				"contentModelId": 5
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 5,
+					"contentModelAlias": "organization"
+				},
+				"foreignKey": null,
+				"contentModelId": 6
+			}
+		]
+	},
+	{
+		"id": 50,
+		"relationTable": {
+			"name": "valueTalents",
+			"contentModelId": 1
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "militarySrv"
+				},
+				"foreignKey": null,
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents1"
+				},
+				"foreignKey": "militarySrvId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 51,
+		"relationTable": {
+			"name": "valueTalents",
+			"contentModelId": 1
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "interestStage"
+				},
+				"foreignKey": null,
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents2"
+				},
+				"foreignKey": "interestStageId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 55,
+		"relationTable": {
+			"name": "Talents_InterestSalesTypes",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "interestSalesTypes"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents6"
+				},
+				"foreignKey": "salesTypeId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 60,
+		"relationTable": {
+			"name": "valueExperiences",
+			"contentModelId": 4
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "expType"
+				},
+				"foreignKey": null,
+				"contentModelId": 4
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 4,
+					"contentModelAlias": "experiences"
+				},
+				"foreignKey": "expTypeId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 61,
+		"relationTable": {
+			"name": "valueExperiences",
+			"contentModelId": 4
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "expSalesType"
+				},
+				"foreignKey": null,
+				"contentModelId": 4
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 4,
+					"contentModelAlias": "salesExperiences"
+				},
+				"foreignKey": "expSalesTypeId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 67,
+		"relationTable": {
+			"name": "organizationExperiences",
+			"contentModelId": 4
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 5,
+					"contentModelAlias": "organization"
+				},
+				"foreignKey": null,
+				"contentModelId": 4
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 4,
+					"contentModelAlias": "experiences8"
+				},
+				"foreignKey": "organizationId",
+				"contentModelId": 5
+			}
+		]
+	},
+	{
+		"id": 69,
+		"relationTable": {
+			"name": "organizationExperiences",
+			"contentModelId": 5
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 5,
+					"contentModelAlias": "organizations"
+				},
+				"foreignKey": "organizationTypeId",
+				"contentModelId": 2
+			},
+			{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "organizationType"
+				},
+				"foreignKey": null,
+				"contentModelId": 5
+			}
+		]
+	},
+	{
+		"id": 78,
+		"relationTable": {
+			"name": "Jobs_PositionDepartments",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "positionDepartments"
+				},
+				"foreignKey": "jobId",
+				"contentModelId": 6
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs8"
+				},
+				"foreignKey": "departmentId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 79,
+		"relationTable": {
+			"name": "Jobs_CompanyIndustries",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 3,
+					"contentModelAlias": "companyIndustries"
+				},
+				"foreignKey": "jobId",
+				"contentModelId": 6
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs"
+				},
+				"foreignKey": "industryId",
+				"contentModelId": 3
+			}
+		]
+	},
+	{
+		"id": 80,
+		"relationTable": {
+			"name": "Organizations_Industries",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 5,
+					"contentModelAlias": "organizations"
+				},
+				"foreignKey": "industryId",
+				"contentModelId": 3
+			},
+			{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 3,
+					"contentModelAlias": "industries"
+				},
+				"foreignKey": "organizationId",
+				"contentModelId": 5
+			}
+		]
+	},
+	{
+		"id": 58,
+		"relationTable": {
+			"name": "Talents_WorkSalesType",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "workSalesTypes"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents9"
+				},
+				"foreignKey": "salesTypeId",
+				"contentModelId": 2
+			}
+		],
+		"extraFields": [{
+			"fieldName": "years",
+			"labelName": "years",
+			"fieldComponentId": 3
+		}]
+	},
+	{
+		"id": 76,
+		"relationTable": {
+			"name": "valueJobs",
+			"contentModelId": 6
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "positionRole"
+				},
+				"foreignKey": null,
+				"contentModelId": 6
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs6"
+				},
+				"foreignKey": "positionRoleId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 49,
+		"relationTable": {
+			"name": "valueValues",
+			"contentModelId": 2
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 2,
+					"contentModelAlias": "children"
+				},
+				"foreignKey": "parentId",
+				"contentModelId": 2
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 2,
+					"contentModelAlias": "parent"
+				},
+				"foreignKey": null,
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 59,
+		"relationTable": {
+			"name": "Talents_WorkSalesType",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "workClientTypes"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents10"
+				},
+				"foreignKey": "clientTypeId",
+				"contentModelId": 2
+			}
+		],
+		"extraFields": [{
+			"fieldName": "years",
+			"labelName": "years",
+			"fieldComponentId": 3
+		}]
+	},
+	{
+		"id": 64,
+		"relationTable": {
+			"name": "Talents_WorkSalesType",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 3,
+					"contentModelAlias": "interestIndustries"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents11"
+				},
+				"foreignKey": "industryId",
+				"contentModelId": 3
+			}
+		]
+	},
+	{
+		"id": 65,
+		"relationTable": {
+			"name": "Talents_WorkIndustries",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 3,
+					"contentModelAlias": "workIndustries"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents12"
+				},
+				"foreignKey": "industryId",
+				"contentModelId": 3
+			}
+		],
+		"extraFields": [{
+			"fieldName": "year",
+			"labelName": "year",
+			"fieldComponentId": 3
+		}]
+	},
+	{
+		"id": 73,
+		"relationTable": {
+			"name": "Jobs_CompanyMiniTags",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "companyMiniTags"
+				},
+				"foreignKey": "jobId",
+				"contentModelId": 6
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs3"
+				},
+				"foreignKey": "miniTagId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 66,
+		"relationTable": {
+			"name": "talentExperiences",
+			"contentModelId": 4
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talent"
+				},
+				"foreignKey": null,
+				"contentModelId": 4
+			},
+			{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 4,
+					"contentModelAlias": "experiences"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			}
+		]
+	},
+	{
+		"id": 71,
+		"relationTable": {
+			"name": "Organizations_MiniTags",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 5,
+					"contentModelAlias": "organizations"
+				},
+				"foreignKey": "miniTagId",
+				"contentModelId": 2
+			},
+			{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "miniTags"
+				},
+				"foreignKey": "organizationId",
+				"contentModelId": 5
+			}
+		]
+	},
+	{
+		"id": 72,
+		"relationTable": {
+			"name": "valueJobs",
+			"contentModelId": 6
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "companyType"
+				},
+				"foreignKey": null,
+				"contentModelId": 6
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs2"
+				},
+				"foreignKey": "companyTypeId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 74,
+		"relationTable": {
+			"name": "valueJobs",
+			"contentModelId": 6
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "positionRoleType"
+				},
+				"foreignKey": null,
+				"contentModelId": 6
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs4"
+				},
+				"foreignKey": "positionRoleTypeId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 75,
+		"relationTable": {
+			"name": "valueJobs",
+			"contentModelId": 6
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "positionSalesType"
+				},
+				"foreignKey": null,
+				"contentModelId": 6
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs5"
+				},
+				"foreignKey": "positionSalesTypeId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 77,
+		"relationTable": {
+			"name": "Jobs_PositionClientTypes",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "positionClientTypes"
+				},
+				"foreignKey": "jobId",
+				"contentModelId": 6
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 6,
+					"contentModelAlias": "jobs7"
+				},
+				"foreignKey": "clientTypeId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 54,
+		"relationTable": {
+			"name": "Talents_InterestClientTypes",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "interestClientTypes"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents5"
+				},
+				"foreignKey": "clientTypeId",
+				"contentModelId": 2
+			}
+		]
+	},
+	{
+		"id": 56,
+		"relationTable": {
+			"name": "Talents_WorkRoles",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "workRoles"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents7"
+				},
+				"foreignKey": "roleId",
+				"contentModelId": 2
+			}
+		],
+		"extraFields": [{
+			"fieldName": "years",
+			"labelName": "years",
+			"fieldComponentId": 3
+		}]
+	},
+	{
+		"id": 57,
+		"relationTable": {
+			"name": "Talents_WorkRoleLevels",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "workRoleLevels"
+				},
+				"foreignKey": "talentId",
+				"contentModelId": 1
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 1,
+					"contentModelAlias": "talents8"
+				},
+				"foreignKey": "roleLevelId",
+				"contentModelId": 2
+			}
+		],
+		"extraFields": [{
+			"fieldName": "years",
+			"labelName": "years",
+			"fieldComponentId": 3
+		}]
+	},
+	{
+		"id": 81,
+		"relationTable": {
+			"name": "Experiences_Industries",
+			"contentModelId": null
+		},
+		"type": "manyToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 4,
+					"contentModelAlias": "experiences"
+				},
+				"foreignKey": "industryId",
+				"contentModelId": 3
+			},
+			{
+				"alias": {
+					"willReturn": true,
+					"contentModelId": 3,
+					"contentModelAlias": "industries"
+				},
+				"foreignKey": "experienceId",
+				"contentModelId": 4
+			}
+		]
+	},
+	{
+		"id": 62,
+		"relationTable": {
+			"name": "industryIndustries",
+			"contentModelId": 3
+		},
+		"type": "oneToMany",
+		"description": [{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 3,
+					"contentModelAlias": "children"
+				},
+				"foreignKey": "parentId",
+				"contentModelId": 3
+			},
+			{
+				"alias": {
+					"willReturn": false,
+					"contentModelId": 3,
+					"contentModelAlias": "parent"
+				},
+				"foreignKey": null,
+				"contentModelId": 3
+			}
+		]
+	}
+]

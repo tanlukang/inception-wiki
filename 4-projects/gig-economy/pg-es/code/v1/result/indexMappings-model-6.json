@@ -1,0 +1,118 @@
+{
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"positionTitle": {
+			"type": "text"
+		},
+		"positionDepartments": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"companyIndustries": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"positionRole": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"companyMiniTags": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"companyType": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"positionRoleType": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"positionSalesType": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"positionClientTypes": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		}
+	}
+}

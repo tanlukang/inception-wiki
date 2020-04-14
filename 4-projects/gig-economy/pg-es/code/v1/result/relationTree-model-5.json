@@ -1,0 +1,66 @@
+{
+	"contentModelId": 5,
+	"isRoot": true,
+	"childrenNodes": [
+		{
+			"id": 70,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "valueOrganizations",
+				"contentModelId": 5
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "companyType"
+			}
+		},
+		{
+			"id": 69,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "organizationExperiences",
+				"contentModelId": 5
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "organizationType"
+			}
+		},
+		{
+			"id": 80,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Organizations_Industries",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 3,
+				"contentModelAlias": "industries"
+			}
+		},
+		{
+			"id": 71,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Organizations_MiniTags",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "miniTags"
+			}
+		}
+	]
+}

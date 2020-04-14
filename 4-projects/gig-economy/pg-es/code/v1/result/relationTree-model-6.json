@@ -1,0 +1,126 @@
+{
+	"contentModelId": 6,
+	"isRoot": true,
+	"childrenNodes": [
+		{
+			"id": 78,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Jobs_PositionDepartments",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "positionDepartments"
+			}
+		},
+		{
+			"id": 79,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Jobs_CompanyIndustries",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 3,
+				"contentModelAlias": "companyIndustries"
+			}
+		},
+		{
+			"id": 76,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "valueJobs",
+				"contentModelId": 6
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "positionRole"
+			}
+		},
+		{
+			"id": 73,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Jobs_CompanyMiniTags",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "companyMiniTags"
+			}
+		},
+		{
+			"id": 72,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "valueJobs",
+				"contentModelId": 6
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "companyType"
+			}
+		},
+		{
+			"id": 74,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "valueJobs",
+				"contentModelId": 6
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "positionRoleType"
+			}
+		},
+		{
+			"id": 75,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "valueJobs",
+				"contentModelId": 6
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "positionSalesType"
+			}
+		},
+		{
+			"id": 77,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Jobs_PositionClientTypes",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "positionClientTypes"
+			}
+		}
+	]
+}

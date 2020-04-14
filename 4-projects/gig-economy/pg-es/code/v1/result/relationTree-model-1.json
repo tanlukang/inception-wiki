@@ -1,0 +1,323 @@
+{
+	"contentModelId": 1,
+	"isRoot": true,
+	"childrenNodes": [
+		{
+			"id": 52,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "valueTalents",
+				"contentModelId": 1
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "preferredRoleLevel"
+			}
+		},
+		{
+			"id": 53,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_InterestRoles",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "interestRoles"
+			}
+		},
+		{
+			"id": 50,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "valueTalents",
+				"contentModelId": 1
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "militarySrv"
+			}
+		},
+		{
+			"id": 51,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "valueTalents",
+				"contentModelId": 1
+			},
+			"isAliasFieldArray": false,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "interestStage"
+			}
+		},
+		{
+			"id": 55,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_InterestSalesTypes",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "interestSalesTypes"
+			}
+		},
+		{
+			"id": 58,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_WorkSalesType",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "workSalesTypes"
+			}
+		},
+		{
+			"id": 59,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_WorkSalesType",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "workClientTypes"
+			}
+		},
+		{
+			"id": 64,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_WorkSalesType",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 3,
+				"contentModelAlias": "interestIndustries"
+			}
+		},
+		{
+			"id": 65,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_WorkIndustries",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 3,
+				"contentModelAlias": "workIndustries"
+			}
+		},
+		{
+			"id": 66,
+			"type": "oneToMany",
+			"relationTable": {
+				"name": "talentExperiences",
+				"contentModelId": 4
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [
+					{
+						"id": 60,
+						"type": "oneToMany",
+						"relationTable": {
+							"name": "valueExperiences",
+							"contentModelId": 4
+						},
+						"isAliasFieldArray": false,
+						"alias": {
+							"childrenNodes": [],
+							"willReturn": true,
+							"contentModelId": 2,
+							"contentModelAlias": "expType"
+						}
+					},
+					{
+						"id": 61,
+						"type": "oneToMany",
+						"relationTable": {
+							"name": "valueExperiences",
+							"contentModelId": 4
+						},
+						"isAliasFieldArray": false,
+						"alias": {
+							"childrenNodes": [],
+							"willReturn": true,
+							"contentModelId": 2,
+							"contentModelAlias": "expSalesType"
+						}
+					},
+					{
+						"id": 67,
+						"type": "oneToMany",
+						"relationTable": {
+							"name": "organizationExperiences",
+							"contentModelId": 4
+						},
+						"isAliasFieldArray": false,
+						"alias": {
+							"childrenNodes": [
+								{
+									"id": 70,
+									"type": "oneToMany",
+									"relationTable": {
+										"name": "valueOrganizations",
+										"contentModelId": 5
+									},
+									"isAliasFieldArray": false,
+									"alias": {
+										"childrenNodes": [],
+										"willReturn": true,
+										"contentModelId": 2,
+										"contentModelAlias": "companyType"
+									}
+								},
+								{
+									"id": 69,
+									"type": "oneToMany",
+									"relationTable": {
+										"name": "organizationExperiences",
+										"contentModelId": 5
+									},
+									"isAliasFieldArray": false,
+									"alias": {
+										"childrenNodes": [],
+										"willReturn": true,
+										"contentModelId": 2,
+										"contentModelAlias": "organizationType"
+									}
+								},
+								{
+									"id": 80,
+									"type": "manyToMany",
+									"relationTable": {
+										"name": "Organizations_Industries",
+										"contentModelId": null
+									},
+									"isAliasFieldArray": true,
+									"alias": {
+										"childrenNodes": [],
+										"willReturn": true,
+										"contentModelId": 3,
+										"contentModelAlias": "industries"
+									}
+								},
+								{
+									"id": 71,
+									"type": "manyToMany",
+									"relationTable": {
+										"name": "Organizations_MiniTags",
+										"contentModelId": null
+									},
+									"isAliasFieldArray": true,
+									"alias": {
+										"childrenNodes": [],
+										"willReturn": true,
+										"contentModelId": 2,
+										"contentModelAlias": "miniTags"
+									}
+								}
+							],
+							"willReturn": true,
+							"contentModelId": 5,
+							"contentModelAlias": "organization"
+						}
+					},
+					{
+						"id": 81,
+						"type": "manyToMany",
+						"relationTable": {
+							"name": "Experiences_Industries",
+							"contentModelId": null
+						},
+						"isAliasFieldArray": true,
+						"alias": {
+							"childrenNodes": [],
+							"willReturn": true,
+							"contentModelId": 3,
+							"contentModelAlias": "industries"
+						}
+					}
+				],
+				"willReturn": true,
+				"contentModelId": 4,
+				"contentModelAlias": "experiences"
+			}
+		},
+		{
+			"id": 54,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_InterestClientTypes",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "interestClientTypes"
+			}
+		},
+		{
+			"id": 56,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_WorkRoles",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "workRoles"
+			}
+		},
+		{
+			"id": 57,
+			"type": "manyToMany",
+			"relationTable": {
+				"name": "Talents_WorkRoleLevels",
+				"contentModelId": null
+			},
+			"isAliasFieldArray": true,
+			"alias": {
+				"childrenNodes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "workRoleLevels"
+			}
+		}
+	]
+}

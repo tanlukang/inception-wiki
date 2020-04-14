@@ -1,0 +1,67 @@
+{
+	"properties": {
+		"id": {
+			"type": "integer"
+		},
+		"name": {
+			"type": "text"
+		},
+		"url": {
+			"type": "text"
+		},
+		"companyType": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"organizationType": {
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"industries": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		},
+		"miniTags": {
+			"type": "nested",
+			"properties": {
+				"id": {
+					"type": "integer"
+				},
+				"name": {
+					"type": "text"
+				},
+				"order": {
+					"type": "integer"
+				}
+			}
+		}
+	}
+}

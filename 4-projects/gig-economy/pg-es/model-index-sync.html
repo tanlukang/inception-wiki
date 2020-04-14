@@ -1,0 +1,2696 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>model中和index相关的配置 · InceptionWiki</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-prism/prism.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../../gitbook/gitbook-plugin-theme-comscore/test.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="research.html" />
+    
+    
+    <link rel="prev" href="migrate.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">1-wiki</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../../">
+            
+                <a href="../../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Elasticsearch
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../../1-wiki/Elasticsearch/appbase_mapping_research.html">
+            
+                <a href="../../../1-wiki/Elasticsearch/appbase_mapping_research.html">
+            
+                    
+                    说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../../1-wiki/Elasticsearch/auto-completion.html">
+            
+                <a href="../../../1-wiki/Elasticsearch/auto-completion.html">
+            
+                    
+                    Elastic 提供的专门自动补全
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../../1-wiki/Elasticsearch/html_char_filter.html">
+            
+                <a href="../../../1-wiki/Elasticsearch/html_char_filter.html">
+            
+                    
+                    自定义html analyzer,在
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../../1-wiki/Elasticsearch/setting_test.html">
+            
+                <a href="../../../1-wiki/Elasticsearch/setting_test.html">
+            
+                    
+                    setting_test.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../../1-wiki/Elasticsearch/text_storage.html">
+            
+                <a href="../../../1-wiki/Elasticsearch/text_storage.html">
+            
+                    
+                    索引空间占用调研
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../../1-wiki/Elasticsearch/token_filter_simple_list.html">
+            
+                <a href="../../../1-wiki/Elasticsearch/token_filter_simple_list.html">
+            
+                    
+                    官方文档地址
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    aws
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../../1-wiki/aws/0-mgmt-solution-v1.html">
+            
+                <a href="../../../1-wiki/aws/0-mgmt-solution-v1.html">
+            
+                    
+                    AWS Management Solution V1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../../1-wiki/aws/0-mgmt-solution-v2.html">
+            
+                <a href="../../../1-wiki/aws/0-mgmt-solution-v2.html">
+            
+                    
+                    AWS Management Solution V2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../../1-wiki/aws/1-security.html">
+            
+                <a href="../../../1-wiki/aws/1-security.html">
+            
+                    
+                    Security Overview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../../1-wiki/aws/10-cloudtrail.html">
+            
+                <a href="../../../1-wiki/aws/10-cloudtrail.html">
+            
+                    
+                    AWS CloudTrail
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../../1-wiki/aws/11-cloudformation.html">
+            
+                <a href="../../../1-wiki/aws/11-cloudformation.html">
+            
+                    
+                    AWS CloudFormation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../../1-wiki/aws/12-rds.html">
+            
+                <a href="../../../1-wiki/aws/12-rds.html">
+            
+                    
+                    Amazon Relational Database Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../../../1-wiki/aws/13-sns.html">
+            
+                <a href="../../../1-wiki/aws/13-sns.html">
+            
+                    
+                    Amazon Simple Notification Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../../../1-wiki/aws/14-compliance.html">
+            
+                <a href="../../../1-wiki/aws/14-compliance.html">
+            
+                    
+                    AWS Compliance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../../../1-wiki/aws/2-iam.html">
+            
+                <a href="../../../1-wiki/aws/2-iam.html">
+            
+                    
+                    AWS Identity and Access Management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../../../1-wiki/aws/3-sts.html">
+            
+                <a href="../../../1-wiki/aws/3-sts.html">
+            
+                    
+                    AWS Security Token Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../../../1-wiki/aws/4-s3.html">
+            
+                <a href="../../../1-wiki/aws/4-s3.html">
+            
+                    
+                    Amazon Simple Storage Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../../../1-wiki/aws/5-ses.html">
+            
+                <a href="../../../1-wiki/aws/5-ses.html">
+            
+                    
+                    Amazon Simple Email Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../../../1-wiki/aws/6-ec2.html">
+            
+                <a href="../../../1-wiki/aws/6-ec2.html">
+            
+                    
+                    Amazon EC2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../../../1-wiki/aws/7-systemsmanager.html">
+            
+                <a href="../../../1-wiki/aws/7-systemsmanager.html">
+            
+                    
+                    AWS Systems Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../../../1-wiki/aws/8-config.html">
+            
+                <a href="../../../1-wiki/aws/8-config.html">
+            
+                    
+                    AWS Config
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../../../1-wiki/aws/9-cloudwatch.html">
+            
+                <a href="../../../1-wiki/aws/9-cloudwatch.html">
+            
+                    
+                    Amazon CloudWatch
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    git
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../../1-wiki/git/1-git-conflict.html">
+            
+                <a href="../../../1-wiki/git/1-git-conflict.html">
+            
+                    
+                    Git冲突流程处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" >
+            
+                <span>
+            
+                    
+                    naming
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../1-wiki/naming/1-db-naming.html">
+            
+                <a href="../../../1-wiki/naming/1-db-naming.html">
+            
+                    
+                    数据库命名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../1-wiki/naming/2-react-directory-structure.html">
+            
+                <a href="../../../1-wiki/naming/2-react-directory-structure.html">
+            
+                    
+                    React Directory Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../1-wiki/naming/3-var-naming.html">
+            
+                <a href="../../../1-wiki/naming/3-var-naming.html">
+            
+                    
+                    变量命名
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" >
+            
+                <span>
+            
+                    
+                    ops
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" >
+            
+                <span>
+            
+                    
+                    ec2-alarm
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1.1" data-path="../../../1-wiki/ops/ec2-alarm/ec2-alarm.html">
+            
+                <a href="../../../1-wiki/ops/ec2-alarm/ec2-alarm.html">
+            
+                    
+                    EC2 告警设置
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" >
+            
+                <span>
+            
+                    
+                    visa
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../../../1-wiki/visa/us.html">
+            
+                <a href="../../../1-wiki/visa/us.html">
+            
+                    
+                    美国签证
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">2-members</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" >
+            
+                <span>
+            
+                    
+                    chen-dong
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1.1" data-path="../../../2-members/chen-dong/titanhouse-cp-summary.html">
+            
+                <a href="../../../2-members/chen-dong/titanhouse-cp-summary.html">
+            
+                    
+                    TitianHouse-CP Experience
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" >
+            
+                <span>
+            
+                    
+                    xia-bin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1" >
+            
+                <span>
+            
+                    
+                    tools
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.1.1" data-path="../../../2-members/xia-bin/tools/utool.html">
+            
+                <a href="../../../2-members/xia-bin/tools/utool.html">
+            
+                    
+                    小工具安利之《UTool》
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.2" data-path="../../../2-members/xia-bin/using-image-in-markdown.html">
+            
+                <a href="../../../2-members/xia-bin/using-image-in-markdown.html">
+            
+                    
+                    Markdown 图片问题解决方案
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3" >
+            
+                <span>
+            
+                    
+                    weekly
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.2.3.1" data-path="../../../2-members/xia-bin/weekly/[2019.01.06-2020.01.10].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.01.06-2020.01.10].html">
+            
+                    
+                    第九期 2019.01.06-2020.01.10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.2" data-path="../../../2-members/xia-bin/weekly/[2019.11.11-2019.11.15].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.11.11-2019.11.15].html">
+            
+                    
+                    第一期 2019.11.11-2019.11.15
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.3" data-path="../../../2-members/xia-bin/weekly/[2019.11.18-2019.11.22].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.11.18-2019.11.22].html">
+            
+                    
+                    第二期 2019.11.18-2019.11.22
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.4" data-path="../../../2-members/xia-bin/weekly/[2019.11.25-2019.11.29].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.11.25-2019.11.29].html">
+            
+                    
+                    第三期 2019.11.25-2019.11.29
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.5" data-path="../../../2-members/xia-bin/weekly/[2019.12.02-2019.12.06].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.12.02-2019.12.06].html">
+            
+                    
+                    第四期 2019.12.02-2019.12.06
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.6" data-path="../../../2-members/xia-bin/weekly/[2019.12.09-2019.12.13].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.12.09-2019.12.13].html">
+            
+                    
+                    第五期 2019.12.09-2019.12.13
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.7" data-path="../../../2-members/xia-bin/weekly/[2019.12.16-2019.12.20].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.12.16-2019.12.20].html">
+            
+                    
+                    第六期 2019.12.16-2019.12.20
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.8" data-path="../../../2-members/xia-bin/weekly/[2019.12.23-2019.12.27].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.12.23-2019.12.27].html">
+            
+                    
+                    第六期 2019.12.23-2019.12.27
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2.3.9" data-path="../../../2-members/xia-bin/weekly/[2019.12.30-2020.01.03].html">
+            
+                <a href="../../../2-members/xia-bin/weekly/[2019.12.30-2020.01.03].html">
+            
+                    
+                    第八期 2019.12.30-2020.01.03
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" >
+            
+                <span>
+            
+                    
+                    zhang-jiajing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.3.1" data-path="../../../2-members/zhang-jiajing/postman-auto-test.html">
+            
+                <a href="../../../2-members/zhang-jiajing/postman-auto-test.html">
+            
+                    
+                    Postman auto test
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" >
+            
+                <span>
+            
+                    
+                    zhang-junhou
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1" >
+            
+                <span>
+            
+                    
+                    flutter
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.4.1.1" data-path="../../../2-members/zhang-junhou/flutter/plugins-and-tools.html">
+            
+                <a href="../../../2-members/zhang-junhou/flutter/plugins-and-tools.html">
+            
+                    
+                    Flutter 常用的插件和工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" >
+            
+                <span>
+            
+                    
+                    zhang-milai
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.1" data-path="../../../2-members/zhang-milai/PR-target.html">
+            
+                <a href="../../../2-members/zhang-milai/PR-target.html">
+            
+                    
+                    2019-10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.2" data-path="../../../2-members/zhang-milai/TH review.html">
+            
+                <a href="../../../2-members/zhang-milai/TH review.html">
+            
+                    
+                    TH review
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.3" data-path="../../../2-members/zhang-milai/api-design.html">
+            
+                <a href="../../../2-members/zhang-milai/api-design.html">
+            
+                    
+                    tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.4" data-path="../../../2-members/zhang-milai/code-clean.html">
+            
+                <a href="../../../2-members/zhang-milai/code-clean.html">
+            
+                    
+                    Code Clean
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.5" data-path="../../../2-members/zhang-milai/code-review-guide.html">
+            
+                <a href="../../../2-members/zhang-milai/code-review-guide.html">
+            
+                    
+                    review价值观
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.6" data-path="../../../2-members/zhang-milai/db-naming.html">
+            
+                <a href="../../../2-members/zhang-milai/db-naming.html">
+            
+                    
+                    数据库命名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7" >
+            
+                <span>
+            
+                    
+                    ddd
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.7.1" data-path="../../../2-members/zhang-milai/ddd/ddd-guide.html">
+            
+                <a href="../../../2-members/zhang-milai/ddd/ddd-guide.html">
+            
+                    
+                    DDD的核心
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.7.2" data-path="../../../2-members/zhang-milai/ddd/event-stroming.html">
+            
+                <a href="../../../2-members/zhang-milai/ddd/event-stroming.html">
+            
+                    
+                    Event Storming - 如何划分微服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.8" data-path="../../../2-members/zhang-milai/design-flow.html">
+            
+                <a href="../../../2-members/zhang-milai/design-flow.html">
+            
+                    
+                    命名讨论流程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.9" >
+            
+                <span>
+            
+                    
+                    design
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.9.1" data-path="../../../2-members/zhang-milai/design/db-design.html">
+            
+                <a href="../../../2-members/zhang-milai/design/db-design.html">
+            
+                    
+                    Tips
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.10" >
+            
+                <span>
+            
+                    
+                    discuss-list
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.10.1" data-path="../../../2-members/zhang-milai/discuss-list/2019-10.html">
+            
+                <a href="../../../2-members/zhang-milai/discuss-list/2019-10.html">
+            
+                    
+                    2019-10
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.11" data-path="../../../2-members/zhang-milai/function-name.html">
+            
+                <a href="../../../2-members/zhang-milai/function-name.html">
+            
+                    
+                    State management
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.12" data-path="../../../2-members/zhang-milai/git-flow.html">
+            
+                <a href="../../../2-members/zhang-milai/git-flow.html">
+            
+                    
+                    Git Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.13" data-path="../../../2-members/zhang-milai/">
+            
+                <a href="../../../2-members/zhang-milai/">
+            
+                    
+                    草稿箱
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.14" data-path="../../../2-members/zhang-milai/react-directory-structure.html">
+            
+                <a href="../../../2-members/zhang-milai/react-directory-structure.html">
+            
+                    
+                    react
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15" >
+            
+                <span>
+            
+                    
+                    research
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.5.15.1" data-path="../../../2-members/zhang-milai/research/TH-multiple-frontend-applications.html">
+            
+                <a href="../../../2-members/zhang-milai/research/TH-multiple-frontend-applications.html">
+            
+                    
+                    How does TH manage multiple front-end applications
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15.2" data-path="../../../2-members/zhang-milai/research/lerna.html">
+            
+                <a href="../../../2-members/zhang-milai/research/lerna.html">
+            
+                    
+                    what's lerna
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5.15.3" data-path="../../../2-members/zhang-milai/research/pipelines.html">
+            
+                <a href="../../../2-members/zhang-milai/research/pipelines.html">
+            
+                    
+                    Pipelines
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" >
+            
+                <span>
+            
+                    
+                    zhao-huanyu
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.6.1" data-path="../../../2-members/zhao-huanyu/jira-ticket-title.html">
+            
+                <a href="../../../2-members/zhao-huanyu/jira-ticket-title.html">
+            
+                    
+                    Jira ticket的标题格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" >
+            
+                <span>
+            
+                    
+                    zhou-hongbin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1" >
+            
+                <span>
+            
+                    
+                    elastic-daily
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.7.1.1" data-path="../../../2-members/zhou-hongbin/elastic-daily/elastic-daily-771.html">
+            
+                <a href="../../../2-members/zhou-hongbin/elastic-daily/elastic-daily-771.html">
+            
+                    
+                    Elastic 日报 第 772 期
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">3-goals</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="../../../3-goals/1-2019-10.html">
+            
+                <a href="../../../3-goals/1-2019-10.html">
+            
+                    
+                    2019-10
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="../../../3-goals/2-2019-11.html">
+            
+                <a href="../../../3-goals/2-2019-11.html">
+            
+                    
+                    2019-11
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">4-projects</li>
+        
+        
+    
+        <li class="chapter " data-level="4.1" >
+            
+                <span>
+            
+                    
+                    airlineratings
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1.1" data-path="../../airlineratings/Admob.html">
+            
+                <a href="../../airlineratings/Admob.html">
+            
+                    
+                    AirlineRatings AdMob问题存档
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" >
+            
+                <span>
+            
+                    
+                    csv-manager
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="../../csv-manager/1-requirements.html">
+            
+                <a href="../../csv-manager/1-requirements.html">
+            
+                    
+                    CSV 上传下载管理模块
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" >
+            
+                <span>
+            
+                    
+                    email-service
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.3.1" data-path="../../email-service/requirements.html">
+            
+                <a href="../../email-service/requirements.html">
+            
+                    
+                    邮件服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" >
+            
+                <span>
+            
+                    
+                    gig-economy
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1" >
+            
+                <span>
+            
+                    
+                    data-version
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.1.1" data-path="../data-version/design-v1.html">
+            
+                <a href="../data-version/design-v1.html">
+            
+                    
+                    基于关系型数据库的版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.1.2" data-path="../data-version/design-v2.1.html">
+            
+                <a href="../data-version/design-v2.1.html">
+            
+                    
+                    基于关系型数据库的版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.1.3" data-path="../data-version/design-v2.html">
+            
+                <a href="../data-version/design-v2.html">
+            
+                    
+                    基于关系型数据库的版本管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.1.4" data-path="../data-version/draft.html">
+            
+                <a href="../data-version/draft.html">
+            
+                    
+                    版本管理结构分层
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.1.5" data-path="../data-version/example-1.html">
+            
+                <a href="../data-version/example-1.html">
+            
+                    
+                    需求
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.1.6" data-path="../data-version/rdms-history-version-design.html">
+            
+                <a href="../data-version/rdms-history-version-design.html">
+            
+                    
+                    关系型数据库数据历史管理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.2" >
+            
+                <span>
+            
+                    
+                    database
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.2.1" data-path="../database/db-design.html">
+            
+                <a href="../database/db-design.html">
+            
+                    
+                    Apps
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3" >
+            
+                <span>
+            
+                    
+                    es-related
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.3.1" data-path="../es-related/issues.html">
+            
+                <a href="../es-related/issues.html">
+            
+                    
+                    Alpha版本接触到的ES issues
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.3.2" data-path="../es-related/script.html">
+            
+                <a href="../es-related/script.html">
+            
+                    
+                    ES script
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.4" data-path="../inception-summary.html">
+            
+                <a href="../inception-summary.html">
+            
+                    
+                    项目启动会回顾
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.5" data-path="../inception.html">
+            
+                <a href="../inception.html">
+            
+                    
+                    gig economy - Inception
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6" >
+            
+                <span>
+            
+                    
+                    pg-es
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.6.1" >
+            
+                <span>
+            
+                    
+                    code
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.6.1.1" >
+            
+                <span>
+            
+                    
+                    v1
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.6.1.1.1" >
+            
+                <span>
+            
+                    
+                    result
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6.1.2" >
+            
+                <span>
+            
+                    
+                    v2
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.6.1.2.1" >
+            
+                <span>
+            
+                    
+                    result
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6.2" data-path="design.html">
+            
+                <a href="design.html">
+            
+                    
+                    名词解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6.3" data-path="es-relation.html">
+            
+                <a href="es-relation.html">
+            
+                    
+                    ElasticSearch Relation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6.4" data-path="migrate.html">
+            
+                <a href="migrate.html">
+            
+                    
+                    DB 与 Es 数据迁移功能设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.4.6.5" data-path="model-index-sync.html">
+            
+                <a href="model-index-sync.html">
+            
+                    
+                    model中和index相关的配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6.6" data-path="research.html">
+            
+                <a href="research.html">
+            
+                    
+                    review log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6.7" data-path="searchview-structure.html">
+            
+                <a href="searchview-structure.html">
+            
+                    
+                    Search View Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.6.8" data-path="sync-service-design.html">
+            
+                <a href="sync-service-design.html">
+            
+                    
+                    ES同步PG服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7" >
+            
+                <span>
+            
+                    
+                    pg-related
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.7.1" data-path="../pg-related/cms-support-data-type.html">
+            
+                <a href="../pg-related/cms-support-data-type.html">
+            
+                    
+                    pg数据类型alpha支持
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7.2" data-path="../pg-related/relation-api-draft.html">
+            
+                <a href="../pg-related/relation-api-draft.html">
+            
+                    
+                    实例数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7.3" data-path="../pg-related/relation-db-design.html">
+            
+                <a href="../pg-related/relation-db-design.html">
+            
+                    
+                    Model关系数据库设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7.4" data-path="../pg-related/single-way-desgin.html">
+            
+                <a href="../pg-related/single-way-desgin.html">
+            
+                    
+                    单向关系的设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.7.5" data-path="../pg-related/support-middleTable-extraFields.html">
+            
+                <a href="../pg-related/support-middleTable-extraFields.html">
+            
+                    
+                    API设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8" >
+            
+                <span>
+            
+                    
+                    product
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.8.1" data-path="../product/baas-vs-headless-cms.html">
+            
+                <a href="../product/baas-vs-headless-cms.html">
+            
+                    
+                    BaaS & Headless CMS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.8.2" data-path="../product/jsonArray-realtimeRelation.html">
+            
+                <a href="../product/jsonArray-realtimeRelation.html">
+            
+                    
+                    Json array support realtime relation
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.9" >
+            
+                <span>
+            
+                    
+                    th
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.9.1" data-path="../th/database.html">
+            
+                <a href="../th/database.html">
+            
+                    
+                    Source
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.9.2" >
+            
+                <span>
+            
+                    
+                    es
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.4.9.2.1" >
+            
+                <span>
+            
+                    
+                    thes
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4.9.3" >
+            
+                <span>
+            
+                    
+                    pg
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" >
+            
+                <span>
+            
+                    
+                    official-website
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.5.1" data-path="../../official-website/information-structure.html">
+            
+                <a href="../../official-website/information-structure.html">
+            
+                    
+                    what we do
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" >
+            
+                <span>
+            
+                    
+                    pinpoint
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.6.1" data-path="../../pinpoint/business-design.html">
+            
+                <a href="../../pinpoint/business-design.html">
+            
+                    
+                    用户系统设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.2" data-path="../../pinpoint/db.html">
+            
+                <a href="../../pinpoint/db.html">
+            
+                    
+                    Pinpoint Database Design
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.3" data-path="../../pinpoint/front-end-code-standard.html">
+            
+                <a href="../../pinpoint/front-end-code-standard.html">
+            
+                    
+                    front-end-code-standard.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6.4" data-path="../../pinpoint/frontend-project-structure.html">
+            
+                <a href="../../pinpoint/frontend-project-structure.html">
+            
+                    
+                    项目结构配置规则：
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+        
+        <li class="header">5-data science</li>
+        
+        
+    
+        <li class="chapter " data-level="5.1" >
+            
+                <span>
+            
+                    
+                    data_analysis
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1.1" data-path="../../../5-data science/data_analysis/readme.html">
+            
+                <a href="../../../5-data science/data_analysis/readme.html">
+            
+                    
+                    readme.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" >
+            
+                <span>
+            
+                    
+                    machine_learing
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.2.1" data-path="../../../5-data science/machine_learing/readme.html">
+            
+                <a href="../../../5-data science/machine_learing/readme.html">
+            
+                    
+                    readme.md
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" >
+            
+                <span>
+            
+                    
+                    spiders
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.3.1" >
+            
+                <span>
+            
+                    
+                    code
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.2" data-path="../../../5-data science/spiders/readme.html">
+            
+                <a href="../../../5-data science/spiders/readme.html">
+            
+                    
+                    数据采集之爬虫篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3.3" data-path="../../../5-data science/spiders/yahoo_stock.html">
+            
+                <a href="../../../5-data science/spiders/yahoo_stock.html">
+            
+                    
+                    yahoo 股价爬虫
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../../.." >model中和index相关的配置</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h3 id="model&#x4E2D;&#x548C;index&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;">model&#x4E2D;&#x548C;index&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;</h3>
+<ul>
+<li>noIndex&#xFF0C;&#x662F;&#x5426;&#x5BF9;model&#x751F;&#x6210;index<ul>
+<li>&#x53D8;&#x66F4;&#x8FC7;&#x7A0B; @milai<ul>
+<li>true-&gt;false&#xFF0C;&#x65B0;&#x589E;index&#xFF0C;&#x5E76;&#x4E14;&#x628A;pg&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5168;&#x90E8;&#x540C;&#x6B65;&#x5230;index&#x4E2D;<ul>
+<li>false-&gt;true&#xFF0C;&#x5220;&#x9664;index&#xFF0C;&#x5E76;&#x4E14;&#x5220;&#x9664;/&#x5931;&#x6548;searchView&#x4E2D;&#x7684;&#x914D;&#x7F6E;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5355;&#x5411;&#x5173;&#x7CFB;<ul>
+<li>&#x65B0;&#x589E;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4E0D;&#x7F16;&#x8F91;alias @milai<ul>
+<li>&#x4F8B;&#x5982;&#xFF0C;talents&#x548C;industries&#x4E3A;&#x4ECE;talents&#x5230;industries&#x5355;&#x5411;&#x7684;&#x591A;&#x5BF9;&#x591A;&#x5173;&#x8054;&#x3002;&#x5728;&#x65B0;&#x589E;talents&#x548C;industries&#x7684;&#x5173;&#x7CFB;&#x65F6;&#xFF0C;&#x53EA;&#x9700;&#x8981;&#x7F16;&#x8F91;industries&#x5728;talents&#x4E0B;&#x7684;alias&#xFF08;workIndustries&#xFF09;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x7F16;&#x8F91;talents&#x5728;industries&#x4E0B;&#x7684;alias</li>
+</ul>
+</li>
+<li>&#xFF08;later&#xFF09;&#x5728;curd&#x63A5;&#x53E3;&#x4E2D;&#xFF0C;&#x4E0D;&#x67E5;&#x8BE2;/&#x65B0;&#x589E;/&#x66F4;&#x65B0;&#x5355;&#x5411;&#x5173;&#x7CFB;&#x7684;model @milai<ul>
+<li>&#x5728;&#x8C03;&#x7528;&#x67E5;&#x8BE2;talents&#x7684;&#x63A5;&#x53E3;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x5230;industries&#x7684;&#x6570;&#x636E;&#x4EE5;workIndustries&#xFF08;alias&#xFF09;&#x7684;&#x5B57;&#x6BB5;&#x6302;&#x5728;talents&#x4E0B;&#x65B9;&#x8FD4;&#x56DE;&#xFF1B;&#x5728;&#x8C03;&#x7528;&#x65B0;&#x589E;&#x3001;&#x66F4;&#x65B0;talents&#x7684;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;&#x4E0A;&#x5E26;&#x4E0A;workIndustries&#x5B57;&#x6BB5;&#xFF0C;&#x6765;&#x8BBE;&#x7F6E;&#x5173;&#x7CFB;&#xFF1B;&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x8C03;&#x7528;industries&#x7684;&#x67E5;&#x8BE2;/&#x65B0;&#x589E;/&#x66F4;&#x65B0;&#x63A5;&#x53E3;&#x65F6;&#xFF0C;&#x65E0;&#x6CD5;&#x628A;talents&#x4EE5;alias&#x7684;&#x65B9;&#x5F0F;&#x6302;&#x5728;industries&#x7684;&#x6570;&#x636E;&#x4E0A;</li>
+</ul>
+</li>
+<li>index&#x65F6;&#xFF0C;&#x4E0D;&#x751F;&#x6210;alias&#x5B50;&#x5B57;&#x6BB5;<ul>
+<li>&#x5728;talents&#x7684;index&#x4E2D;&#xFF0C;&#x6709;workIndustries&#x5B57;&#x6BB5;&#x4FDD;&#x5B58;&#x5173;&#x8054;&#x7684;industries&#xFF1B;&#x4F46;&#x662F;&#x5728;industries&#x7684;index&#x4E2D;&#xFF0C;&#x6CA1;&#x6709;talents&#x76F8;&#x5173;&#x7684;&#x5B57;&#x6BB5;</li>
+<li>** &#x65E0;&#x6CD5;&#x652F;&#x6301;&#x4EFB;&#x610F;index&#xFF08;includeLevel&#xFF09;<ul>
+<li>&#x5BF9;talents index&#x7684;index&#x5C42;&#x7EA7;&#x662F;talents.experiences.organization&#xFF0C;&#x5BF9;organizations index&#x7684;&#x5C42;&#x7EA7;&#x4E3A;organizations&#xFF0C;&#x5BF9;jobs index&#x7684;&#x5C42;&#x7EA7;&#x662F;jobs.organizations.experiences.talents&#x3002;&#x8FD9;&#x6837;&#x7684;&#x9700;&#x6C42;&#x65E0;&#x6CD5;&#x5B9E;&#x73B0;&#xFF0C;&#x56E0;&#x4E3A;&#x5173;&#x7CFB;&#x7684;&#x5355;&#x5411;&#x8D70;&#x5411;&#x662F;talents-&gt;experiences-&gt;organizations-jobs&#xFF0C;index&#x65F6;&#x65E0;&#x6CD5;&#x4ECE;jobs&#x628A;organizations&#x5E26;&#x51FA;&#x6765;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#xFF08;later&#xFF09;&#x81EA;&#x5B9A;&#x4E49;index&#x903B;&#x8F91;&#xFF08;&#x4F8B;&#x5982;&#x628A;company&#x6570;&#x636E;&#x76F4;&#x63A5;&#x6302;&#x5230;talent&#x4E0A;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x901A;&#x8FC7;talent.experience.company&#x8FD9;&#x6837;&#x4F7F;&#x7528;&#xFF09;<ul>
+<li>&#x5982;&#x4F55;&#x63CF;&#x8FF0;&#x8BE5;&#x903B;&#x8F91;</li>
+<li>&#x5982;&#x4F55;&#x8FD0;&#x884C;&#x8BE5;&#x903B;&#x8F91;&#xFF08;index mapping&#x9636;&#x6BB5;&#xFF0C;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x9636;&#x6BB5;&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<h3 id="index&#x7ED3;&#x6784;&#x66F4;&#x65B0;&#x7684;&#x573A;&#x666F;">index&#x7ED3;&#x6784;&#x66F4;&#x65B0;&#x7684;&#x573A;&#x666F;</h3>
+<ul>
+<li>&#x65B0;&#x589E;model&#x5B57;&#x6BB5;<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>add new field mapping</li>
+<li>reindex with latest mapping</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>(later&#xFF09;&#x5220;&#x9664;model&#x5B57;&#x6BB5;<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>&#x65E0;&#x64CD;&#x4F5C;<ul>
+<li>&#x539F;&#x5B57;&#x6BB5;&#x5728;index&#x4E2D;&#x53D8;&#x4E3A;&#x5197;&#x4F59;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li>reindex with latest mapping</li>
+</ul>
+</li>
+<li>searchView&#x4E2D;&#x539F;&#x5B57;&#x6BB5;&#x914D;&#x7F6E;&#x5220;&#x9664;/&#x5931;&#x6548;</li>
+</ul>
+</li>
+<li>&#xFF08;later&#xFF09;&#x66F4;&#x65B0;model&#x5B57;&#x6BB5;<ul>
+<li>&#x66F4;&#x65B0;fieldName<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>add new field mapping<ul>
+<li>&#x628A;&#x6539;&#x540D;&#x540E;&#x7684;&#x5B57;&#x6BB5;&#x6267;&#x884C;&#x66F4;&#x65B0;mapping&#x5230;index&#x4E2D;</li>
+<li>&#x539F;&#x5B57;&#x6BB5;&#x5728;index&#x4E2D;&#x53D8;&#x4E3A;&#x5197;&#x4F59;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li>reindex with latest mapping</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x66F4;&#x65B0;fieldType<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>add new field mapping<ul>
+<li>&#x628A;&#x66F4;&#x65B0;&#x7C7B;&#x578B;&#x540E;&#x7684;&#x5B57;&#x6BB5;&#x6267;&#x884C;&#x66F4;&#x65B0;mapping&#x5230;index&#x4E2D;</li>
+<li>&#x539F;&#x5B57;&#x6BB5;&#x5728;index&#x4E2D;&#x53D8;&#x4E3A;&#x5197;&#x4F59;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li>reindex with latest mapping</li>
+</ul>
+</li>
+<li>searchView&#x4E2D;&#x5B57;&#x6BB5;&#x914D;&#x7F6E;&#x5220;&#x9664;/&#x5931;&#x6548;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x65B0;&#x589E;model&#x5173;&#x7CFB;&#xFF08;&#x548C;model&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5173;&#x8054;&#x7684;&#x5176;&#x4ED6;model&#x7684;&#x5173;&#x7CFB;&#x66F4;&#x65B0;&#xFF0C;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5F53;&#x524D;model&#x9700;&#x8981;&#x66F4;&#x65B0;index&#xFF09;@hongbin<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>add new field mapping<ul>
+<li>&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;&#x65F6;&#x9700;&#x8981;&#x628A;&#x4ECE;&#x8BE5;&#x5B57;&#x6BB5;&#x5230;&#x5E95;&#x5C42;mapping&#x7684;&#x5B8C;&#x6574;&#x94FE;&#x8DEF;&#x5199;&#x4E0A;&#xFF0C;&#x518D;&#x8C03;&#x7528;put mapping api&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5F53;experiences&#x548C;organization&#x5EFA;&#x7ACB;&#x591A;&#x5BF9;&#x4E00;&#x5173;&#x7CFB;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x628A;organization&#x4F5C;&#x4E3A;&#x5B50;&#x5B57;&#x6BB5;&#x653E;&#x5728;experiences&#x5B57;&#x6BB5;&#x4E0B;&#x65B9;&#xFF0C;&#x800C;experiences&#x672C;&#x6765;&#x662F;talents index&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x5B57;&#x6BB5;
+`
+properties: {<pre class="language-"><code>experiences: {
+    type: &apos;nested&apos;,
+    properties: {
+        organization: {
+            properties: {
+                name: {
+                    type: &apos;text&apos;
+                },
+                url: {
+                    type: &apos;text&apos;
+                }
+            }
+        }
+    }
+}
+</code></pre>}
+`</li>
+</ul>
+</li>
+<li>reindex with latest mapping</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#xFF08;later&#xFF09;&#x5220;&#x9664;model&#x5173;&#x7CFB;&#xFF08;&#x548C;model&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5173;&#x8054;&#x7684;&#x5176;&#x4ED6;model&#x7684;&#x5173;&#x7CFB;&#x66F4;&#x65B0;&#xFF0C;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5F53;&#x524D;model&#x9700;&#x8981;&#x66F4;&#x65B0;index&#xFF09;<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>&#x65E0;&#x64CD;&#x4F5C;<ul>
+<li>&#x539F;&#x5173;&#x7CFB;&#x5B57;&#x6BB5;&#x5728;index&#x4E2D;&#x53D8;&#x4E3A;&#x5197;&#x4F59;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li>reindex with latest mapping</li>
+</ul>
+</li>
+<li>searchView&#x4E2D;&#x539F;&#x5B57;&#x6BB5;&#x914D;&#x7F6E;&#x5220;&#x9664;/&#x5931;&#x6548;</li>
+</ul>
+</li>
+<li>&#xFF08;later&#xFF09;&#x66F4;&#x65B0;model&#x5173;&#x7CFB;&#xFF08;&#x548C;model&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5173;&#x8054;&#x7684;&#x5176;&#x4ED6;model&#x7684;&#x5173;&#x7CFB;&#x66F4;&#x65B0;&#xFF0C;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5F53;&#x524D;model&#x9700;&#x8981;&#x66F4;&#x65B0;index&#xFF09;<ul>
+<li>&#x66F4;&#x65B0;alias<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>add new field mapping<ul>
+<li>&#x548C;&#x65B0;&#x589E;model&#x5173;&#x7CFB;&#x7684;&#x64CD;&#x4F5C;&#x7C7B;&#x4F3C;</li>
+<li>&#x539F;&#x5173;&#x7CFB;&#x5B57;&#x6BB5;&#x5728;index&#x4E2D;&#x53D8;&#x4E3A;&#x5197;&#x4F59;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li>reindex with latest mapping</li>
+</ul>
+</li>
+<li>searchView&#x4E2D;&#x5B57;&#x6BB5;&#x914D;&#x7F6E;&#x5220;&#x9664;/&#x5931;&#x6548;</li>
+</ul>
+</li>
+<li>&#x66F4;&#x65B0;foreignKey<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>&#x65E0;&#x64CD;&#x4F5C;<ul>
+<li>&#x5916;&#x952E;&#x662F;&#x5426;&#x540C;&#x6B65;&#x5230;index&#x4E2D;&#x4E0D;&#x91CD;&#x8981;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x66F4;&#x65B0;willReturn&#xFF08;&#x5355;&#x5411;&#x5173;&#x7CFB;&#xFF09;<ul>
+<li>index&#x64CD;&#x4F5C;<ul>
+<li>add new field mapping<ul>
+<li>&#x548C;&#x65B0;&#x589E;model&#x5173;&#x7CFB;&#x7684;&#x64CD;&#x4F5C;&#x7C7B;&#x4F3C;</li>
+<li>&#x539F;&#x5173;&#x7CFB;&#x5B57;&#x6BB5;&#x5728;index&#x4E2D;&#x53D8;&#x4E3A;&#x5197;&#x4F59;&#x5B57;&#x6BB5;</li>
+</ul>
+</li>
+<li>reindex with latest mapping</li>
+</ul>
+</li>
+<li>searchView&#x4E2D;&#x5B57;&#x6BB5;&#x914D;&#x7F6E;&#x5220;&#x9664;/&#x5931;&#x6548;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="model&#x5173;&#x7CFB;&#x4F9D;&#x8D56;&#x6811;&#xFF08;relationtree&#xFF09;&#x751F;&#x6210;&#x903B;&#x8F91;">model&#x5173;&#x7CFB;&#x4F9D;&#x8D56;&#x6811;&#xFF08;relationTree&#xFF09;&#x751F;&#x6210;&#x903B;&#x8F91;</h3>
+<ul>
+<li>code/buildModelRelationTree.js</li>
+</ul>
+<h3 id="index&#x7ED3;&#x6784;&#x751F;&#x6210;&#x903B;&#x8F91;">index&#x7ED3;&#x6784;&#x751F;&#x6210;&#x903B;&#x8F91;</h3>
+<ul>
+<li>code/buildIndexMapping.js</li>
+</ul>
+<h3 id="index&#x6570;&#x636E;&#x66F4;&#x65B0;&#x7684;&#x573A;&#x666F;&#xFF08;&#x548C;model&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5173;&#x8054;&#x7684;&#x5176;&#x4ED6;model&#x7684;&#x5173;&#x7CFB;&#x66F4;&#x65B0;&#xFF0C;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5F53;&#x524D;model&#x9700;&#x8981;&#x66F4;&#x65B0;index&#xFF09;">index&#x6570;&#x636E;&#x66F4;&#x65B0;&#x7684;&#x573A;&#x666F;&#xFF08;&#x548C;model&#x76F4;&#x63A5;&#x6216;&#x95F4;&#x63A5;&#x5173;&#x8054;&#x7684;&#x5176;&#x4ED6;model&#x7684;&#x5173;&#x7CFB;&#x66F4;&#x65B0;&#xFF0C;&#x90FD;&#x4F1A;&#x5BFC;&#x81F4;&#x5F53;&#x524D;model&#x9700;&#x8981;&#x66F4;&#x65B0;index&#xFF09;</h3>
+<ul>
+<li>&#x65B0;&#x589E;model&#x6570;&#x636E;</li>
+<li>&#x66F4;&#x65B0;model&#x6570;&#x636E;</li>
+<li>&#x5220;&#x9664;model&#x6570;&#x636E;</li>
+</ul>
+<h4 id="&#x65B0;&#x589E;model&#x6570;&#x636E;">&#x65B0;&#x589E;model&#x6570;&#x636E;</h4>
+<ul>
+<li>&#x6267;&#x884C;&#x66F4;&#x65B0;&#x6570;&#x636E;&#xFF0C;&#x5F97;&#x5230;&#x88AB;&#x66F4;&#x65B0;&#x7684;modelId&#x548C;&#x6570;&#x636E;&#x672C;&#x8EAB;&#x7684;dataId</li>
+<li>&#x8BA1;&#x7B97;&#x9700;&#x8981;&#x66F4;&#x65B0;index&#x7684;model&#xFF08;modelId&#xFF09;<ul>
+<li>&#x901A;&#x8FC7;&#x904D;&#x5386;&#x4E0A;&#x9762;&#x7B97;&#x6CD5;&#x5F97;&#x5230;&#x7684;relationTree&#xFF0C;&#x53EF;&#x5F97;&#x5230;&#x9700;&#x8981;&#x66F4;&#x65B0;index&#x7684;modelId<ul>
+<li>&#x4F8B;&#x5982;&#xFF0C;&#x5F53;&#x66F4;&#x65B0;&#x4E86;Values&#x8868;&#x65F6;&#xFF0C;&#x901A;&#x8FC7;&#x904D;&#x5386;relationTree&#xFF0C;&#x53EF;&#x77E5;&#x9053;Talents&#x3001;Orgs&#x3001;Jobs&#x8FD9;&#x4E09;&#x4E2A;index&#x90FD;&#x9700;&#x8981;&#x66F4;&#x65B0;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x8BA1;&#x7B97;&#x9700;&#x8981;&#x66F4;&#x65B0;index&#x7684;model&#x4E2D;&#x7684;&#x5177;&#x4F53;&#x6570;&#x636E;&#xFF08;dataId&#xFF09;<ul>
+<li>&#x904D;&#x5386;relationTree&#xFF0C;&#x4ECE;&#x88AB;&#x66F4;&#x65B0;&#x7684;modelId&#x6240;&#x5728;&#x8282;&#x70B9;&#xFF08;Values&#xFF09;&#x5230;&#x6811;&#x6839;&#x8282;&#x70B9;&#xFF08;Talents&#x3001;Orgs&#x3001;Jobs&#xFF09;&#x8BA1;&#x7B97;&#xFF0C;&#x5F97;&#x5230;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;sql&#x8BED;&#x53E5;</li>
+<li>&#x6267;&#x884C;sql&#x8BED;&#x53E5;&#xFF0C;&#x5F97;&#x5230;&#x6811;&#x6839;&#x8282;&#x70B9;&#xFF08;Talents&#x3001;Orgs&#x3001;Jobs&#xFF09;&#x7684;dataId</li>
+</ul>
+</li>
+<li>&#x8BA1;&#x7B97;&#x9700;&#x8981;&#x66F4;&#x65B0;index&#x7684;&#x5B8C;&#x6574;&#x6570;&#x636E;</li>
+<li>&#x628A;&#x6570;&#x636E;&#x5199;&#x5165;index</li>
+</ul>
+<h4 id="&#x66F4;&#x65B0;model&#x6570;&#x636E;">&#x66F4;&#x65B0;model&#x6570;&#x636E;</h4>
+<ul>
+<li>&#x9700;&#x8981;&#x5728;&#x66F4;&#x65B0;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x628A;&#x5220;&#x6389;&#x7684;modelId&#x548C;dataId&#x8BB0;&#x4E0B;&#x6765;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x6570;&#x636E;&#x540C;&#x6837;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x6574;&#x4F53;&#x7684;&#x8BA1;&#x7B97;</li>
+<li>&#x540E;&#x7EED;&#x8BA1;&#x7B97;&#x6267;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x548C;&#x65B0;&#x589E;model&#x6570;&#x636E;&#x6D41;&#x7A0B;&#x4E00;&#x6837;</li>
+</ul>
+<h4 id="&#x5220;&#x9664;model&#x6570;&#x636E;">&#x5220;&#x9664;model&#x6570;&#x636E;</h4>
+<ul>
+<li>&#x786C;&#x5220;&#x9664;<ul>
+<li>&#x5220;&#x9664;&#x524D;&#x9700;&#x8981;&#x628A;&#x4F9D;&#x8D56;&#x7684;modelId+dataId&#x90FD;&#x8BA1;&#x7B97;&#x51FA;&#x6765;&#xFF0C;&#x4E3A;&#x540E;&#x7EED;&#x540C;&#x6B65;&#x505A;&#x8BA1;&#x7B97;</li>
+</ul>
+</li>
+<li>&#xFF1F;&#x8F6F;&#x5220;&#x9664;&#xFF08;&#x662F;&#x5426;&#x4F1A;&#x628A;&#x5173;&#x7CFB;&#x5220;&#x6389;&#xFF0C;&#x53EA;&#x7559;&#x4E0B;&#x4E3B;&#x4F53;&#xFF09;<ul>
+<li>&#x5982;&#x679C;&#x5173;&#x7CFB;&#x4E0D;&#x5220;&#x9664;&#xFF0C;&#x540E;&#x9762;&#x7684;&#x6240;&#x6709;&#x7684;&#x67E5;&#x8BE2;&#x90FD;&#x9700;&#x8981;&#x63D2;&#x5165;isDelete=false</li>
+<li>&#x5982;&#x679C;&#x5173;&#x7CFB;&#x5220;&#x9664;&#xFF0C;&#x5220;&#x9664;&#x524D;&#x9700;&#x8981;&#x628A;&#x4F9D;&#x8D56;&#x7684;modelId+dataId&#x90FD;&#x8BA1;&#x7B97;&#x51FA;&#x6765;</li>
+</ul>
+</li>
+<li>&#x540E;&#x7EED;&#x8BA1;&#x7B97;&#x6267;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x548C;&#x65B0;&#x589E;model&#x6570;&#x636E;&#x6D41;&#x7A0B;&#x4E00;&#x6837;</li>
+</ul>
+<h3 id="index&#x6570;&#x636E;&#x66F4;&#x65B0;&#x7B97;&#x6CD5;">index&#x6570;&#x636E;&#x66F4;&#x65B0;&#x7B97;&#x6CD5;</h3>
+<ul>
+<li><a href="https://bitbucket.org/inceptionpad/gig-pg-es-sync/src" target="_blank">https://bitbucket.org/inceptionpad/gig-pg-es-sync/src</a></li>
+</ul>
+<h3 id="&#xFF08;draft&#xFF09;index&#x6570;&#x636E;&#x66F4;&#x65B0;&#x7684;&#x540E;&#x7EED;&#x4F18;&#x5316;">&#xFF08;draft&#xFF09;index&#x6570;&#x636E;&#x66F4;&#x65B0;&#x7684;&#x540E;&#x7EED;&#x4F18;&#x5316;</h3>
+<ul>
+<li>&#x52A0;&#x5165;noIndex&#x548C;&#x5355;&#x5411;&#x5173;&#x7CFB;&#xFF0C;&#x51CF;&#x5C11;index&#x6570;&#x636E;</li>
+<li>&#x5BF9;&#x4E8E;&#x74F6;&#x9888;&#x90E8;&#x5206;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;&#x5728;&#x72EC;&#x7ACB;&#x7684;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4E13;&#x95E8;&#x505A;&#x6570;&#x636E;&#x540C;&#x6B65;&#x64CD;&#x4F5C;</li>
+<li>&#x5982;&#x679C;&#x5BF9;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x987A;&#x5E8F;&#x6709;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x52A0;&#x5165;&#x961F;&#x5217;&#xFF0C;&#x6BCF;&#x6B21;&#x53EA;&#x5904;&#x7406;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x7684;&#x4EFB;&#x52A1;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="migrate.html" class="navigation navigation-prev " aria-label="Previous page: DB 与 Es 数据迁移功能设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="research.html" class="navigation navigation-next " aria-label="Next page: review log">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"model中和index相关的配置","level":"4.4.6.5","depth":3,"next":{"title":"review log","level":"4.4.6.6","depth":3,"path":"4-projects/gig-economy/pg-es/research.md","ref":"4-projects/gig-economy/pg-es/research.md","articles":[]},"previous":{"title":"DB 与 Es 数据迁移功能设计","level":"4.4.6.4","depth":3,"path":"4-projects/gig-economy/pg-es/migrate.md","ref":"4-projects/gig-economy/pg-es/migrate.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/pg-es/model-index-sync.md","mtime":"2020-04-14T09:45:50.341Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-14T09:46:31.548Z"},"basePath":"../../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../../gitbook/gitbook.js"></script>
+    <script src="../../../gitbook/theme.js"></script>
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../../../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+        
+    
+
+    </body>
+</html>
+

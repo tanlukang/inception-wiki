@@ -1,0 +1,363 @@
+{
+	"treeList": [
+		{
+			"nodeId": "k3ormsg05o",
+			"index": 0,
+			"contentModelId": 5,
+			"isRoot": true,
+			"childrenNodesIndexes": [
+				1,
+				2,
+				3,
+				4
+			]
+		},
+		{
+			"nodeId": "gkc8rwkivb",
+			"index": 1,
+			"id": 70,
+			"type": "oneToMany",
+			"description": [
+				{
+					"alias": {
+						"willReturn": false,
+						"contentModelId": 5,
+						"contentModelAlias": "organizations"
+					},
+					"foreignKey": "companyTypeId",
+					"contentModelId": 2
+				},
+				{
+					"alias": {
+						"willReturn": true,
+						"contentModelId": 2,
+						"contentModelAlias": "companyType"
+					},
+					"foreignKey": null,
+					"contentModelId": 5
+				}
+			],
+			"relationTable": {
+				"name": "",
+				"contentModelId": 5
+			},
+			"relationTableName": "",
+			"isAliasFieldArray": false,
+			"parentNodeIndex": 0,
+			"parentNodeId": "k3ormsg05o",
+			"alias": {
+				"childrenNodesIndexes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "companyType",
+				"childrenNodes": []
+			}
+		},
+		{
+			"nodeId": "656gwiqv7e",
+			"index": 2,
+			"id": 69,
+			"type": "oneToMany",
+			"description": [
+				{
+					"alias": {
+						"willReturn": false,
+						"contentModelId": 5,
+						"contentModelAlias": "organizations"
+					},
+					"foreignKey": "organizationTypeId",
+					"contentModelId": 2
+				},
+				{
+					"alias": {
+						"willReturn": true,
+						"contentModelId": 2,
+						"contentModelAlias": "organizationType"
+					},
+					"foreignKey": null,
+					"contentModelId": 5
+				}
+			],
+			"relationTable": {
+				"name": "",
+				"contentModelId": 5
+			},
+			"relationTableName": "",
+			"isAliasFieldArray": false,
+			"parentNodeIndex": 0,
+			"parentNodeId": "k3ormsg05o",
+			"alias": {
+				"childrenNodesIndexes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "organizationType",
+				"childrenNodes": []
+			}
+		},
+		{
+			"nodeId": "zbbrccwpkw",
+			"index": 3,
+			"id": 80,
+			"type": "manyToMany",
+			"description": [
+				{
+					"alias": {
+						"willReturn": false,
+						"contentModelId": 5,
+						"contentModelAlias": "organizations"
+					},
+					"foreignKey": "industryId",
+					"contentModelId": 3
+				},
+				{
+					"alias": {
+						"willReturn": true,
+						"contentModelId": 3,
+						"contentModelAlias": "industries"
+					},
+					"foreignKey": "organizationId",
+					"contentModelId": 5
+				}
+			],
+			"relationTable": {
+				"name": "Organizations_Industries",
+				"contentModelId": null
+			},
+			"relationTableName": "Organizations_Industries",
+			"isAliasFieldArray": true,
+			"parentNodeIndex": 0,
+			"parentNodeId": "k3ormsg05o",
+			"alias": {
+				"childrenNodesIndexes": [],
+				"willReturn": true,
+				"contentModelId": 3,
+				"contentModelAlias": "industries",
+				"childrenNodes": []
+			}
+		},
+		{
+			"nodeId": "8fiwz4zryf",
+			"index": 4,
+			"id": 71,
+			"type": "manyToMany",
+			"description": [
+				{
+					"alias": {
+						"willReturn": false,
+						"contentModelId": 5,
+						"contentModelAlias": "organizations"
+					},
+					"foreignKey": "miniTagId",
+					"contentModelId": 2
+				},
+				{
+					"alias": {
+						"willReturn": true,
+						"contentModelId": 2,
+						"contentModelAlias": "miniTags"
+					},
+					"foreignKey": "organizationId",
+					"contentModelId": 5
+				}
+			],
+			"relationTable": {
+				"name": "Organizations_MiniTags",
+				"contentModelId": null
+			},
+			"relationTableName": "Organizations_MiniTags",
+			"isAliasFieldArray": true,
+			"parentNodeIndex": 0,
+			"parentNodeId": "k3ormsg05o",
+			"alias": {
+				"childrenNodesIndexes": [],
+				"willReturn": true,
+				"contentModelId": 2,
+				"contentModelAlias": "miniTags",
+				"childrenNodes": []
+			}
+		}
+	],
+	"tree": {
+		"childrenNodes": [
+			{
+				"nodeId": "gkc8rwkivb",
+				"index": 1,
+				"id": 70,
+				"type": "oneToMany",
+				"description": [
+					{
+						"alias": {
+							"willReturn": false,
+							"contentModelId": 5,
+							"contentModelAlias": "organizations"
+						},
+						"foreignKey": "companyTypeId",
+						"contentModelId": 2
+					},
+					{
+						"alias": {
+							"willReturn": true,
+							"contentModelId": 2,
+							"contentModelAlias": "companyType"
+						},
+						"foreignKey": null,
+						"contentModelId": 5
+					}
+				],
+				"relationTable": {
+					"name": "",
+					"contentModelId": 5
+				},
+				"relationTableName": "",
+				"isAliasFieldArray": false,
+				"parentNodeIndex": 0,
+				"parentNodeId": "k3ormsg05o",
+				"alias": {
+					"childrenNodesIndexes": [],
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "companyType",
+					"childrenNodes": []
+				}
+			},
+			{
+				"nodeId": "656gwiqv7e",
+				"index": 2,
+				"id": 69,
+				"type": "oneToMany",
+				"description": [
+					{
+						"alias": {
+							"willReturn": false,
+							"contentModelId": 5,
+							"contentModelAlias": "organizations"
+						},
+						"foreignKey": "organizationTypeId",
+						"contentModelId": 2
+					},
+					{
+						"alias": {
+							"willReturn": true,
+							"contentModelId": 2,
+							"contentModelAlias": "organizationType"
+						},
+						"foreignKey": null,
+						"contentModelId": 5
+					}
+				],
+				"relationTable": {
+					"name": "",
+					"contentModelId": 5
+				},
+				"relationTableName": "",
+				"isAliasFieldArray": false,
+				"parentNodeIndex": 0,
+				"parentNodeId": "k3ormsg05o",
+				"alias": {
+					"childrenNodesIndexes": [],
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "organizationType",
+					"childrenNodes": []
+				}
+			},
+			{
+				"nodeId": "zbbrccwpkw",
+				"index": 3,
+				"id": 80,
+				"type": "manyToMany",
+				"description": [
+					{
+						"alias": {
+							"willReturn": false,
+							"contentModelId": 5,
+							"contentModelAlias": "organizations"
+						},
+						"foreignKey": "industryId",
+						"contentModelId": 3
+					},
+					{
+						"alias": {
+							"willReturn": true,
+							"contentModelId": 3,
+							"contentModelAlias": "industries"
+						},
+						"foreignKey": "organizationId",
+						"contentModelId": 5
+					}
+				],
+				"relationTable": {
+					"name": "Organizations_Industries",
+					"contentModelId": null
+				},
+				"relationTableName": "Organizations_Industries",
+				"isAliasFieldArray": true,
+				"parentNodeIndex": 0,
+				"parentNodeId": "k3ormsg05o",
+				"alias": {
+					"childrenNodesIndexes": [],
+					"willReturn": true,
+					"contentModelId": 3,
+					"contentModelAlias": "industries",
+					"childrenNodes": []
+				}
+			},
+			{
+				"nodeId": "8fiwz4zryf",
+				"index": 4,
+				"id": 71,
+				"type": "manyToMany",
+				"description": [
+					{
+						"alias": {
+							"willReturn": false,
+							"contentModelId": 5,
+							"contentModelAlias": "organizations"
+						},
+						"foreignKey": "miniTagId",
+						"contentModelId": 2
+					},
+					{
+						"alias": {
+							"willReturn": true,
+							"contentModelId": 2,
+							"contentModelAlias": "miniTags"
+						},
+						"foreignKey": "organizationId",
+						"contentModelId": 5
+					}
+				],
+				"relationTable": {
+					"name": "Organizations_MiniTags",
+					"contentModelId": null
+				},
+				"relationTableName": "Organizations_MiniTags",
+				"isAliasFieldArray": true,
+				"parentNodeIndex": 0,
+				"parentNodeId": "k3ormsg05o",
+				"alias": {
+					"childrenNodesIndexes": [],
+					"willReturn": true,
+					"contentModelId": 2,
+					"contentModelAlias": "miniTags",
+					"childrenNodes": []
+				}
+			}
+		],
+		"nodeId": "k3ormsg05o",
+		"index": 0,
+		"contentModelId": 5,
+		"isRoot": true,
+		"childrenNodesIndexes": [
+			1,
+			2,
+			3,
+			4
+		]
+	},
+	"dependencies": [
+		2,
+		3
+	],
+	"dependents": []
+}
