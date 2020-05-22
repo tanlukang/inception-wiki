@@ -1,0 +1,4422 @@
+{
+	"table_constraints": [
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Industries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Values_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_expSalesTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_expTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Industries_parentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_companyTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_organizationId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_positionRoleId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_jobId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_miniTagId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_clientTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_jobId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_departmentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_jobId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_companyTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_organizationTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_miniTagId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_organizationId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_interestStageId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_clientTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_roleId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_salesTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_clientTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_roleLevelId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_roleId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_salesTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Values_parentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_jobId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_organizationId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_experienceId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"constraint_type": "FOREIGN KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "data_sync_queue_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "DataSyncQueue",
+			"constraint_type": "PRIMARY KEY",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18779_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "DataSyncQueue",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17965_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17965_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17965_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17965_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18019_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18019_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18019_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18019_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17975_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17975_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17975_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17975_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18083_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18083_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18083_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18083_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18003_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18003_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18003_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18003_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17955_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17955_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17955_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17955_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_6_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_6_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_6_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_6_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_6_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_1_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_2_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_3_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_4_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_5_not_null",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"constraint_type": "CHECK",
+			"is_deferrable": "NO",
+			"initially_deferred": "NO",
+			"enforced": "YES"
+		}
+	],
+	"key_column_usage": [
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"column_name": "id",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Industries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "id",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "id",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"column_name": "jobId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"column_name": "miniTagId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"column_name": "jobId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"column_name": "clientTypeId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"column_name": "jobId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"column_name": "departmentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"column_name": "id",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"column_name": "miniTagId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"column_name": "organizationId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"column_name": "clientTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"column_name": "roleId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"column_name": "salesTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"column_name": "clientTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"column_name": "roleLevelId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"column_name": "roleId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"column_name": "salesTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"column_name": "talentId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Values_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_expSalesTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"column_name": "expSalesTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_expTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"column_name": "expTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Industries_parentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "parentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_companyTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "companyTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_organizationId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "organizationId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_positionRoleId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "positionRoleId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_jobId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"column_name": "jobId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_miniTagId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"column_name": "miniTagId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_clientTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"column_name": "clientTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_jobId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"column_name": "jobId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_departmentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"column_name": "departmentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_jobId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"column_name": "jobId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_companyTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"column_name": "companyTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_organizationTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"column_name": "organizationTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_miniTagId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"column_name": "miniTagId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_organizationId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"column_name": "organizationId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_interestStageId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "interestStageId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_clientTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"column_name": "clientTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_roleId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"column_name": "roleId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_salesTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"column_name": "salesTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_clientTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"column_name": "clientTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_roleLevelId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"column_name": "roleLevelId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_roleId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"column_name": "roleId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_salesTypeId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"column_name": "salesTypeId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Values_parentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "parentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"column_name": "jobId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_jobId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"column_name": "jobId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"column_name": "organizationId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_organizationId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"column_name": "organizationId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"column_name": "experienceId",
+			"ordinal_position": 2,
+			"position_in_unique_constraint": null
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_industryId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"column_name": "industryId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_experienceId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"column_name": "experienceId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_talentId_fkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"column_name": "talentId",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": 1
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "data_sync_queue_pkey",
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "DataSyncQueue",
+			"column_name": "id",
+			"ordinal_position": 1,
+			"position_in_unique_constraint": null
+		}
+	],
+	"constraint_column_usage": [
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Industries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"column_name": "jobId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyMiniTags",
+			"column_name": "miniTagId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"column_name": "jobId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionClientTypes",
+			"column_name": "clientTypeId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"column_name": "jobId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_PositionDepartments",
+			"column_name": "departmentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"column_name": "miniTagId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_MiniTags",
+			"column_name": "organizationId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"column_name": "clientTypeId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestClientTypes",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"column_name": "industryId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestIndustries",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"column_name": "roleId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestRoles",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"column_name": "salesTypeId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_InterestSalesTypes",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"column_name": "clientTypeId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkClientType",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"column_name": "industryId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkIndustries",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"column_name": "roleLevelId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoleLevels",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"column_name": "roleId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkRoles",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"column_name": "salesTypeId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents_WorkSalesType",
+			"column_name": "talentId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Values_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_expSalesTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_expTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Industries_parentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_companyTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_organizationId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_positionRoleId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_jobId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyMiniTags_miniTagId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_clientTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionClientTypes_jobId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_departmentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_PositionDepartments_jobId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_companyTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_organizationTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_miniTagId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_MiniTags_organizationId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_interestStageId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_clientTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestClientTypes_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_industryId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestIndustries_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_roleId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestRoles_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_salesTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_InterestSalesTypes_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_clientTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkClientType_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_industryId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkIndustries_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_roleLevelId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoleLevels_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_roleId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkRoles_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_salesTypeId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Talents_WorkSalesType_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Values",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Values_parentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"column_name": "industryId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs_CompanyIndustries",
+			"column_name": "jobId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_industryId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Jobs",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Jobs_CompanyIndustries_jobId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"column_name": "industryId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations_Industries",
+			"column_name": "organizationId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_industryId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Organizations",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Organizations_Industries_organizationId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"column_name": "industryId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences_Industries",
+			"column_name": "experienceId",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_pkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Industries",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_industryId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Experiences",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_Industries_experienceId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "Talents",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "Experiences_talentId_fkey"
+		},
+		{
+			"table_catalog": "postgres",
+			"table_schema": "titanhouse_schema",
+			"table_name": "DataSyncQueue",
+			"column_name": "id",
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "data_sync_queue_pkey"
+		}
+	],
+	"check_constraints": [
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_4_not_null",
+			"check_clause": "industryId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_5_not_null",
+			"check_clause": "experienceId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_4_not_null",
+			"check_clause": "industryId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_6_not_null",
+			"check_clause": "years IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_4_not_null",
+			"check_clause": "roleLevelId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18779_4_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_6_not_null",
+			"check_clause": "years IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17955_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17975_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17955_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_5_not_null",
+			"check_clause": "departmentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17975_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_4_not_null",
+			"check_clause": "roleId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_4_not_null",
+			"check_clause": "industryId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_5_not_null",
+			"check_clause": "clientTypeId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18083_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_5_not_null",
+			"check_clause": "organizationId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_4_not_null",
+			"check_clause": "salesTypeId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18019_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18019_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17975_4_not_null",
+			"check_clause": "_syncStatus IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18013_4_not_null",
+			"check_clause": "miniTagId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_5_not_null",
+			"check_clause": "miniTagId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18003_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_6_not_null",
+			"check_clause": "years IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_4_not_null",
+			"check_clause": "industryId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18019_4_not_null",
+			"check_clause": "_syncStatus IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_4_not_null",
+			"check_clause": "jobId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18003_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17975_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18019_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17965_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18083_4_not_null",
+			"check_clause": "_syncStatus IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18437_5_not_null",
+			"check_clause": "organizationId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_4_not_null",
+			"check_clause": "industryId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_5_not_null",
+			"check_clause": "jobId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_4_not_null",
+			"check_clause": "salesTypeId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18083_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17955_4_not_null",
+			"check_clause": "_syncStatus IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17955_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18047_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18083_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17965_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_6_not_null",
+			"check_clause": "years IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_1_not_null",
+			"check_clause": "id IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18462_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18035_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18041_4_not_null",
+			"check_clause": "roleId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_4_not_null",
+			"check_clause": "jobId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18029_4_not_null",
+			"check_clause": "clientTypeId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18065_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18071_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18003_4_not_null",
+			"check_clause": "_syncStatus IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18053_4_not_null",
+			"check_clause": "clientTypeId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18059_5_not_null",
+			"check_clause": "talentId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17991_4_not_null",
+			"check_clause": "jobId IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_3_not_null",
+			"check_clause": "updatedAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18003_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17997_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17965_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17985_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18335_2_not_null",
+			"check_clause": "createdAt IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_18077_6_not_null",
+			"check_clause": "years IS NOT NULL"
+		},
+		{
+			"constraint_catalog": "postgres",
+			"constraint_schema": "titanhouse_schema",
+			"constraint_name": "17916_17965_4_not_null",
+			"check_clause": "_syncStatus IS NOT NULL"
+		}
+	]
+}
