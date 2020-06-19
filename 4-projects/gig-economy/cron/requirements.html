@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Apps · InceptionWiki</title>
+        <title>Cron 模块构思 · InceptionWiki</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -1606,9 +1606,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="4.4.1.1" data-path="../cron/requirements.html">
+        <li class="chapter active" data-level="4.4.1.1" data-path="requirements.html">
             
-                <a href="../cron/requirements.html">
+                <a href="requirements.html">
             
                     
                     Cron 模块构思
@@ -1735,9 +1735,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter active" data-level="4.4.3.1" data-path="db-design.html">
+        <li class="chapter " data-level="4.4.3.1" data-path="../database/db-design.html">
             
-                <a href="db-design.html">
+                <a href="../database/db-design.html">
             
                     
                     Apps
@@ -2593,7 +2593,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../../.." >Apps</a>
+        <a href="../../.." >Cron 模块构思</a>
     </h1>
 </div>
 
@@ -2608,111 +2608,207 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h4 id="apps">Apps</h4>
+                                <h1 id="cron-&#x6A21;&#x5757;&#x6784;&#x601D;">Cron &#x6A21;&#x5757;&#x6784;&#x601D;</h1>
+<h2 id="&#x9700;&#x6C42;&#x70B9;">&#x9700;&#x6C42;&#x70B9;</h2>
 <ul>
-<li>id</li>
-<li>labelName</li>
-<li>schemaName</li>
+<li>&#x5355;&#x4E2A;&#x65F6;&#x95F4;&#x70B9;&#x7684;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;: &#x6BCF;&#x5468;&#x7684;&#x67D0;&#x51E0;&#x5929;&#x7684;&#x67D0;&#x4E2A;&#x65F6;&#x523B;&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;</li>
+<li>&#x591A;&#x4E2A;&#x65F6;&#x95F4;&#x70B9;&#x7684;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#xFF1A;&#x6BCF;&#x5468;&#x7684;&#x67D0;&#x51E0;&#x5929;&#x7684;&#x67D0;&#x51E0;&#x4E2A;&#x65F6;&#x523B;&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;</li>
+<li>&#x5355;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#x7684;&#x9891;&#x7387;&#x4EFB;&#x52A1;&#xFF1A;&#x6BCF;&#x5468;&#x7684;&#x67D0;&#x51E0;&#x5929;&#x7684;&#x67D0;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#xFF0C;&#x4EE5;&#x56FA;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x91CD;&#x590D;&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;</li>
+<li>&#x591A;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#x7684;&#x9891;&#x7387;&#x4EFB;&#x52A1;&#xFF1A;&#x6BCF;&#x5468;&#x7684;&#x67D0;&#x51E0;&#x5929;&#x7684;&#x67D0;&#x51E0;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#xFF0C;&#x4EE5;&#x56FA;&#x5B9A;&#x7684;&#x9891;&#x7387;&#x91CD;&#x590D;&#x6267;&#x884C;&#x67D0;&#x4E2A;&#x4EFB;&#x52A1;</li>
 </ul>
-<h4 id="contentmodels">ContentModels</h4>
-<ul>
-<li>id</li>
-<li>labelName</li>
-<li>settings (jsonb)<ul>
-<li>icon</li>
-<li>color</li>
-<li>...</li>
+<h2 id="&#x9009;&#x578B;">&#x9009;&#x578B;</h2>
+<ol>
+<li>&#x4F9D;&#x8D56;&#x4E8E;Cron&#x6A21;&#x5757;&#xFF0C;&#x5982;&#x672C;&#x673A;cron&#x529F;&#x80FD;&#xFF0C;&#x6216;&#x8005;&#x6846;&#x67B6;&#x7684;cron&#x529F;&#x80FD;<ul>
+<li>&#x4F18;&#x70B9;: &#x4F7F;&#x7528;&#x8F83;&#x4E3A;&#x7B80;&#x5355;</li>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x9700;&#x8981;&#x89E3;&#x51B3;&#x96C6;&#x7FA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x591A;&#x670D;&#x52A1;&#x5668;&#x91CD;&#x590D;&#x8C03;&#x7528;&#x6267;&#x884C;&#x7684;&#x95EE;&#x9898;&#x3002;&#x5982;&#x679C;&#x662F;&#x7CFB;&#x7EDF;&#x7684;crontab&#x529F;&#x80FD;&#xFF0C;&#x5F88;&#x96BE;&#x9488;&#x5BF9;&#x67D0;&#x4E00;&#x6761;cronjob&#x505A;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x6846;&#x67B6;&#x7684;cron&#x5219;&#x65E0;&#x6B64;&#x95EE;&#x9898;&#x3002;</li>
 </ul>
 </li>
-<li>tableName</li>
-<li>status</li>
-<li>appId</li>
-</ul>
-<h4 id="contentmodelfields">ContentModelFields</h4>
-<ul>
-<li>id</li>
-<li>labelName</li>
-<li>fieldName</li>
-<li>fieldComponentId</li>
-<li>description</li>
-<li>isArray</li>
-<li>isRequired</li>
-<li>isUnique</li>
-<li>isPrimaryKey</li>
-<li>isForExternalDisplay</li>
-<li>contentModelId</li>
-</ul>
-<h4 id="fieldcomponents">FieldComponents</h4>
-<ul>
-<li>id</li>
-<li>labelName</li>
-<li>pgType</li>
-<li>esType</li>
-<li>isArray</li>
-</ul>
-<h4 id="contentmodelrelations">ContentModelRelations</h4>
-<ul>
-<li>id</li>
-<li>relation<ul>
-<li>oneToOne</li>
-<li>oneToMany</li>
-<li>manyToOne</li>
-<li>manyToMany</li>
+<li>&#x4F9D;&#x8D56;&#x4E8E;cloudwatch&#x7684;schedule&#x529F;&#x80FD;<ul>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x4E0D;&#x7528;&#x62C5;&#x5FC3;&#x96C6;&#x7FA4;&#x91CD;&#x590D;&#x8C03;&#x7528;&#x95EE;&#x9898;&#x3002;</li>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x4EE3;&#x7801;&#x91CF;&#x589E;&#x591A;&#x3001;&#x989D;&#x5916;&#x7684;&#x4E91;&#x7AEF;&#x8FD0;&#x7EF4;&#x6210;&#x672C;&#x3001;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;lambda&#x51FD;&#x6570;&#x652F;&#x6301;&#x3001;&#x5982;&#x679C;&#x7528;&#x6237;&#x56DE;&#x8C03;&#x4E0D;&#x662F;&#x7EAF;&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x4E22;&#x5931;&#x5BF9;&#x5E94;&#x4E0A;&#x4E0B;&#x6587;&#x73AF;&#x5883;</li>
 </ul>
 </li>
-<li>sourceContentModelId</li>
-<li>targetContentModelId</li>
-<li>sourceContentModelFieldId</li>
-<li>targetContentModelFieldId</li>
-<li>sourceContentModelFieldName</li>
-<li>targetContentModelFieldName</li>
-<li>tableName</li>
-</ul>
-<h4 id="searchindexes">SearchIndexes</h4>
+</ol>
+<h2 id="&#x6A21;&#x5757;&#x5B9A;&#x4E49;">&#x6A21;&#x5757;&#x5B9A;&#x4E49;</h2>
+<h3 id="&#x603B;&#x89C8;">&#x603B;&#x89C8;</h3>
 <ul>
-<li>id</li>
-<li>labelName</li>
-<li>indexAlias</li>
-<li>indexName</li>
-<li>status</li>
-<li>contentModelId</li>
+<li>&#x6A21;&#x5757;&#x5165;&#x53E3;</li>
 </ul>
-<h4 id="searchindexviews">SearchIndexViews</h4>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CronModule</span> <span class="token punctuation">{</span>
+    <span class="token function">create</span><span class="token punctuation">(</span>options<span class="token operator">:</span>CreateOptionsType<span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token function">createBySchedule</span><span class="token punctuation">(</span>options<span class="token operator">:</span>CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+      <span class="token function">createByFrequency</span><span class="token punctuation">(</span>options<span class="token operator">:</span>CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token function">createByCronExpression</span><span class="token punctuation">(</span>options<span class="token operator">:</span>CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span>CronExpression<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">Array</span><span class="token operator">&lt;</span>CronInfo<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+    <span class="token function">start</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token function">startAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token function">stop</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+      <span class="token function">stopAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token function">edit</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">,</span> editData<span class="token operator">:</span>EditOptions<span class="token operator">&lt;</span>CronType<span class="token operator">&gt;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">describe</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>CronInfo<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+    <span class="token keyword">delete</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
 <ul>
-<li>id</li>
-<li>labelName</li>
-<li>components (jsonb)<ul>
-<li>search</li>
-<li>result</li>
-<li>filters</li>
+<li>&#x7C7B;&#x578B;&#x5B9A;&#x4E49;</li>
+</ul>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">enum</span> CronType<span class="token punctuation">{</span>
+        <span class="token constant">SCHEDULE</span><span class="token punctuation">,</span> <span class="token comment">// &#x4E00;&#x5468;&#x5185;&#x67D0;&#x51E0;&#x5929;&#x4E2D;&#x7684;&#x67D0;&#x51E0;&#x4E2A;&#x65F6;&#x95F4;&#x70B9;&#x6267;&#x884C;</span>
+        <span class="token constant">FREQUENCY</span><span class="token punctuation">,</span> <span class="token comment">// &#x4E00;&#x5468;&#x5185;&#x67D0;&#x51E0;&#x5929;&#x4E2D;&#x7684;&#x67D0;&#x51E0;&#x4E2A;&#x65F6;&#x95F4;&#x6BB5;&#xFF0C;&#x6309;&#x7167;&#x4E00;&#x5B9A;&#x9891;&#x7387;&#x91CD;&#x590D;&#x6267;&#x884C;</span>
+        CronExpression
+<span class="token punctuation">}</span>
+
+<span class="token keyword">enum</span> CronStatus<span class="token punctuation">{</span>
+    <span class="token constant">ACTIVE</span><span class="token punctuation">,</span> <span class="token comment">// &#x751F;&#x6548;&#x4E2D;</span>
+    <span class="token constant">INACTIVE</span> <span class="token comment">//&#x672A;&#x751F;&#x6548;,&#x7981;&#x7528;&#x4E2D;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">type</span> CronString <span class="token operator">=</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token comment">// cron &#x8868;&#x8FBE;&#x5F0F;</span>
+<span class="token keyword">type</span> CreateOptionsType <span class="token operator">=</span> CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token operator">&gt;</span> <span class="token operator">|</span>
+                            CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token operator">&gt;</span> <span class="token operator">|</span>
+                            CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span>CronExpression<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">Result</span><span class="token punctuation">{</span>
+    success<span class="token operator">:</span><span class="token builtin">boolean</span><span class="token punctuation">;</span>
+    err<span class="token operator">?</span><span class="token operator">:</span>Error<span class="token punctuation">;</span>
+      data<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">CronInfo</span><span class="token punctuation">{</span>
+    status<span class="token operator">:</span>CronStatus<span class="token punctuation">;</span>
+    options<span class="token operator">:</span>CreateOptionsType
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">TimeCell</span><span class="token punctuation">{</span>
+    second<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    minute<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+    hour<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Schedule&#x8C03;&#x7528;&#x7C7B;&#x578B;</li>
+</ul>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions</span><span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+        name<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+        <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token punctuation">;</span>
+        scheduleRules<span class="token operator">:</span><span class="token builtin">Array</span><span class="token operator">&lt;</span>ScheduleRule<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token parameter"><span class="token builtin">any</span></span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+        callbackParams<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">ScheduleRule</span><span class="token punctuation">{</span>
+        scheduleTime<span class="token operator">:</span> TimeCell <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+        weekdays<span class="token operator">?</span><span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span> <span class="token comment">// 7&#x4F4D;2&#x8FDB;&#x5236;&#x7684;10&#x8FDB;&#x5236;&#x8868;&#x793A;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>Frequency&#x8C03;&#x7528;&#x7C7B;&#x578B;</li>
+</ul>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions</span><span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+        name<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+        <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token punctuation">;</span>
+        frequencyRules<span class="token operator">:</span><span class="token builtin">Array</span><span class="token operator">&lt;</span>FrequencyRule<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token parameter"><span class="token builtin">any</span></span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+        callbackParams<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">;</span>    
+<span class="token punctuation">}</span>
+
+<span class="token keyword">interface</span> <span class="token class-name">FrequencyRule</span><span class="token punctuation">{</span>
+        startTime<span class="token operator">?</span><span class="token operator">:</span>TimeCell <span class="token operator">|</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token comment">// default 00:00</span>
+        endTime<span class="token operator">?</span><span class="token operator">:</span>TimeCell<span class="token punctuation">;</span> <span class="token comment">// default 23:59</span>
+        frequency<span class="token operator">?</span><span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span> <span class="token comment">// &#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D; default 60, means every 60 seconds</span>
+        weekdays<span class="token operator">?</span><span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">;</span> <span class="token comment">// 7&#x4F4D;2&#x8FDB;&#x5236;&#x7684;10&#x8FDB;&#x5236;&#x8868;&#x793A;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ul>
+<li>CronExpression&#x8C03;&#x7528;&#x7C7B;&#x578B;</li>
+</ul>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions</span><span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span>CronExpression<span class="token operator">&gt;</span><span class="token punctuation">{</span>
+        name<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
+        <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span>CronExpression<span class="token punctuation">;</span>
+        cronExpressions<span class="token operator">:</span><span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
+        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token parameter"><span class="token builtin">any</span></span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+        callbackParams<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">;</span>    
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="&#x63A5;&#x53E3;&#x63CF;&#x8FF0;">&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</h2>
+<h3 id="create">create</h3>
+<pre class="language-"><code class="lang-typescript">        <span class="token function">create</span><span class="token punctuation">(</span><span class="token parameter">options<span class="token operator">:</span>CreateOptionsType</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x6839;&#x636E;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;cron&#x4EFB;&#x52A1;&#x5199;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x9ED8;&#x8BA4;&#x72B6;&#x6001;&#x4E3A;DISABLED, &#x7B49;&#x5BBF;&#x4E3B;&#x8C03;&#x7528;startAll()&#x6216;&#x8005;start()&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x4F1A;&#x53D8;&#x4E3A;ENABLE&#x72B6;&#x6001;&#x5E76;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;cronjob&#x6B63;&#x5F0F;&#x542F;&#x52A8;&#x3002;</p>
+<p>&#x4F8B;&#x5982;&#xFF1A;</p>
+<pre class="language-"><code class="lang-typescript"><span class="token comment">// &#x5468;&#x4E00;&#x5230;&#x5468;&#x516D;&#xFF0C;&#x6BCF;&#x5929;12&#xFF1A;00&#x4EE5;&#x53CA;13&#xFF1A;05&#x90FD;&#x4F1A;&#x6267;&#x884C;&#x4E00;&#x6B21;callback&#xFF0C;&#x9644;&#x5E26;&#x53C2;&#x6570;{}</span>
+<span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    name<span class="token operator">:</span><span class="token string">&quot;test1&quot;</span><span class="token punctuation">,</span>
+    <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token punctuation">,</span>
+    scheduleRules<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>hour<span class="token operator">:</span><span class="token number">12</span><span class="token punctuation">,</span> weekdays<span class="token operator">:</span><span class="token number">127</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>hour<span class="token operator">:</span><span class="token number">13</span><span class="token punctuation">,</span> minute<span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">,</span> weekdays<span class="token operator">:</span><span class="token number">127</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;fired&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    callbackParams<span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// &#x6BCF;&#x5929;&#x6BCF;&#x5C0F;&#x65F6;&#x6267;&#x884C;&#x4E00;&#x6B21;callback&#xFF0C;&#x9644;&#x5E26;&#x53C2;&#x6570;{}</span>
+<span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    name<span class="token operator">:</span><span class="token string">&quot;test2&quot;</span><span class="token punctuation">,</span>
+    <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token punctuation">,</span>
+    frequencyRules<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>frequency<span class="token operator">:</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token parameter">data</span><span class="token operator">=&gt;</span><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;fired&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    callbackParams<span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+<h3 id="startall">startAll</h3>
+<pre class="language-"><code class="lang-typescript"><span class="token function">startAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x542F;&#x52A8;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6240;&#x6709;&#x5B58;&#x50A8;&#x7684;cron&#xFF0C;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;cronjob&#x3002;&#x4E00;&#x822C;&#x5728;&#x670D;&#x52A1;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x8C03;&#x7528;</p>
+<h3 id="start">start</h3>
+<pre class="language-"><code class="lang-typescript"><span class="token function">start</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5355;&#x72EC;&#x542F;&#x52A8;&#x67D0;&#x4E00;cron</p>
+<h3 id="list">list</h3>
+<pre class="language-"><code class="lang-typescript"><span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span><span class="token builtin">Array</span><span class="token operator">&lt;</span>CronInfo<span class="token operator">&gt;&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5217;&#x51FA;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x6240;&#x6709;&#x7684;cron&#x4FE1;&#x606F;</p>
+<h3 id="describe">describe</h3>
+<pre class="language-"><code class="lang-typescript"><span class="token function">describe</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>CronInfo<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5355;&#x72EC;&#x5217;&#x51FA;&#x67D0;&#x4E00;&#x4E2A;cron&#x76F8;&#x5173;&#x4FE1;&#x606F;</p>
+<h3 id="delete">delete</h3>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">delete</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5220;&#x9664;&#x67D0;&#x4E00;&#x7279;&#x5B9A;cron&#xFF0C;&#x5982;&#x679C;&#x8BE5;cron&#x5DF2;&#x751F;&#x6210;&#x4E86;&#x5BF9;&#x5E94;&#x7684;cronjob&#x5E76;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#xFF0C;&#x4E5F;&#x4F1A;&#x5220;&#x9664;&#x5BF9;&#x5E94;cronjob</p>
+<h3 id="stop">stop</h3>
+<pre class="language-"><code class="lang-typescript"><span class="token function">stop</span><span class="token punctuation">(</span>id<span class="token operator">:</span><span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+</code></pre>
+<p>&#x5C06;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x67D0;&#x4E00;cron&#x72B6;&#x6001;&#x8BBE;&#x7F6E;&#x4E3A;DISABLED&#x72B6;&#x6001;&#xFF0C;&#x4F46;&#x4E0D;&#x5220;&#x9664;&#xFF0C;&#x5E76;&#x5982;&#x679C;&#x8BE5;cron&#x751F;&#x6210;&#x4E86;&#x5BF9;&#x5E94;&#x7684;cronjob&#xFF0C;&#x4F1A;&#x5220;&#x9664;&#x5BF9;&#x5E94;&#x7684;cronjob</p>
+<h2 id="&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;">&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x8BA1;</h2>
+<p>id: number
+cronId: string
+cronType: CronType
+status: CronStatus
+scheduleRule: {}
+frequencyRule: {}
+cronExpression: string
+callback: string
+callbackParams: {}
+createdAt: date
+updatedAt: date</p>
+<h2 id="&#x8865;&#x5145;">&#x8865;&#x5145;</h2>
+<ul>
+<li>cron&#x4EFB;&#x52A1;&#x96C6;&#x7FA4;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x6536;&#x96C6;:<ul>
+<li>&#x901A;&#x8FC7;env&#x8BBE;&#x7F6E;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;cron&#x670D;&#x52A1;&#x53EA;&#x5728;&#x4E00;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x751F;&#x6548;<ul>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x5904;&#x7406;&#x65B9;&#x4FBF;</li>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x4E0D;&#x4F18;&#x96C5;&#x3001;&#x5982;&#x679C;&#x8BE5;&#x4E3B;&#x673A;&#x5B95;&#x673A;&#xFF0C;cron&#x670D;&#x52A1;&#x5219;&#x76F4;&#x63A5;&#x5D29;&#x6E83;</li>
 </ul>
 </li>
-<li>settings (jsonb)</li>
-<li>searchIndexId</li>
-</ul>
-<h4 id="need-discussion">need discussion</h4>
-<ul>
-<li>&#x5728;ContentModelRelations&#x4E2D;&#x521B;&#x5EFA;&#x5173;&#x8054;&#x540E;&#xFF0C;&#x662F;&#x5426;&#x9700;&#x8981;&#x5230;ContentModelRelations&#x4E2D;&#x521B;&#x5EFA;&#x5BF9;&#x5E94;&#x7684;&#x5916;&#x952E;&#x5B57;&#x6BB5;&#x8BB0;&#x5F55;<ul>
-<li>&#x67E5;&#x8BE2;contentModel&#x7684;&#x6240;&#x6709;fields</li>
-<li>&#x7F16;&#x8F91;contentModel&#x6570;&#x636E;</li>
-<li>&#x6570;&#x636E;&#x540C;&#x6B65;&#x5230;es&#x4E2D;</li>
-<li>&#x5B57;&#x6BB5;&#x540E;&#x7EED;workflow&#x548C;&#x6743;&#x9650;&#x8BBE;&#x7F6E;</li>
-</ul>
-</li>
-<li>&#x9664;&#x4E86;ContentModelRelations&#x8868;&#x4EE5;&#x5916;&#xFF0C;&#x662F;&#x5426;&#x8FD8;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x8868;&#x6765;&#x4FDD;&#x5B58;pg&#x8868;&#x7684;&#x5B57;&#x6BB5;&#x6570;&#x636E;<ul>
-<li>&#x6682;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#xFF0C;&#x80FD;&#x901A;&#x8FC7;&#x5F53;&#x524D;&#x8868;&#x6620;&#x5C04;&#x5F97;&#x5230;</li>
-</ul>
-</li>
-<li>&#x662F;&#x5426;&#x9700;&#x8981;&#x4F7F;&#x7528;searchIndexFields&#x6765;&#x4FDD;&#x5B58;es&#x7684;mapping<ul>
-<li>&#x6682;&#x65F6;&#x4E0D;&#x9700;&#x8981;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;api&#x62FF;&#x5230;&#x5F53;&#x524D;es&#x7684;mappings</li>
+<li>&#x901A;&#x8FC7;&#x5916;&#x7F6E;&#x7684;redis&#x8BBE;&#x7F6E;&#x4EA4;&#x4E92;&#x9501;<ul>
+<li>&#x4F18;&#x70B9;&#xFF1A;&#x4FDD;&#x8BC1;&#x4E86;cron&#x7684;&#x96C6;&#x7FA4;&#x90E8;&#x7F72;&#xFF0C;&#x4FDD;&#x8BC1;&#x5404;&#x96C6;&#x7FA4;&#x4E3B;&#x673A;&#x73AF;&#x5883;&#x7EDF;&#x4E00;</li>
+<li>&#x7F3A;&#x70B9;&#xFF1A;&#x989D;&#x5916;&#x7684;redis&#x4F9D;&#x8D56;&#xFF0C;&#x989D;&#x5916;&#x7684;&#x4EA4;&#x4E92;&#x9501;&#x903B;&#x8F91;&#x4EE3;&#x7801;</li>
 </ul>
 </li>
 </ul>
-<h4 id="further-think">further think</h4>
-<ul>
-<li>relation&#x4E2D;&#x7684;dominant&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x4F8B;&#x5982;&#x67E5;titan&#x65F6;&#xFF0C;&#x81EA;&#x52A8;&#x628A;skill&#x67E5;&#x51FA;&#x6765;&#xFF0C;&#x4F46;&#x662F;&#x67E5;skill&#x65F6;&#xFF0C;&#x4E0D;&#x4F1A;&#x5427;titan&#x4E5F;&#x67E5;&#x51FA;&#x6765;</li>
-<li>contentmodel&#x5173;&#x8054;&#xFF0C;&#x5B58;&#x5728;&#x591A;&#x7EA7;&#x5D4C;&#x5957;&#xFF0C;&#x5411;searchindex&#x521B;&#x5EFA;index&#x548C;&#x540C;&#x6B65;&#x6570;&#x636E;&#x65F6;&#x7684;&#x5173;&#x8054;&#x5B9E;&#x4F53;&#x9009;&#x62E9;</li>
-<li>&#x5F53;&#x524D;&#x9636;&#x6BB5;contentmodel&#x5230;searchindex&#x540C;&#x6B65;&#x65B9;&#x5F0F;</li>
+</li>
+<li>&#x601D;&#x8003;&#xFF1A;<ul>
+<li>&#x5728;Service&#x6A21;&#x5F0F;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x4F55;&#x624D;&#x80FD;&#x8BA9;&#x5BBF;&#x4E3B;&#x6CE8;&#x518C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5E76;&#x4E14;&#x4E0D;&#x4E22;&#x5931;&#x8FD0;&#x884C;&#x4E0A;&#x4E0B;&#x6587;?</li>
+</ul>
+</li>
 </ul>
 
                                 
@@ -2749,7 +2845,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Apps","level":"4.4.3.1","depth":3,"next":{"title":"es-related","level":"4.4.4","depth":2,"ref":"","articles":[{"title":"Alpha版本接触到的ES issues","level":"4.4.4.1","depth":3,"path":"4-projects/gig-economy/es-related/issues.md","ref":"4-projects/gig-economy/es-related/issues.md","articles":[]},{"title":"ES script","level":"4.4.4.2","depth":3,"path":"4-projects/gig-economy/es-related/script.md","ref":"4-projects/gig-economy/es-related/script.md","articles":[]}]},"previous":{"title":"database","level":"4.4.3","depth":2,"ref":"","articles":[{"title":"Apps","level":"4.4.3.1","depth":3,"path":"4-projects/gig-economy/database/db-design.md","ref":"4-projects/gig-economy/database/db-design.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/database/db-design.md","mtime":"2020-06-19T16:12:56.874Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-19T16:13:44.804Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cron 模块构思","level":"4.4.1.1","depth":3,"next":{"title":"data-version","level":"4.4.2","depth":2,"ref":"","articles":[{"title":"基于关系型数据库的版本管理","level":"4.4.2.1","depth":3,"path":"4-projects/gig-economy/data-version/design-v1.md","ref":"4-projects/gig-economy/data-version/design-v1.md","articles":[]},{"title":"基于关系型数据库的版本管理","level":"4.4.2.2","depth":3,"path":"4-projects/gig-economy/data-version/design-v2.1.md","ref":"4-projects/gig-economy/data-version/design-v2.1.md","articles":[]},{"title":"基于关系型数据库的版本管理","level":"4.4.2.3","depth":3,"path":"4-projects/gig-economy/data-version/design-v2.md","ref":"4-projects/gig-economy/data-version/design-v2.md","articles":[]},{"title":"版本管理结构分层","level":"4.4.2.4","depth":3,"path":"4-projects/gig-economy/data-version/draft.md","ref":"4-projects/gig-economy/data-version/draft.md","articles":[]},{"title":"需求","level":"4.4.2.5","depth":3,"path":"4-projects/gig-economy/data-version/example-1.md","ref":"4-projects/gig-economy/data-version/example-1.md","articles":[]},{"title":"关系型数据库数据历史管理","level":"4.4.2.6","depth":3,"path":"4-projects/gig-economy/data-version/rdms-history-version-design.md","ref":"4-projects/gig-economy/data-version/rdms-history-version-design.md","articles":[]}]},"previous":{"title":"cron","level":"4.4.1","depth":2,"ref":"","articles":[{"title":"Cron 模块构思","level":"4.4.1.1","depth":3,"path":"4-projects/gig-economy/cron/requirements.md","ref":"4-projects/gig-economy/cron/requirements.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/cron/requirements.md","mtime":"2020-06-19T16:12:56.872Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-19T16:13:44.804Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
