@@ -2872,6 +2872,38 @@
 <li>createdAt</li>
 <li>updatedAt</li>
 </ul>
+<h2 id="form-&#x76F8;&#x5173;">Form &#x76F8;&#x5173;</h2>
+<h4 id="formtemplates">FormTemplates</h4>
+<ul>
+<li>id</li>
+<li>name</li>
+<li>userDataSchema(&#x8868;&#x5355;&#x6570;&#x636E;&#x63D0;&#x4EA4;&#x7684;JSON Schema)</li>
+<li>customizedVisualDataSchema(&#x8868;&#x5355;&#x81EA;&#x5B9A;&#x4E49;&#x663E;&#x793A;JSON Schema)</li>
+<li>customizedBusinessDataSchema(&#x8868;&#x5355;&#x4E1A;&#x52A1;&#x81EA;&#x5B9A;&#x4E49;JSON schema)</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h4 id="forms">Forms</h4>
+<ul>
+<li>id</li>
+<li>organizationId</li>
+<li>formTemplateId</li>
+<li>name</li>
+<li>customizedVisualData(&#x66FF;&#x6362;logo&#x4E4B;&#x7C7B;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6570;&#x636E;)</li>
+<li>customizedBusinessData(&#x66FF;&#x6362;&#x8868;&#x5355;&#x4E1A;&#x52A1;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x6570;&#x636E;)</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
+<h4 id="formuserdata">FormUserData</h4>
+<ul>
+<li>id</li>
+<li>organizationId</li>
+<li>formId</li>
+<li>memberUserId</li>
+<li>data (type: jsonb)</li>
+<li>createdAt</li>
+<li>updatedAt</li>
+</ul>
 
                                 
                                 </section>
@@ -2915,7 +2947,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Pinpoint Database Design","level":"4.6.2","depth":2,"next":{"title":"front-end-code-standard.md","level":"4.6.3","depth":2,"path":"4-projects/pinpoint/front-end-code-standard.md","ref":"4-projects/pinpoint/front-end-code-standard.md","articles":[]},"previous":{"title":"用户系统设计","level":"4.6.1","depth":2,"path":"4-projects/pinpoint/business-design.md","ref":"4-projects/pinpoint/business-design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/pinpoint/db.md","mtime":"2020-06-19T16:12:56.915Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-19T16:13:44.804Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Pinpoint Database Design","level":"4.6.2","depth":2,"next":{"title":"front-end-code-standard.md","level":"4.6.3","depth":2,"path":"4-projects/pinpoint/front-end-code-standard.md","ref":"4-projects/pinpoint/front-end-code-standard.md","articles":[]},"previous":{"title":"用户系统设计","level":"4.6.1","depth":2,"path":"4-projects/pinpoint/business-design.md","ref":"4-projects/pinpoint/business-design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/pinpoint/db.md","mtime":"2020-06-19T16:13:35.460Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-19T16:14:21.450Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
