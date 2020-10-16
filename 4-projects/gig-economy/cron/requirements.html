@@ -955,6 +955,19 @@
             
         </li>
     
+        <li class="chapter " data-level="2.2.4" data-path="../../../2-members/xia-bin/第三方信用卡支付总结 - Square篇.html">
+            
+                <a href="../../../2-members/xia-bin/第三方信用卡支付总结 - Square篇.html">
+            
+                    
+                    第三方信用卡支付总结 - Square篇
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -2676,8 +2689,8 @@
     <span class="token constant">INACTIVE</span> <span class="token comment">//&#x672A;&#x751F;&#x6548;,&#x7981;&#x7528;&#x4E2D;</span>
 <span class="token punctuation">}</span>
 
-<span class="token keyword">type</span> CronString <span class="token operator">=</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token comment">// cron &#x8868;&#x8FBE;&#x5F0F;</span>
-<span class="token keyword">type</span> CreateOptionsType <span class="token operator">=</span> CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token operator">&gt;</span> <span class="token operator">|</span>
+<span class="token keyword">type</span> <span class="token class-name">CronString</span> <span class="token operator">=</span> <span class="token builtin">string</span><span class="token punctuation">;</span> <span class="token comment">// cron &#x8868;&#x8FBE;&#x5F0F;</span>
+<span class="token keyword">type</span> <span class="token class-name">CreateOptionsType</span> <span class="token operator">=</span> CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token operator">&gt;</span> <span class="token operator">|</span>
                             CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token operator">&gt;</span> <span class="token operator">|</span>
                             CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span>CronExpression<span class="token operator">&gt;</span><span class="token punctuation">;</span>
 
@@ -2701,11 +2714,11 @@
 <ul>
 <li>Schedule&#x8C03;&#x7528;&#x7C7B;&#x578B;</li>
 </ul>
-<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions</span><span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
         name<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
         <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token punctuation">;</span>
         scheduleRules<span class="token operator">:</span><span class="token builtin">Array</span><span class="token operator">&lt;</span>ScheduleRule<span class="token operator">&gt;</span><span class="token punctuation">;</span>
-        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token parameter"><span class="token builtin">any</span></span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token builtin">any</span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
         callbackParams<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
@@ -2717,11 +2730,11 @@
 <ul>
 <li>Frequency&#x8C03;&#x7528;&#x7C7B;&#x578B;</li>
 </ul>
-<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions</span><span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
         name<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
         <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token punctuation">;</span>
         frequencyRules<span class="token operator">:</span><span class="token builtin">Array</span><span class="token operator">&lt;</span>FrequencyRule<span class="token operator">&gt;</span><span class="token punctuation">;</span>
-        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token parameter"><span class="token builtin">any</span></span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token builtin">any</span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
         callbackParams<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">;</span>    
 <span class="token punctuation">}</span>
 
@@ -2735,17 +2748,17 @@
 <ul>
 <li>CronExpression&#x8C03;&#x7528;&#x7C7B;&#x578B;</li>
 </ul>
-<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions</span><span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span>CronExpression<span class="token operator">&gt;</span><span class="token punctuation">{</span>
+<pre class="language-"><code class="lang-typescript"><span class="token keyword">interface</span> <span class="token class-name">CreateOptions<span class="token operator">&lt;</span>CronType<span class="token punctuation">.</span>CronExpression<span class="token operator">&gt;</span></span><span class="token punctuation">{</span>
         name<span class="token operator">?</span><span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">;</span>
         <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span>CronExpression<span class="token punctuation">;</span>
         cronExpressions<span class="token operator">:</span><span class="token builtin">Array</span><span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">&gt;</span><span class="token punctuation">;</span>
-        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token parameter"><span class="token builtin">any</span></span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
+        <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token builtin">any</span><span class="token operator">=&gt;</span><span class="token keyword">void</span><span class="token punctuation">;</span>
         callbackParams<span class="token operator">:</span><span class="token builtin">any</span><span class="token punctuation">;</span>    
 <span class="token punctuation">}</span>
 </code></pre>
 <h2 id="&#x63A5;&#x53E3;&#x63CF;&#x8FF0;">&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</h2>
 <h3 id="create">create</h3>
-<pre class="language-"><code class="lang-typescript">        <span class="token function">create</span><span class="token punctuation">(</span><span class="token parameter">options<span class="token operator">:</span>CreateOptionsType</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
+<pre class="language-"><code class="lang-typescript">        <span class="token function">create</span><span class="token punctuation">(</span>options<span class="token operator">:</span>CreateOptionsType<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token builtin">Promise</span><span class="token operator">&lt;</span>Result<span class="token operator">&gt;</span><span class="token punctuation">;</span>
 </code></pre>
 <p>&#x6839;&#x636E;&#x4F20;&#x5165;&#x53C2;&#x6570;&#x4E0D;&#x540C;&#xFF0C;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x5E94;&#x7684;cron&#x4EFB;&#x52A1;&#x5199;&#x5165;&#x5230;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x9ED8;&#x8BA4;&#x72B6;&#x6001;&#x4E3A;DISABLED, &#x7B49;&#x5BBF;&#x4E3B;&#x8C03;&#x7528;startAll()&#x6216;&#x8005;start()&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x4F1A;&#x53D8;&#x4E3A;ENABLE&#x72B6;&#x6001;&#x5E76;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;cronjob&#x6B63;&#x5F0F;&#x542F;&#x52A8;&#x3002;</p>
 <p>&#x4F8B;&#x5982;&#xFF1A;</p>
@@ -2754,7 +2767,7 @@
     name<span class="token operator">:</span><span class="token string">&quot;test1&quot;</span><span class="token punctuation">,</span>
     <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span><span class="token constant">SCHEDULE</span><span class="token punctuation">,</span>
     scheduleRules<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>hour<span class="token operator">:</span><span class="token number">12</span><span class="token punctuation">,</span> weekdays<span class="token operator">:</span><span class="token number">127</span><span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token punctuation">{</span>hour<span class="token operator">:</span><span class="token number">13</span><span class="token punctuation">,</span> minute<span class="token operator">:</span><span class="token number">5</span><span class="token punctuation">,</span> weekdays<span class="token operator">:</span><span class="token number">127</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token punctuation">(</span><span class="token parameter">data</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;fired&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;fired&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     callbackParams<span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
@@ -2763,7 +2776,7 @@
     name<span class="token operator">:</span><span class="token string">&quot;test2&quot;</span><span class="token punctuation">,</span>
     <span class="token keyword">type</span><span class="token operator">:</span>CronType<span class="token punctuation">.</span><span class="token constant">FREQUENCY</span><span class="token punctuation">,</span>
     frequencyRules<span class="token operator">:</span><span class="token punctuation">[</span><span class="token punctuation">{</span>frequency<span class="token operator">:</span><span class="token number">60</span><span class="token operator">*</span><span class="token number">60</span><span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token function-variable function">callback</span><span class="token operator">:</span><span class="token parameter">data</span><span class="token operator">=&gt;</span><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;fired&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">callback</span><span class="token operator">:</span>data<span class="token operator">=&gt;</span><span class="token builtin">console</span><span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">&quot;fired&quot;</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
     callbackParams<span class="token operator">:</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>
 <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </code></pre>
@@ -2858,7 +2871,7 @@ updatedAt: date</p>
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Cron 模块构思","level":"4.4.1.1","depth":3,"next":{"title":"data-version","level":"4.4.2","depth":2,"ref":"","articles":[{"title":"基于关系型数据库的版本管理","level":"4.4.2.1","depth":3,"path":"4-projects/gig-economy/data-version/design-v1.md","ref":"4-projects/gig-economy/data-version/design-v1.md","articles":[]},{"title":"基于关系型数据库的版本管理","level":"4.4.2.2","depth":3,"path":"4-projects/gig-economy/data-version/design-v2.1.md","ref":"4-projects/gig-economy/data-version/design-v2.1.md","articles":[]},{"title":"基于关系型数据库的版本管理","level":"4.4.2.3","depth":3,"path":"4-projects/gig-economy/data-version/design-v2.md","ref":"4-projects/gig-economy/data-version/design-v2.md","articles":[]},{"title":"版本管理结构分层","level":"4.4.2.4","depth":3,"path":"4-projects/gig-economy/data-version/draft.md","ref":"4-projects/gig-economy/data-version/draft.md","articles":[]},{"title":"需求","level":"4.4.2.5","depth":3,"path":"4-projects/gig-economy/data-version/example-1.md","ref":"4-projects/gig-economy/data-version/example-1.md","articles":[]},{"title":"关系型数据库数据历史管理","level":"4.4.2.6","depth":3,"path":"4-projects/gig-economy/data-version/rdms-history-version-design.md","ref":"4-projects/gig-economy/data-version/rdms-history-version-design.md","articles":[]}]},"previous":{"title":"cron","level":"4.4.1","depth":2,"ref":"","articles":[{"title":"Cron 模块构思","level":"4.4.1.1","depth":3,"path":"4-projects/gig-economy/cron/requirements.md","ref":"4-projects/gig-economy/cron/requirements.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/cron/requirements.md","mtime":"2020-07-19T06:02:07.270Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-07-19T06:02:46.420Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Cron 模块构思","level":"4.4.1.1","depth":3,"next":{"title":"data-version","level":"4.4.2","depth":2,"ref":"","articles":[{"title":"基于关系型数据库的版本管理","level":"4.4.2.1","depth":3,"path":"4-projects/gig-economy/data-version/design-v1.md","ref":"4-projects/gig-economy/data-version/design-v1.md","articles":[]},{"title":"基于关系型数据库的版本管理","level":"4.4.2.2","depth":3,"path":"4-projects/gig-economy/data-version/design-v2.1.md","ref":"4-projects/gig-economy/data-version/design-v2.1.md","articles":[]},{"title":"基于关系型数据库的版本管理","level":"4.4.2.3","depth":3,"path":"4-projects/gig-economy/data-version/design-v2.md","ref":"4-projects/gig-economy/data-version/design-v2.md","articles":[]},{"title":"版本管理结构分层","level":"4.4.2.4","depth":3,"path":"4-projects/gig-economy/data-version/draft.md","ref":"4-projects/gig-economy/data-version/draft.md","articles":[]},{"title":"需求","level":"4.4.2.5","depth":3,"path":"4-projects/gig-economy/data-version/example-1.md","ref":"4-projects/gig-economy/data-version/example-1.md","articles":[]},{"title":"关系型数据库数据历史管理","level":"4.4.2.6","depth":3,"path":"4-projects/gig-economy/data-version/rdms-history-version-design.md","ref":"4-projects/gig-economy/data-version/rdms-history-version-design.md","articles":[]}]},"previous":{"title":"cron","level":"4.4.1","depth":2,"ref":"","articles":[{"title":"Cron 模块构思","level":"4.4.1.1","depth":3,"path":"4-projects/gig-economy/cron/requirements.md","ref":"4-projects/gig-economy/cron/requirements.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["prism","-highlight","disqus","summary","theme-comscore"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"prism":{},"disqus":{"useIdentifier":false,"shortName":"inceptionpad"},"summary":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-comscore":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"InceptionWiki","gitbook":"*","theme-default":{"showLevel":true}},"file":{"path":"4-projects/gig-economy/cron/requirements.md","mtime":"2020-10-16T07:24:03.332Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-10-16T07:25:07.207Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
